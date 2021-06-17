@@ -51,6 +51,12 @@ public class M00ks1Controller : MonoBehaviour
 			Debug.Log("Collided with Knight!");
 			StartCoroutine(Stunned());
 		}
+		
+		if (other.gameObject.CompareTag("Arrow") && !Immunity)
+		{
+			Debug.Log("He Shot Me!");
+			StartCoroutine(Stunned());
+		}
 	}
 	
 	IEnumerator  Stunned(){
@@ -65,5 +71,10 @@ public class M00ks1Controller : MonoBehaviour
 		yield return new WaitForSeconds(0.3f);
 		Immunity = false;
 		m00ksSprite.material.color = new Color (1,1,1);
+	}
+	
+	IEnumerator  Poisoned(){
+		m00ksSprite.material.color = new Color(0,1,0); //C#
+		yield return new WaitForSeconds(3f);
 	}
 }
