@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireboltController : MonoBehaviour
+public class IceboltController : MonoBehaviour
 {
 	public float speed = 10;
-	public float lifetime = 2f;
+	public float lifeTime = 3f;
+	public float meltTime = 2f;
 	public GameObject target1;
 	
 	private bool exploded = false;
@@ -44,17 +45,18 @@ public class FireboltController : MonoBehaviour
 	void Explode()
 	{
 		exploded = true;
-		transform.localScale = new Vector3(2,2,0);
-		StartCoroutine(Crater());
+		transform.localScale = new Vector3(1.5f,1.5f,0);
+		itemSprite.material.color = new Color(0,0,1); //C#
+		StartCoroutine(Debris());
 	}
 	
-	IEnumerator Crater(){
-		yield return new WaitForSeconds(2f);
+	IEnumerator Debris(){
+		yield return new WaitForSeconds(meltTime);
 		OnBecameInvisible();
 	}
 	
 	IEnumerator Lifetime(){
-		yield return new WaitForSeconds(lifetime);
+		yield return new WaitForSeconds(lifeTime);
 		Explode();
 	}
 	

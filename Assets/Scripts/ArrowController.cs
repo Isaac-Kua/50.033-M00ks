@@ -6,8 +6,7 @@ public class ArrowController : MonoBehaviour
 {
 	private Rigidbody2D itemBody;
 	private SpriteRenderer itemSprite;
-	public float speed = 15;
-
+	
 	void Start()
 	{
 		itemBody = GetComponent<Rigidbody2D>();
@@ -17,7 +16,6 @@ public class ArrowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // MoveItem();
     }
 	
 	void  OnBecameInvisible()
@@ -27,7 +25,7 @@ public class ArrowController : MonoBehaviour
 	
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.CompareTag("M00ks"))
+		if (other.gameObject.CompareTag("Player"))
 		{
 			OnBecameInvisible();
 		}

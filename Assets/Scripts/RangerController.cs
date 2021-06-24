@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class RangerController : MonoBehaviour
 {
-	public float maxSpeed = 5;
-	public float speed;
+	public float speed = 12;
+	public float maxRange = 20;
+	public float minRange = 10;
+	public float missileSpeed = 100;
+	public float windUpTime = 3f;	
+	public GameObject target1;
+	public GameObject missile;
+	
 	private Rigidbody2D rangerBody;
 	private SpriteRenderer rangerSprite;
 	private float distance;
-	public GameObject target1;
-	public float maxRange = 20;
-	public float minRange = 10;
-	public float missileSpeed = 150;	
-	public  GameObject missile;
 	private bool ammo = true;
     
 	
@@ -34,17 +35,17 @@ public class RangerController : MonoBehaviour
     // Update is called once per frame
     void Update()
      {
-         distance = Vector3.Distance(transform.position, target1.transform.position);
+         distance = Vector2.Distance(transform.position, target1.transform.position);
  
          if (distance > maxRange)
          {
-             transform.position = Vector3.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
+             transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
 			 // rangerSprite.material.color = new Color(1,0.5f,1); //C#
          }
  
          else if (distance < minRange)
-         {
-             transform.position = Vector3.MoveTowards(transform.position, target1.transform.position, -1 * speed * Time.deltaTime);
+		 {
+             transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, -1 * speed * Time.deltaTime);
 			 // rangerSprite.material.color = new Color(0.5f,1,1); //C#
          }
 		 
@@ -60,17 +61,37 @@ public class RangerController : MonoBehaviour
 	void Fire()
 	 {
 		ammo = false;
+		Vector2 dir = (target1.transform.position - this.transform.position).normalized;
+		Quaternion angle = new Quaternion(0,0,0,0);
+		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
+		angle.eulerAngles = eulerAngle;
+		
 		GameObject arrow = Instantiate(missile, transform.position, transform.rotation);
-		arrow.GetComponent<Rigidbody2D>().AddRelativeForce((target1.transform.position - this.transform.position)*missileSpeed);
-		Debug.Log("fired");
+		arrow.transform.rotation = angle;
+		arrow.GetComponent<Rigidbody2D>().AddRelativeForce(dir*missileSpeed, ForceMode2D.Impulse);
 		StartCoroutine(WindUp());
 	 }
 	 
 	IEnumerator  WindUp()
 	 {
 		rangerSprite.material.color = new Color(1,1,0.5f); //C#
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(windUpTime);
 		rangerSprite.material.color = new Color(1,0,0); //C#
 		ammo = true;
+	}
+	
+	void  onDeath()
+	{
+		Destroy(gameObject);	
+	}
+	
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		// change this to attack animation 
+		if (other.gameObject.CompareTag("Player"))
+		{
+			Debug.Log("Player killed Ranger");
+			onDeath();
+		}
 	}
 }

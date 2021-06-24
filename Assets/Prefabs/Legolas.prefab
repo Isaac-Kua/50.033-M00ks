@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5303145136270888915}
   - component: {fileID: 5303145136270888914}
   - component: {fileID: 5303145136270888917}
-  m_Layer: 0
+  - component: {fileID: -4433392521452696950}
+  m_Layer: 6
   m_Name: Legolas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,10 +97,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e659b27ac0795664583087f935fe2481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
   speed: 12
-  target1: {fileID: 0}
   maxRange: 20
   minRange: 10
   missileSpeed: 0
+  windUpTime: 3
+  target1: {fileID: 0}
   missile: {fileID: 130144637693236197, guid: 747f29eaffa879f49b3d48d95fbdc078, type: 3}
+--- !u!60 &-4433392521452696950
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303145136270888916}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.15234375, y: 0.97265625}
+      - {x: -0.29296875, y: 0.90234375}
+      - {x: -0.40234375, y: 0.79296875}
+      - {x: -0.47265625, y: 0.65234375}
+      - {x: -0.5, y: 0.5}
+      - {x: -0.5, y: -0.5}
+      - {x: -0.47265625, y: -0.65234375}
+      - {x: -0.40234375, y: -0.79296875}
+      - {x: -0.29296875, y: -0.90234375}
+      - {x: -0.15234375, y: -0.97265625}
+      - {x: 0, y: -1}
+      - {x: 0.15234375, y: -0.97265625}
+      - {x: 0.29296875, y: -0.90234375}
+      - {x: 0.40234375, y: -0.79296875}
+      - {x: 0.47265625, y: -0.65234375}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: 0.5}
+      - {x: 0.47265625, y: 0.65234375}
+      - {x: 0.40234375, y: 0.79296875}
+      - {x: 0.29296875, y: 0.90234375}
+      - {x: 0.15234375, y: 0.97265625}

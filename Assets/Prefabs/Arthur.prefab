@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1165645779147639465}
   - component: {fileID: 1165645779147639470}
   - component: {fileID: 1165645779147639469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arthur
   m_TagString: Knight
   m_Icon: {fileID: 0}
@@ -120,19 +120,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165645779147639466}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1165645779147639469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +145,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614d5a1b13533e44aa3436fd3fb9f507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
   speed: 3
-  target1: {fileID: 191496231195150752, guid: 75f05333917e9a8428ee8eb09a25698b, type: 3}
+  target1: {fileID: 0}

@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - M00ks
   - Knight
+  - Ranger
+  - Arrow
+  - Firebolt
+  - Barbarian
+  - Icebolt
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemies
+  - Enemy Projectile
   - 
   - 
   - 

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 366524825544998992}
   - component: {fileID: 6262397166656772709}
   - component: {fileID: -1390114496452303175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Firebolt
-  m_TagString: Untagged
+  m_TagString: Firebolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.5334232, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830cf1c3820fd324986fe69d6948795c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
+  lifetime: 2
   target1: {fileID: 0}
-  angleChangingSpeed: 0
 --- !u!50 &6262397166656772709
 Rigidbody2D:
   serializedVersion: 4
