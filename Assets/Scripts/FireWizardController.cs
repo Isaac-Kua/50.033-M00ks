@@ -13,7 +13,6 @@ public class FireWizardController : MonoBehaviour
 	public float poofChargeTime = 5f;
 	public float windUpTime = 3f;
 	public float missileSpeed = 10;
-	public float missileLifeTime = 2f;
 	public GameObject target1;
 	public GameObject missile;
 	
