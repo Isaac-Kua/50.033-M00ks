@@ -8,13 +8,17 @@ public class IceWizardController : MonoBehaviour
 	public float maxRange = 30;
 	public float minRange = 10 ;
 	
-	public float burstChargeTime = 10f;
-	public float windUpTime = 3f;
-	public float missileSpeed = 10;
-	public float waveSpeed = 500;
 	public GameObject target1;
 	public GameObject missile;
+	public float windUpTime = 3f;
+	public float missileLifeTime = 3f;
+	public float missileMeltTime = 2f;
+	public float missileSpeed = 10;
 	public GameObject wave;
+	public float waveLifeTime = 1f;
+	public float waveMeltTime = 2f;
+	public float burstChargeTime = 10f;
+	public float waveSpeed = 500;
 	
 	private Rigidbody2D iceWizBody;
 	private SpriteRenderer iceWizSprite;
@@ -31,7 +35,8 @@ public class IceWizardController : MonoBehaviour
 	void FixedUpdate()
 	{
 		if (Input.GetKeyUp("f")){
-			Burst();
+			// Burst();
+			Fire();
 		 }
 	}
 	
@@ -44,7 +49,7 @@ public class IceWizardController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
         } else {
-			if (ammo) 
+			if (ammo && (distance > minRange)) 
 			{
 				Fire();
 			}
@@ -71,15 +76,17 @@ public class IceWizardController : MonoBehaviour
 		GameObject burst = Instantiate(wave, transform.position, transform.rotation);
 		burst.transform.rotation = angle;
 		burst.GetComponent<Rigidbody2D>().AddRelativeForce(dir*waveSpeed, ForceMode2D.Impulse);
+		burst.GetComponent<IcewaveController>().lifeTime = waveLifeTime;
+		burst.GetComponent<IcewaveController>().meltTime = waveMeltTime;
 		StartCoroutine(Panic());
 	 }
 	 
 	IEnumerator Panic()
 	{
-		iceWizSprite.material.color = new Color(0,0,1); //C#
+		iceWizSprite.material.color = new Color(0,0,1); //C# Deepblue
 		yield return new WaitForSeconds(burstChargeTime);
 		burstCharge = true;
-		iceWizSprite.material.color = new Color(1,1,1); //C#
+		iceWizSprite.material.color = new Color(1,1,1); //C# White
 	}
 	 
 	void Fire() 
@@ -88,29 +95,16 @@ public class IceWizardController : MonoBehaviour
 		GameObject icebolt = Instantiate(missile, transform.position, transform.rotation);
 		icebolt.GetComponent<IceboltController>().target1 = target1;
 		icebolt.GetComponent<IceboltController>().speed = missileSpeed;
+		icebolt.GetComponent<IceboltController>().lifeTime = missileLifeTime;
+		icebolt.GetComponent<IceboltController>().meltTime = missileMeltTime;
 		StartCoroutine(WindUp());
 	}
 	 
 	IEnumerator  WindUp()
 	{
-		iceWizSprite.material.color = new Color(1,1,0.5f); //C#
+		iceWizSprite.material.color = new Color(1,1,0.5f); //C# Yellow
 		yield return new WaitForSeconds(windUpTime);
-		iceWizSprite.material.color = new Color(1,0,0); //C#
+		iceWizSprite.material.color = new Color(1,0,0); //C# Red
 		ammo = true;
-	}
-	
-	void  onDeath()
-	{
-		Destroy(gameObject);	
-	}
-	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		// change this to attack animation 
-		if (other.gameObject.CompareTag("Player"))
-		{
-			Debug.Log("Player killed IceWizard");
-			onDeath();
-		}
 	}
 }

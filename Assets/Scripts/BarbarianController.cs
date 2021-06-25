@@ -6,14 +6,15 @@ public class BarbarianController : MonoBehaviour
 {
 	public float speed = 5;
 	public float maxRange = 15;
-	public float dashSpeed = 100;
+	public float dashSpeed = 150;
 	public GameObject target1;
 	public float chargeDuration = 0.05f;
 	public float pauseDuration = 0.1f;
 	public float windUpTime = 3f;
+	public int maxCharges = 3;
 	
 	private float distance;
-	private float charges = 3;
+	private int charges;
 	private bool dashing = false;
 	private Rigidbody2D barbBody;
 	private SpriteRenderer barbSprite;
@@ -25,13 +26,14 @@ public class BarbarianController : MonoBehaviour
         barbBody = GetComponent<Rigidbody2D>();
 		barbSprite = GetComponent<SpriteRenderer>();
 		barbCollider = GetComponent<PolygonCollider2D>();
+		charges = maxCharges;
     }
 
 	void FixedUpdate()
 	{
 		if (Input.GetKeyUp("f"))
 		{
-			charges = 3;
+			charges = maxCharges;
 		}
 	}
 	
@@ -40,21 +42,22 @@ public class BarbarianController : MonoBehaviour
     {
 		distance = Vector2.Distance(transform.position, target1.transform.position);
  
-        if (charges == 0)
-        {
-             transform.position = Vector2.MoveTowards(transform.position, -1*target1.transform.position, speed * Time.deltaTime);
-        }
-		 
-		else if (charges > 0 && !dashing)
-		{
-			Dash();
-		} 
+        if (distance < maxRange){
+			if (charges == 0) {
+				transform.position = Vector2.MoveTowards(transform.position, -1*target1.transform.position, speed * Time.deltaTime);
+			} else if (charges > 0 && !dashing) {
+				Dash();
+			} 
+		} else {
+			transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
+		}
     }
 	
 	void Dash() 
 	{
 		dashing = true;
 		barbCollider.isTrigger = true;
+		gameObject.tag = "DashingBarbarian";
 		charges -= 1;
 		Vector2 v2 = (target1.transform.position - this.transform.position);
 		barbBody.AddRelativeForce(v2.normalized*dashSpeed, ForceMode2D.Impulse);
@@ -65,6 +68,7 @@ public class BarbarianController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(chargeDuration);
 		barbBody.velocity = Vector2.zero;
+		gameObject.tag = "Barbarian";
 		yield return new WaitForSeconds(pauseDuration);
 		dashing = false;
 		barbCollider.isTrigger = false;
@@ -72,22 +76,7 @@ public class BarbarianController : MonoBehaviour
 			barbSprite.material.color = new Color(1,1,0.5f); //C#
 			yield return new WaitForSeconds(windUpTime);
 			barbSprite.material.color = new Color(1,0,0); //C#
-			charges = 3;
-		}
-	}
-	
-	void  onDeath()
-	{
-		Destroy(gameObject);	
-	}
-	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		// change this to attack animation 
-		if (other.gameObject.CompareTag("Player") && !dashing)
-		{
-			Debug.Log("Player killed Barbarian");
-			onDeath();
+			charges = maxCharges;
 		}
 	}
 }

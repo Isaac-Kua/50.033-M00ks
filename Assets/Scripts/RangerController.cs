@@ -40,13 +40,11 @@ public class RangerController : MonoBehaviour
          if (distance > maxRange)
          {
              transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
-			 // rangerSprite.material.color = new Color(1,0.5f,1); //C#
          }
  
          else if (distance < minRange)
 		 {
              transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, -1 * speed * Time.deltaTime);
-			 // rangerSprite.material.color = new Color(0.5f,1,1); //C#
          }
 		 
 		 else 
@@ -78,20 +76,5 @@ public class RangerController : MonoBehaviour
 		yield return new WaitForSeconds(windUpTime);
 		rangerSprite.material.color = new Color(1,0,0); //C#
 		ammo = true;
-	}
-	
-	void  onDeath()
-	{
-		Destroy(gameObject);	
-	}
-	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		// change this to attack animation 
-		if (other.gameObject.CompareTag("Player"))
-		{
-			Debug.Log("Player killed Ranger");
-			onDeath();
-		}
 	}
 }

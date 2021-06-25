@@ -38,7 +38,7 @@ public class IceboltController : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{   
-			Explode();
+			OnBecameInvisible();
 		}
 	}
 	
@@ -47,6 +47,7 @@ public class IceboltController : MonoBehaviour
 		exploded = true;
 		transform.localScale = new Vector3(1.5f,1.5f,0);
 		itemSprite.material.color = new Color(0,0,1); //C#
+		gameObject.tag = "Debris";
 		StartCoroutine(Debris());
 	}
 	

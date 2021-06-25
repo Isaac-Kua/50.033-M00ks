@@ -10,6 +10,13 @@ TagManager:
   - Firebolt
   - Barbarian
   - Icebolt
+  - Debris
+  - IceWizard
+  - FireWizard
+  - DashingBarbarian
+  - Goo
+  - KnightShield
+  - KnightSword
   layers:
   - Default
   - TransparentFX

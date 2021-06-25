@@ -31,7 +31,7 @@ public class IcewaveController : MonoBehaviour
 	void Explode()
 	{
 		itemBody.velocity = Vector2.zero;
-		itemBody.bodyType = RigidbodyType2D.Static;
+		itemBody.constraints = RigidbodyConstraints2D.FreezeAll;
 		itemSprite.material.color = new Color(0,0,1); //C#
 		StartCoroutine(Debris());
 	}
@@ -40,6 +40,7 @@ public class IcewaveController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(meltTime);
 		// Debug.Log("Ice wave melted");
+		gameObject.tag = "Debris";
 		OnBecameInvisible();
 	}
 	

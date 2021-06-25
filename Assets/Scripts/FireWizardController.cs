@@ -10,9 +10,10 @@ public class FireWizardController : MonoBehaviour
 	public float maxRange = 20;
 	public float minRange = 5 ;
 	
-	public float poofChargeTime = 10f;
+	public float poofChargeTime = 5f;
 	public float windUpTime = 3f;
-	public float missileSpeed = 200;
+	public float missileSpeed = 10;
+	public float missileLifeTime = 2f;
 	public GameObject target1;
 	public GameObject missile;
 	
@@ -76,10 +77,10 @@ public class FireWizardController : MonoBehaviour
 	 
 	 IEnumerator Panic()
 	 {
-		fireWizSprite.material.color = new Color(0,0,1); //C#
+		fireWizSprite.material.color = new Color(0,0,1); //C# Deep Blue
 		yield return new WaitForSeconds(poofChargeTime);
 		poofCharge = true;
-		fireWizSprite.material.color = new Color(1,1,1); //C#
+		fireWizSprite.material.color = new Color(1,1,1); //C# White
 	 }
 	 
 	 void Fire() 
@@ -93,24 +94,9 @@ public class FireWizardController : MonoBehaviour
 	 
 	 IEnumerator  WindUp()
 	 {
-		fireWizSprite.material.color = new Color(1,1,0.5f); //C#
+		fireWizSprite.material.color = new Color(1,1,0.5f); //C# Yellow
 		yield return new WaitForSeconds(windUpTime);
-		fireWizSprite.material.color = new Color(1,0,0); //C#
+		fireWizSprite.material.color = new Color(1,0,0); //C# Red
 		ammo = true;
-	}
-	
-	void  onDeath()
-	{
-		Destroy(gameObject);	
-	}
-	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		// change this to attack animation 
-		if (other.gameObject.CompareTag("Player"))
-		{
-			Debug.Log("Player killed FireWizard");
-			onDeath();
-		}
 	}
 }
