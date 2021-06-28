@@ -151,6 +151,7 @@ MonoBehaviour:
   maxRange: 15
   target1: {fileID: 0}
   shield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
+  myShield: {fileID: 0}
   swordLength: 1
   shieldWidth: 1
   windUpTime: 3
@@ -166,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
 --- !u!114 &3364962700852580756
 MonoBehaviour:
   m_ObjectHideFlags: 0
