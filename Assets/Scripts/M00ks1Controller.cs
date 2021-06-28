@@ -14,7 +14,11 @@ public class M00ks1Controller : MonoBehaviour
 	public float slowTime = 3f;
 	public float slowRatio = 5f;
 	public bool Dead = false;
+	public Vector2 moveDirection;
+	public Vector2 faceDirection;
 	
+
+
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
 	private Collider2D m00ksCollider;
@@ -34,11 +38,23 @@ public class M00ks1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
-
+		ProcessInputs();
     }
 	
 	void FixedUpdate()
 	{
+		Move();
+	}
+	
+	void ProcessInputs()
+    {
+        float moveX =Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        moveDirection = new Vector2(moveX,moveY).normalized;
+		if (moveDirection.magnitude!=0)
+		{
+			faceDirection = moveDirection;
+		}
 		if (Input.GetKeyUp("r"))
 		{
 			Application.LoadLevel(0);
@@ -48,32 +64,20 @@ public class M00ks1Controller : MonoBehaviour
 		{
 			StartCoroutine(Death());
 		}
-		
-		if (Input.GetKeyDown("l"))
-		{
-			Dash();
-		}
-		
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		if (Mathf.Abs(moveHorizontal) > 0){
-			Vector2 movement = new Vector2(moveHorizontal, 0);
-			if (m00ksBody.velocity.magnitude < maxSpeed)
-                  m00ksBody.AddForce(movement * speed, ForceMode2D.Impulse);
-		}
-		
-		float moveVertical = Input.GetAxis("Vertical");
-		if (Mathf.Abs(moveVertical) > 0){
-			Vector2 movement = new Vector2(0, moveVertical);
-			if (m00ksBody.velocity.magnitude < maxSpeed)
-                  m00ksBody.AddForce(movement * speed, ForceMode2D.Impulse);
-		}
-		
-		if (Input.GetKeyUp("a") || Input.GetKeyUp("d") || Input.GetKeyDown("w") || Input.GetKeyDown("s")){
-			// stop
-			m00ksBody.velocity = Vector2.zero;
-		}
+    }
+
+    void Move()
+    {
+        m00ksBody.velocity = new Vector2(moveDirection.x*speed, moveDirection.y*speed);
+    }
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, faceDirection*5);
 	}
-	
+
+
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if(!Dead){
@@ -155,20 +159,20 @@ public class M00ks1Controller : MonoBehaviour
 		StartCoroutine(Respawn());
 	}
 	
-	void Dash() 
-	{
-		Immunity = true;
-		m00ksCollider.isTrigger = true;
-		m00ksBody.AddRelativeForce(m00ksBody.velocity.normalized*dashSpeed, ForceMode2D.Impulse);
-		StartCoroutine(StopDash());
-	}
+	// void Dash() 
+	// {
+	// 	Immunity = true;
+	// 	m00ksCollider.isTrigger = true;
+	// 	m00ksBody.AddRelativeForce(m00ksBody.velocity.normalized*dashSpeed, ForceMode2D.Impulse);
+	// 	StartCoroutine(StopDash());
+	// }
 	
-	IEnumerator StopDash()
-	{
-		yield return new WaitForSeconds(chargeDuration);
-		m00ksBody.velocity = Vector2.zero;
-		yield return new WaitForSeconds(pauseDuration);
-		m00ksCollider.isTrigger = false;
-		Immunity = false;
-	}
+	// IEnumerator StopDash()
+	// {
+	// 	yield return new WaitForSeconds(chargeDuration);
+	// 	m00ksBody.velocity = Vector2.zero;
+	// 	yield return new WaitForSeconds(pauseDuration);
+	// 	m00ksCollider.isTrigger = false;
+	// 	Immunity = false;
+	// }
 }

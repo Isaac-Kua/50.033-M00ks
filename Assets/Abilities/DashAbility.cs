@@ -13,7 +13,7 @@ public class DashAbility : Ability
     public override void Activate(GameObject parent)
     {
         rb = parent.GetComponent<Rigidbody2D>();
-        moveDirection = parent.GetComponent<PlayerMovement>().moveDirection;
+        moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         Debug.Log("Dashing in DashAbility");
         StartCoroutine(DashCoroutine());
     }

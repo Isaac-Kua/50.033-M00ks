@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ceedefa5f8cae4468015906abbad9a9, type: 3}
-  m_Name: Dash
+  m_Script: {fileID: 11500000, guid: f7830e46d8e5e1c48a51182093c4938b, type: 3}
+  m_Name: Attack
   m_EditorClassIdentifier: 
-  name: Dash
-  activeTime: 0.1
-  charges: 3
-  rechargeTime: 3
-  dashSpeed: 100
+  name: 
+  activeTime: 0
+  charges: 0
+  rechargeTime: 0
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  missileSpeed: 10
+  target1: {fileID: 0}
+  missile: {fileID: 0}
