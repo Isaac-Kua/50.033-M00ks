@@ -20,6 +20,9 @@ public class BarbarianController : MonoBehaviour
 	private SpriteRenderer barbSprite;
 	private PolygonCollider2D barbCollider;
 	
+	private Vector2 dir;
+	private Quaternion angle = new Quaternion(0,0,0,0);
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -28,30 +31,41 @@ public class BarbarianController : MonoBehaviour
 		barbCollider = GetComponent<PolygonCollider2D>();
 		charges = maxCharges;
     }
-
-	void FixedUpdate()
-	{
+	
+    // Update is called once per frame
+    void FixedUpdate()
+    {
 		if (Input.GetKeyUp("f"))
 		{
 			charges = maxCharges;
 		}
-	}
-	
-    // Update is called once per frame
-    void Update()
-    {
+		
+		dir = (target1.transform.position - this.transform.position).normalized;
+		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
+		angle.eulerAngles = eulerAngle;
+		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
- 
-        if (distance < maxRange){
+		transform.rotation = angle;
+
+		if (distance < maxRange)
+		{
 			if (charges == 0) {
-				transform.position = Vector2.MoveTowards(transform.position, -1*target1.transform.position, speed * Time.deltaTime);
+				barbBody.velocity = (-1*dir * speed);
 			} else if (charges > 0 && !dashing) {
 				Dash();
 			} 
+			
 		} else {
-			transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
+			barbBody.velocity = (dir * speed);
 		}
     }
+	
+	void Update(){
+		gameObject.GetComponent<Bumblebee>().dir = dir;
+		gameObject.GetComponent<Bumblebee>().speed = speed;
+		gameObject.GetComponent<Bumblebee>().detectionRange = maxRange;
+		gameObject.GetComponent<Bumblebee>().npcBody = barbBody;	
+	}
 	
 	void Dash() 
 	{
@@ -59,8 +73,7 @@ public class BarbarianController : MonoBehaviour
 		barbCollider.isTrigger = true;
 		gameObject.tag = "DashingBarbarian";
 		charges -= 1;
-		Vector2 v2 = (target1.transform.position - this.transform.position);
-		barbBody.AddRelativeForce(v2.normalized*dashSpeed, ForceMode2D.Impulse);
+		barbBody.AddRelativeForce(Vector2.right*dashSpeed, ForceMode2D.Impulse);
 		StartCoroutine(StopDash());
 	}
 	

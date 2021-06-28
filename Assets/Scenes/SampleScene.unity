@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098023446668689171, guid: 897a7ca5e2f91d1448d76abda313684a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897a7ca5e2f91d1448d76abda313684a, type: 3}
@@ -455,6 +455,10 @@ PrefabInstance:
     - target: {fileID: 5303145136270888916, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
       propertyPath: m_Name
       value: Legolas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303145136270888916, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5303145136270888917, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
       propertyPath: target1
@@ -708,6 +712,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1737345941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1346884830144348009, guid: 1b166d1165c1b5c4bba547df0225e9e6, type: 3}
+  m_PrefabInstance: {fileID: 350610311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1737345947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737345941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  detectionRange: 0
+  npcBody: {fileID: 0}
+  dir: {x: 0, y: 0}
+--- !u!50 &1737345948
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737345941}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1778992953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 191496231195150752, guid: 75f05333917e9a8428ee8eb09a25698b, type: 3}

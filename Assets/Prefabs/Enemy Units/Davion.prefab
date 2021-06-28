@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1165645779147639470}
   - component: {fileID: 1165645779147639469}
   - component: {fileID: 127944649722509358}
+  - component: {fileID: 3364962700852580756}
   m_Layer: 6
   m_Name: Davion
   m_TagString: Knight
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  maxRange: 15
   target1: {fileID: 0}
   shield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
   swordLength: 1
@@ -164,3 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3364962700852580756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165645779147639466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  detectionRange: 0
+  npcBody: {fileID: 0}
+  dir: {x: 0, y: 0}

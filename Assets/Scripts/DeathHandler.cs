@@ -18,6 +18,9 @@ public class DeathHandler : MonoBehaviour
 	
 	void  onDeath()
 	{
+		if (gameObject.tag == "Knight"){
+			Destroy(gameObject.GetComponent<KnightController>().myShield);
+		}
 		Destroy(gameObject);	
 	}
 	
