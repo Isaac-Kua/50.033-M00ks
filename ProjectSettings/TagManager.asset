@@ -17,6 +17,8 @@ TagManager:
   - Goo
   - KnightShield
   - KnightSword
+  - Soul
+  - Altar
   layers:
   - Default
   - TransparentFX
