@@ -4,27 +4,21 @@ using UnityEngine;
 
 public class SoulManager : MonoBehaviour
 {
-    private int player1TotalSouls = 0;
-    private int player1CurrentSouls = 0;
-    private int altarSouls = 0;
+    private int totalSouls = 0;
+    private int currentSouls = 0;
 
-    public void increaseSouls(int player)
+    public void increaseSouls()
     {
-        if (player == 1)
-        {
-            player1CurrentSouls += 1;
-            player1TotalSouls += 1;
-            Debug.Log("Gained soul, Souls: "+player1CurrentSouls);
-        }
+        currentSouls += 1;
+        totalSouls += 1;
+        Debug.Log("Player 1 Souls: "+currentSouls);
     }
 
-    public void depositSouls(int player)
+    public int depositSouls()
     {
-        if (player == 1)
-        {
-            altarSouls += player1CurrentSouls;
-            Debug.Log("Souls deposited: "+player1CurrentSouls);
-            player1CurrentSouls = 0;
-        }
+        int temp = currentSouls;
+        Debug.Log("Souls deposited: "+currentSouls);
+        currentSouls = 0;
+        return temp;
     }
 }
