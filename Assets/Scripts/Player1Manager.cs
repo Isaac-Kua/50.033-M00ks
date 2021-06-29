@@ -31,4 +31,9 @@ public class Player1Manager : MonoBehaviour
         int souls = soulManager.depositSouls();
         altarManager.altarDeposit(souls);
     }
+
+    public void damageAltar()
+    {
+        altarManager.damageAltar();
+    }
 }
