@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 191496231195150755}
   - component: {fileID: 191496231195150756}
   - component: {fileID: 191496231195150759}
+  - component: {fileID: 2549104832431793054}
+  - component: {fileID: 764856625507946978}
+  - component: {fileID: 1899906888940604963}
+  - component: {fileID: 4598277235135023499}
   m_Layer: 0
   m_Name: M00ks1
   m_TagString: Player
@@ -28,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191496231195150752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: -3.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 191496231195150752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1155a8a5d3c497648ba7292ac1b44e33, type: 3}
+  m_Script: {fileID: 11500000, guid: 48a7d6e50d2405940a0739bc6594d1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
@@ -107,6 +111,9 @@ MonoBehaviour:
   pauseDuration: 0.1
   slowTime: 1
   slowRatio: 5
+  Dead: 0
+  moveDirection: {x: 0, y: 0}
+  faceDirection: {x: 0, y: 0}
 --- !u!50 &191496231195150756
 Rigidbody2D:
   serializedVersion: 4
@@ -127,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &191496231195150759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,3 +161,91 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2549104832431793054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191496231195150752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 428be906c7f5055499596541590e262f, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e9c5929f-3c36-44cf-8c2d-0f0b27c73cad
+    m_ActionName: Player/Dash[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2937b637-07e5-4a42-a2a7-7ad37b09fddd
+    m_ActionName: Player/Ability 1[/Keyboard/enter,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 98442da5-ad04-4e5e-9c22-ec56572a40ba
+    m_ActionName: Player/Ability 2[/Keyboard/leftShift,/DualShock4GamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 14a2f670-76b0-4865-b21e-21d59f4c30c9
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/right]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &764856625507946978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191496231195150752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 5ee6f3545a701ca4a8b54f40475d3443, type: 2}
+  abilityType: Dash
+--- !u!114 &1899906888940604963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191496231195150752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  abilityType: Ability1
+--- !u!114 &4598277235135023499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191496231195150752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  abilityType: Ability2

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [CreateAssetMenu]
 public class DashAbility : Ability
@@ -13,12 +14,13 @@ public class DashAbility : Ability
     public override void Activate(GameObject parent)
     {
         rb = parent.GetComponent<Rigidbody2D>();
-        moveDirection = parent.GetComponent<PlayerMovement>().moveDirection;
+        moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
+        parent.GetComponent<M00ks1Controller>().Immunity = true;
         Debug.Log("Dashing in DashAbility");
-        StartCoroutine(DashCoroutine());
+        StartCoroutine(DashCoroutine(parent));
     }
 
-    private IEnumerator DashCoroutine()
+    private IEnumerator DashCoroutine(GameObject parent)
     {
         var endOfFrame = new WaitForEndOfFrame();
         Debug.Log("dashing");
@@ -27,6 +29,7 @@ public class DashAbility : Ability
             rb.MovePosition(rb.position + (moveDirection * (dashSpeed * Time.deltaTime)));
             yield return endOfFrame;
         }
+        parent.GetComponent<M00ks1Controller>().Immunity = false;
         dash = null;
     }
 }

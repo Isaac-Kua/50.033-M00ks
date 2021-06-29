@@ -17,6 +17,7 @@ TagManager:
   - Goo
   - KnightShield
   - KnightSword
+  - PlayerArrow
   - Soul
   - Altar
   layers:
@@ -29,8 +30,8 @@ TagManager:
   - Enemies
   - Enemy Projectile
   - Debris
-  - 
-  - 
+  - Player Projectile
+  - Players
   - 
   - 
   - 
