@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class M00ks1Controller : MonoBehaviour
 {
+	
 	public float maxSpeed = 10;
 	public float speed = 20;
 	public float stunTime = 3f;
@@ -16,7 +17,8 @@ public class M00ks1Controller : MonoBehaviour
 	public bool Dead = false;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
-	
+
+
 
 
 	private Rigidbody2D m00ksBody;
@@ -25,8 +27,11 @@ public class M00ks1Controller : MonoBehaviour
 	private bool Immunity = false;
 	private bool Brittle = false;
 	private bool Slow = false;
-	
-	
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +43,6 @@ public class M00ks1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
-		ProcessInputs();
     }
 	
 	void FixedUpdate()
@@ -46,25 +50,14 @@ public class M00ks1Controller : MonoBehaviour
 		Move();
 	}
 	
-	void ProcessInputs()
-    {
-        float moveX =Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveX,moveY).normalized;
+	public void OnMove(InputValue value)
+	{
+		moveDirection = value.Get<Vector2>().normalized;
 		if (moveDirection.magnitude!=0)
 		{
 			faceDirection = moveDirection;
 		}
-		if (Input.GetKeyUp("r"))
-		{
-			Application.LoadLevel(0);
-		}
-		
-		if (Input.GetKeyUp("m"))
-		{
-			StartCoroutine(Death());
-		}
-    }
+	}
 
     void Move()
     {
@@ -157,6 +150,11 @@ public class M00ks1Controller : MonoBehaviour
 		m00ksBody.constraints = RigidbodyConstraints2D.FreezeAll;
 		yield return new WaitForSeconds(deathTime);
 		StartCoroutine(Respawn());
+	}
+
+	void testDash()
+	{
+		Debug.Log("Dashed");
 	}
 	
 	// void Dash() 

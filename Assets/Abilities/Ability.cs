@@ -8,7 +8,7 @@ public class Ability : ScriptableObject
     public float activeTime;
     public int charges;
     public float rechargeTime;
-
+    public string abilityType;
     public virtual void Activate(GameObject parent){}
 
     protected void StartCoroutine(IEnumerator _task)

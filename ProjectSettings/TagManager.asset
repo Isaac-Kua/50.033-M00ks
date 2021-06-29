@@ -17,6 +17,7 @@ TagManager:
   - Goo
   - KnightShield
   - KnightSword
+  - PlayerArrow
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Enemies
   - Enemy Projectile
   - Debris
-  - 
-  - 
+  - Player Projectile
+  - Players
   - 
   - 
   - 

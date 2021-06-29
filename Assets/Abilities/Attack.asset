@@ -14,12 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   activeTime: 0
-  charges: 0
-  rechargeTime: 0
-  attackRange: 0.5
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  missileSpeed: 10
-  target1: {fileID: 0}
-  missile: {fileID: 0}
+  charges: 5
+  rechargeTime: 0.5
+  abilityType: Ability1
+  missile: {fileID: 1668824383739398946, guid: be2a73505d7e4d740b4e67e9f60ce545, type: 3}
+  missileSpeed: 4000
