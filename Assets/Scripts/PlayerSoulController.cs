@@ -14,12 +14,12 @@ public class PlayerSoulController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Soul"))
         {
-            CentralManager.centralManagerInstance.increaseSouls(1);
+            Player1Manager.centralManagerInstance.increaseSouls();
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Altar"))
         {
-            CentralManager.centralManagerInstance.depositSouls(1);
+            Player1Manager.centralManagerInstance.depositSouls();
         }
     }
 }

@@ -55,9 +55,6 @@ public class KnightController : MonoBehaviour
 	}
 	
 	void Update() {
-		gameObject.GetComponent<Bumblebee>().dir = dir;
-		gameObject.GetComponent<Bumblebee>().speed = speed;
-		gameObject.GetComponent<Bumblebee>().detectionRange = maxRange;
-		gameObject.GetComponent<Bumblebee>().npcBody = knightBody;	
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 	}
 }

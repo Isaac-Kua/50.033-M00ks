@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1165645779147639469}
   - component: {fileID: 127944649722509358}
   - component: {fileID: 3364962700852580756}
+  - component: {fileID: 5908023712643518722}
   m_Layer: 6
   m_Name: Davion
   m_TagString: Knight
@@ -184,3 +185,17 @@ MonoBehaviour:
   detectionRange: 0
   npcBody: {fileID: 0}
   dir: {x: 0, y: 0}
+--- !u!114 &5908023712643518722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165645779147639466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dd9c17558da6d4c8d78fbc6568dd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  selectedTarget: {fileID: 0}

@@ -65,12 +65,8 @@ public class FireWizardController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update()
-	{
-		gameObject.GetComponent<Bumblebee>().dir = dir;
-		gameObject.GetComponent<Bumblebee>().speed = speed;
-		gameObject.GetComponent<Bumblebee>().detectionRange = maxRange;
-		gameObject.GetComponent<Bumblebee>().npcBody = fireWizBody;
+	void Update() {
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 	}
 	
 	void Poof()
