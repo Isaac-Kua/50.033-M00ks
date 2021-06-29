@@ -95,7 +95,7 @@ public class M00ks1Controller : MonoBehaviour
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(!Immunity){
+		if(!Immunity && !Dead){
 			if (other.gameObject.CompareTag("DashingBarbarian"))
 			{
 				Debug.Log("Killed By Barbarian");
@@ -106,9 +106,7 @@ public class M00ks1Controller : MonoBehaviour
 				Debug.Log("Killed By Knight");
 				StartCoroutine(Death());
 			}
-		}
-		if(!Dead && !Immunity){
-			if (other.gameObject.CompareTag("KnightShield"))
+			else if (other.gameObject.CompareTag("KnightShield"))
 			{
 				Debug.Log("Collided with KnightShield");
 				StartCoroutine(Stunned());

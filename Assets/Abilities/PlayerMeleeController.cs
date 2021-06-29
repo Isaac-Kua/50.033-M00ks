@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerArrowController : MonoBehaviour
+public class PlayerMeleeController : MonoBehaviour
 {
     private Rigidbody2D itemBody;
 	private SpriteRenderer itemSprite;

@@ -114,6 +114,7 @@ MonoBehaviour:
   Dead: 0
   moveDirection: {x: 0, y: 0}
   faceDirection: {x: 0, y: 0}
+  Immunity: 0
 --- !u!50 &191496231195150756
 Rigidbody2D:
   serializedVersion: 4
@@ -247,5 +248,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  ability: {fileID: 11400000, guid: 990f1707b3a18914dbb9d26d955ae861, type: 2}
   abilityType: Ability2
