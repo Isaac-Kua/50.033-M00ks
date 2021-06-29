@@ -3,13 +3,13 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bumblebee : MonoBehaviour
-{	
+public class KennaAim : MonoBehaviour
+{
+	public GameObject[] targets; 
 	public GameObject selectedTarget;
 	private Dictionary<GameObject,float> target_distance = new Dictionary<GameObject,float>();
 	private Dictionary<GameObject,Vector2> target_dir = new Dictionary<GameObject,Vector2>();
 	public float detectionRange;
-	private GameObject[] targets; 
 	
 	// Start is called before the first frame update
 	void Start()
@@ -52,9 +52,9 @@ public class Bumblebee : MonoBehaviour
 			if (m00k.CompareTag("Player")){
 				Debug.Log(m00k.name);
 				if (m00k.GetComponent<M00ks1Controller>().Dead){
-					// Debug.Log(m00k.name + " is Dead");
+					Debug.Log(m00k.name + " is Dead");
 					viable.Remove(m00k);
-					// Debug.Log(m00k.name + " is Removed");
+					Debug.Log(m00k.name + " is Removed");
 				}
 			}
 			
@@ -68,16 +68,16 @@ public class Bumblebee : MonoBehaviour
 			if (hit.collider!= null && hit.collider.tag == "Debris")
 			{
 				//Hit something, print the tag of the object
-				// Debug.Log(m00k.name + " is blocked");
+				Debug.Log(m00k.name + " is blocked");
 				viable.Remove(m00k);
-				// Debug.Log(m00k.name + " is Removed");
+				Debug.Log(m00k.name + " is Removed");
 			}
 			
 			Debug.DrawRay(transform.position, target_dir[m00k] * target_distance[m00k], Color.red);
 		}
 		
 		selectedTarget = FindClosestEnemy(viable);
-		// Debug.Log(selectedTarget.name + " is selected");
+		Debug.Log(selectedTarget.name + " is selected");
 	}
 	
 	public GameObject FindClosestEnemy(List<GameObject>  viable)

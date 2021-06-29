@@ -61,10 +61,7 @@ public class BarbarianController : MonoBehaviour
     }
 	
 	void Update(){
-		gameObject.GetComponent<Bumblebee>().dir = dir;
-		gameObject.GetComponent<Bumblebee>().speed = speed;
-		gameObject.GetComponent<Bumblebee>().detectionRange = maxRange;
-		gameObject.GetComponent<Bumblebee>().npcBody = barbBody;	
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 	}
 	
 	void Dash() 
