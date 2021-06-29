@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class AbilityHolder : MonoBehaviour
 {
     public Ability ability;
+    public string abilityType;
     float cooldownTime;
     float activeTime;
     float rechargeTime;
@@ -22,7 +23,7 @@ public class AbilityHolder : MonoBehaviour
     private bool input = false;
     public void OnDash(InputValue value)
     {
-        if(ability.abilityType=="Dash")
+        if(abilityType=="Dash")
         {
             input = true;
         }
@@ -31,7 +32,7 @@ public class AbilityHolder : MonoBehaviour
     public void OnAbility1()
     {
         
-        if(ability.abilityType=="Ability1")
+        if(abilityType=="Ability1")
         {
             input = true;
         }
@@ -39,7 +40,7 @@ public class AbilityHolder : MonoBehaviour
     }
     public void OnAbility2()
     {
-        if(ability.abilityType=="Ability2")
+        if(abilityType=="Ability2")
         {
             input = true;
         }

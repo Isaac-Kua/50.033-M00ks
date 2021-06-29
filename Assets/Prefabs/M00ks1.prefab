@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2549104832431793054}
   - component: {fileID: 764856625507946978}
   - component: {fileID: 1899906888940604963}
+  - component: {fileID: 4598277235135023499}
   m_Layer: 0
   m_Name: M00ks1
   m_TagString: Player
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: 5ee6f3545a701ca4a8b54f40475d3443, type: 2}
+  abilityType: Dash
 --- !u!114 &1899906888940604963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +234,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  abilityType: Ability1
+--- !u!114 &4598277235135023499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191496231195150752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  abilityType: Ability2

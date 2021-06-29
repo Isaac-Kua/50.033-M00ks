@@ -17,6 +17,7 @@ public class M00ks1Controller : MonoBehaviour
 	public bool Dead = false;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
+	public bool Immunity = false;
 
 
 
@@ -24,7 +25,6 @@ public class M00ks1Controller : MonoBehaviour
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
 	private Collider2D m00ksCollider;
-	private bool Immunity = false;
 	private bool Brittle = false;
 	private bool Slow = false;
 
@@ -73,7 +73,7 @@ public class M00ks1Controller : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if(!Dead){
+		if(!Dead && !Immunity){
 			if (other.gameObject.CompareTag("KnightShield"))
 			{
 				Debug.Log("Collided with KnightShield");
@@ -105,6 +105,24 @@ public class M00ks1Controller : MonoBehaviour
 			} else if (other.gameObject.CompareTag("KnightSword")){
 				Debug.Log("Killed By Knight");
 				StartCoroutine(Death());
+			}
+		}
+		if(!Dead && !Immunity){
+			if (other.gameObject.CompareTag("KnightShield"))
+			{
+				Debug.Log("Collided with KnightShield");
+				StartCoroutine(Stunned());
+			} else if (other.gameObject.CompareTag("Arrow") || other.gameObject.CompareTag("Firebolt")) {
+				Debug.Log("He Shot Me!");
+				StartCoroutine(Death());
+			} else if (other.gameObject.CompareTag("Icebolt")) {
+				if (!Brittle){
+					Brittle = true;
+					StartCoroutine(Stunned());
+				} else if (Brittle){
+					Debug.Log("Killed by IceWizard");
+					StartCoroutine(Death());
+				}
 			}
 		}
 	}
