@@ -25,62 +25,68 @@ public class IceWizardController : MonoBehaviour
 	private float distance;
 	private bool burstCharge = true;
 	private bool ammo = true;
+	private Vector2 dir;
+	private Quaternion angle = new Quaternion(0,0,0,0);
 	
 	void Start()
-    {
-        iceWizBody = GetComponent<Rigidbody2D>();
+	{
+		iceWizBody = GetComponent<Rigidbody2D>();
 		iceWizSprite = GetComponent<SpriteRenderer>();
-    }
+	}
 
 	void FixedUpdate()
 	{
 		if (Input.GetKeyUp("f")){
 			// Burst();
 			Fire();
-		 }
-	}
-	
-    // Update is called once per frame
-    void Update()
-    {
-        distance = Vector2.Distance(transform.position, target1.transform.position);
- 
-        if (distance > maxRange)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
-        } else {
-			if (ammo && (distance > minRange)) 
-			{
-				Fire();
-			}
-			else if (distance < minRange)
-			{
-				if (burstCharge) 
-				{
-					Burst();
-				} else {
-					transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, -1 * speed * Time.deltaTime);
-				}
-			}
 		}
-	 }
-	
-	void Burst()
-	 {
-		burstCharge = false;
-		Vector2 dir = (target1.transform.position - this.transform.position).normalized;
-		Quaternion angle = new Quaternion(0,0,0,0);
-		Vector3 eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.right,dir));
+		
+		dir = (target1.transform.position - this.transform.position).normalized;
+		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
 		
-		GameObject burst = Instantiate(wave, transform.position, transform.rotation);
+		distance = Vector2.Distance(transform.position, target1.transform.position);
+		transform.rotation = angle;
+
+		if (distance > maxRange)
+		{
+			iceWizBody.velocity = (dir * speed);
+			
+		} else if (distance > minRange && distance < maxRange) {
+			iceWizBody.velocity = Vector2.zero;
+			if (ammo) {
+				Fire();
+			} 
+		} else if (distance < minRange){
+			if (burstCharge) {
+				Burst();
+			} else {
+				iceWizBody.velocity = (-1*dir * speed);
+			}
+		}
+	}
+	
+	// Update is called once per frame
+	void Update()
+	{
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+	}
+	
+	void Burst()
+	{
+		burstCharge = false;	
+		Vector3 eulerAngle = new Vector3(0,0, 90+Vector2.SignedAngle(Vector2.right,dir));
+		angle.eulerAngles = eulerAngle;
+		eulerAngle = dir;
+		
+		GameObject burst = Instantiate(wave, transform.position + eulerAngle, transform.rotation);		
 		burst.transform.rotation = angle;
-		burst.GetComponent<Rigidbody2D>().AddRelativeForce(dir*waveSpeed, ForceMode2D.Impulse);
+		burst.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right*waveSpeed, ForceMode2D.Impulse);
 		burst.GetComponent<IcewaveController>().lifeTime = waveLifeTime;
 		burst.GetComponent<IcewaveController>().meltTime = waveMeltTime;
 		StartCoroutine(Panic());
-	 }
-	 
+	}
+	
 	IEnumerator Panic()
 	{
 		iceWizSprite.material.color = new Color(0,0,1); //C# Deepblue
@@ -88,7 +94,7 @@ public class IceWizardController : MonoBehaviour
 		burstCharge = true;
 		iceWizSprite.material.color = new Color(1,1,1); //C# White
 	}
-	 
+	
 	void Fire() 
 	{
 		ammo = false;
@@ -99,7 +105,7 @@ public class IceWizardController : MonoBehaviour
 		icebolt.GetComponent<IceboltController>().meltTime = missileMeltTime;
 		StartCoroutine(WindUp());
 	}
-	 
+	
 	IEnumerator  WindUp()
 	{
 		iceWizSprite.material.color = new Color(1,1,0.5f); //C# Yellow

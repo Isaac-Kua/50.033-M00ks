@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: -2260225008516460013}
   - component: {fileID: -7668038856219066561}
   - component: {fileID: 5165520411922565074}
+  - component: {fileID: 3831483218372252668}
+  - component: {fileID: 4431533452657506003}
   m_Layer: 0
   m_Name: Rylai
   m_TagString: IceWizard
@@ -169,3 +171,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+--- !u!114 &3831483218372252668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706058254562611206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  detectionRange: 0
+  npcBody: {fileID: 0}
+  dir: {x: 0, y: 0}
+--- !u!50 &4431533452657506003
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706058254562611206}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -106,7 +106,6 @@ MonoBehaviour:
   poofChargeTime: 5
   windUpTime: 3
   missileSpeed: 10
-  missileLifeTime: 2
   target1: {fileID: 0}
   missile: {fileID: 2180849708720968426, guid: bd81218ecb9196c47bbe11eefeab30f6, type: 3}
 --- !u!60 &6727582931780562736
@@ -152,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}

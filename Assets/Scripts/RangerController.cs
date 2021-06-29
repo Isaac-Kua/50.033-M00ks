@@ -51,19 +51,15 @@ public class RangerController : MonoBehaviour
 			if (ammo) {
 				Fire();
 			} 
-		} else if (distance > minRange && distance < maxRange){
+		} else if (distance < minRange) {
 			rangerBody.velocity = (-1*dir * speed);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update()
-	{
-		
-		gameObject.GetComponent<Bumblebee>().dir = dir;
-		gameObject.GetComponent<Bumblebee>().speed = speed;
-		gameObject.GetComponent<Bumblebee>().detectionRange = maxRange;
-		gameObject.GetComponent<Bumblebee>().npcBody = rangerBody;
+	{		
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 	}
 	
 	void Fire()

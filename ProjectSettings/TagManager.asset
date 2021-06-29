@@ -18,6 +18,8 @@ TagManager:
   - KnightShield
   - KnightSword
   - PlayerArrow
+  - Soul
+  - Altar
   layers:
   - Default
   - TransparentFX
@@ -54,4 +56,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4089929037
+    locked: 0
+  - name: Obstacles
+    uniqueID: 404749179
+    locked: 0
+  - name: Enemies
+    uniqueID: 2269993767
+    locked: 0
+  - name: Player
+    uniqueID: 2593855851
     locked: 0
