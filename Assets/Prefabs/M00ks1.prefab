@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 764856625507946978}
   - component: {fileID: 1899906888940604963}
   - component: {fileID: 4598277235135023499}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: M00ks1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -114,6 +114,7 @@ MonoBehaviour:
   Dead: 0
   moveDirection: {x: 0, y: 0}
   faceDirection: {x: 0, y: 0}
+  Immunity: 0
 --- !u!50 &191496231195150756
 Rigidbody2D:
   serializedVersion: 4

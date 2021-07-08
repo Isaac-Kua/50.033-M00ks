@@ -18,16 +18,20 @@ public class PlayerArrowController : MonoBehaviour
     {
     }
 	
-	void  OnBecameInvisible()
+	void OnBecameInvisible()
 	{
 		Destroy(gameObject);	
 	}
 	
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.CompareTag("Player"))
+		if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("KnightShield"))
 		{
-			OnBecameInvisible();
+			Destroy(gameObject);
+		}
+		else if (other.gameObject.CompareTag("Knight"))
+		{
+			Destroy(other.gameObject);
 		}
 	}
 }
