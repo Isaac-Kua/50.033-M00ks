@@ -15,14 +15,15 @@ public class TripleDashAbility : Ability
     {
         rb = parent.GetComponent<Rigidbody2D>();
         parent.GetComponent<M00ks1Controller>().Immunity = true;
-        Debug.Log("Dash: Triple");
+        //Debug.Log("Dash: Triple");
         StartCoroutine(DashCoroutine(parent));
     }
 
     private IEnumerator DashCoroutine(GameObject parent)
     {
+        count -= 1;
         var endOfFrame = new WaitForEndOfFrame();
-        Debug.Log("dashing");		
+        //Debug.Log("dashing");		
         moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         for(float timer = 0; timer < activeTime; timer += Time.deltaTime)
         {
@@ -33,7 +34,6 @@ public class TripleDashAbility : Ability
 		
 		if (count>0) {
 			StartCoroutine(DashCoroutine(parent));
-			count -=1;
 		}
 		
 		else {count = 3;}

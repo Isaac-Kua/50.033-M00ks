@@ -9,27 +9,24 @@ public class M00ks1Controller : MonoBehaviour
 	public float speed = 20;
 	public float stunTime = 3f;
 	public float deathTime = 3f;
-	public float chargeDuration = 0.05f;
-	public float pauseDuration = 0.1f;
 	public float slowTime = 3f;
 	public float slowRatio = 5f;
 	public bool Dead = false;
 	public Vector3 previousLocation;
 	public GameObject shadow;
-	public float teleportDuration =1f;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
 	public bool Immunity = false;
+
+	// ability use case
+	public float reverseDuration = 1f;
+	public float launchDuration = 1f;
 
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
 	private Collider2D m00ksCollider;
 	private bool Brittle = false;
 	private bool Slow = false;
-
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -93,6 +90,15 @@ public class M00ks1Controller : MonoBehaviour
 					StartCoroutine(Death());
 				}
 			}
+		}
+
+		if (this.tag == "PlayerArrow" && other.gameObject.CompareTag("Debris")) {
+			Rigidbody2D debris = other.gameObject.GetComponent<Rigidbody2D>();
+			debris.constraints = RigidbodyConstraints2D.FreezeRotation;
+			debris.velocity = m00ksBody.velocity;
+			this.tag = "Player";
+			other.gameObject.tag = "PlayerArrow";
+			StartCoroutine(Disintegrate(other.gameObject));
 		}
 	}
 	
@@ -178,10 +184,20 @@ public class M00ks1Controller : MonoBehaviour
 		Debug.Log("Dashed");
 	}
 	
+	// Only used for reverseDash
 	IEnumerator WhatWasI(){
 		Vector3 trackedLocation = transform.position;
-		yield return new WaitForSeconds(teleportDuration);
+		yield return new WaitForSeconds(reverseDuration);
 		previousLocation = trackedLocation;
+	}
+
+	// Ony used for Knockback
+	IEnumerator Disintegrate(GameObject debrisProjectile)
+	{
+		yield return new WaitForSeconds(launchDuration);
+		debrisProjectile.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		debrisProjectile.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+		debrisProjectile.tag = "Debris";
 	}
 	// void Dash() 
 	// {
@@ -190,7 +206,7 @@ public class M00ks1Controller : MonoBehaviour
 	// 	m00ksBody.AddRelativeForce(m00ksBody.velocity.normalized*dashSpeed, ForceMode2D.Impulse);
 	// 	StartCoroutine(StopDash());
 	// }
-	
+
 	// IEnumerator StopDash()
 	// {
 	// 	yield return new WaitForSeconds(chargeDuration);

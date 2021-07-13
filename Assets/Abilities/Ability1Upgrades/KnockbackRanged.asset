@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280d4a61dfe3d4b4d91d3597aea9513b, type: 3}
-  m_Name: SpiderDash
+  m_Script: {fileID: 11500000, guid: c1107181a66aa6e40b89397b8f18ac97, type: 3}
+  m_Name: KnockbackRanged
   m_EditorClassIdentifier: 
-  name: SpiderDash
+  name: KnockbackRanged
   activeTime: 0.1
   charges: 0
   rechargeTime: 0
-  abilityType: Dash
-  dashSpeed: 300
+  abilityType: Ability1
+  missile: {fileID: 0}
+  missileSpeed: 300

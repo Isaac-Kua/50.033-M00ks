@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280d4a61dfe3d4b4d91d3597aea9513b, type: 3}
-  m_Name: SpiderDash
+  m_Script: {fileID: 11500000, guid: e45dbdc5bc6ad064a93a17bde9d93959, type: 3}
+  m_Name: KaitenRanged
   m_EditorClassIdentifier: 
-  name: SpiderDash
-  activeTime: 0.1
+  name: KaitenRanged
+  activeTime: 0.4
   charges: 0
   rechargeTime: 0
-  abilityType: Dash
-  dashSpeed: 300
+  abilityType: Ability1
+  missile: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
+  growthRate: 1.05
+  lingerDuration: 0.2
