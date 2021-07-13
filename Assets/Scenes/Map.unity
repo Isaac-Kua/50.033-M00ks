@@ -5441,6 +5441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887f577f4f37827489fc3ff03c2e8ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNo: 0
 --- !u!1 &928317644
 GameObject:
   m_ObjectHideFlags: 0
@@ -5678,6 +5679,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1189495728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189495730}
+  - component: {fileID: 1189495729}
+  m_Layer: 0
+  m_Name: EnemyPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1189495729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189495728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72cec59f300ff4c8b80cb46a5fa497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToPool:
+  - amount: 5
+    prefab: {fileID: 0}
+    expandPool: 0
+    type: 0
+  - amount: 5
+    prefab: {fileID: 0}
+    expandPool: 0
+    type: 1
+  - amount: 5
+    prefab: {fileID: 0}
+    expandPool: 0
+    type: 2
+  - amount: 5
+    prefab: {fileID: 0}
+    expandPool: 0
+    type: 3
+  - amount: 5
+    prefab: {fileID: 0}
+    expandPool: 0
+    type: 4
+--- !u!4 &1189495730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189495728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1200457761 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5303145136270888916, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
@@ -5867,10 +5932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  selectedTarget: {fileID: 0}
   detectionRange: 0
-  npcBody: {fileID: 0}
-  dir: {x: 0, y: 0}
 --- !u!50 &1323194325
 Rigidbody2D:
   serializedVersion: 4
