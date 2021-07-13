@@ -6,7 +6,8 @@ public  enum EnemyType{
 	Davion =  1,
     Lina = 2,
     Rylai = 3,
-    Traxex = 4
+    Traxex = 4,
+    Dummy = 5,
 }
 
 [System.Serializable]

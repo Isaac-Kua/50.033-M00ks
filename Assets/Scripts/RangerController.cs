@@ -19,6 +19,7 @@ public class RangerController : MonoBehaviour
 	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
+	private EnemyType enemyType = EnemyType.Traxex;
 	
 	
 	// Start is called before the first frame update

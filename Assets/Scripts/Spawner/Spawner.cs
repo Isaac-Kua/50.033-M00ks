@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     }
 
 
-    void spawnFromPooler()
+    public void spawnFromPooler()
     {
         GameObject item = EnemyPool.SharedInstance.GetPooledObject(enemyType);
 

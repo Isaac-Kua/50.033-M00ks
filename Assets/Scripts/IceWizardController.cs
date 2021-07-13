@@ -27,6 +27,7 @@ public class IceWizardController : MonoBehaviour
 	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
+	private EnemyType enemyType = EnemyType.Rylai;
 	
 	void Start()
 	{
