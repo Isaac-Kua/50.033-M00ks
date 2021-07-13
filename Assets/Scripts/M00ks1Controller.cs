@@ -9,18 +9,17 @@ public class M00ks1Controller : MonoBehaviour
 	public float speed = 20;
 	public float stunTime = 3f;
 	public float deathTime = 3f;
-	public float dashSpeed = 100;
 	public float chargeDuration = 0.05f;
 	public float pauseDuration = 0.1f;
 	public float slowTime = 3f;
 	public float slowRatio = 5f;
 	public bool Dead = false;
+	public Vector3 previousLocation;
+	public GameObject shadow;
+	public float teleportDuration =1f;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
 	public bool Immunity = false;
-
-
-
 
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
@@ -38,6 +37,7 @@ public class M00ks1Controller : MonoBehaviour
 		m00ksBody = GetComponent<Rigidbody2D>();
 		m00ksSprite = GetComponent<SpriteRenderer>();
 		m00ksCollider = GetComponent<Collider2D>();
+		previousLocation = transform.position;
     }
 
     // Update is called once per frame
@@ -48,6 +48,9 @@ public class M00ks1Controller : MonoBehaviour
 	void FixedUpdate()
 	{
 		Move();
+		StartCoroutine(WhatWasI());
+		// Debug.Log(previousLocation);
+		shadow.transform.position = previousLocation;
 	}
 	
 	public void OnMove(InputValue value)
@@ -175,6 +178,11 @@ public class M00ks1Controller : MonoBehaviour
 		Debug.Log("Dashed");
 	}
 	
+	IEnumerator WhatWasI(){
+		Vector3 trackedLocation = transform.position;
+		yield return new WaitForSeconds(teleportDuration);
+		previousLocation = trackedLocation;
+	}
 	// void Dash() 
 	// {
 	// 	Immunity = true;

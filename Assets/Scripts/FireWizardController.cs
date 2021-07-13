@@ -35,9 +35,9 @@ public class FireWizardController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (Input.GetKeyUp("f")){
-			Poof();
-		}
+		// if (Input.GetKeyUp("f")){
+			// Poof();
+		// }
 		
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));

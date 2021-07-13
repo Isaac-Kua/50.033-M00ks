@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceedefa5f8cae4468015906abbad9a9, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
-  name: Dash
+  name: DefaultDash
   activeTime: 0.1
   charges: 3
   rechargeTime: 3

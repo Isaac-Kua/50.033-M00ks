@@ -36,10 +36,10 @@ public class IceWizardController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (Input.GetKeyUp("f")){
-			// Burst();
-			Fire();
-		}
+		// if (Input.GetKeyUp("f")){
+			// // Burst();
+			// Fire();
+		// }
 		
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));

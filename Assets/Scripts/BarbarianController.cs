@@ -35,10 +35,10 @@ public class BarbarianController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if (Input.GetKeyUp("f"))
-		{
-			charges = maxCharges;
-		}
+		// if (Input.GetKeyUp("f"))
+		// {
+			// charges = maxCharges;
+		// }
 		
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));

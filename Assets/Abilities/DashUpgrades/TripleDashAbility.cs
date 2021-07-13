@@ -4,32 +4,38 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu]
-public class DashAbility : Ability
+public class TripleDashAbility : Ability
 {
     public float dashSpeed;
-    private Coroutine dash = null;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
+	private int count = 3;
     
     public override void Activate(GameObject parent)
     {
         rb = parent.GetComponent<Rigidbody2D>();
-        moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         parent.GetComponent<M00ks1Controller>().Immunity = true;
-        Debug.Log("Dashing in DashAbility");
+        Debug.Log("Dash: Triple");
         StartCoroutine(DashCoroutine(parent));
     }
 
     private IEnumerator DashCoroutine(GameObject parent)
     {
         var endOfFrame = new WaitForEndOfFrame();
-        Debug.Log("dashing");
+        Debug.Log("dashing");		
+        moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         for(float timer = 0; timer < activeTime; timer += Time.deltaTime)
         {
             rb.MovePosition(rb.position + (moveDirection * (dashSpeed * Time.deltaTime)));
             yield return endOfFrame;
         }
         parent.GetComponent<M00ks1Controller>().Immunity = false;
-        dash = null;
+		
+		if (count>0) {
+			StartCoroutine(DashCoroutine(parent));
+			count -=1;
+		}
+		
+		else {count = 3;}
     }
 }
