@@ -6,6 +6,7 @@ public class DeathHandler : MonoBehaviour
 {
 	private SpriteRenderer npcSprite;
 	public GameObject soul;
+	private bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +31,10 @@ public class DeathHandler : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		// change this to attack animation 
-		if (other.gameObject.CompareTag("Player") && !gameObject.CompareTag("DashingBarbarian"))
+		if (other.gameObject.CompareTag("Player") && !gameObject.CompareTag("DashingBarbarian") && !dead)
 		{
 			Debug.Log("Player killed " + gameObject.tag);
+			dead = true;
 			StartCoroutine(death());
 		}
 	}

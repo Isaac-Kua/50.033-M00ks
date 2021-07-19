@@ -27,7 +27,6 @@ public class PlayerSoulController : MonoBehaviour
         {
             if (playerNo == 1) {
                 Player1Manager.centralManagerInstance.depositSouls();
-                Player1Manager.centralManagerInstance.damageAltar();
             }
             else if (playerNo == 2) {
                 Player2Manager.centralManagerInstance.depositSouls();
