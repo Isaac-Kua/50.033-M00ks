@@ -32,6 +32,7 @@ MonoBehaviour:
   kamikazeGrowthRate: 2
   kamikazeCastTime: 0.5
   launchDuration: 1
+  knockbackSpeed: 150
   kaitenGrowthRate: 1.1
   kaitenCastTime: 0.5
   kaitenMaxRadius: 8
@@ -71,5 +72,7 @@ MonoBehaviour:
   iceboltMeltTime: 2
   iceboltSpeed: 10
   icewaveLifeTime: 1
-  icewaveMeltTime: 2
-  icewaveSpeed: 150
+  icewaveMeltTime: 5
+  icewaveSpeed: 100
+  debris: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
+  wallLength: 2
