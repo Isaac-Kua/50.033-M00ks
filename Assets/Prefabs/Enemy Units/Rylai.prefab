@@ -100,20 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2771e453cdc66c4da7b7a500eb187ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  maxRange: 25
-  minRange: 10
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   target1: {fileID: 0}
-  missile: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}
-  windUpTime: 3
-  missileLifeTime: 3
-  missileMeltTime: 2
-  missileSpeed: 10
-  wave: {fileID: 6504242331748839440, guid: 3cca09b862783404b85579a1d9e5cf02, type: 3}
-  waveLifeTime: 1
-  waveMeltTime: 3
-  burstChargeTime: 5
-  waveSpeed: 500
 --- !u!60 &-7668038856219066561
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  activeAbilities:
+  - {fileID: -2260225008516460013}
 --- !u!114 &3831483218372252668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,10 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  selectedTarget: {fileID: 0}
   detectionRange: 0
-  npcBody: {fileID: 0}
-  dir: {x: 0, y: 0}
 --- !u!50 &4431533452657506003
 Rigidbody2D:
   serializedVersion: 4
@@ -208,4 +197,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

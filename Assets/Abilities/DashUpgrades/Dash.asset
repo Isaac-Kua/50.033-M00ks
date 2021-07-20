@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceedefa5f8cae4468015906abbad9a9, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: DefaultDash
   activeTime: 0.1
   charges: 3

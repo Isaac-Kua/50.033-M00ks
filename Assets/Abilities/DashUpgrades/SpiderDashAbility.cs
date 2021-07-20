@@ -16,7 +16,7 @@ public class SpiderDashAbility : Ability
     public override void Activate(GameObject parent)
     {
         rb = parent.GetComponent<Rigidbody2D>();
-        parent.GetComponent<M00ks1Controller>().Immunity = true;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = true;
         Debug.Log("Dash: Spider");
 		
 		targets = GameObject.FindGameObjectsWithTag("Debris");		
@@ -38,7 +38,7 @@ public class SpiderDashAbility : Ability
             rb.MovePosition(rb.position + (moveDirection.normalized * (dashSpeed * Time.deltaTime)));
             yield return endOfFrame;
         }
-        parent.GetComponent<M00ks1Controller>().Immunity = false;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = false;
     }
 	
 	private GameObject FindClosestObstacle(List<GameObject>  viable, GameObject parent)

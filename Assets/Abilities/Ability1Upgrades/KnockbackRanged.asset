@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1107181a66aa6e40b89397b8f18ac97, type: 3}
   m_Name: KnockbackRanged
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: KnockbackRanged
   activeTime: 0.1
   charges: 0

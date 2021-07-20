@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49e754e885804547925732441ed497e, type: 3}
+  m_Name: BreakingMelee
+  m_EditorClassIdentifier: 
+  name: BreakingMelee
+  activeTime: 0
+  charges: 0
+  rechargeTime: 0
+  abilityType: Melee
+  missile: {fileID: 8166981690832168009, guid: 75bd3ce9ab38e8f4fbfe6855c4921cf3, type: 3}
+  missileSpeed: 4000

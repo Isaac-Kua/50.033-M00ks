@@ -147,14 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614d5a1b13533e44aa3436fd3fb9f507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  maxRange: 15
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   target1: {fileID: 0}
-  shield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
-  myShield: {fileID: 0}
-  swordLength: 1
-  shieldWidth: 1
-  windUpTime: 3
 --- !u!114 &127944649722509358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  activeAbilities:
+  - {fileID: 1165645779147639469}
 --- !u!114 &3364962700852580756
 MonoBehaviour:
   m_ObjectHideFlags: 0

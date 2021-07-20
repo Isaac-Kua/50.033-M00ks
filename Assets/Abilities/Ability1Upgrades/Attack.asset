@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7830e46d8e5e1c48a51182093c4938b, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: 
   activeTime: 0
   charges: 5

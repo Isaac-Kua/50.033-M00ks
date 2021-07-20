@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6d59b048f7881458e6f7873ab3293b, type: 3}
   m_Name: SpikeRanged
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: SpikeRanged
   activeTime: 0.1
   charges: 0

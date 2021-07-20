@@ -14,7 +14,7 @@ public class TripleDashAbility : Ability
     public override void Activate(GameObject parent)
     {
         rb = parent.GetComponent<Rigidbody2D>();
-        parent.GetComponent<M00ks1Controller>().Immunity = true;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = true;
         //Debug.Log("Dash: Triple");
         StartCoroutine(DashCoroutine(parent));
     }
@@ -30,7 +30,7 @@ public class TripleDashAbility : Ability
             rb.MovePosition(rb.position + (moveDirection * (dashSpeed * Time.deltaTime)));
             yield return endOfFrame;
         }
-        parent.GetComponent<M00ks1Controller>().Immunity = false;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = false;
 		
 		if (count>0) {
 			StartCoroutine(DashCoroutine(parent));

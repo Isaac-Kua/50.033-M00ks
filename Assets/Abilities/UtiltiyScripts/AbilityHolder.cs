@@ -46,6 +46,14 @@ public class AbilityHolder : MonoBehaviour
         }
         Debug.Log("ability2 in abiliy holder");
     }
+	public void OnMelee()
+    {
+        if(abilityType=="Melee")
+        {
+            input = true;
+        }
+        Debug.Log("melee in abiliy holder");
+    }
     // Update is called once per frame
     void Update()
     {

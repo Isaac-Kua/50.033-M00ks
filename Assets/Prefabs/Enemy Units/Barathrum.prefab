@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6098023446668689183}
   - component: {fileID: 9194582249139844003}
   - component: {fileID: -8682729444445444339}
+  - component: {fileID: 370690965595558772}
   m_Layer: 6
   m_Name: Barathrum
   m_TagString: Barbarian
@@ -120,7 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  activeAbilities:
+  - {fileID: 6098023446668689170}
 --- !u!50 &6098023446668689183
 Rigidbody2D:
   serializedVersion: 4
@@ -185,7 +189,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  selectedTarget: {fileID: 0}
   detectionRange: 0
-  npcBody: {fileID: 0}
-  dir: {x: 0, y: 0}
+--- !u!114 &370690965595558772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098023446668689171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7306756330295183491}
   - component: {fileID: 7306756330295183490}
   - component: {fileID: 7306756330295183493}
+  - component: {fileID: 1415024314942790045}
   m_Layer: 0
   m_Name: Sword
   m_TagString: KnightSword
@@ -128,6 +129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43500587c2b74774a91b0cff285a8ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   shield: {fileID: 0}
-  swingSpeed: 500
-  length: 1
+--- !u!114 &1415024314942790045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306756330295183489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}

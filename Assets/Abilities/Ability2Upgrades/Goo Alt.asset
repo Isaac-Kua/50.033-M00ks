@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1527e90214ade5343957e34a5b5ac9de, type: 3}
+  m_Name: Goo Alt
+  m_EditorClassIdentifier: 
+  name: GooAlt
+  activeTime: 0.4
+  charges: 0
+  rechargeTime: 0
+  abilityType: Ability2
+  missile: {fileID: 2190267130267438645, guid: 8c4ae051a8b829d4c9945df12a6919b6, type: 3}
+  growthRate: 1.07
+  lingerDuration: 0

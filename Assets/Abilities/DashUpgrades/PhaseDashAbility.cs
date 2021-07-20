@@ -14,7 +14,7 @@ public class PhaseDashAbility : Ability
     {
         rb = parent.GetComponent<Rigidbody2D>();
         moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
-        parent.GetComponent<M00ks1Controller>().Immunity = true;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = true;
 		parent.GetComponent<Collider2D>().isTrigger = true;
         Debug.Log("Dashing in DashAbility");
         StartCoroutine(DashCoroutine(parent));
@@ -32,6 +32,6 @@ public class PhaseDashAbility : Ability
             yield return endOfFrame;
         }
 		parent.GetComponent<Collider2D>().isTrigger = false;
-        parent.GetComponent<M00ks1Controller>().Immunity = false;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = false;
     }
 }

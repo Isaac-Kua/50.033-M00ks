@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8063540377780970128}
   - component: {fileID: -962516448177832501}
   - component: {fileID: 3339478385524600331}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerSpike
   m_TagString: PlayerArrow
   m_Icon: {fileID: 0}

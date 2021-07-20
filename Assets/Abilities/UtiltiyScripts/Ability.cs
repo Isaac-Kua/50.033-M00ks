@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ability : ScriptableObject
 {
+	public GameConstants gameConstants;
     public new string name;
     public float activeTime;
     public int charges;

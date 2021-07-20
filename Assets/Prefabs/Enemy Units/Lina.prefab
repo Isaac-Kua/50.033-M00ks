@@ -98,16 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08704ef07cdfb904798e1fc83399f6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  yBound: 18
-  xBound: 30
-  maxRange: 20
-  minRange: 5
-  poofChargeTime: 5
-  windUpTime: 3
-  missileSpeed: 10
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   target1: {fileID: 0}
-  missile: {fileID: 2180849708720968426, guid: bd81218ecb9196c47bbe11eefeab30f6, type: 3}
 --- !u!60 &6727582931780562736
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,4 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4ec89d46b90954cb90fe8afcd209ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  activeAbilities:
+  - {fileID: 256521070877765591}

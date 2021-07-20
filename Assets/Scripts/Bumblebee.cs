@@ -16,7 +16,7 @@ public class Bumblebee : MonoBehaviour
 	{
 		detectionRange = 20;
 		targets = GameObject.FindGameObjectsWithTag("Player");
-		// targets.Add(GameObject.FindGameObjectsWithTag("Altar"));
+		// targets.AddRange(GameObject.FindGameObjectsWithTag("Altar"));
 		// // Targets Altar on spawn
 		// selectedTarget = targets[0];
 		
@@ -27,11 +27,11 @@ public class Bumblebee : MonoBehaviour
 			target_dir.Add(m00k,dir);
 		}
 
-		foreach(KeyValuePair<GameObject, float> entry in target_distance)
-		{
-			Debug.Log(entry.Key.name);
-			Debug.Log(entry.Value);
-		}
+		// foreach(KeyValuePair<GameObject, float> entry in target_distance)
+		// {
+			// Debug.Log(entry.Key.name);
+			// Debug.Log(entry.Value);
+		// }
 		
 	}
 	
@@ -50,8 +50,8 @@ public class Bumblebee : MonoBehaviour
 		foreach (GameObject m00k in targets) {
 			// Filter by death
 			if (m00k.CompareTag("Player")){
-				Debug.Log(m00k.name);
-				if (m00k.GetComponent<M00ks1Controller>().Dead){
+				// Debug.Log(m00k.name);
+				if (m00k.GetComponent<M00ksDeathHandler>().Dead){
 					// Debug.Log(m00k.name + " is Dead");
 					viable.Remove(m00k);
 					// Debug.Log(m00k.name + " is Removed");

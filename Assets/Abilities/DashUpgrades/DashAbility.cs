@@ -14,7 +14,7 @@ public class DashAbility : Ability
     {
         rb = parent.GetComponent<Rigidbody2D>();
         moveDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
-        parent.GetComponent<M00ks1Controller>().Immunity = true;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = true;
         //Debug.Log("Dashing in DashAbility");
         StartCoroutine(DashCoroutine(parent));
     }
@@ -28,6 +28,6 @@ public class DashAbility : Ability
             rb.MovePosition(rb.position + (moveDirection * (dashSpeed * Time.deltaTime)));
             yield return endOfFrame;
         }
-        parent.GetComponent<M00ks1Controller>().Immunity = false;
+        parent.GetComponent<M00ksDeathHandler>().Immunity = false;
     }
 }

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4983300256521188058}
   - component: {fileID: 938530863124050172}
   - component: {fileID: 8645331255189751551}
-  m_Layer: 0
+  - component: {fileID: 5105284062713176079}
+  m_Layer: 9
   m_Name: Kaiten
   m_TagString: PlayerArrow
   m_Icon: {fileID: 0}
@@ -132,3 +133,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5105284062713176079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7532896425907243978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02545f5ae79a74c408e69841f2671fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
