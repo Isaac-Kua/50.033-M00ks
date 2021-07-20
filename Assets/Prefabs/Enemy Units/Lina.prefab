@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4362268442407387503}
   m_Layer: 6
   m_Name: Lina
-  m_TagString: FireWizard
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,5 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 256521070877765591}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2560170341750450185}
   m_Layer: 6
   m_Name: Traxex
-  m_TagString: Ranger
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 5303145136270888917}
 --- !u!212 &5303145136270888914

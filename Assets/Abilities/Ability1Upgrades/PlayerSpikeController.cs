@@ -35,13 +35,13 @@ public class PlayerSpikeController : MonoBehaviour {
     {
         itemBody.constraints = RigidbodyConstraints2D.FreezeAll;
         itemSprite.material.color = new Color(0, 0, 1); //C#
+        gameObject.tag = "Debris";
         StartCoroutine(Debris());
     }
 
     IEnumerator Debris()
     {
         yield return new WaitForSeconds(meltTime);
-        gameObject.tag = "Debris";
         OnBecameInvisible();
     }
 

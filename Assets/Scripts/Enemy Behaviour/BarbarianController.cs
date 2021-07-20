@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class BarbarianController : MonoBehaviour
 {
-	public float speed = 5;
-	public float maxRange = 15;
-	public float dashSpeed = 150;
+	public GameConstants gameConstants;
 	public GameObject target1;
-	public float chargeDuration = 0.05f;
-	public float pauseDuration = 0.1f;
-	public float windUpTime = 3f;
-	public int maxCharges = 3;
 	
 	private float distance;
 	private int charges;
@@ -29,18 +23,13 @@ public class BarbarianController : MonoBehaviour
         barbBody = GetComponent<Rigidbody2D>();
 		barbSprite = GetComponent<SpriteRenderer>();
 		barbCollider = GetComponent<PolygonCollider2D>();
-		charges = maxCharges;
+		charges = gameConstants.BarbarianMaxCharges;
 		GetComponent<ProjectileController>().owner = gameObject;
     }
 	
     // Update is called once per frame
     void FixedUpdate()
-    {
-		// if (Input.GetKeyUp("f"))
-		// {
-			// charges = maxCharges;
-		// }
-		
+    {	
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
@@ -48,16 +37,16 @@ public class BarbarianController : MonoBehaviour
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		transform.rotation = angle;
 
-		if (distance < maxRange)
+		if (distance < gameConstants.BarbarianMaxRange)
 		{
 			if (charges == 0) {
-				barbBody.velocity = (-1*dir * speed);
+				barbBody.velocity = (-1*dir * gameConstants.BarbarianMoveSpeed);
 			} else if (charges > 0 && !dashing) {
 				Dash();
 			} 
 			
 		} else {
-			barbBody.velocity = (dir * speed);
+			barbBody.velocity = (dir * gameConstants.BarbarianMoveSpeed);
 		}
     }
 	
@@ -71,23 +60,23 @@ public class BarbarianController : MonoBehaviour
 		barbCollider.isTrigger = true;
 		gameObject.tag = "DashingBarbarian";
 		charges -= 1;
-		barbBody.AddRelativeForce(Vector2.right*dashSpeed, ForceMode2D.Impulse);
+		barbBody.AddRelativeForce(Vector2.right*gameConstants.BarbarianDashSpeed, ForceMode2D.Impulse);
 		StartCoroutine(StopDash());
 	}
 	
 	IEnumerator StopDash()
 	{
-		yield return new WaitForSeconds(chargeDuration);
+		yield return new WaitForSeconds(gameConstants.BarbarianChargeDuration);
 		barbBody.velocity = Vector2.zero;
-		gameObject.tag = "Barbarian";
-		yield return new WaitForSeconds(pauseDuration);
+		gameObject.tag = "Enemy";
+		yield return new WaitForSeconds(gameConstants.BarbarianPauseDuration);
 		dashing = false;
 		barbCollider.isTrigger = false;
 		if (charges == 0){
 			barbSprite.material.color = new Color(1,1,0.5f); //C#
-			yield return new WaitForSeconds(windUpTime);
+			yield return new WaitForSeconds(gameConstants.BarbarianWindUpTime);
 			barbSprite.material.color = new Color(1,0,0); //C#
-			charges = maxCharges;
+			charges = gameConstants.BarbarianMaxCharges;
 		}
 	}
 }

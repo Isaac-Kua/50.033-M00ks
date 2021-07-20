@@ -4,15 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Knight
-  - Ranger
   - Arrow
   - Firebolt
-  - Barbarian
   - Icebolt
   - Debris
-  - IceWizard
-  - FireWizard
   - DashingBarbarian
   - Goo
   - KnightShield
@@ -20,6 +15,7 @@ TagManager:
   - PlayerArrow
   - Soul
   - Altar
+  - Enemy
   layers:
   - Default
   - TransparentFX

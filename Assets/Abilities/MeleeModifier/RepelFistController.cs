@@ -7,7 +7,6 @@ public class RepelFistController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		Debug.Log("Repel Fist");
     }
 
     // Update is called once per frame

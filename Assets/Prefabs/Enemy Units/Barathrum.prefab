@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 370690965595558772}
   m_Layer: 6
   m_Name: Barathrum
-  m_TagString: Barbarian
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,14 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9954f863bf5116b47bb50f11c263a068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  maxRange: 15
-  dashSpeed: 100
+  gameConstants: {fileID: 0}
   target1: {fileID: 0}
-  chargeDuration: 0.05
-  pauseDuration: 0.1
-  windUpTime: 3
-  maxCharges: 3
 --- !u!114 &5997644861611666344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 6098023446668689170}
 --- !u!50 &6098023446668689183
