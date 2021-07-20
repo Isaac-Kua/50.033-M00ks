@@ -20,6 +20,7 @@ public class AltarManager : MonoBehaviour
         if (altarSouls >= soulCap)
         {
             NextStage();
+            altarSouls = 0;
         }
     }
 
