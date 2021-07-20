@@ -39,12 +39,12 @@ MonoBehaviour:
   kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
   reverseDuration: 1
   rotationPerSec: 5
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 5655318487974413711, guid: 7026978fdb7a2384e881c3dc848a3115, type: 3}
+  katsuMaxRadius: 5
+  katsuGrowthRate: 1.5
+  katsuCastTime: 0.5
   zombiePrefab: {fileID: 455198501895332021, guid: 978f6e6adf3ccb34c83055442fa5b77f, type: 3}
   SpiderMoveSpeed: 15
-  SpiderMaxRange: 10
-  SpiderDashSpeed: 150
-  SpiderChargeDuration: 0.05
   SpiderLifeTime: 5
   fireboltExplosionScale: 3
   fireboltSpeed: 10

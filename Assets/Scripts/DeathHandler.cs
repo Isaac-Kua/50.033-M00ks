@@ -57,13 +57,14 @@ public class DeathHandler : MonoBehaviour
 
 	IEnumerator death(GameObject killer)
 	{
+		npcBody.velocity = Vector2.zero;
 		lastHit = killer.GetComponent<ProjectileController>().owner;
 		if (lastHit.CompareTag("Player"))
 		{
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
 		}
 		npcSprite.color = Color.black;
-		yield return new WaitForSeconds(1f);
+		yield return null;
 		Instantiate(soul, new  Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
 	}

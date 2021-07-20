@@ -16,6 +16,9 @@ public class GameConstants : ScriptableObject
 	public float yBound = 18;
 	public float xBound = 30;
 	
+	// M00ks
+	public float M00ksMoveSpeed = 20;
+	
 	// Defensive Passive Variables 
 	// Tough
 	public int defaultLives = 1;
@@ -59,11 +62,18 @@ public class GameConstants : ScriptableObject
 	// Kill Passive Variables
 	// Explosion
 	public GameObject explosionPrefab;
+	public float katsuMaxRadius = 5;
+	public float katsuGrowthRate = 1.5f;
+	public float katsuCastTime = 0.5f;
 
 	// Zombie
 	public GameObject zombiePrefab;
 	public float SpiderMoveSpeed = 30;
 	public float SpiderLifeTime = 5f;
+
+	// Haste
+	public float hasteRatio = 3;
+	public float hasteDuration = 2;
 
 
 	// Enemies

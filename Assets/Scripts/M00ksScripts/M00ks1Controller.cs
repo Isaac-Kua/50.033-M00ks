@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class M00ks1Controller : MonoBehaviour
 {
 	public GameConstants gameConstants;
-	public float speed = 20;
+	public float speed;
 	public Vector3 previousLocation;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
@@ -26,6 +26,7 @@ public class M00ks1Controller : MonoBehaviour
 		m00ksCollider = GetComponent<Collider2D>();
 		previousLocation = transform.position;
 		reverseDuration = gameConstants.reverseDuration;
+		speed = gameConstants.M00ksMoveSpeed;
     }
 
     // Update is called once per frame
