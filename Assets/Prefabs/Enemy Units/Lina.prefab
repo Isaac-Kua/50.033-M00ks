@@ -108,6 +108,7 @@ MonoBehaviour:
   missileSpeed: 10
   target1: {fileID: 0}
   missile: {fileID: 2180849708720968426, guid: bd81218ecb9196c47bbe11eefeab30f6, type: 3}
+  enemyPool: {fileID: 0}
 --- !u!60 &6727582931780562736
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -152,3 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  enemyType: 2
+  enemyPool: {fileID: 0}

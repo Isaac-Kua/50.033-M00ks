@@ -6,7 +6,8 @@ public class DeathHandler : MonoBehaviour
 {
 	private SpriteRenderer npcSprite;
 	public GameObject soul;
-	public GameObject spawner;
+	public EnemyType enemyType;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,9 @@ public class DeathHandler : MonoBehaviour
 		if (gameObject.tag == "Knight"){
 			Destroy(gameObject.GetComponent<KnightController>().myShield);
 		}
-		//Destroy(gameObject);
-		
-		//spawner.GetComponent<Spawner>().spawnFromPooler();	//spawn a new enemy of same type using specific spawner
-		this.gameObject.SetActive(false); //return itself to enemy pool
+		this.gameObject.SetActive(false);
+		EnemyPool.SharedInstance.spawnEnemy(enemyType);
+
 	}
 	
 	void OnTriggerEnter2D(Collider2D other)

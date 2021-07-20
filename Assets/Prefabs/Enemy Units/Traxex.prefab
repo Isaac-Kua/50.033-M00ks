@@ -54,6 +54,7 @@ MonoBehaviour:
   windUpTime: 3
   target1: {fileID: 0}
   missile: {fileID: 130144637693236197, guid: 747f29eaffa879f49b3d48d95fbdc078, type: 3}
+  enemyPool: {fileID: 0}
 --- !u!114 &3213452991335054725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  enemyType: 4
+  enemyPool: {fileID: 0}
 --- !u!212 &5303145136270888914
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -178,7 +181,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  selectedTarget: {fileID: 0}
   detectionRange: 20
-  npcBody: {fileID: 0}
-  dir: {x: 0, y: 0}

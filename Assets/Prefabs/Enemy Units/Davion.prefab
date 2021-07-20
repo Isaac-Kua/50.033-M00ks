@@ -155,6 +155,7 @@ MonoBehaviour:
   swordLength: 1
   shieldWidth: 1
   windUpTime: 3
+  enemyPool: {fileID: 0}
 --- !u!114 &127944649722509358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  enemyType: 1
+  enemyPool: {fileID: 0}
 --- !u!114 &3364962700852580756
 MonoBehaviour:
   m_ObjectHideFlags: 0

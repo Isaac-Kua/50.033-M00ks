@@ -114,6 +114,7 @@ MonoBehaviour:
   waveMeltTime: 3
   burstChargeTime: 5
   waveSpeed: 500
+  enemyPool: {fileID: 0}
 --- !u!60 &-7668038856219066561
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -172,6 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  enemyType: 3
+  enemyPool: {fileID: 0}
 --- !u!114 &3831483218372252668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,10 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  selectedTarget: {fileID: 0}
   detectionRange: 0
-  npcBody: {fileID: 0}
-  dir: {x: 0, y: 0}
 --- !u!50 &4431533452657506003
 Rigidbody2D:
   serializedVersion: 4

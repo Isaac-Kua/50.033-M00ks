@@ -20,6 +20,7 @@ public class RangerController : MonoBehaviour
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	private EnemyType enemyType = EnemyType.Traxex;
+	public EnemyPool enemyPool;
 	
 	
 	// Start is called before the first frame update
@@ -78,5 +79,9 @@ public class RangerController : MonoBehaviour
 		yield return new WaitForSeconds(windUpTime);
 		rangerSprite.material.color = new Color(1,0,0); //C#
 		ammo = true;
+	}
+	void onDeath(){
+		this.gameObject.SetActive(false);
+		enemyPool.spawnEnemy(enemyType);	
 	}
 }
