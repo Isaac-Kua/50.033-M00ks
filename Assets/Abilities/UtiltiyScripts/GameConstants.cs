@@ -52,6 +52,10 @@ public class GameConstants : ScriptableObject
 	// Reverse
 	public float reverseDuration = 1;
 	
+	// Melee Ability Variables;
+	// Zangief
+	public float rotationPerSec = 5;
+	
 	// Enemies
 	// FireWizard
 	public float fireboltExplosionScale = 3;

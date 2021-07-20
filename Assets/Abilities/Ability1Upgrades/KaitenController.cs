@@ -22,7 +22,7 @@ public class KaitenController : MonoBehaviour
 	{
 		if (transform.localScale.x < kaitenMaxRadius){
 			transform.localScale *= kaitenGrowthRate;
-			}
+		}
 	}
 	
 	private IEnumerator GrowCoroutine ()

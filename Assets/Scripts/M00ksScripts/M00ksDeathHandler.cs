@@ -68,7 +68,9 @@ public class M00ksDeathHandler : MonoBehaviour
 			debris.constraints = RigidbodyConstraints2D.FreezeRotation;
 			debris.velocity = m00ksBody.velocity;
 			this.tag = "Player";
+			GetComponent<ProjectileController>().owner = gameObject;
 			other.gameObject.tag = "PlayerArrow";
+			other.gameObject.GetComponent<ProjectileController>().owner = gameObject;
 			StartCoroutine(Disintegrate(other.gameObject));
 		}
 	}

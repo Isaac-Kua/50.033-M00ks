@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49e754e885804547925732441ed497e, type: 3}
   m_Name: BreakingMelee
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 0}
   name: BreakingMelee
   activeTime: 0
   charges: 0

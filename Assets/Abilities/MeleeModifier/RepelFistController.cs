@@ -7,7 +7,7 @@ public class RepelFistController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+		Debug.Log("Repel Fist");
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class RepelFistController : MonoBehaviour
     }
 	
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "Arrow"){
+		if (other.gameObject.CompareTag("Arrow") && other.gameObject.CompareTag("PlayerArrow")){
 			Destroy(other.gameObject);
 		}
 	}

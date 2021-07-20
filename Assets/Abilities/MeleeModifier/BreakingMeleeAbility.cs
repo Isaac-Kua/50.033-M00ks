@@ -16,5 +16,6 @@ public class BreakingMeleeAbility : Ability
         GameObject missile1 = Instantiate(missile, missilePosition, parent.transform.rotation);
         missile1.GetComponent<Rigidbody2D>().AddRelativeForce(missileDirection*missileSpeed);
 		missile1.GetComponent<NormalFistController>().player = parent;
+		missile1.GetComponent<ProjectileController>().owner = parent;
     }
 }

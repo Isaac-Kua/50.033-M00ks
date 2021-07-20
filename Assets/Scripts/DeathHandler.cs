@@ -38,6 +38,11 @@ public class DeathHandler : MonoBehaviour
 			dead = true;
 			StartCoroutine(death());
 		}
+		
+		if (other.gameObject.CompareTag("PlayerArrow"))
+		{
+			StartCoroutine(death());
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -47,6 +52,7 @@ public class DeathHandler : MonoBehaviour
 			StartCoroutine(death());
 		}
 	}
+	
 
 	IEnumerator death()
 	{
