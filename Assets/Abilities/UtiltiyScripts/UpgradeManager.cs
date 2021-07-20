@@ -157,6 +157,16 @@ public class UpgradeManager : MonoBehaviour
 	}
     // Start is called before the first frame update
     void Start()
+	public bool vengeanceDeath = false;
+
+	// Kill Upgrades
+	public bool explosionKill = false;
+	public bool zombieKill = false;
+	public bool hasteKill = false;
+	public bool saiyanKill = false;
+
+	// Start is called before the first frame update
+	void Start()
     {
         ability1Holder = player.GetComponent<Ability1Holder>();
 		dashHolder = player.GetComponent<DashHolder>();
@@ -170,17 +180,30 @@ public class UpgradeManager : MonoBehaviour
 		updateAbilities();
     }
 
+<<<<<<< HEAD
 	public void onKill(GameObject victim) {
 		Debug.Log("I killed " + victim.name);
 		if (explosionKill) {
 			Instantiate(gameConstants.explosionPrefab, victim.transform.position, victim.transform.rotation);
 		} else if (zombieKill) {
+=======
+	public void onKill(GameObject victim) {
+		Debug.Log("I killed " + victim.name);
+		if (explosionKill) {
+			Instantiate(gameConstants.explosionPrefab, victim.transform.position, victim.transform.rotation);
+		} else if (zombieKill) {
+>>>>>>> e8f86e770726fd16f8a98b571cacad24fb009e0a
 			GameObject Spider = Instantiate(gameConstants.zombiePrefab, victim.transform.position, victim.transform.rotation);
 			Spider.GetComponent<ProjectileController>().owner = gameObject;
 		} else if (hasteKill) {
 			Debug.Log("GOTTA GO FAST");
+<<<<<<< HEAD
 		} else if (saiyanKill) {
 			Debug.Log("ALL RECHARGE");
+=======
+		} else if (saiyanKill) {
+			Debug.Log("ALL RECHARGE");
+>>>>>>> e8f86e770726fd16f8a98b571cacad24fb009e0a
 		}
 	}
 }
