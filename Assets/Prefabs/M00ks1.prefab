@@ -102,19 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a7d6e50d2405940a0739bc6594d1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  gameConstants: {fileID: 0}
   speed: 30
-  stunTime: 3
-  deathTime: 3
-  dashSpeed: 100
-  chargeDuration: 0.05
-  pauseDuration: 0.1
-  slowTime: 1
-  slowRatio: 5
-  Dead: 0
+  previousLocation: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0}
   faceDirection: {x: 0, y: 0}
-  Immunity: 0
 --- !u!50 &191496231195150756
 Rigidbody2D:
   serializedVersion: 4
