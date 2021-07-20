@@ -6,7 +6,7 @@ public class StartMenuController : MonoBehaviour
 {
     void Awake()
     {
-        // Time.timeScale = 0f;
+        Time.timeScale = 0f;
         foreach (Transform eachChild in transform)
         {
             if (eachChild.name != "StartScreen")

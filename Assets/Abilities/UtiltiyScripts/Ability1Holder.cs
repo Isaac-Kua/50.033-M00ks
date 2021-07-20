@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AbilityHolder : MonoBehaviour
+public class Ability1Holder : MonoBehaviour
 {
     public Ability ability;
-    public string abilityType;
+    //public string abilityType;
     float cooldownTime;
     float activeTime;
     float rechargeTime;
@@ -26,41 +26,16 @@ public class AbilityHolder : MonoBehaviour
         charges = ability.charges;
         state = AbilityState.ready;
     }
+
     //public KeyCode key;
     private bool input = false;
-    public void OnDash(InputValue value)
-    {
-        if(abilityType=="Dash")
-        {
-            input = true;
-        }
-        Debug.Log("dashing in ability holder");
-    }
+
     public void OnAbility1()
     {
-        
-        if(abilityType=="Ability1")
-        {
-            input = true;
-        }
-        Debug.Log("ability1 in abiliy holder");
+        input = true;
+        Debug.Log("ability1 in ability holder");
     }
-    public void OnAbility2()
-    {
-        if(abilityType=="Ability2")
-        {
-            input = true;
-        }
-        Debug.Log("ability2 in abiliy holder");
-    }
-	public void OnMelee()
-    {
-        if(abilityType=="Melee")
-        {
-            input = true;
-        }
-        Debug.Log("melee in abiliy holder");
-    }
+    
     // Update is called once per frame
     void Update()
     {
