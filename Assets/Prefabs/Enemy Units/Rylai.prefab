@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4431533452657506003}
   m_Layer: 0
   m_Name: Rylai
-  m_TagString: IceWizard
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: -2260225008516460013}
 --- !u!114 &3831483218372252668

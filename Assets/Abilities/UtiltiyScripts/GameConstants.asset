@@ -38,6 +38,14 @@ MonoBehaviour:
   kaitenMaxRadius: 8
   kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
   reverseDuration: 1
+  rotationPerSec: 5
+  explosionPrefab: {fileID: 0}
+  zombiePrefab: {fileID: 455198501895332021, guid: 978f6e6adf3ccb34c83055442fa5b77f, type: 3}
+  SpiderMoveSpeed: 15
+  SpiderMaxRange: 10
+  SpiderDashSpeed: 150
+  SpiderChargeDuration: 0.05
+  SpiderLifeTime: 5
   fireboltExplosionScale: 3
   fireboltSpeed: 10
   fireboltTargetArea: {fileID: 2474520951067320257, guid: b55d2f8fc8c1626419a6dc58258f83b0, type: 3}
@@ -76,3 +84,10 @@ MonoBehaviour:
   icewaveSpeed: 100
   debris: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
   wallLength: 2
+  BarbarianMoveSpeed: 5
+  BarbarianMaxRange: 15
+  BarbarianDashSpeed: 150
+  BarbarianChargeDuration: 0.05
+  BarbarianPauseDuration: 0.1
+  BarbarianWindUpTime: 3
+  BarbarianMaxCharges: 3

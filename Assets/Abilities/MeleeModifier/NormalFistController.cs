@@ -5,7 +5,7 @@ using UnityEngine;
 public class NormalFistController : MonoBehaviour
 {
 	public GameObject player;
-	public float range = 2;
+	public float range;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class NormalFistController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		Debug.Log((transform.position-player.transform.position).magnitude);
 		if ((transform.position-player.transform.position).magnitude > range){
 			Destroy(gameObject);
 		}

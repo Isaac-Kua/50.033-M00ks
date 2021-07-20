@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5303145136270888914}
   - component: {fileID: -4433392521452696950}
   - component: {fileID: 3741889582445445316}
+  - component: {fileID: 2560170341750450185}
   m_Layer: 6
   m_Name: Traxex
-  m_TagString: Ranger
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 5303145136270888917}
 --- !u!212 &5303145136270888914
@@ -178,3 +180,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedTarget: {fileID: 0}
   detectionRange: 20
+--- !u!50 &2560170341750450185
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303145136270888916}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

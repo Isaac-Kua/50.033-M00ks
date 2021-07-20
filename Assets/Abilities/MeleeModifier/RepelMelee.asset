@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d466722fd82ab974a92ab65d0cf01cc4, type: 3}
   m_Name: RepelMelee
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 0}
   name: RepelMelee
   activeTime: 0
   charges: 0
   rechargeTime: 0
   abilityType: Melee
   missile: {fileID: 640931253731198062, guid: faccf5e66a4601647a0a0ca37e363639, type: 3}
-  missileSpeed: 0
+  missileSpeed: 4000

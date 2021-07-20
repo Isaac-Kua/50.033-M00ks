@@ -52,6 +52,20 @@ public class GameConstants : ScriptableObject
 	// Reverse
 	public float reverseDuration = 1;
 	
+	// Melee Ability Variables;
+	// Zangief
+	public float rotationPerSec = 5;
+
+	// Kill Passive Variables
+	// Explosion
+	public GameObject explosionPrefab;
+
+	// Zombie
+	public GameObject zombiePrefab;
+	public float SpiderMoveSpeed = 30;
+	public float SpiderLifeTime = 5f;
+
+
 	// Enemies
 	// FireWizard
 	public float fireboltExplosionScale = 3;
@@ -100,6 +114,14 @@ public class GameConstants : ScriptableObject
 	public float icewaveSpeed = 500;
 	public GameObject debris;
 	public int wallLength = 2;
-	
-	
+
+	// Barbarian
+	public float BarbarianMoveSpeed = 5;
+	public float BarbarianMaxRange = 15;
+	public float BarbarianDashSpeed = 150;
+	public float BarbarianChargeDuration = 0.05f;
+	public float BarbarianPauseDuration = 0.1f;
+	public float BarbarianWindUpTime = 3f;
+	public int BarbarianMaxCharges = 3;
+
 }

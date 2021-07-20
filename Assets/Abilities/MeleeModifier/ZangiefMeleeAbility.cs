@@ -6,7 +6,6 @@ using UnityEngine;
 public class ZangiefMeleeAbility : Ability
 {
     public GameObject missile;
-    public float rotationPerSec;
     private Vector2 missile1Position;
     private Vector2 missile2Position;
     private Vector2 missileDirection;
@@ -20,11 +19,14 @@ public class ZangiefMeleeAbility : Ability
 		
 		missile1.GetComponent<ZangiefFistController>().player = parent;
 		missile2.GetComponent<ZangiefFistController>().player = parent;
-		missile1.GetComponent<ZangiefFistController>().rotationPerSec = rotationPerSec;
-		missile2.GetComponent<ZangiefFistController>().rotationPerSec = rotationPerSec;
+		missile1.GetComponent<ZangiefFistController>().rotationPerSec = gameConstants.rotationPerSec;
+		missile2.GetComponent<ZangiefFistController>().rotationPerSec = gameConstants.rotationPerSec;
 		
 		missile1.GetComponent<ZangiefFistController>().lifeTime = activeTime;
 		missile2.GetComponent<ZangiefFistController>().lifeTime = activeTime;
+		
+		missile1.GetComponent<ProjectileController>().owner = parent;
+		missile2.GetComponent<ProjectileController>().owner = parent;
 		
     }
 }

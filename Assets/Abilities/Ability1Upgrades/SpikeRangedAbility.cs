@@ -26,6 +26,7 @@ public class SpikeRangedAbility : Ability
         yield return new WaitForSeconds(activeTime);
         missilePosition = missilePosition + missileDirection * spacing;
         GameObject missile1 = Instantiate(missile, missilePosition, parent.transform.rotation);
+		missile1.GetComponent<ProjectileController>().owner = parent;
 
         if (count > 0)
         {

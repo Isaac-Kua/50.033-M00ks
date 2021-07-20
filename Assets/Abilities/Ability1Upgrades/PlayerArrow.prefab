@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8010298686593634630}
   - component: {fileID: 2259199097427026302}
   - component: {fileID: 7711724364199379813}
-  - component: {fileID: 8796081194325337656}
   - component: {fileID: 958854492769029283}
+  - component: {fileID: -5858423306020207243}
   m_Layer: 9
   m_Name: PlayerArrow
   m_TagString: PlayerArrow
@@ -96,24 +96,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8796081194325337656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668824383739398946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a157f49e201014a8c4e9e98a684535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &958854492769029283
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +123,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-5858423306020207243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668824383739398946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}

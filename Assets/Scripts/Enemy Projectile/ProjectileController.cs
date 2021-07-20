@@ -16,4 +16,12 @@ public class ProjectileController : MonoBehaviour
     {
         
     }
+	
+	void OnCollisionEnter2D(Collision2D other)
+	{
+        if (!gameObject.CompareTag("Player")){
+            if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile")) {
+                Destroy(gameObject);
+            } }
+	}
 }

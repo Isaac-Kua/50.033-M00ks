@@ -11,7 +11,6 @@ public class M00ksDeathHandler : MonoBehaviour
 	public bool Immunity = false;
 	public bool Brittle = false;
 	public int lives;
-	private bool Slow = false;
 	private float launchDuration;
 	private float stunTime;
 	private Rigidbody2D m00ksBody;
@@ -37,6 +36,9 @@ public class M00ksDeathHandler : MonoBehaviour
 	{
 		if (myLives == 0 && !Dead){
 			StartCoroutine(Death());
+			if (lastHit.CompareTag("Player")) {
+				lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
+			}
 		}
 	}
 	
@@ -68,7 +70,10 @@ public class M00ksDeathHandler : MonoBehaviour
 			debris.constraints = RigidbodyConstraints2D.FreezeRotation;
 			debris.velocity = m00ksBody.velocity;
 			this.tag = "Player";
+			GetComponent<ProjectileController>().owner = gameObject;
+			other.gameObject.GetComponent<ProjectileController>().owner = gameObject;
 			other.gameObject.tag = "PlayerArrow";
+			other.gameObject.name = "KnockbackProjectile";
 			StartCoroutine(Disintegrate(other.gameObject));
 		}
 	}
@@ -175,7 +180,6 @@ public class M00ksDeathHandler : MonoBehaviour
 		Brittle = false;
 		Immunity = false;
 		Dead = false;
-		Slow = false;
 		myLives = lives;
 	}
 	

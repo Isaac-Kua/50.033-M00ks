@@ -12,11 +12,7 @@ public class MagnetAlternateAbility : Ability
 	public override void Activate(GameObject parent)
 	{
 		targets = GameObject.FindGameObjectsWithTag("Player").ToList();
-		targets.AddRange(GameObject.FindGameObjectsWithTag("Ranger"));
-		targets.AddRange(GameObject.FindGameObjectsWithTag("Barbarian").ToList());
-		targets.AddRange(GameObject.FindGameObjectsWithTag("IceWizard").ToList());
-		targets.AddRange(GameObject.FindGameObjectsWithTag("FireWizard").ToList());
-		targets.AddRange(GameObject.FindGameObjectsWithTag("Knight").ToList());
+		targets.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 		
 		StartCoroutine(CastCoroutine(parent, targets));
 	}

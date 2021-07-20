@@ -13,7 +13,8 @@ public class KaitenRangedAbility : Ability
     {
         rb = parent.GetComponent<Rigidbody2D>();
         missilePosition = parent.transform.position;
-        Instantiate(gameConstants.kaitenPrefab, missilePosition, parent.transform.rotation);
+        GameObject kaiten = Instantiate(gameConstants.kaitenPrefab, missilePosition, parent.transform.rotation);
+		kaiten.GetComponent<ProjectileController>().owner = parent;
         StartCoroutine(ShootCoroutine(parent));
     }
 
