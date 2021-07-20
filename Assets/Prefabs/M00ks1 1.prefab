@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8317819965915158160}
   - component: {fileID: 8317819965915158163}
   - component: {fileID: 5955654988366937258}
-  - component: {fileID: 8198383102585790262}
   - component: {fileID: 8198383102585790263}
   - component: {fileID: 8198383102585790256}
   - component: {fileID: 8198383102585790257}
@@ -28,6 +27,7 @@ GameObject:
   - component: {fileID: 6098015429725167267}
   - component: {fileID: 878347575091974266}
   - component: {fileID: 3643207744776231285}
+  - component: {fileID: 2902796722341918449}
   m_Layer: 10
   m_Name: M00ks1 1
   m_TagString: Player
@@ -211,30 +211,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8198383102585790262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8317819965915158164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d13a43cbec8b9c4a82e5cf73afe455b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miniDefense: 0
-  shellDefense: 0
-  unstoppableDefense: 0
-  toughDefense: 0
-  crawlDeath: 0
-  kamikazeDeath: 0
-  soulswapDeath: 0
-  vengeanceDeath: 0
-  player: {fileID: 8317819965915158164}
-  ab1_Kaiten: {fileID: 11400000, guid: 72a9641d56ed3494ba1152f8e7ebe3a6, type: 2}
-  ab1_Knockback: {fileID: 11400000, guid: 2233a6ecefa76ad48b0d9def8c93e7cf, type: 2}
-  ab1_SpikeRange: {fileID: 11400000, guid: b41f0df1febce0e49b7ae6b18e711617, type: 2}
 --- !u!114 &8198383102585790263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,3 +393,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
+--- !u!114 &2902796722341918449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317819965915158164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d13a43cbec8b9c4a82e5cf73afe455b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniDefense: 0
+  shellDefense: 0
+  unstoppableDefense: 0
+  toughDefense: 0
+  crawlDeath: 0
+  kamikazeDeath: 0
+  soulswapDeath: 0
+  vengeanceDeath: 0
+  Kaiten: 0
+  Knockback: 0
+  SpikeRange: 0
+  ab1Upgrade: 0
+  ab2Upgrade: 0
+  dUpgrade: 0
+  mUpgrade: 0
+  player: {fileID: 0}
+  ab1_Kaiten: {fileID: 0}
+  ab1_Knockback: {fileID: 0}
+  ab1_SpikeRange: {fileID: 0}
+  ab1_Attack: {fileID: 0}

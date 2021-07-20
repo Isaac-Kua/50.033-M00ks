@@ -16,26 +16,6 @@ public class UpgradeManager : MonoBehaviour
 	public bool kamikazeDeath = false;
 	public bool soulswapDeath = false;
 	public bool vengeanceDeath = false;	
-	
-	//Ability 1 Upgrades
-	public bool Kaiten = false;
-	public bool Knockback = false;
-	public bool SpikeRange = false;
-
-
-
-
-
-
-	public enum meleeUpgrade
-	{
-		Melee
-	}
-
-	public ability1Upgrade ab1Upgrade = ability1Upgrade.Attack;
-	public ability2Upgrade ab2Upgrade = ability2Upgrade.Attack;
-	public dashUpgrade dUpgrade = dashUpgrade.Dash;
-	public meleeUpgrade mUpgrade = meleeUpgrade.Melee;
 
 	public GameObject player;
 	//Ability1 ScriptableObjects
@@ -47,7 +27,8 @@ public class UpgradeManager : MonoBehaviour
 	{
 		Kaiten,
 		Knockback,
-		SpikeRange
+		SpikeRange,
+		Default
 	}
 	//Ability2 ScriptableObjects
 	public Ability ab2_Goo;
@@ -60,7 +41,8 @@ public class UpgradeManager : MonoBehaviour
 		Goo,
 		Magnet,
 		Teleport,
-		Mine
+		Mine,
+		Default
 	}
 	//Dash ScriptableObjects
 	public Ability d_Phase;
@@ -70,25 +52,36 @@ public class UpgradeManager : MonoBehaviour
 	public Ability d_Default;
 	public enum dashUpgrade
 	{
-		Dash,
 		Phase,
 		Reverse,
 		Triple,
-		Spider
+		Spider,
+		Default
 	}
 	//Melee ScriptableObjects
 	public Ability m_Breaking;
 	public Ability m_Repel;
 	public Ability m_Lunge;
 	public Ability m_Zangief;
-
-
+	public Ability m_Default;
+	public enum meleeUpgrade
+	{
+		Breaking,
+		Repel,
+		Lunge,
+		Zangief,
+		Default
+	}
 	//The Various Ability Holders
 	private Ability1Holder ability1Holder;
 	private DashHolder dashHolder;
 	private Ability2Holder ability2Holder;
 	private MeleeHolder meleeHolder;
-
+	//The Various Ability States
+	public ability1Upgrade ab1Upgrade = ability1Upgrade.Default;
+	public ability2Upgrade ab2Upgrade = ability2Upgrade.Default;
+	public dashUpgrade dUpgrade = dashUpgrade.Default;
+	public meleeUpgrade mUpgrade = meleeUpgrade.Default;
 
 	public void changeAbility1(Ability a1)
 	{
@@ -122,42 +115,69 @@ public class UpgradeManager : MonoBehaviour
 				changeAbility1(ab1_SpikeRange);
 				break;
 			default:
-				changeAbility1(ab1_Attack);
+				changeAbility1(ab1_Default);
 				break;
 		}
 		
 		switch (ab2Upgrade)
 		{
-			case ability2Upgrade.Attack:
+			case ability2Upgrade.Goo:
+				changeAbility2(ab2_Goo);
 				//changeAbility2(Attack)
 				break;
+			case ability2Upgrade.Magnet:
+				changeAbility2(ab2_Magnet);
+				break;
+			case ability2Upgrade.Teleport:
+				changeAbility2(ab2_Teleport);
+				break;
+			case ability2Upgrade.Mine:
+				changeAbility2(ab2_Mine);
+				break;
 			default:
-				changeAbility2(ab2_Attack);
+				changeAbility2(ab2_Default);
 				break;
 		}
 
 		switch (dUpgrade)
 		{
-			case dashUpgrade.Dash:
-				//changeDash(Melee)
+			case dashUpgrade.Phase:
+				changeDash(d_Phase);
+				break;
+			case dashUpgrade.Reverse:
+				changeDash(d_Reverse);
+				break;
+			case dashUpgrade.Triple:
+				changeDash(d_Triple);
+				break;
+			case dashUpgrade.Spider:
+				changeDash(d_Spider);
 				break;
 			default:
+				changeDash(d_Default);
 				break;
 		}
 
 		switch (mUpgrade)
 		{
-			case meleeUpgrade.Melee:
-				//changeMelee(Melee)
+			case meleeUpgrade.Breaking:
+				changeMelee(m_Breaking);
+				break;
+			case meleeUpgrade.Repel:
+				changeMelee(m_Repel);
+				break;
+			case meleeUpgrade.Lunge:
+				changeMelee(m_Lunge);
+				break;
+			case meleeUpgrade.Zangief:
+				changeMelee(m_Zangief);
 				break;
 			default:
+				changeMelee(m_Default);
 				break;
 		}
 
 	}
-    // Start is called before the first frame update
-    void Start()
-	public bool vengeanceDeath = false;
 
 	// Kill Upgrades
 	public bool explosionKill = false;
@@ -180,30 +200,17 @@ public class UpgradeManager : MonoBehaviour
 		updateAbilities();
     }
 
-<<<<<<< HEAD
 	public void onKill(GameObject victim) {
 		Debug.Log("I killed " + victim.name);
 		if (explosionKill) {
 			Instantiate(gameConstants.explosionPrefab, victim.transform.position, victim.transform.rotation);
 		} else if (zombieKill) {
-=======
-	public void onKill(GameObject victim) {
-		Debug.Log("I killed " + victim.name);
-		if (explosionKill) {
-			Instantiate(gameConstants.explosionPrefab, victim.transform.position, victim.transform.rotation);
-		} else if (zombieKill) {
->>>>>>> e8f86e770726fd16f8a98b571cacad24fb009e0a
 			GameObject Spider = Instantiate(gameConstants.zombiePrefab, victim.transform.position, victim.transform.rotation);
 			Spider.GetComponent<ProjectileController>().owner = gameObject;
 		} else if (hasteKill) {
 			Debug.Log("GOTTA GO FAST");
-<<<<<<< HEAD
 		} else if (saiyanKill) {
 			Debug.Log("ALL RECHARGE");
-=======
-		} else if (saiyanKill) {
-			Debug.Log("ALL RECHARGE");
->>>>>>> e8f86e770726fd16f8a98b571cacad24fb009e0a
 		}
 	}
 }
