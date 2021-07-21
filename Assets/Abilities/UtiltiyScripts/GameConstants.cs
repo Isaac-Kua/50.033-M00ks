@@ -28,6 +28,7 @@ public class GameConstants : ScriptableObject
 	public float shrinkRatio = 2;
 	// Shell
 	public float shellDistance = 5;
+	public GameObject shell;
 	// Unstoppable
 	public float slowRatio = 0.3f;
 	
@@ -44,7 +45,6 @@ public class GameConstants : ScriptableObject
 	// Knockback
 	public float launchDuration = 1;
 	public float knockbackSpeed = 150;
-	
 	// Kaiten
 	public float kaitenGrowthRate = 1.1f;
 	public float kaitenCastTime = 0.5f;
@@ -65,16 +65,28 @@ public class GameConstants : ScriptableObject
 	public float katsuMaxRadius = 5;
 	public float katsuGrowthRate = 1.5f;
 	public float katsuCastTime = 0.5f;
-
 	// Zombie
 	public GameObject zombiePrefab;
 	public float SpiderMoveSpeed = 30;
 	public float SpiderLifeTime = 5f;
-
 	// Haste
 	public float hasteRatio = 3;
 	public float hasteDuration = 2;
 
+	//Movement Passive Variables
+	// Shiva
+	public GameObject shivaAura;
+	public float shivaRatio = 0.2f;
+	public float shivaRadius = 15;
+	// Ghost
+	public float ghostFadeDuration = 5;
+	public float ghostFlickerDuration = 1;
+	public float ghostApparitionDuration = 0.05f;
+	// Juggernaut
+	public float juggernautRatio = 2;
+	public float juggernautSize = 4;
+	public GameObject juggernautBubble;
+	public float juggernautRampDuration = 5;
 
 	// Enemies
 	// FireWizard

@@ -28,7 +28,6 @@ GameObject:
   - component: {fileID: 7023214618810478992}
   - component: {fileID: 7023214618810478999}
   - component: {fileID: 7023214618810478998}
-  - component: {fileID: 52325669146992031}
   m_Layer: 10
   m_Name: M00ksPimped
   m_TagString: Player
@@ -290,6 +289,7 @@ MonoBehaviour:
   Dead: 0
   Immunity: 0
   Brittle: 0
+  Invisible: 0
   lives: 0
   myLives: 0
   lastHit: {fileID: 0}
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 0}
-  shell: {fileID: 0}
 --- !u!114 &7023214618810479004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d13a43cbec8b9c4a82e5cf73afe455b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 0}
   miniDefense: 0
   shellDefense: 0
   unstoppableDefense: 0
@@ -418,16 +418,35 @@ MonoBehaviour:
   kamikazeDeath: 0
   soulswapDeath: 0
   vengeanceDeath: 0
---- !u!114 &52325669146992031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 0}
+  explosionKill: 0
+  zombieKill: 0
+  hasteKill: 0
+  saiyanKill: 0
+  juggernautMove: 0
+  wallwalkerMove: 0
+  shivaMove: 0
+  ghostMove: 0
+  player: {fileID: 0}
+  ab1_Kaiten: {fileID: 0}
+  ab1_Knockback: {fileID: 0}
+  ab1_SpikeRange: {fileID: 0}
+  ab1_Default: {fileID: 0}
+  ab2_Goo: {fileID: 0}
+  ab2_Magnet: {fileID: 0}
+  ab2_Mine: {fileID: 0}
+  ab2_Teleport: {fileID: 0}
+  ab2_Default: {fileID: 0}
+  d_Phase: {fileID: 0}
+  d_Reverse: {fileID: 0}
+  d_Triple: {fileID: 0}
+  d_Spider: {fileID: 0}
+  d_Default: {fileID: 0}
+  m_Breaking: {fileID: 0}
+  m_Repel: {fileID: 0}
+  m_Lunge: {fileID: 0}
+  m_Zangief: {fileID: 0}
+  m_Default: {fileID: 0}
+  ab1Upgrade: 3
+  ab2Upgrade: 4
+  dUpgrade: 4
+  mUpgrade: 4

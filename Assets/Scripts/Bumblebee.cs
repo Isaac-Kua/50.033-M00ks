@@ -56,6 +56,10 @@ public class Bumblebee : MonoBehaviour
 					viable.Remove(m00k);
 					// Debug.Log(m00k.name + " is Removed");
 				}
+				else if (m00k.GetComponent<M00ksDeathHandler>().Invisible)
+				{
+					viable.Remove(m00k);
+				}
 			}
 			
 			// Filter by debris
@@ -79,8 +83,8 @@ public class Bumblebee : MonoBehaviour
 		selectedTarget = FindClosestEnemy(viable);
 		// Debug.Log(selectedTarget.name + " is selected");
 	}
-	
-	public GameObject FindClosestEnemy(List<GameObject>  viable)
+
+	public GameObject FindClosestEnemy(List<GameObject> viable)
 	{
 		GameObject closest = null;
 		float distance = Mathf.Infinity;
@@ -95,6 +99,12 @@ public class Bumblebee : MonoBehaviour
 				distance = curDistance;
 			}
 		}
-		return closest;
+
+		if (closest != null) { 
+			return closest; 
+		} else
+        {
+			return gameObject;
+        }
 	}
 }

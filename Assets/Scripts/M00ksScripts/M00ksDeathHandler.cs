@@ -10,6 +10,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	public bool Dead = false;
 	public bool Immunity = false;
 	public bool Brittle = false;
+	public bool Invisible = false;
 	public int lives;
 	private float launchDuration;
 	private float stunTime;
@@ -43,6 +44,8 @@ public class M00ksDeathHandler : MonoBehaviour
 	}
 	
 	void onHit(GameObject other){
+		Invisible = false;
+		m00ksSprite.enabled = true;
 		Debug.Log(other.GetComponent<ProjectileController>().owner);
 		lastHit = other.GetComponent<ProjectileController>().owner;
 		myLives -=1;
@@ -121,6 +124,8 @@ public class M00ksDeathHandler : MonoBehaviour
 	// }
 	
 	public void OnStunned(){
+		Invisible = false;
+		m00ksSprite.enabled = true;
 		StartCoroutine(Stunned());
 	}
 	

@@ -10,8 +10,7 @@ public class M00ks1Controller : MonoBehaviour
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
 
-	// ability use cas
-
+	// ability use case
 	private Rigidbody2D m00ksBody;
 	private Collider2D m00ksCollider;
 	private Vector2 dir;
@@ -31,8 +30,9 @@ public class M00ks1Controller : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {	
-    }
+    {
+
+	}
 	
 	void FixedUpdate()
 	{
