@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280d4a61dfe3d4b4d91d3597aea9513b, type: 3}
   m_Name: SpiderDash
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: SpiderDash
   activeTime: 0.1
   charges: 0

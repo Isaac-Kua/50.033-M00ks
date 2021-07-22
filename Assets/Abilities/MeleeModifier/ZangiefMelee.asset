@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d252a2e6c74099459a70880c23d9129, type: 3}
   m_Name: ZangiefMelee
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: Zangief
   activeTime: 0.5
   charges: 0
   rechargeTime: 1
   abilityType: Melee
   missile: {fileID: 4631150860077270317, guid: 7d105a4b0cb41744a8a7c49c1347233b, type: 3}
-  rotationPerSec: 5

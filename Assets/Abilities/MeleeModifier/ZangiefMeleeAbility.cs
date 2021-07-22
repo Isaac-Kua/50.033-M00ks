@@ -11,6 +11,7 @@ public class ZangiefMeleeAbility : Ability
     private Vector2 missileDirection;
     public override void Activate(GameObject parent)
     {
+        Debug.Log("Zangief Activated");
         missileDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         missile1Position = new Vector2(parent.transform.position.x, parent.transform.position.y) + missileDirection*2;
         missile2Position = new Vector2(parent.transform.position.x, parent.transform.position.y) - missileDirection*2;

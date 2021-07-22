@@ -219,7 +219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
   m_Name: 
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
   m_Name: 
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
   m_Name: 
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
   m_Name: 
@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d13a43cbec8b9c4a82e5cf73afe455b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 0}
   miniDefense: 0
   shellDefense: 0
   unstoppableDefense: 0
@@ -418,6 +419,34 @@ MonoBehaviour:
   kamikazeDeath: 0
   soulswapDeath: 0
   vengeanceDeath: 0
+  player: {fileID: 0}
+  ab1_Kaiten: {fileID: 0}
+  ab1_Knockback: {fileID: 0}
+  ab1_SpikeRange: {fileID: 0}
+  ab1_Default: {fileID: 0}
+  ab2_Goo: {fileID: 0}
+  ab2_Magnet: {fileID: 0}
+  ab2_Mine: {fileID: 0}
+  ab2_Teleport: {fileID: 0}
+  ab2_Default: {fileID: 0}
+  d_Phase: {fileID: 0}
+  d_Reverse: {fileID: 0}
+  d_Triple: {fileID: 0}
+  d_Spider: {fileID: 0}
+  d_Default: {fileID: 0}
+  m_Breaking: {fileID: 0}
+  m_Repel: {fileID: 0}
+  m_Lunge: {fileID: 0}
+  m_Zangief: {fileID: 0}
+  m_Default: {fileID: 0}
+  ab1Upgrade: 3
+  ab2Upgrade: 4
+  dUpgrade: 4
+  mUpgrade: 4
+  explosionKill: 0
+  zombieKill: 0
+  hasteKill: 0
+  saiyanKill: 0
 --- !u!114 &52325669146992031
 MonoBehaviour:
   m_ObjectHideFlags: 0

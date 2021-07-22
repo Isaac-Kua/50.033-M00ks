@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d466722fd82ab974a92ab65d0cf01cc4, type: 3}
   m_Name: RepelMelee
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 0}
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: RepelMelee
   activeTime: 0
   charges: 0

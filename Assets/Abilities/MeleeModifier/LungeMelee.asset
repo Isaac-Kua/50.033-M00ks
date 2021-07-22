@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b429e406ae0c444b7e9755ab75e936, type: 3}
   m_Name: LungeMelee
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: Lunge Melee
   activeTime: 0.1
   charges: 0
