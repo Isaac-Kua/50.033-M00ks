@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "SpiderDashAbility", menuName =  "Dash/Spider")]
 public class SpiderDashAbility : Ability
 {
     public float dashSpeed;

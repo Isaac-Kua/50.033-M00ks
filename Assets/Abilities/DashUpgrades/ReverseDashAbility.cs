@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "ReverseDashAbility", menuName =  "Dash/Reverse")]
 public class ReverseDashAbility : Ability
 {
     public override void Activate(GameObject parent)

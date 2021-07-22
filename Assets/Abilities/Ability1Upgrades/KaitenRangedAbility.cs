@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(fileName =  "KaitenRangedAbility", menuName =  "Ability 1/Kaiten", order =  1)]
+[CreateAssetMenu(fileName =  "KaitenRangedAbility", menuName =  "Ability 1/Kaiten")]
 public class KaitenRangedAbility : Ability
 {
     private Vector2 missilePosition;

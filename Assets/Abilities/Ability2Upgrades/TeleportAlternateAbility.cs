@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "TeleportAlternateAbility", menuName =  "Ability 2/Teleport")]
 public class TeleportAlternateAbility : Ability
 {
 	// should make this a gameconstant

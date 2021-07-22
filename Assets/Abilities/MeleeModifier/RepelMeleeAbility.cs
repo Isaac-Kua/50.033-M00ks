@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "RepelMeleeAbility", menuName =  "Melee/Repel")]
 public class RepelMeleeAbility : Ability
 {
     public GameObject missile;

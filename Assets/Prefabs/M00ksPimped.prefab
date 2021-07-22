@@ -14,10 +14,6 @@ GameObject:
   - component: {fileID: 7196519876665669680}
   - component: {fileID: 7196519876665669683}
   - component: {fileID: 4762351181279482378}
-  - component: {fileID: 7776073269165564022}
-  - component: {fileID: 8875094323731382199}
-  - component: {fileID: 6820460518025361439}
-  - component: {fileID: 7023214618810479007}
   - component: {fileID: 7023214618810479076}
   - component: {fileID: 7023214618810479006}
   - component: {fileID: 7023214618810479005}
@@ -211,62 +207,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7776073269165564022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 5ee6f3545a701ca4a8b54f40475d3443, type: 2}
-  abilityType: Dash
---- !u!114 &8875094323731382199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
-  abilityType: Ability1
---- !u!114 &6820460518025361439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
-  abilityType: Ability2
---- !u!114 &7023214618810479007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7196519876665669684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
-  abilityType: Melee
 --- !u!114 &7023214618810479076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,16 +221,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   activeAbilities:
-  - {fileID: 7023214618810479007}
-  - {fileID: 6820460518025361439}
-  - {fileID: 8875094323731382199}
-  - {fileID: 7776073269165564022}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   movementAbility: {fileID: 7196519876665669687}
   Dead: 0
   Immunity: 0
   Brittle: 0
   Invisible: 0
   lives: 0
+  deathTime: 0
   myLives: 0
   lastHit: {fileID: 0}
 --- !u!114 &7023214618810479006
@@ -427,6 +368,10 @@ MonoBehaviour:
   shivaMove: 0
   ghostMove: 0
   player: {fileID: 0}
+  respawnUtil: 0
+  meleeUtil: 0
+  rangedUtil: 0
+  altUtil: 0
   ab1_Kaiten: {fileID: 0}
   ab1_Knockback: {fileID: 0}
   ab1_SpikeRange: {fileID: 0}

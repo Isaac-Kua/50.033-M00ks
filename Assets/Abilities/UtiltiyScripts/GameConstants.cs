@@ -15,6 +15,7 @@ public class GameConstants : ScriptableObject
 	public float defaultDrag = 10;
 	public float yBound = 18;
 	public float xBound = 30;
+	public int comboCount = 2;
 	
 	// M00ks
 	public float M00ksMoveSpeed = 20;
@@ -87,6 +88,11 @@ public class GameConstants : ScriptableObject
 	public float juggernautSize = 4;
 	public GameObject juggernautBubble;
 	public float juggernautRampDuration = 5;
+	
+	//Utility Passive Variables
+	// Respawn
+	public float reducedDeathTime = 1.5f;
+	
 
 	// Enemies
 	// FireWizard

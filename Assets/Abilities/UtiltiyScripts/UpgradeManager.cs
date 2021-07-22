@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class UpgradeManager : MonoBehaviour
 	// Death Upgrades
 	public bool crawlDeath = false;
 	public bool kamikazeDeath = false;
-	public bool soulswapDeath = false;
+	public bool soulswapDeath = true;
 	public bool vengeanceDeath = false;
 
 	// Kill Upgrades
@@ -29,11 +30,69 @@ public class UpgradeManager : MonoBehaviour
 	public bool shivaMove = false;
 	public bool ghostMove = false;
 	public GameObject player;
+	
+	// Utility Upgrades
+	public bool respawnUtil = false;
+	public bool meleeUtil = false;
+	public bool rangedUtil = false;
+	public bool altUtil = false;
+
+	// Alt 1 Modifier
+	public bool rangedBullet = false;
+	public bool phaseBullet = false;
+	public bool heavyBullet = false;
+	public bool homingBullet = false;
+
+	// Combo Passives
+	public bool JuggernautCombo = false;
+	public bool WidowmakerCombo = false;
+	public bool TophCombo = false;
+	public bool AchmedCombo = false;
+	public bool PacquiaoCombo = false;
+	public bool DannyCombo = false;
+	public bool TurtleCombo = false;
+	public bool MagnusCombo = false;
+
+	// Ability 1 Ranged
+	public bool arrowRange = false;
+	public bool knockbackRange = false;
+	public bool kaitenRange = false;
+	public bool spikeRange = false;
+
+	// Ability 2 Alternate
+	public bool mineAlt = false;
+	public bool teleportAlt = false;
+	public bool gooAlt = false;
+	public bool magnetAlt = false;
+
+	// Melee Abilities
+	public bool breakingMelee = false;
+	public bool repelMelee = false;
+	public bool lungeMelee = false;
+	public bool zangiefMelee = false;
+
+	// Dash Abilities
+	public bool phaseDash = false;
+	public bool reverseDash = false;
+	public bool tripleDash = false;
+	public bool spiderDash = false;
+
+	// ComboLists
+	private bool[] JuggernautList;
+	private bool[] WidowmakerList;
+	private bool[] TophList;
+	private bool[] AchmedList;
+	private bool[] PacquiaoList;
+	private bool[] DannyList;
+	private bool[] TurleList;
+	private bool[] MagnusList;
+
 	//Ability1 ScriptableObjects
 	public Ability ab1_Kaiten;
 	public Ability ab1_Knockback;
 	public Ability ab1_SpikeRange;
 	public Ability ab1_Default;
+	
 	public enum ability1Upgrade
 	{
 		Kaiten,
@@ -111,6 +170,8 @@ public class UpgradeManager : MonoBehaviour
 		meleeHolder.changeAbility(newMelee);
 	}
 
+
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -124,6 +185,7 @@ public class UpgradeManager : MonoBehaviour
 	void Update()
 	{
 		updateAbilities();
+		calculateCombo();
 		if (wallwalkerMove)
 		{
 			if (transform.position.x > gameConstants.xBound)
@@ -177,82 +239,203 @@ public class UpgradeManager : MonoBehaviour
 
 	public void updateAbilities()
 	{
-		//Debug.Log("HUANAH");
-		//Debug.Log(ab1_Default.name);
+		// Ability 1 Ranged
+		arrowRange = false;
+		knockbackRange = false;
+		kaitenRange = false;
+		spikeRange = false;
+
+		// Ability 2 Alternate
+		mineAlt = false;
+		teleportAlt = false;
+		gooAlt = false;
+		magnetAlt = false;
+
+		// Melee Abilities
+		breakingMelee = false;
+		repelMelee = false;
+		lungeMelee = false;
+		zangiefMelee = false;
+
+		// Dash Abilities
+		phaseDash = false;
+		reverseDash = false;
+		tripleDash = false;
+		spiderDash = false;
+		
 		switch (ab1Upgrade)
 		{
-			case ability1Upgrade.Kaiten:
-				changeAbility1(ab1_Kaiten);
-				break;
-			case ability1Upgrade.Knockback:
-				changeAbility1(ab1_Knockback);
-				break;
-			case ability1Upgrade.SpikeRange:
-				changeAbility1(ab1_SpikeRange);
-				break;
-			default:
-				changeAbility1(ab1_Default);
-				break;
+		case ability1Upgrade.Kaiten:
+			changeAbility1(ab1_Kaiten);
+			kaitenRange = true;
+			break;
+		case ability1Upgrade.Knockback:
+			changeAbility1(ab1_Knockback);
+			knockbackRange = true;
+			break;
+		case ability1Upgrade.SpikeRange:
+			changeAbility1(ab1_SpikeRange);
+			spikeRange = true;
+			break;
+		default:
+			changeAbility1(ab1_Default);
+			arrowRange = false;
+			break;
 		}
 
 		switch (ab2Upgrade)
 		{
-			case ability2Upgrade.Goo:
-				changeAbility2(ab2_Goo);
-				//changeAbility2(Attack)
-				break;
-			case ability2Upgrade.Magnet:
-				changeAbility2(ab2_Magnet);
-				break;
-			case ability2Upgrade.Teleport:
-				changeAbility2(ab2_Teleport);
-				break;
-			case ability2Upgrade.Mine:
-				changeAbility2(ab2_Mine);
-				break;
-			default:
-				changeAbility2(ab2_Default);
-				break;
+		case ability2Upgrade.Goo:
+			changeAbility2(ab2_Goo);
+			//changeAbility2(Attack)
+			gooAlt = true;
+			break;
+		case ability2Upgrade.Magnet:
+			changeAbility2(ab2_Magnet);
+			magnetAlt = true;
+			break;
+		case ability2Upgrade.Teleport:
+			changeAbility2(ab2_Teleport);
+			teleportAlt = true;
+			break;
+		case ability2Upgrade.Mine:
+			changeAbility2(ab2_Mine);
+			mineAlt = true;
+			break;
+		default:
+			changeAbility2(ab2_Default);
+			break;
 		}
 
 		switch (dUpgrade)
 		{
-			case dashUpgrade.Phase:
-				changeDash(d_Phase);
-				break;
-			case dashUpgrade.Reverse:
-				changeDash(d_Reverse);
-				break;
-			case dashUpgrade.Triple:
-				changeDash(d_Triple);
-				break;
-			case dashUpgrade.Spider:
-				changeDash(d_Spider);
-				break;
-			default:
-				changeDash(d_Default);
-				break;
+		case dashUpgrade.Phase:
+			changeDash(d_Phase);
+			phaseDash = true;
+			break;
+		case dashUpgrade.Reverse:
+			changeDash(d_Reverse);
+			reverseDash = true;
+			break;
+		case dashUpgrade.Triple:
+			changeDash(d_Triple);
+			tripleDash = true;
+			break;
+		case dashUpgrade.Spider:
+			changeDash(d_Spider);
+			spiderDash = true;
+			break;
+		default:
+			changeDash(d_Default);
+			break;
 		}
 
 		switch (mUpgrade)
 		{
-			case meleeUpgrade.Breaking:
-				changeMelee(m_Breaking);
-				break;
-			case meleeUpgrade.Repel:
-				changeMelee(m_Repel);
-				break;
-			case meleeUpgrade.Lunge:
-				changeMelee(m_Lunge);
-				break;
-			case meleeUpgrade.Zangief:
-				changeMelee(m_Zangief);
-				break;
-			default:
-				changeMelee(m_Default);
-				break;
+		case meleeUpgrade.Breaking:
+			changeMelee(m_Breaking);		
+			breakingMelee = true;
+			break;
+		case meleeUpgrade.Repel:
+			changeMelee(m_Repel);		
+			repelMelee = true;
+			break;
+		case meleeUpgrade.Lunge:
+			changeMelee(m_Lunge);	
+			lungeMelee = true;
+			break;
+		case meleeUpgrade.Zangief:
+			changeMelee(m_Zangief);	
+			zangiefMelee = true;
+			break;
+		default:
+			changeMelee(m_Default);	
+			break;
+		}
+	}
+
+	void calculateCombo(){
+		JuggernautList = new bool[] {unstoppableDefense, knockbackRange, heavyBullet, breakingMelee, juggernautMove};
+		WidowmakerList = new bool[] {arrowRange, rangedBullet, rangedUtil, spiderDash, saiyanKill};
+		TophList = new bool[] {miniDefense, spikeRange, homingBullet, tripleDash, repelMelee};
+		AchmedList = new bool[] {kaitenRange, magnetAlt, kamikazeDeath, explosionKill, zangiefMelee};
+		PacquiaoList = new bool[] {toughDefense, meleeUtil, vengeanceDeath, hasteKill, lungeMelee};
+		DannyList = new bool[] {phaseBullet, teleportAlt, respawnUtil ,phaseDash, ghostMove};
+		TurleList = new bool[] {shellDefense, gooAlt, altUtil, crawlDeath, shivaMove};
+		MagnusList = new bool[] {mineAlt, reverseDash, soulswapDeath, zombieKill, wallwalkerMove};
+	
+
+		if (JuggernautList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!JuggernautCombo) {
+				JuggernautCombo = true;
+				Debug.Log("I'm the Juggernaut Bitch");
+			}
+		} else {
+			JuggernautCombo = false;
 		}
 
+		if (WidowmakerList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!WidowmakerCombo) {
+				WidowmakerCombo = true;
+				Debug.Log("Widowmaker pew pew pew");
+			}
+		} else {
+			WidowmakerCombo = false;
+		}
+
+		if (TophList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!TophCombo) {
+				TophCombo = true;
+				Debug.Log("I am the greatest earthbender in the world, don't you two dunder heads ever forget it");
+			}
+		} else {
+			TophCombo = false;
+		}
+
+		if (AchmedList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!AchmedCombo) {
+				AchmedCombo = true;
+				Debug.Log("Admiral Ackbar!");
+			}
+		} else {
+			AchmedCombo = false;
+		}
+
+		if (PacquiaoList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!PacquiaoCombo) {
+				PacquiaoCombo = true;
+				Debug.Log("Manny Pacquiao");
+			}
+		} else {
+			PacquiaoCombo = false;
+		}
+
+		if (DannyList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!DannyCombo) {
+				DannyCombo = true;
+				Debug.Log("He's a phantom");
+			}
+		} else {
+			DannyCombo = false;
+		}
+
+		if (TurleList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!TurtleCombo) {
+				TurtleCombo = true;
+				Debug.Log("Teenage Mutant Ninja Turtles!");
+			}
+		} else {
+			TurtleCombo = false;
+		}
+		
+		if (MagnusList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+			if (!MagnusCombo) {
+				MagnusCombo = true;
+				Debug.Log("Magnus Carlsen");
+			}
+		} else {
+			MagnusCombo = false;
+		}
 	}
 }
 

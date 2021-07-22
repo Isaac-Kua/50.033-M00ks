@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "MagnetAlternateAbility", menuName =  "Ability 2/Magnet")]
 public class MagnetAlternateAbility : Ability
 {	
 	private List<GameObject> targets; 

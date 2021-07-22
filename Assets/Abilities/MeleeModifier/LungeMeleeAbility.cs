@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "LungeMeleeAbility", menuName =  "Melee/Lunge")]
 public class LungeMeleeAbility : Ability
 {
     public GameObject missile;

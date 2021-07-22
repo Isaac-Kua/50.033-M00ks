@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "TripleDashAbility", menuName =  "Dash/Triple")]
 public class TripleDashAbility : Ability
 {
     public float dashSpeed;
