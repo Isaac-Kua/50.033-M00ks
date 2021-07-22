@@ -22,10 +22,18 @@ MonoBehaviour:
   xBound: 35
   comboCount: 2
   M00ksMoveSpeed: 20
-  JuggernautSpeed: 30
+  MagnusSpeed: 30
   TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
-  TophRatio: 0.3
+  TophRatio: 2
   TophRadius: 20
+  AchmedBomb: {fileID: 4696089679803575608, guid: ca8a7be998b0b4041ab3451b7101d0c1, type: 3}
+  AchmedDuration: 1
+  WidowmakerArrow: {fileID: 8165097702643790258, guid: aecd231470b484148a68251ee74f6ea2, type: 3}
+  WidowmakerDuration: 0.05
+  WidowmakerChargeDuration: 1
+  WidowmakerRange: 50
+  JuggernautAura: {fileID: 4697814213403115097, guid: 8bdbe56597954a444bf48ecceea41a48, type: 3}
+  JuggernautRadius: 3
   defaultLives: 1
   thugLives: 2
   defaultSize: 2
@@ -44,6 +52,7 @@ MonoBehaviour:
   kaitenCastTime: 0.5
   kaitenMaxRadius: 8
   kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
+  armDuration: 0.5
   reverseDuration: 1
   rotationPerSec: 5
   explosionPrefab: {fileID: 5655318487974413711, guid: 7026978fdb7a2384e881c3dc848a3115, type: 3}
@@ -79,7 +88,7 @@ MonoBehaviour:
   rangerMoveSpeed: 12
   rangerMaxRange: 20
   rangerMinRange: 10
-  rangerArrowSpeed: 100
+  rangerArrowSpeed: 5
   rangerWindUpTime: 3
   knightMoveSpeed: 5
   knightShield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
@@ -97,7 +106,6 @@ MonoBehaviour:
   iceWizardIcebolt: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}
   iceWizardIcewave: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
   iceboltLifeTime: 3
-  iceboltMeltTime: 2
   iceboltSpeed: 10
   icewaveLifeTime: 1
   icewaveMeltTime: 5
