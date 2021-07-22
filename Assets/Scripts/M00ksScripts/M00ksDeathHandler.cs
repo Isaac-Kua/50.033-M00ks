@@ -35,7 +35,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (myLives == 0 && !Dead){
+		if (myLives < 1 && !Dead){
 			StartCoroutine(Death());
 			if (lastHit.CompareTag("Player")) {
 				lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
@@ -57,13 +57,29 @@ public class M00ksDeathHandler : MonoBehaviour
 			if (other.gameObject.CompareTag("KnightShield"))
 			{
 				OnStunned();
-			} else if (other.gameObject.CompareTag("Arrow") || other.gameObject.CompareTag("Firebolt")) {
+			}
+			else if (other.gameObject.CompareTag("Arrow") || other.gameObject.CompareTag("Firebolt"))
+			{
 				onHit(other.gameObject);
-			} else if (other.gameObject.CompareTag("Icebolt")) {
-				if (!Brittle){
+			}
+			else if (other.gameObject.CompareTag("Icebolt"))
+			{
+				if (!Brittle)
+				{
 					OnStunned();
-				} else if (Brittle){
+				}
+				else if (Brittle)
+				{
 					onHit(other.gameObject);
+				}
+			}
+			else if (other.gameObject.CompareTag("PlayerArrow")) {
+				if (other.gameObject.GetComponent<ProjectileController>().owner != this.gameObject)
+				{
+					onHit(other.gameObject);
+				}
+				else {
+					Debug.Log("phew its just me");
 				}
 			}
 		}
@@ -88,6 +104,18 @@ public class M00ksDeathHandler : MonoBehaviour
 				onHit(other.gameObject);
 			} else if (other.gameObject.CompareTag("KnightSword")){
 				onHit(other.gameObject);
+			}
+		}
+
+		if (other.gameObject.CompareTag("PlayerArrow"))
+		{
+			if (other.gameObject.GetComponent<ProjectileController>().owner != this.gameObject)
+			{
+				onHit(other.gameObject);
+			}
+			else
+			{
+				Debug.Log("phew its just me");
 			}
 		}
 	}

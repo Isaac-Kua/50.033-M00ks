@@ -43,39 +43,29 @@ public class UpgradeManager : MonoBehaviour
 	public bool heavyBullet = false;
 	public bool homingBullet = false;
 
-	// Combo Passives
-	public bool JuggernautCombo = false;
-	public bool WidowmakerCombo = false;
-	public bool TophCombo = false;
-	public bool AchmedCombo = false;
-	public bool PacquiaoCombo = false;
-	public bool DannyCombo = false;
-	public bool TurtleCombo = false;
-	public bool MagnusCombo = false;
-
 	// Ability 1 Ranged
-	public bool arrowRange = false;
-	public bool knockbackRange = false;
-	public bool kaitenRange = false;
-	public bool spikeRange = false;
+	private bool arrowRange = false;
+	private bool knockbackRange = false;
+	private bool kaitenRange = false;
+	private bool spikeRange = false;
 
 	// Ability 2 Alternate
-	public bool mineAlt = false;
-	public bool teleportAlt = false;
-	public bool gooAlt = false;
-	public bool magnetAlt = false;
+	private bool mineAlt = false;
+	private bool teleportAlt = false;
+	private bool gooAlt = false;
+	private bool magnetAlt = false;
 
 	// Melee Abilities
-	public bool breakingMelee = false;
-	public bool repelMelee = false;
-	public bool lungeMelee = false;
-	public bool zangiefMelee = false;
+	private bool breakingMelee = false;
+	private bool repelMelee = false;
+	private bool lungeMelee = false;
+	private bool zangiefMelee = false;
 
 	// Dash Abilities
-	public bool phaseDash = false;
-	public bool reverseDash = false;
-	public bool tripleDash = false;
-	public bool spiderDash = false;
+	private bool phaseDash = false;
+	private bool reverseDash = false;
+	private bool tripleDash = false;
+	private bool spiderDash = false;
 
 	// ComboLists
 	private bool[] JuggernautList;
@@ -86,6 +76,17 @@ public class UpgradeManager : MonoBehaviour
 	private bool[] DannyList;
 	private bool[] TurleList;
 	private bool[] MagnusList;
+
+	// Combo Passives
+	public bool JuggernautCombo = false;
+	public bool WidowmakerCombo = false;
+	public bool TophCombo = false;
+	public bool AchmedCombo = false;
+	public bool PacquiaoCombo = false;
+	public bool DannyCombo = false;
+	public bool TurtleCombo = false;
+	public bool MagnusCombo = false;
+
 
 	//Ability1 ScriptableObjects
 	public Ability ab1_Kaiten;
@@ -360,7 +361,7 @@ public class UpgradeManager : MonoBehaviour
 		TophList = new bool[] {miniDefense, spikeRange, homingBullet, tripleDash, repelMelee};
 		AchmedList = new bool[] {kaitenRange, magnetAlt, kamikazeDeath, explosionKill, zangiefMelee};
 		PacquiaoList = new bool[] {toughDefense, meleeUtil, vengeanceDeath, hasteKill, lungeMelee};
-		DannyList = new bool[] {phaseBullet, teleportAlt, respawnUtil ,phaseDash, ghostMove};
+		DannyList = new bool[] {phaseBullet, teleportAlt, respawnUtil, phaseDash, ghostMove};
 		TurleList = new bool[] {shellDefense, gooAlt, altUtil, crawlDeath, shivaMove};
 		MagnusList = new bool[] {mineAlt, reverseDash, soulswapDeath, zombieKill, wallwalkerMove};
 	

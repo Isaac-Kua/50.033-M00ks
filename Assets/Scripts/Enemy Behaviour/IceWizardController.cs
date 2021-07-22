@@ -83,7 +83,7 @@ public class IceWizardController : MonoBehaviour
 		
 		GameObject burst = Instantiate(wave, transform.position + eulerAngle, transform.rotation);		
 		burst.transform.rotation = angle;
-		burst.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right*waveSpeed, ForceMode2D.Impulse);
+		burst.GetComponent<Rigidbody2D>().AddRelativeForce(dir*waveSpeed, ForceMode2D.Impulse);
 		burst.GetComponent<IcewaveController>().core = true;
 		StartCoroutine(Panic());
 	}

@@ -14,6 +14,7 @@ public class IcewaveController : MonoBehaviour
 	private float meltTime;
 	
 	private bool together = true;
+	private bool exploded = false;
 	private List<GameObject> wall = new List<GameObject>();
 	private List<Vector3> wallPosition = new List<Vector3>();
 	
@@ -61,6 +62,10 @@ public class IcewaveController : MonoBehaviour
 				wall[i].transform.position = transform.position + wallPosition[i];
 			}
 		}
+
+		if (itemBody.velocity == Vector2.zero) {
+			if (!exploded) Explode();
+		}
     }
 	
 	void  OnBecameInvisible()
@@ -70,6 +75,7 @@ public class IcewaveController : MonoBehaviour
 	
 	void Explode()
 	{
+		exploded = true;
 		itemBody.velocity = Vector2.zero;
 		itemBody.constraints = RigidbodyConstraints2D.FreezeAll;
 		itemSprite.material.color = new Color(0,0,1); //C#
@@ -89,6 +95,6 @@ public class IcewaveController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(lifeTime);
 		// Debug.Log("Ice wave stopped");
-		Explode();
+		if (!exploded) Explode();
 	}
 }

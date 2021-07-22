@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName =  "GameConstants", menuName =  "ScriptableObjects/GameConstants", order =  1)]
+[CreateAssetMenu(fileName =  "GameConstants", menuName =  "GameConstants/GameConstants", order =  1)]
 public class GameConstants : ScriptableObject
 {
 		
@@ -12,14 +12,33 @@ public class GameConstants : ScriptableObject
 	public float gooPoolLifeTime = 3;
 	public GameObject gooPool;
 	public float stickiness = 0.5f;
-	public float defaultDrag = 10;
+	public float defaultDrag = 0;
 	public float yBound = 18;
 	public float xBound = 30;
 	public int comboCount = 2;
 	
 	// M00ks
 	public float M00ksMoveSpeed = 20;
-	
+
+	// Combos
+	// Magnus
+	public float MagnusSpeed = 30;
+    //Toph
+    public GameObject TophAura;
+	public float TophRatio = 0.5f;
+	public float TophRadius = 20;
+	//Achmed
+	public GameObject AchmedBomb;
+	public float AchmedDuration = 1f;
+	//Widowmaker
+	public GameObject WidowmakerArrow;
+	public float WidowmakerDuration = 0.05f;
+	public float WidowmakerChargeDuration = 1;
+	public float WidowmakerRange = 50;
+	//Juggernaut
+	public GameObject JuggernautAura;
+	public float JuggernautRadius = 3;
+
 	// Defensive Passive Variables 
 	// Tough
 	public int defaultLives = 1;
@@ -51,11 +70,15 @@ public class GameConstants : ScriptableObject
 	public float kaitenCastTime = 0.5f;
 	public float kaitenMaxRadius = 8;
 	public GameObject kaitenPrefab;
-	
+
 	// Ability2 (Alternate) Variables 
+	// Mine
+	public float armDuration = 0.5f;
+
+	// Dash Variables
 	// Reverse
 	public float reverseDuration = 1;
-	
+
 	// Melee Ability Variables;
 	// Zangief
 	public float rotationPerSec = 5;
@@ -134,7 +157,6 @@ public class GameConstants : ScriptableObject
 	public GameObject iceWizardIcewave;
 	
 	public float iceboltLifeTime = 3f;
-	public float iceboltMeltTime = 2f;
 	public float iceboltSpeed = 10;
 	
 	public float icewaveLifeTime = 1f;

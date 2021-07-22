@@ -20,7 +20,12 @@ MonoBehaviour:
   defaultDrag: 10
   yBound: 20
   xBound: 35
+  comboCount: 2
   M00ksMoveSpeed: 20
+  JuggernautSpeed: 30
+  TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
+  TophRatio: 0.3
+  TophRadius: 20
   defaultLives: 1
   thugLives: 2
   defaultSize: 2
@@ -59,6 +64,8 @@ MonoBehaviour:
   juggernautRatio: 2
   juggernautSize: 3
   juggernautBubble: {fileID: 676521889362899286, guid: d728cbc7c1fc9bd4ab2fd4d37ef73666, type: 3}
+  juggernautRampDuration: 5
+  reducedDeathTime: 1.5
   fireboltExplosionScale: 3
   fireboltSpeed: 10
   fireboltTargetArea: {fileID: 2474520951067320257, guid: b55d2f8fc8c1626419a6dc58258f83b0, type: 3}

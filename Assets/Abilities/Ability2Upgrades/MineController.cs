@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MineController : MonoBehaviour
 {
-	public float stunDuration;
-	public float armDuration;
+	public GameConstants gameConstants;
 	private bool armed = false;
 	
     // Start is called before the first frame update
@@ -17,7 +16,7 @@ public class MineController : MonoBehaviour
     }
 
 	IEnumerator Arm(){
-		yield return new WaitForSeconds(armDuration);
+		yield return new WaitForSeconds(gameConstants.armDuration);
 		armed = true;
 		GetComponent<SpriteRenderer>().color = Color.red;
 	}

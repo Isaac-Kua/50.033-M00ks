@@ -9,7 +9,6 @@ public class IceboltController : MonoBehaviour
 
 	private float speed;
 	private float lifeTime;
-	private float meltTime;
 	
 	private bool exploded = false;
 	private Rigidbody2D itemBody;
@@ -21,7 +20,6 @@ public class IceboltController : MonoBehaviour
 		itemSprite = GetComponent<SpriteRenderer>();
 		
 		lifeTime = gameConstants.iceboltLifeTime;
-		meltTime = gameConstants.iceboltMeltTime;
 		speed = gameConstants.iceboltSpeed ;
 		
 		StartCoroutine(Lifetime());	
@@ -32,7 +30,7 @@ public class IceboltController : MonoBehaviour
     {
 		if (!exploded)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, target1.transform.position, speed * Time.deltaTime);
+			itemBody.velocity = (target1.transform.position - transform.position).normalized*speed;
 		}
     }
 	
@@ -51,15 +49,8 @@ public class IceboltController : MonoBehaviour
 	
 	void Explode()
 	{
-		exploded = true;
-		transform.localScale = new Vector3(1.5f,1.5f,0);
-		itemSprite.material.color = new Color(0,0,1); //C#
-		gameObject.tag = "Debris";
-		StartCoroutine(Debris());
-	}
-	
-	IEnumerator Debris(){
-		yield return new WaitForSeconds(meltTime);
+		GameObject debris = Instantiate(gameConstants.debris, transform.position, transform.rotation);
+		debris.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 		OnBecameInvisible();
 	}
 	
