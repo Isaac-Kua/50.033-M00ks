@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
+
 public class M00ks1Controller : MonoBehaviour
 {
 	
@@ -27,7 +29,47 @@ public class M00ks1Controller : MonoBehaviour
 	private Collider2D m00ksCollider;
 	private bool Brittle = false;
 	private bool Slow = false;
+	
 
+	//Player Input
+	private PlayerConfiguration playerConfig;
+	private InputMaster controls;
+	private PlayerInput input;
+	private AbilityHolder[] abilities;
+	private AbilityHolder dash;
+	private AbilityHolder ability1;
+	private AbilityHolder ability2;
+
+	
+	private void Awake(){
+		Debug.Log("AWAKE");
+		controls = new InputMaster();
+		abilities = GetComponents<AbilityHolder>();
+		dash = abilities[0];
+		ability1 = abilities[1];
+		ability2 = abilities[2];	
+	}
+
+	public void InitializePlayer(PlayerConfiguration pc){
+		playerConfig = pc;
+		playerConfig.Input.onActionTriggered += Input_onActionTriggered;
+	}
+
+	private void Input_onActionTriggered(CallbackContext obj){
+		Debug.Log("ACTION!!!");
+		if(obj.action.name == controls.Player.Move.name){
+			OnMove(obj);
+		}
+		if(obj.action.name == controls.Player.Dash.name){
+			dash.OnDash();
+		}
+		if(obj.action.name == controls.Player.Ability1.name){
+			ability1.OnAbility1();
+		}
+		if(obj.action.name == controls.Player.Ability2.name){
+			ability2.OnAbility2();
+		}
+	}
     // Start is called before the first frame update
     void Start()
     {
@@ -50,9 +92,9 @@ public class M00ks1Controller : MonoBehaviour
 		shadow.transform.position = previousLocation;
 	}
 	
-	public void OnMove(InputValue value)
+	public void OnMove(CallbackContext obj)
 	{
-		moveDirection = value.Get<Vector2>().normalized;
+		moveDirection = obj.ReadValue<Vector2>().normalized;
 		if (moveDirection.magnitude!=0)
 		{
 			faceDirection = moveDirection;

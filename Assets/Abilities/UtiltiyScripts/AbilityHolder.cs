@@ -21,7 +21,7 @@ public class AbilityHolder : MonoBehaviour
 
     //public KeyCode key;
     private bool input = false;
-    public void OnDash(InputValue value)
+    public void OnDash()
     {
         if(abilityType=="Dash")
         {

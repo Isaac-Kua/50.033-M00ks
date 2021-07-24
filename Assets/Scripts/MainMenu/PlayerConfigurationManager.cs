@@ -9,10 +9,13 @@ public class PlayerConfigurationManager : MonoBehaviour
     private List<PlayerConfiguration> playerConfigs;
 
     [SerializeField]
-    private int MinPlayers = 4;
+    private int MinPlayers;
     public static PlayerConfigurationManager Instance {get; private set;}
+    public GameObject M00ksPrefab;
+
 
     private void Awake(){
+        MinPlayers = 2;
         if(Instance!=null){
             Debug.Log("Trying to create another instance of singleton!");
         }else{
@@ -33,6 +36,11 @@ public class PlayerConfigurationManager : MonoBehaviour
     public void ReadyPlayer(int index){
         playerConfigs[index].isReady = true;
         if(AllPlayerReady()){
+            // for(int i=0;i<playerConfigs.Count;i++){
+            //     var newPosition = new Vector3(2*i,2*i,1);
+            //     var mook = Instantiate(M00ksPrefab,this.transform.position+ newPosition,Quaternion.identity);
+            //     playerConfigs[index].M00ks = mook;  
+            // }
             SceneManager.LoadScene("SampleScene");
         }else{
             Debug.Log("Players not readied");
@@ -40,7 +48,9 @@ public class PlayerConfigurationManager : MonoBehaviour
     }
 
     private bool AllPlayerReady(){
-        if (playerConfigs.Count > MinPlayers && playerConfigs.All(p=>p.isReady==true)){    
+        Debug.Log(playerConfigs.Count);
+        Debug.Log(MinPlayers);
+        if (playerConfigs.Count >= MinPlayers && playerConfigs.All(p=>p.isReady==true)){    
             return true;
         }
         else{
@@ -48,12 +58,13 @@ public class PlayerConfigurationManager : MonoBehaviour
         }
     }
 
-    public void HandlePlayerJoined(PlayerInput pi){
+    public void OnPlayerJoined(PlayerInput pi){
         Debug.Log("Player Joined: "+pi.playerIndex);
         
         if(!playerConfigs.Any(p=>p.PlayerIndex==pi.playerIndex)){
             pi.transform.SetParent(transform);
             playerConfigs.Add(new PlayerConfiguration(pi));
+            Debug.Log(pi);
         }
     }
 }
