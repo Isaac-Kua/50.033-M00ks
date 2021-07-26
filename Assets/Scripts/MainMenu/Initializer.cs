@@ -15,7 +15,7 @@ public class Initializer : MonoBehaviour
         for(int i =0; i<playerConfigs.Length; i++){
             Debug.Log("INSTATIATING " + i.ToString());
             var player = Instantiate(playerPrefab,playerSpawns[i].position,playerSpawns[i].rotation,gameObject.transform);
-            //player.GetComponent<M00ks1Controller>().InitializePlayer(playerConfigs[i]);
+            player.GetComponent<M00ks1Controller>().InitializePlayer(playerConfigs[i]);
         }
     }
 
