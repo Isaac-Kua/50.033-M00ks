@@ -9,13 +9,13 @@ public class PlayerConfigurationManager : MonoBehaviour
     private List<PlayerConfiguration> playerConfigs;
 
     [SerializeField]
-    private int MinPlayers;
+    private int MinPlayers = 1;
     public static PlayerConfigurationManager Instance {get; private set;}
     public GameObject M00ksPrefab;
 
 
     private void Awake(){
-        MinPlayers = 2;
+        //MinPlayers = 2;
         if(Instance!=null){
             Debug.Log("Trying to create another instance of singleton!");
         }else{
@@ -41,7 +41,7 @@ public class PlayerConfigurationManager : MonoBehaviour
             //     var mook = Instantiate(M00ksPrefab,this.transform.position+ newPosition,Quaternion.identity);
             //     playerConfigs[index].M00ks = mook;  
             // }
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Level");
         }else{
             Debug.Log("Players not readied");
         }
