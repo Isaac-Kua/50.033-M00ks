@@ -16,6 +16,8 @@ public class BarbarianController : MonoBehaviour
 	
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
+	private EnemyType enemyType = EnemyType.bara;
+	public EnemyPool enemyPool;
 	
     // Start is called before the first frame update
     void Start()
@@ -78,5 +80,9 @@ public class BarbarianController : MonoBehaviour
 			barbSprite.material.color = new Color(1,0,0); //C#
 			charges = gameConstants.BarbarianMaxCharges;
 		}
+	}
+	void onDeath(){
+		this.gameObject.SetActive(false);
+		enemyPool.spawnEnemy(enemyType);
 	}
 }

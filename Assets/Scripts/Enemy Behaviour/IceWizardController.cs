@@ -25,6 +25,8 @@ public class IceWizardController : MonoBehaviour
 	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
+	private EnemyType enemyType = EnemyType.Rylai;
+	public EnemyPool enemyPool;
 	
 	void Start()
 	{
@@ -111,5 +113,9 @@ public class IceWizardController : MonoBehaviour
 		yield return new WaitForSeconds(windUpTime);
 		iceWizSprite.material.color = new Color(1,0,0); //C# Red
 		ammo = true;
+	}
+	void onDeath(){
+		this.gameObject.SetActive(false);
+		enemyPool.spawnEnemy(enemyType);
 	}
 }

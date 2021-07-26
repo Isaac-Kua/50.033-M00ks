@@ -23,7 +23,8 @@ public class FireWizardController : MonoBehaviour
 	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-
+	private EnemyType enemyType = EnemyType.Lina;
+	public EnemyPool enemyPool;
 	
 	
 	// Start is called before the first frame update
@@ -105,5 +106,10 @@ public class FireWizardController : MonoBehaviour
 		yield return new WaitForSeconds(windUpTime);
 		fireWizSprite.material.color = new Color(1,0,0); //C# Red
 		ammo = true;
+	}
+
+	void onDeath(){
+		this.gameObject.SetActive(false);
+		enemyPool.spawnEnemy(enemyType);
 	}
 }
