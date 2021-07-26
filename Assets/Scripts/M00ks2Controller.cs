@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
-public class M00ks1Controller : MonoBehaviour
+public class M00ks2Controller : MonoBehaviour
 {
 	
 	public float maxSpeed = 10;

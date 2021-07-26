@@ -103,20 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a7d6e50d2405940a0739bc6594d1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   speed: 30
-  stunTime: 3
-  deathTime: 3
-  slowTime: 1
-  slowRatio: 5
-  Dead: 0
   previousLocation: {x: 0, y: 0, z: 0}
-  shadow: {fileID: 7271696819237607335}
   moveDirection: {x: 0, y: 0}
   faceDirection: {x: 0, y: 0}
-  Immunity: 0
-  reverseDuration: 1
-  launchDuration: 1
 --- !u!50 &8716975563261405636
 Rigidbody2D:
   serializedVersion: 4
@@ -190,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3667ae65e5bc94b88d2654b2a82e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: ddceee2703c95714c92b816e42b60d57, type: 2}
+  ability: {fileID: 0}
   abilityType: Ability1
 --- !u!114 &7900308298223131697
 MonoBehaviour:

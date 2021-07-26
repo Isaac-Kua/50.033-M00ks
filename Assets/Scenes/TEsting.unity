@@ -322,6 +322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traxex (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5303145136270888916, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5303145136270888917, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1684,6 +1688,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4762351181279482378, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762351181279482378, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762351181279482378, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 157c884d-89da-48b6-a9e6-4ed26de8cda6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762351181279482378, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Melee[/Keyboard/rightShift]
+      objectReference: {fileID: 0}
     - target: {fileID: 6820460518025361439, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: ability
       value: 

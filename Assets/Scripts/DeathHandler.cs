@@ -29,10 +29,6 @@ public class DeathHandler : MonoBehaviour
 	
 	void onDeath()
 	{
-		Destroy(gameObject);
-		if (gameObject.tag == "Knight"){
-			Destroy(gameObject.GetComponent<KnightController>().myShield);
-		}
 		this.gameObject.SetActive(false);
 		EnemyPool.SharedInstance.spawnEnemy(enemyType);
 

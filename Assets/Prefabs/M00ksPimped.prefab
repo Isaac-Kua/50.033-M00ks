@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 428be906c7f5055499596541590e262f, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -372,6 +372,18 @@ MonoBehaviour:
   meleeUtil: 0
   rangedUtil: 0
   altUtil: 0
+  rangedBullet: 0
+  phaseBullet: 0
+  heavyBullet: 0
+  homingBullet: 0
+  JuggernautCombo: 0
+  WidowmakerCombo: 0
+  TophCombo: 0
+  AchmedCombo: 0
+  PacquiaoCombo: 0
+  DannyCombo: 0
+  TurtleCombo: 0
+  MagnusCombo: 0
   ab1_Kaiten: {fileID: 0}
   ab1_Knockback: {fileID: 0}
   ab1_SpikeRange: {fileID: 0}

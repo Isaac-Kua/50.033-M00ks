@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
+
 public class M00ks1Controller : MonoBehaviour
 {
 	public GameConstants gameConstants;
@@ -17,6 +19,15 @@ public class M00ks1Controller : MonoBehaviour
 	private float reverseDuration;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 
+	// player input
+	private PlayerConfiguration playerConfig;
+	private InputMaster controls;
+	private PlayerInput input;
+
+	void Awake()
+	{
+		controls = new InputMaster();	
+	}
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +50,22 @@ public class M00ks1Controller : MonoBehaviour
 		Move();
 		StartCoroutine(WhatWasI());
 	}
+
+	public void InitializePlayer(PlayerConfiguration pc){
+		playerConfig = pc;
+		playerConfig.Input.onActionTriggered += Input_onActionTriggered;
+	}
+
+	private void Input_onActionTriggered(CallbackContext obj){
+		Debug.Log("ACTION!!!");
+		if(obj.action.name == controls.Player.Move.name){
+			OnMove(obj);
+		}
+	}
 	
-	public void OnMove(InputValue value)
+	public void OnMove(CallbackContext value)
 	{
-		moveDirection = value.Get<Vector2>().normalized;
+		moveDirection = value.ReadValue<Vector2>().normalized;
 		if (moveDirection.magnitude!=0)
 		{
 			faceDirection = moveDirection;
