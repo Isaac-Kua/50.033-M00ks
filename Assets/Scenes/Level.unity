@@ -1424,7 +1424,7 @@ MonoBehaviour:
   playerSpawns:
   - {fileID: 197590897}
   - {fileID: 1354171680}
-  playerPrefab: {fileID: 7271696818617130511, guid: 75f05333917e9a8428ee8eb09a25698b, type: 3}
+  playerPrefab: {fileID: 7196519876665669684, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
 --- !u!1 &1286334464
 GameObject:
   m_ObjectHideFlags: 0
