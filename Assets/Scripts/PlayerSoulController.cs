@@ -33,9 +33,4 @@ public class PlayerSoulController : MonoBehaviour
             }
         }
     }
-
-    void Test()
-    {
-        Debug.Log("e");
-    }
 }
