@@ -70,7 +70,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 428be906c7f5055499596541590e262f, type: 3}
   m_PointAction: {fileID: 0}
   m_MoveAction: {fileID: 0}
-  m_SubmitAction: {fileID: 749435454340325467, guid: 428be906c7f5055499596541590e262f, type: 3}
+  m_SubmitAction: {fileID: 6148605297834600937, guid: 428be906c7f5055499596541590e262f, type: 3}
   m_CancelAction: {fileID: 0}
   m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
