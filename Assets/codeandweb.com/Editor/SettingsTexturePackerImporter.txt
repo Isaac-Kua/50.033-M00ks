@@ -2,6 +2,7 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Sprites/Effects/Ice Wall/Ice Walls.tpsheet
 - Assets/Sprites/Enemies/Fire Witch/fire witch back.tpsheet
 - Assets/Sprites/Enemies/Fire Witch/fire witch front.tpsheet
 - Assets/Sprites/Enemies/Fire Witch/fire witch left.tpsheet
@@ -16,6 +17,7 @@ tpsheetFileNames:
 - Assets/Sprites/Enemies/Knight/Knight Up Slash.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Sprites/Effects/Ice Wall/Ice Walls.png
 - Assets/Sprites/Enemies/Fire Witch/fire witch back.png
 - Assets/Sprites/Enemies/Fire Witch/fire witch front.png
 - Assets/Sprites/Enemies/Fire Witch/fire witch left.png
@@ -30,6 +32,7 @@ textureFileNames:
 - Assets/Sprites/Enemies/Knight/Knight Up Slash.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 
