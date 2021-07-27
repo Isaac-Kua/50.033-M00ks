@@ -18,7 +18,8 @@ public class IceboltController : MonoBehaviour
 	{
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
-		
+		itemSprite.flipX = true;
+
 		lifeTime = gameConstants.iceboltLifeTime;
 		speed = gameConstants.iceboltSpeed ;
 		
@@ -29,7 +30,7 @@ public class IceboltController : MonoBehaviour
     void Update()
     {
 		if (!exploded)
-		{
+		{ 
 			itemBody.velocity = (target1.transform.position - transform.position).normalized*speed;
 		}
     }
