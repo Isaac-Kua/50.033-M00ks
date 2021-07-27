@@ -1,0 +1,384 @@
+fileFormatVersion: 2
+guid: 1bf09230a5ac8614f9d1fb60686b35c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2288783194259726736
+    second: Third-0
+  - first:
+      213: -6742137447159413555
+    second: Third-1
+  - first:
+      213: -4175359963642858708
+    second: Third-2
+  - first:
+      213: -5254492540482782569
+    second: Third-3
+  - first:
+      213: 8876351106539781150
+    second: Third-4
+  - first:
+      213: 8167032928600577698
+    second: Third-5
+  - first:
+      213: -3771985169331438804
+    second: Third-6
+  - first:
+      213: -3284077013066320665
+    second: Third-7
+  - first:
+      213: 1758766057806580859
+    second: Third-8
+  - first:
+      213: 9040088798052981741
+    second: Third-9
+  - first:
+      213: -642554885838671769
+    second: Third-10
+  - first:
+      213: -936563247451664805
+    second: Third-11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Third-0
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 60
+        width: 120
+        height: 217
+      alignment: 9
+      pivot: {x: 0.49583334, y: 0.53456223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0912cbd403463cf10800000000000000
+      internalID: 2288783194259726736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 59
+        width: 122
+        height: 218
+      alignment: 9
+      pivot: {x: 0.48770493, y: 0.5321101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4443396bd1f62a0800000000000000
+      internalID: -6742137447159413555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-2
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 279
+        width: 123
+        height: 219
+      alignment: 9
+      pivot: {x: 0.5081301, y: 0.5251142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23fdad2c342e06c0800000000000000
+      internalID: -4175359963642858708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-3
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 279
+        width: 123
+        height: 219
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51598173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a7599bfda4417b0800000000000000
+      internalID: -5254492540482782569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 58
+        width: 123
+        height: 219
+      alignment: 9
+      pivot: {x: 0.49186993, y: 0.4977169}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1cf2fe6d422f2b70800000000000000
+      internalID: 8876351106539781150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 371
+        width: 244
+        height: 226
+      alignment: 9
+      pivot: {x: 0.477459, y: 0.5176991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6d7228d21275170800000000000000
+      internalID: 8167032928600577698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 599
+        width: 251
+        height: 210
+      alignment: 9
+      pivot: {x: 0.50398403, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b35fb297737abc0800000000000000
+      internalID: -3771985169331438804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 811
+        width: 254
+        height: 212
+      alignment: 9
+      pivot: {x: 0.4980315, y: 0.49056605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4f72d3b5d9c62d0800000000000000
+      internalID: -3284077013066320665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 589
+        width: 251
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5079681, y: 0.4875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c43964964686810800000000000000
+      internalID: 1758766057806580859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-9
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 831
+        width: 253
+        height: 192
+      alignment: 9
+      pivot: {x: 0.50395256, y: 0.49479166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb9fe98dd8d47d70800000000000000
+      internalID: 9040088798052981741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-10
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 500
+        width: 177
+        height: 87
+      alignment: 9
+      pivot: {x: 0.48870057, y: 0.4827586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760f4e85cbf2517f0800000000000000
+      internalID: -642554885838671769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Third-11
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 580
+        width: 32
+        height: 7
+      alignment: 9
+      pivot: {x: 0.515625, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e05f540b8a003f0800000000000000
+      internalID: -936563247451664805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

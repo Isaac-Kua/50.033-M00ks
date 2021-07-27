@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: 959baf262fa185d4d9d5e3264e139c90
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2495710216298478411
+    second: DownSlash (1)
+  - first:
+      213: -9210197942935241586
+    second: DownSlash (2)
+  - first:
+      213: -8092428063743575451
+    second: DownSlash (3)
+  - first:
+      213: 8143779154819646518
+    second: DownSlash (4)
+  - first:
+      213: 4284040809974482215
+    second: DownSlash (5)
+  - first:
+      213: 1094426921586106026
+    second: DownSlash (6)
+  - first:
+      213: 5975099734184895212
+    second: DownSlash (7)
+  - first:
+      213: -8712666877283576435
+    second: DownSlash (8)
+  - first:
+      213: 8318508516735577403
+    second: DownSlash (9)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DownSlash (1)
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 159
+        width: 288
+        height: 536
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.5317164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b44737f7c47d5dd0800000000000000
+      internalID: -2495710216298478411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (2)
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 156
+        width: 346
+        height: 539
+      alignment: 9
+      pivot: {x: 0.54046243, y: 0.528757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8cbf44c4cdce2080800000000000000
+      internalID: -9210197942935241586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (3)
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 1505
+        width: 579
+        height: 542
+      alignment: 9
+      pivot: {x: 0.5664939, y: 0.5627306}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a79223d8be1bf80800000000000000
+      internalID: -8092428063743575451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (4)
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 822
+        width: 448
+        height: 681
+      alignment: 9
+      pivot: {x: 0.4174107, y: 0.65198237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63481446ef3840170800000000000000
+      internalID: 8143779154819646518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1134
+        width: 717
+        height: 913
+      alignment: 9
+      pivot: {x: 0.2608089, y: 0.73932093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7254ec93b68f37b30800000000000000
+      internalID: 4284040809974482215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 299
+        width: 717
+        height: 833
+      alignment: 9
+      pivot: {x: 0.2608089, y: 0.71428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae93c59c7f203f00800000000000000
+      internalID: 1094426921586106026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (7)
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1367
+        width: 721
+        height: 680
+      alignment: 9
+      pivot: {x: 0.25936198, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce22f910d81dbe250800000000000000
+      internalID: 5975099734184895212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (8)
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 697
+        width: 720
+        height: 668
+      alignment: 9
+      pivot: {x: 0.27222222, y: 0.6407186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85533503a3661780800000000000000
+      internalID: -8712666877283576435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownSlash (9)
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 165
+        width: 398
+        height: 530
+      alignment: 9
+      pivot: {x: 0.38190955, y: 0.54339623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3de5113c67417370800000000000000
+      internalID: 8318508516735577403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

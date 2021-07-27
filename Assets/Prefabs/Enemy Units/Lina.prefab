@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6727582931780562736}
   - component: {fileID: 4362268442407387503}
   - component: {fileID: -9045741747657949306}
-  - component: {fileID: -7111844606376304189}
+  - component: {fileID: -6746092523729370845}
   m_Layer: 6
   m_Name: Lina
   m_TagString: Enemy
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedTarget: {fileID: 0}
   detectionRange: 0
---- !u!50 &-7111844606376304189
+--- !u!50 &-6746092523729370845
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -184,4 +184,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
