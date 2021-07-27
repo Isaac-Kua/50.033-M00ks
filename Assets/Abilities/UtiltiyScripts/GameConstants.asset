@@ -88,7 +88,7 @@ MonoBehaviour:
   iceWizardMoveSpeed: 10
   iceWizardMaxRange: 30
   iceWizardMinRange: 10
-  iceWizardBurstChargeTime: 10
+  iceWizardBurstChargeTime: 1
   iceWizardWindUpTime: 3
   iceWizardIcebolt: {fileID: 0}
   iceWizardIcewave: {fileID: 0}
@@ -96,9 +96,9 @@ MonoBehaviour:
   iceboltMeltTime: 2
   iceboltSpeed: 10
   icewaveLifeTime: 1
-  icewaveMeltTime: 2
-  icewaveSpeed: 500
-  debris: {fileID: 0}
+  icewaveMeltTime: 5
+  icewaveSpeed: 2000
+  debris: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
   wallLength: 2
   BarbarianMoveSpeed: 5
   BarbarianMaxRange: 15

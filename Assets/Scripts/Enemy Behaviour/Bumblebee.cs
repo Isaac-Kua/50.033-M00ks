@@ -9,15 +9,14 @@ public class Bumblebee : MonoBehaviour
 	private Dictionary<GameObject,float> target_distance = new Dictionary<GameObject,float>();
 	private Dictionary<GameObject,Vector2> target_dir = new Dictionary<GameObject,Vector2>();
 	public float detectionRange;
-	private GameObject[] targets; 
+	private List<GameObject> targets; 
 	
 	// Start is called before the first frame update
 	void Start()
 	{
 		detectionRange = 20;
-		targets = GameObject.FindGameObjectsWithTag("Player");
-		// targets.AddRange(GameObject.FindGameObjectsWithTag("Altar"));
-		// // Targets Altar on spawn
+		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList();
+		targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);		// // Targets Altar on spawn
 		// selectedTarget = targets[0];
 		
 		foreach (GameObject m00k in targets) {
@@ -37,7 +36,14 @@ public class Bumblebee : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update()
-	{		
+	{
+
+		detectionRange = 20;
+		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList();
+		// targets.AddRange(GameObject.FindGameObjectsWithTag("Altar"));
+		// // Targets Altar on spawn
+		// selectedTarget = targets[0];
+
 		// Updates all distance
 		foreach (GameObject m00k in targets) {
 			float distance = Vector2.Distance(transform.position, m00k.transform.position);
@@ -55,10 +61,6 @@ public class Bumblebee : MonoBehaviour
 					// Debug.Log(m00k.name + " is Dead");
 					viable.Remove(m00k);
 					// Debug.Log(m00k.name + " is Removed");
-				}
-				else if (m00k.GetComponent<M00ksDeathHandler>().Invisible)
-				{
-					viable.Remove(m00k);
 				}
 				else if (m00k.GetComponent<M00ksDeathHandler>().Invisible)
 				{

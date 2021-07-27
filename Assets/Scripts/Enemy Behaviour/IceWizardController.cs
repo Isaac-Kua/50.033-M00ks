@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IceWizardController : MonoBehaviour
 {
@@ -36,7 +37,6 @@ public class IceWizardController : MonoBehaviour
 		missile = gameConstants.iceWizardIcebolt;
 		wave = gameConstants.iceWizardIcewave;
 	
-		waveSpeed = gameConstants.icewaveSpeed;
 		iceWizBody = GetComponent<Rigidbody2D>();
 		iceWizSprite = GetComponent<SpriteRenderer>();
 	}
@@ -53,13 +53,16 @@ public class IceWizardController : MonoBehaviour
 		if (distance > maxRange)
 		{
 			iceWizBody.velocity = (dir * speed);
-			
-		} else if (distance > minRange && distance < maxRange) {
-			iceWizBody.velocity = Vector2.zero;
-			if (ammo) {
-				Fire();
-			} 
-		} else if (distance < minRange){
+
+        }
+        else if (distance > minRange && distance < maxRange)
+        {
+            iceWizBody.velocity = Vector2.zero;
+            if (ammo)
+            {
+                Fire();
+            }
+        } else if (distance < minRange && target1 != gameObject){
 			if (burstCharge) {
 				Burst();
 			} else {
@@ -79,11 +82,12 @@ public class IceWizardController : MonoBehaviour
 		burstCharge = false;	
 		Vector3 eulerAngle = new Vector3(0,0, 90+Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
-		eulerAngle = dir;
+
+		Vector3 faceDir = dir;
 		
-		GameObject burst = Instantiate(wave, transform.position + eulerAngle, transform.rotation);		
+		GameObject burst = Instantiate(wave, transform.position + faceDir, transform.rotation);		
 		burst.transform.rotation = angle;
-		burst.GetComponent<Rigidbody2D>().AddRelativeForce(dir*waveSpeed, ForceMode2D.Impulse);
+		burst.GetComponent<Rigidbody2D>().AddForce(dir* gameConstants.icewaveSpeed, ForceMode2D.Impulse);
 		burst.GetComponent<IcewaveController>().core = true;
 		StartCoroutine(Panic());
 	}

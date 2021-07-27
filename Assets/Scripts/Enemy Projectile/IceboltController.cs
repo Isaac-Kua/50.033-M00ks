@@ -9,7 +9,9 @@ public class IceboltController : MonoBehaviour
 
 	private float speed;
 	private float lifeTime;
-	
+
+	private Vector2 dir;
+	private Quaternion angle = new Quaternion(0, 0, 0, 0);
 	private bool exploded = false;
 	private Rigidbody2D itemBody;
 	private SpriteRenderer itemSprite;
@@ -18,7 +20,8 @@ public class IceboltController : MonoBehaviour
 	{
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
-		
+		itemSprite.flipX = true;
+
 		lifeTime = gameConstants.iceboltLifeTime;
 		speed = gameConstants.iceboltSpeed ;
 		
@@ -28,8 +31,12 @@ public class IceboltController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		dir = (target1.transform.position - this.transform.position).normalized;
+		Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, dir));
+		angle.eulerAngles = eulerAngle;
+		transform.rotation = angle;
 		if (!exploded)
-		{
+		{ 
 			itemBody.velocity = (target1.transform.position - transform.position).normalized*speed;
 		}
     }

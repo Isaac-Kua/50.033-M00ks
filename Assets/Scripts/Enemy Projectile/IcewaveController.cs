@@ -59,7 +59,10 @@ public class IcewaveController : MonoBehaviour
     {
 		if (together){
 			for (int i = 0; i < wall.Count; i++){
-				wall[i].transform.position = transform.position + wallPosition[i];
+				if (wall[i] != null)
+				{
+					wall[i].transform.position = transform.position + wallPosition[i];
+				}
 			}
 		}
 
@@ -81,6 +84,7 @@ public class IcewaveController : MonoBehaviour
 		itemSprite.material.color = new Color(0,0,1); //C#
 		together = false;
 		gameObject.tag = "Debris";
+		itemBody.mass = 1;
 		StartCoroutine(Debris());
 	}
 	

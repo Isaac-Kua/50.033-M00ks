@@ -27,6 +27,7 @@ public class FireboltController : MonoBehaviour
 		speed = gameConstants.fireboltSpeed;
 		gooPool = gameConstants.gooPool;
 		
+		itemSprite.flipX = true;
 		
 		targetLocation = target1.transform.position;
 		targetAreaMarker = gameConstants.fireboltTargetArea;
