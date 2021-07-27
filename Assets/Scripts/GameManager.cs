@@ -8,14 +8,15 @@ public class GameManager : MonoBehaviour
     public string currentCondition;
     public int firstPlayer;
     public int chosenPlayer;
+    public int totalPlayers;
 
-    public static GameManager centralManagerInstance;
+    public static GameManager Instance;
     public delegate void gameEvent();
     public static event gameEvent BossStage;
 
     void Awake()
     {
-        centralManagerInstance = this;
+        Instance = this;
     }
 
     public void increaseStage(){

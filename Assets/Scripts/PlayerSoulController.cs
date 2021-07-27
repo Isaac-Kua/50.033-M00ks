@@ -15,27 +15,22 @@ public class PlayerSoulController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Soul"))
         {
-            if (playerNo == 1) {
+            if (playerNo == 0) {
                 Player1Manager.centralManagerInstance.increaseSouls();
             }
-            else if (playerNo == 2) {
+            else if (playerNo == 1) {
                 Player2Manager.centralManagerInstance.increaseSouls();
             }
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Altar"))
         {
-            if (playerNo == 1) {
+            if (playerNo == 0) {
                 Player1Manager.centralManagerInstance.depositSouls();
             }
-            else if (playerNo == 2) {
+            else if (playerNo == 1) {
                 Player2Manager.centralManagerInstance.depositSouls();
             }
         }
-    }
-
-    void Test()
-    {
-        Debug.Log("e");
     }
 }

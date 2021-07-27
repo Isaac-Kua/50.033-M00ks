@@ -28,7 +28,7 @@ public class DashHolder : MonoBehaviour
     }
     //public KeyCode key;
     private bool input = false;
-    public void OnDash(InputValue value)
+    public void OnDash()
     {
         input = true;
         Debug.Log("dashing in ability holder");

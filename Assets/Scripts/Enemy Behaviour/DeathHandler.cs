@@ -12,6 +12,7 @@ public class DeathHandler : MonoBehaviour
 	private Rigidbody2D npcBody;
 	private bool dead = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class DeathHandler : MonoBehaviour
 	
 	void onDeath()
 	{
-		Destroy(gameObject);
+		this.gameObject.SetActive(false);
 	}
 	
 	void OnTriggerEnter2D(Collider2D other)

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
+
 public class M00ks1Controller : MonoBehaviour
 {
 	public GameConstants gameConstants;
@@ -9,6 +11,7 @@ public class M00ks1Controller : MonoBehaviour
 	public Vector3 previousLocation;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
+	public int playerNo;
 
 	// ability use case
 	private Rigidbody2D m00ksBody;
@@ -17,6 +20,23 @@ public class M00ks1Controller : MonoBehaviour
 	private float reverseDuration;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 
+	// player input
+	private PlayerConfiguration playerConfig;
+	private InputMaster controls;
+	private PlayerInput input;
+	private MeleeHolder melee;
+	private DashHolder dash;
+	private Ability1Holder ability1;
+	private Ability2Holder ability2;
+
+	void Awake()
+	{
+		controls = new InputMaster();	
+		melee = GetComponent<MeleeHolder>();
+		dash = GetComponent<DashHolder>();
+		ability1 = GetComponent<Ability1Holder>();
+		ability2 = GetComponent<Ability2Holder>();
+	}
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +59,35 @@ public class M00ks1Controller : MonoBehaviour
 		Move();
 		StartCoroutine(WhatWasI());
 	}
+
+	public void InitializePlayer(PlayerConfiguration pc){
+		playerConfig = pc;
+		playerConfig.Input.onActionTriggered += Input_onActionTriggered;
+		pc.playerPrefab = this.gameObject;
+	}
+
+	private void Input_onActionTriggered(CallbackContext obj){
+		//Debug.Log("ACTION!!!");
+		if(obj.action.name == controls.Player.Move.name){
+			OnMove(obj);
+		}
+		if(obj.action.name == controls.Player.Dash.name){
+			dash.OnDash();
+		}
+		if(obj.action.name == controls.Player.Ability1.name){
+			ability1.OnAbility1();
+		}
+		if(obj.action.name == controls.Player.Ability2.name){
+			ability2.OnAbility2();
+		}
+		if(obj.action.name == controls.Player.Melee.name){
+			melee.OnMelee();
+		}
+	}
 	
-	public void OnMove(InputValue value)
+	public void OnMove(CallbackContext value)
 	{
-		moveDirection = value.Get<Vector2>().normalized;
+		moveDirection = value.ReadValue<Vector2>().normalized;
 		if (moveDirection.magnitude!=0)
 		{
 			faceDirection = moveDirection;
