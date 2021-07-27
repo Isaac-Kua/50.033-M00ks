@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5105284062713176079}
   - component: {fileID: -1944880743219357622}
   - component: {fileID: -370183807694594919}
+  - component: {fileID: 553230794749935152}
   m_Layer: 9
   m_Name: Kaiten
   m_TagString: PlayerArrow
@@ -148,6 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
 --- !u!114 &-1944880743219357622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +178,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1783bd586cec324d9da1094f657439b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Range: 0
+  Bypass: 0
+  Speed: 0
+  Heavy: 0
+  KaitenProjectile: {fileID: 0}
+--- !u!95 &553230794749935152
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7532896425907243978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fad7bd80ffdab5a47a0437f454d0a42b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -1,12 +1,45 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch back.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch front.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch left.tpsheet
 - Assets/Sprites/Enemies/Fire Witch/fire witch right.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost back.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost front.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost left.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost right.tpsheet
+- Assets/Sprites/Enemies/Knight/Knight Down Slash.tpsheet
+- Assets/Sprites/Enemies/Knight/knight left.tpsheet
+- Assets/Sprites/Enemies/Knight/Knight Side Slash.tpsheet
 - Assets/Sprites/Enemies/Knight/Knight Up Slash.tpsheet
 textureFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch back.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch front.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch left.png
 - Assets/Sprites/Enemies/Fire Witch/fire witch right.png
+- Assets/Sprites/Enemies/Ghost/ghost back.png
+- Assets/Sprites/Enemies/Ghost/ghost front.png
+- Assets/Sprites/Enemies/Ghost/ghost left.png
+- Assets/Sprites/Enemies/Ghost/ghost right.png
+- Assets/Sprites/Enemies/Knight/Knight Down Slash.png
+- Assets/Sprites/Enemies/Knight/knight left.png
+- Assets/Sprites/Enemies/Knight/Knight Side Slash.png
 - Assets/Sprites/Enemies/Knight/Knight Up Slash.png
 normalmapFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 enableDebugOutput: 0
