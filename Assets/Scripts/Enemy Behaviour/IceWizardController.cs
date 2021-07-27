@@ -54,12 +54,12 @@ public class IceWizardController : MonoBehaviour
 		{
 			iceWizBody.velocity = (dir * speed);
 			
-		} else if (distance > minRange && distance < maxRange) {
-			iceWizBody.velocity = Vector2.zero;
-			if (ammo) {
-				Fire();
-			} 
-		} else if (distance < minRange){
+		//} else if (distance > minRange && distance < maxRange) {
+		//	iceWizBody.velocity = Vector2.zero;
+		//	if (ammo) {
+		//		Fire();
+		//	} 
+		} else if (distance < minRange && target1 != gameObject){
 			if (burstCharge) {
 				Burst();
 			} else {

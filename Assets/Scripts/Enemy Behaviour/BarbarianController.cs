@@ -48,6 +48,7 @@ public class BarbarianController : MonoBehaviour
 		} else {
 			barbBody.velocity = (dir * gameConstants.BarbarianMoveSpeed);
 		}
+
     }
 	
 	void Update(){

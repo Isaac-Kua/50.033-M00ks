@@ -31,7 +31,14 @@ public class M00ks1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		if (moveDirection.x != 0 & moveDirection.y !=0)
+		{
+			faceDirection = moveDirection;
+        }
+        else
+        {
+			faceDirection = faceDirection;
+        }
 	}
 	
 	void FixedUpdate()
@@ -42,11 +49,9 @@ public class M00ks1Controller : MonoBehaviour
 	
 	public void OnMove(InputValue value)
 	{
-		moveDirection = value.Get<Vector2>().normalized;
-		if (moveDirection.magnitude!=0)
-		{
-			faceDirection = moveDirection;
-		}
+		moveDirection = value.Get<Vector2>().normalized;		
+		faceDirection = moveDirection;
+		
 	}
 
     void Move()
