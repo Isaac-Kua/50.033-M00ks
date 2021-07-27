@@ -15,7 +15,6 @@ public class NormalFistController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Debug.Log((transform.position-player.transform.position).magnitude);
 		if ((transform.position-player.transform.position).magnitude > range){
 			Destroy(gameObject);
 		}

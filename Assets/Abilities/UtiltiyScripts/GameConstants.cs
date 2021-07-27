@@ -65,6 +65,7 @@ public class GameConstants : ScriptableObject
 	// Knockback
 	public float launchDuration = 1;
 	public float knockbackSpeed = 150;
+	public float knockbackStrength = 5;
 	// Kaiten
 	public float kaitenGrowthRate = 1.1f;
 	public float kaitenCastTime = 0.5f;
@@ -161,7 +162,7 @@ public class GameConstants : ScriptableObject
 	
 	public float icewaveLifeTime = 1f;
 	public float icewaveMeltTime = 2f;
-	public float icewaveSpeed = 500;
+	public float icewaveSpeed = 3000;
 	public GameObject debris;
 	public int wallLength = 2;
 

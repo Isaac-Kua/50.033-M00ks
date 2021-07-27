@@ -87,7 +87,7 @@ public class M00ksDeathHandler : MonoBehaviour
 		if (this.tag == "PlayerArrow" && other.gameObject.CompareTag("Debris")) {
 			Rigidbody2D debris = other.gameObject.GetComponent<Rigidbody2D>();
 			debris.constraints = RigidbodyConstraints2D.FreezeRotation;
-			debris.velocity = m00ksBody.velocity;
+			debris.velocity = m00ksBody.velocity*gameConstants.knockbackStrength;
 			this.tag = "Player";
 			GetComponent<ProjectileController>().owner = gameObject;
 			other.gameObject.GetComponent<ProjectileController>().owner = gameObject;
