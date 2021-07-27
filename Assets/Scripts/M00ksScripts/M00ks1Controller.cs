@@ -11,6 +11,7 @@ public class M00ks1Controller : MonoBehaviour
 	public Vector3 previousLocation;
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
+	public int playerNo;
 
 	// ability use case
 	private Rigidbody2D m00ksBody;

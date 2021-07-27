@@ -8,7 +8,9 @@ public class Spawner : MonoBehaviour
     public EnemyType enemyType;
     void Start()
     {   
+        Debug.Log("Spawning");
         spawnFromPooler();
+        EnemyPool.SharedInstance.spawnEnemy(enemyType);
     }
 
 
