@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GhostMovePassive : MonoBehaviour
 {
-    public GameConstants gameConstants;
+    private GameConstants gameConstants;
     private float stillTimeStamp;
 
     private Rigidbody2D m00ksBody;
@@ -14,6 +14,7 @@ public class GhostMovePassive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         m00ksSprite = GetComponent<SpriteRenderer>();
         m00ksBody = GetComponent<Rigidbody2D>();
     }
@@ -21,6 +22,7 @@ public class GhostMovePassive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         if (GetComponent<UpgradeManager>().ghostMove)
         {
             ghost = GetComponent<M00ksDeathHandler>().Invisible;

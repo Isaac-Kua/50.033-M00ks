@@ -29,6 +29,7 @@ public class FireWizardController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		target1 = gameObject;
 		speed = gameConstants.fireWizardMoveSpeed;
 		yBound = gameConstants.yBound;
 		xBound = gameConstants.xBound;
@@ -52,7 +53,11 @@ public class FireWizardController : MonoBehaviour
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		transform.rotation = angle;
 
-		if (distance > maxRange)
+		if (target1 == gameObject)
+		{
+			// do nothing
+		}
+		else if (distance > maxRange)
 		{
 			fireWizBody.velocity = (dir * speed);
 			

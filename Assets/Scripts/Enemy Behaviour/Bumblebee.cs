@@ -26,11 +26,6 @@ public class Bumblebee : MonoBehaviour
 			target_dir.Add(m00k,dir);
 		}
 
-		// foreach(KeyValuePair<GameObject, float> entry in target_distance)
-		// {
-			// Debug.Log(entry.Key.name);
-			// Debug.Log(entry.Value);
-		// }
 		
 	}
 	

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShellDefensePassive : MonoBehaviour
 {
-	public GameConstants gameConstants;
+	private GameConstants gameConstants;
 	private GameObject myShell;
     private Vector2 shellPosition;
 	private Vector2	shellDirection;
@@ -12,8 +12,9 @@ public class ShellDefensePassive : MonoBehaviour
 	
     // Start is called before the first frame update
     void Start()
-    {
-        shellDirection = GetComponent<M00ks1Controller>().faceDirection;
+	{
+		gameConstants = GetComponent<UpgradeManager>().gameConstants;
+		shellDirection = GetComponent<M00ks1Controller>().faceDirection;
         shellPosition = new Vector2(transform.position.x, transform.position.y) - shellDirection*gameConstants.shellDistance;
         myShell = Instantiate(gameConstants.shell,shellPosition,transform.rotation);
 		myShell.transform.parent = transform;
@@ -22,6 +23,7 @@ public class ShellDefensePassive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		gameConstants = GetComponent<UpgradeManager>().gameConstants;
 		if (GetComponent<UpgradeManager>().shellDefense){
 		myShell.SetActive(true);
 		shellDirection = GetComponent<M00ks1Controller>().faceDirection;

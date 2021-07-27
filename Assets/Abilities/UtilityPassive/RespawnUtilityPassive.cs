@@ -5,11 +5,11 @@ using UnityEngine;
 public class RespawnUtilityPassive : MonoBehaviour
 {
 
-	public GameConstants gameConstants;
+	private GameConstants gameConstants;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
     }
 
     // Update is called once per frame

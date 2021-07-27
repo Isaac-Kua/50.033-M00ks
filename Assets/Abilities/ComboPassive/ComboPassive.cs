@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ComboPassive : MonoBehaviour
 {
-    public GameConstants gameConstants;
+    private GameConstants gameConstants;
     private GameObject TophAura;
     private GameObject JuggernautAura;
     //public bool WidowmakerCombo = false;
@@ -18,6 +18,7 @@ public class ComboPassive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         TophAura = Instantiate(gameConstants.TophAura, transform.position, transform.rotation);
         TophAura.transform.parent = transform;
         JuggernautAura = Instantiate(gameConstants.JuggernautAura, transform.position, transform.rotation);
@@ -27,6 +28,7 @@ public class ComboPassive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         if (GetComponent<UpgradeManager>().MagnusCombo) {
             if (!magnusActive)
             {

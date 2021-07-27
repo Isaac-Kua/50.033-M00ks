@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ShivaMovePassive : MonoBehaviour
 {
-    public GameConstants gameConstants;
+    private GameConstants gameConstants;
     private GameObject shiva;
     // Start is called before the first frame update
     void Start()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         shiva = Instantiate(gameConstants.shivaAura, transform.position, transform.rotation);
         shiva.transform.parent = transform;
     }
@@ -16,6 +17,7 @@ public class ShivaMovePassive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         shiva.transform.position = transform.position;
         if (GetComponent<UpgradeManager>().shivaMove)
         {
