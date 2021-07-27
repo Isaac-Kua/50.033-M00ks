@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: cf0a824d96229434383dc30c3a21eae7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7253938334191548164
+    second: Knight Down Slash (1)
+  - first:
+      213: -2086637981876536561
+    second: Knight Down Slash (2)
+  - first:
+      213: -7463502190502422592
+    second: Knight Down Slash (3)
+  - first:
+      213: 2851950658074656899
+    second: Knight Down Slash (4)
+  - first:
+      213: -1201247827960852977
+    second: Knight Down Slash (5)
+  - first:
+      213: -5629704631225988998
+    second: Knight Down Slash (6)
+  - first:
+      213: 3527123458801046214
+    second: Knight Down Slash (7)
+  - first:
+      213: -7452640769202196127
+    second: Knight Down Slash (8)
+  - first:
+      213: 8063128770398722719
+    second: Knight Down Slash (9)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Knight Down Slash (1)
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 944
+        width: 314
+        height: 548
+      alignment: 9
+      pivot: {x: 0.32165605, y: 0.5063869}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf88cef9485d45b90800000000000000
+      internalID: -7253938334191548164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (2)
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 1494
+        width: 341
+        height: 553
+      alignment: 9
+      pivot: {x: 0.49266863, y: 0.50180835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b396b9fc5ca03e0800000000000000
+      internalID: -2086637981876536561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (3)
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 128
+        width: 580
+        height: 604
+      alignment: 9
+      pivot: {x: 0.56206894, y: 0.56374174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7d0c21d405c6890800000000000000
+      internalID: -7463502190502422592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (4)
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1322
+        width: 419
+        height: 725
+      alignment: 9
+      pivot: {x: 0.27684963, y: 0.642069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3804b73630a249720800000000000000
+      internalID: 2851950658074656899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1122
+        width: 636
+        height: 925
+      alignment: 9
+      pivot: {x: 0.17767295, y: 0.7237838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e0f27077f445fe0800000000000000
+      internalID: -1201247827960852977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 288
+        width: 642
+        height: 832
+      alignment: 9
+      pivot: {x: 0.18068536, y: 0.68810093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78476127754fd1b0800000000000000
+      internalID: -5629704631225988998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (7)
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 734
+        width: 636
+        height: 651
+      alignment: 9
+      pivot: {x: 0.17767295, y: 0.6075269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c298c8291cd2f030800000000000000
+      internalID: 3527123458801046214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (8)
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1387
+        width: 641
+        height: 660
+      alignment: 9
+      pivot: {x: 0.17628706, y: 0.6128788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161fb19c4b6e29890800000000000000
+      internalID: -7452640769202196127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight Down Slash (9)
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 382
+        width: 309
+        height: 560
+      alignment: 9
+      pivot: {x: 0.31391585, y: 0.5205357}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a19d975ecf5ef60800000000000000
+      internalID: 8063128770398722719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
