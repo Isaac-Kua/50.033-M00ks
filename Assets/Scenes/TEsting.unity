@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303145136270888917, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b49d47c69d90e7245b08e0112a32f09c, type: 3}
@@ -1746,7 +1746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: hasteKill
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: m_Default
@@ -1802,7 +1802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: toughDefense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: ab1_Knockback
@@ -1830,11 +1830,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b41f0df1febce0e49b7ae6b18e711617, type: 2}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: juggernautMove
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: vengeanceDeath
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: wallwalkerMove
@@ -1842,7 +1842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810478998, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: unstoppableDefense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023214618810479005, guid: 8a37416e775550645ba4b606a3d27cab, type: 3}
       propertyPath: shell
