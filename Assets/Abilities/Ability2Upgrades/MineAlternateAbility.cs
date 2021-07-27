@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "MineAlternateAbility", menuName =  "Ability 2/Mine")]
 public class MineAlternateAbility : Ability
 {
 	public GameObject missile;

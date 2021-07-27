@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "KnockbackRangedAbility", menuName =  "Ability 1/Knockback")]
 public class KnockbackRangedAbility : Ability
 {
     private Vector2 missilePosition;

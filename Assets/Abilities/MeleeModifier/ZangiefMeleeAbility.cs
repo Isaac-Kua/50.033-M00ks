@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "ZangiefMeleeAbility", menuName =  "Melee/Zangief")]
 public class ZangiefMeleeAbility : Ability
 {
     public GameObject missile;

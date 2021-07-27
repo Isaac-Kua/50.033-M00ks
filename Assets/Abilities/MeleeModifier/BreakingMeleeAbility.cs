@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName =  "BreakingMeleeAbility", menuName =  "Melee/Breaking")]
 public class BreakingMeleeAbility : Ability
 {
     public GameObject missile;

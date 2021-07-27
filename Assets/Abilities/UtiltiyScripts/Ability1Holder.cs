@@ -11,6 +11,21 @@ public class Ability1Holder : MonoBehaviour
     float activeTime;
     float rechargeTime;
     int charges = -999;
+
+    public bool RangeMod;
+    public bool BypassMod;
+    public bool SpeedMod;
+    public bool HeavyMod;
+
+    void checkModifications()
+    {
+        RangeMod = gameObject.GetComponent<UpgradeManager>().RangeMod;
+        BypassMod = gameObject.GetComponent<UpgradeManager>().BypassMod;
+        SpeedMod = gameObject.GetComponent<UpgradeManager>().SpeedMod;
+        HeavyMod = gameObject.GetComponent<UpgradeManager>().HeavyMod;
+    }
+
+
     enum AbilityState{
         ready,
         active,
@@ -41,7 +56,9 @@ public class Ability1Holder : MonoBehaviour
     {
         //Debug.Log(state);
         //Debug.Log(charges);
-
+        checkModifications();
+        Debug.Log("this is the range mod");
+        Debug.Log(RangeMod);
         switch (state)
         {
             case AbilityState.ready:

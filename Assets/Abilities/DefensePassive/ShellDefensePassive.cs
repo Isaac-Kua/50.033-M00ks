@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShellDefensePassive : MonoBehaviour
 {
 	public GameConstants gameConstants;
-	public GameObject shell;
 	private GameObject myShell;
     private Vector2 shellPosition;
 	private Vector2	shellDirection;
@@ -16,7 +15,7 @@ public class ShellDefensePassive : MonoBehaviour
     {
         shellDirection = GetComponent<M00ks1Controller>().faceDirection;
         shellPosition = new Vector2(transform.position.x, transform.position.y) - shellDirection*gameConstants.shellDistance;
-        myShell = Instantiate(shell,shellPosition,transform.rotation);
+        myShell = Instantiate(gameConstants.shell,shellPosition,transform.rotation);
 		myShell.transform.parent = transform;
     }
 

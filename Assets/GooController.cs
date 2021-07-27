@@ -20,15 +20,18 @@ public class GooController : MonoBehaviour
 
 	IEnumerator LifeTime(){
 		yield return new WaitForSeconds(lifeTime);
-		foreach (GameObject slowBugger in targets){
-			slowBugger.GetComponent<Rigidbody2D>().drag = 0;
-		}
 		Destroy(gameObject);
 	}
     // Update is called once per frame
-	
-	void OnTriggerEnter2D(Collider2D other){
-		other.GetComponent<Rigidbody2D>().drag = 1000*stickiness;
-		targets.Add(other.gameObject);
+
+
+	void OnTriggerStay2D(Collider2D other)
+    {
+		other.GetComponent<Rigidbody2D>().drag = 1000 * stickiness;
+	}
+
+	void OnTriggerExit2D(Collider2D other)
+	{
+		other.GetComponent<Rigidbody2D>().drag = gameConstants.defaultDrag;
 	}
 }

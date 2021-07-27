@@ -11,9 +11,14 @@ public class KaitenController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+
 		kaitenGrowthRate = gameConstants.kaitenGrowthRate;
 		kaitenCastTime = gameConstants.kaitenCastTime;
+		// if(RangeMod){
+		// 	kaitenMaxRadius = gameConstants.kaitenMaxRadius*1.5f;
+		// }else{
 		kaitenMaxRadius = gameConstants.kaitenMaxRadius;
+		// }
 		StartCoroutine(GrowCoroutine());
 	}
 
