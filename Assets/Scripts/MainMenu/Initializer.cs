@@ -12,11 +12,12 @@ public class Initializer : MonoBehaviour
     void Start()
     {  
         var playerConfigs = PlayerConfigurationManager.Instance.getListOfPlayerConfigs().ToArray();
+        GameManager.Instance.totalPlayers = playerConfigs.Length;
         for(int i =0; i<playerConfigs.Length; i++){
             Debug.Log("INSTATIATING " + i.ToString());
             var player = Instantiate(playerPrefab,playerSpawns[i].position,playerSpawns[i].rotation,gameObject.transform);
             player.GetComponent<M00ks1Controller>().InitializePlayer(playerConfigs[i]);
-            player.GetComponent<M00ks1Controller>().playerNo = i;
+            player.GetComponent<PlayerSoulController>().playerNo = i;
         }
     }
 

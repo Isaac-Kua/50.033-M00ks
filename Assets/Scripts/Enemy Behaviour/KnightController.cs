@@ -15,8 +15,6 @@ public class KnightController : MonoBehaviour
 	
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-	private EnemyType enemyType = EnemyType.Davion;
-	public EnemyPool enemyPool;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -59,11 +57,5 @@ public class KnightController : MonoBehaviour
 	
 	void Update() {
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
-	}
-	void onDeath(){
-		Destroy(myShield);
-		this.gameObject.SetActive(false);
-		enemyPool.spawnEnemy(enemyType);
-		
 	}
 }

@@ -79,4 +79,5 @@ public class PlayerConfiguration{
     public int PlayerIndex{get;set;}
     public bool isReady {get;set;}
     public Color PlayerColor {get;set;}
+    public GameObject playerPrefab;
 }

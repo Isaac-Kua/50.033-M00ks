@@ -11,7 +11,6 @@ public class DeathHandler : MonoBehaviour
 	private SpriteRenderer npcSprite;
 	private Rigidbody2D npcBody;
 	private bool dead = false;
-	public EnemyType enemyType;
 
 
     // Start is called before the first frame update
@@ -30,8 +29,6 @@ public class DeathHandler : MonoBehaviour
 	void onDeath()
 	{
 		this.gameObject.SetActive(false);
-		EnemyPool.SharedInstance.spawnEnemy(enemyType);
-
 	}
 	
 	void OnTriggerEnter2D(Collider2D other)

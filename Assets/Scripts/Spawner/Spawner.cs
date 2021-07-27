@@ -6,29 +6,14 @@ using UnityEngine.SceneManagement;
 public class Spawner : MonoBehaviour
 {
     public EnemyType enemyType;
+
     void Start()
     {   
         Debug.Log("Spawning");
-        spawnFromPooler();
-        EnemyPool.SharedInstance.spawnEnemy(enemyType);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Lina);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Davion);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Rylai);
     }
-
-
-    public void spawnFromPooler()
-    {
-        GameObject item = EnemyPool.SharedInstance.GetPooledObject(enemyType);
-
-        if (item != null)
-        {
-            //set position
-            item.transform.position = this.transform.position;
-            item.SetActive(true);
-        }
-        else
-        {
-            Debug.Log("not enough items in the pool!");
-        }
-    }
-
 
 }

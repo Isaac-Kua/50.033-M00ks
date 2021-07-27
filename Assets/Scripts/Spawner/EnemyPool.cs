@@ -107,13 +107,13 @@ public class EnemyPool : MonoBehaviour
         GameObject enemy =  GetPooledObject(enemyType);
         if (enemy  !=  null){
 		    //randomly choose a spawner
-            int rand = Random.Range(0,3);
+            int rand = Random.Range(0,4);
             enemy.transform.position  =  Spawners[rand].transform.position;
             enemy.SetActive(true);
         }
-	else{
-		Debug.Log("not enough items in the pool.");
-	}
+        else{
+            Debug.Log("not enough items in the pool.");
+        }
     }
 
 }
