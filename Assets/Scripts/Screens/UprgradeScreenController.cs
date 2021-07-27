@@ -13,12 +13,14 @@ public class UprgradeScreenController : MonoBehaviour
     public Button upgradeButton4;
     public Button condition1;
     private EventSystem eventSystem;
+    private List<PlayerConfiguration> players;
 
     // Start is called before the first frame update
     void Start()
     {
         AltarManager.NextStage += beforeUpgradeScreen;
         eventSystem = EventSystem.current;
+        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
     }
 
     void Update()
@@ -32,7 +34,15 @@ public class UprgradeScreenController : MonoBehaviour
 
     void beforeUpgradeScreen()
     {
-        GameManager.centralManagerInstance.increaseStage();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            //players[i].Input.DeactivateInput();
+            if (i != GameManager.Instance.firstPlayer){
+                Debug.Log("Deactivate player "+ i+1);
+                players[i].Input.DeactivateInput();
+                Debug.Log("Deactivated");
+            }
+        }
+        GameManager.Instance.increaseStage();
         foreach (Transform eachChild in transform)
         {
             if (eachChild.name == "before Upgrade Selection")
@@ -40,7 +50,7 @@ public class UprgradeScreenController : MonoBehaviour
                 eachChild.gameObject.SetActive(true);
             }                
         }
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         eventSystem.SetSelectedGameObject(p1.gameObject, new BaseEventData(eventSystem));
     }
 
@@ -86,7 +96,7 @@ public class UprgradeScreenController : MonoBehaviour
 
     public void PlayerNo(int player)
     {
-        GameManager.centralManagerInstance.chosenPlayer = player;
+        GameManager.Instance.chosenPlayer = player;
         foreach (Transform eachChild in transform)
         {
             if (eachChild.name == "before Upgrade Selection")
@@ -127,7 +137,7 @@ public class UprgradeScreenController : MonoBehaviour
 
     public void SelectCondition(Button button)
     {
-        GameManager.centralManagerInstance.currentCondition = button.name;
+        GameManager.Instance.currentCondition = button.name;
         foreach (Transform eachChild in transform)
         {
             if (eachChild.name == "after Upgrade Selection")

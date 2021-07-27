@@ -23,8 +23,6 @@ public class FireWizardController : MonoBehaviour
 	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-
-	
 	
 	// Start is called before the first frame update
 	void Start()

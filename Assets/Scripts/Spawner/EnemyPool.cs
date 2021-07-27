@@ -6,7 +6,7 @@ public  enum EnemyType{
 	Davion =  1,
     Lina = 2,
     Rylai = 3,
-    Traxex = 4
+    Traxex = 4,
 }
 
 [System.Serializable]
@@ -37,6 +37,7 @@ public class EnemyPool : MonoBehaviour
     public static EnemyPool SharedInstance;
     public List<EnemyPoolItem> itemsToPool; // types of different object to pool 
     public List<ExistingPoolItem> pooledObjects; // a list of all objects in the pool, of all types
+    public List<GameObject> Spawners;
     void Awake()
     {
         SharedInstance = this;
@@ -98,6 +99,21 @@ public class EnemyPool : MonoBehaviour
 
         // we will return null IF and only IF the type doesn't match with what is defined in the itemsToPool. 
         return null;
+    }
+    
+    public void spawnEnemy(EnemyType enemyType){
+        Debug.Log("Spawing enemy");
+        Debug.Log(enemyType);
+        GameObject enemy =  GetPooledObject(enemyType);
+        if (enemy  !=  null){
+		    //randomly choose a spawner
+            int rand = Random.Range(0,4);
+            enemy.transform.position  =  Spawners[rand].transform.position;
+            enemy.SetActive(true);
+        }
+        else{
+            Debug.Log("not enough items in the pool.");
+        }
     }
 
 }

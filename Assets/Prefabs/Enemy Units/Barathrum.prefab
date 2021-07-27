@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   target1: {fileID: 0}
+  enemyPool: {fileID: 0}
 --- !u!114 &5997644861611666344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,7 @@ MonoBehaviour:
   lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 6098023446668689170}
+  enemyType: 0
 --- !u!50 &6098023446668689183
 Rigidbody2D:
   serializedVersion: 4
