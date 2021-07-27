@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: 806cd5788ac7e29419eff77f7dda3c0f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1849434490677494209
+    second: flame_drop_blue_01
+  - first:
+      213: 6486193342411440184
+    second: flame_drop_blue_02
+  - first:
+      213: -3110916236691899873
+    second: flame_drop_blue_03
+  - first:
+      213: -97399796916133633
+    second: flame_drop_blue_04
+  - first:
+      213: -2155643128399482328
+    second: flame_drop_blue_05
+  - first:
+      213: -4844854849023654545
+    second: flame_drop_blue_06
+  - first:
+      213: 2714098388722662778
+    second: flame_drop_blue_07
+  - first:
+      213: -4073696671907793209
+    second: flame_drop_blue_08
+  - first:
+      213: 8253656630796955935
+    second: flame_drop_blue_09
+  - first:
+      213: 724727774440545074
+    second: flame_drop_blue_10
+  - first:
+      213: 6833637829557759064
+    second: flame_drop_blue_11
+  - first:
+      213: -1311314651218035738
+    second: flame_drop_blue_12
+  - first:
+      213: -6288128680429784465
+    second: flame_drop_blue_13
+  - first:
+      213: 7775125177770724982
+    second: flame_drop_blue_14
+  - first:
+      213: -7332209121052626836
+    second: flame_drop_blue_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flame_drop_blue_01
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1695
+        width: 40
+        height: 43
+      alignment: 9
+      pivot: {x: 5.225, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1003cded28aa910800000000000000
+      internalID: 1849434490677494209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_02
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1552
+        width: 98
+        height: 101
+      alignment: 9
+      pivot: {x: 2.4795918, y: 0.5148515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83000f6ca76930a50800000000000000
+      internalID: 6486193342411440184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_03
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 801
+        width: 165
+        height: 118
+      alignment: 9
+      pivot: {x: 1.6242424, y: 0.4915254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1afbf14a2ec3d4d0800000000000000
+      internalID: -3110916236691899873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_04
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 921
+        width: 262
+        height: 164
+      alignment: 9
+      pivot: {x: 0.9465649, y: 0.49390244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff06e979667f5aef0800000000000000
+      internalID: -97399796916133633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_05
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1849
+        width: 368
+        height: 198
+      alignment: 9
+      pivot: {x: 0.6793478, y: 0.510101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822bc3deefd9512e0800000000000000
+      internalID: -2155643128399482328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_06
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1655
+        width: 360
+        height: 192
+      alignment: 9
+      pivot: {x: 0.325, y: 0.5104167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65cd971f2e93ccb0800000000000000
+      internalID: -4844854849023654545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1523
+        width: 341
+        height: 215
+      alignment: 9
+      pivot: {x: 0.24340177, y: 0.5069767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d3649ca1a6aa520800000000000000
+      internalID: 2714098388722662778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_08
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1740
+        width: 391
+        height: 307
+      alignment: 9
+      pivot: {x: 0.3375959, y: 0.48859936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6be34d5725777c0800000000000000
+      internalID: -4073696671907793209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_09
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 455
+        width: 175
+        height: 480
+      alignment: 9
+      pivot: {x: -0.50285715, y: 0.48958334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1133b8d9f0ea8270800000000000000
+      internalID: 8253656630796955935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_10
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1508
+        width: 239
+        height: 539
+      alignment: 9
+      pivot: {x: -0.117154814, y: 0.5176252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b53623210ce0a00800000000000000
+      internalID: 724727774440545074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_11
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 937
+        width: 270
+        height: 569
+      alignment: 9
+      pivot: {x: 0.011111111, y: 0.50087875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c267a5665f5de50800000000000000
+      internalID: 6833637829557759064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_12
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1087
+        width: 292
+        height: 566
+      alignment: 9
+      pivot: {x: 0.07876712, y: 0.49646643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb3269b5464dcde0800000000000000
+      internalID: -1311314651218035738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 969
+        width: 287
+        height: 552
+      alignment: 9
+      pivot: {x: 0.114982575, y: 0.5054348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f627905f7441cb8a0800000000000000
+      internalID: -6288128680429784465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 451
+        width: 225
+        height: 516
+      alignment: 9
+      pivot: {x: -0.013333334, y: 0.52131784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e4831a72bc6eb60800000000000000
+      internalID: 7775125177770724982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_drop_blue_15
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 461
+        width: 194
+        height: 474
+      alignment: 9
+      pivot: {x: -0.14432989, y: 0.51898736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6077c0f6a2ce3a90800000000000000
+      internalID: -7332209121052626836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

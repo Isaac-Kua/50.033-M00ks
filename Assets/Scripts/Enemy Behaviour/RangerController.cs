@@ -38,7 +38,7 @@ public class RangerController : MonoBehaviour
 	}
 
 	void FixedUpdate()
-	{		
+	{
 		dir = (target1.transform.position - transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
@@ -70,8 +70,8 @@ public class RangerController : MonoBehaviour
 	{
 		ammo = false;		
 		GameObject arrow = Instantiate(missile, transform.position, transform.rotation);
+		arrow.GetComponent<ArrowController>().target1 = target1;
 		arrow.transform.rotation = angle;
-		arrow.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.right*missileSpeed, ForceMode2D.Impulse);
 		arrow.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());
 	}

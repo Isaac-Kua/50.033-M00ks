@@ -15,7 +15,7 @@ public class SoulSwapDeathPassive : MonoBehaviour
     void Update()
     {
        	if (GetComponent<UpgradeManager>().soulswapDeath){
-			if (GetComponent<M00ksDeathHandler>().myLives == 0 && !GetComponent<M00ksDeathHandler>().Dead){
+			if (GetComponent<M00ksDeathHandler>().myLives <1 && !GetComponent<M00ksDeathHandler>().Dead){
 				Vector3 selfPosition = transform.position;
 				Vector3 killerPosition = GetComponent<M00ksDeathHandler>().lastHit.transform.position;
 				

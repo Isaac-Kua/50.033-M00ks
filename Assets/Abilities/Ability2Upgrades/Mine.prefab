@@ -113,5 +113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33644b9baa78fdc4c8ae2b6ecf3671a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 3
-  armDuration: 1
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}

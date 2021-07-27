@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Abilities/Ability1Modifier/KaitenModifications.cs.meta
 guid: c1783bd586cec324d9da1094f657439b
+=======
+guid: 96262df8ed4c9244099fe4ea93d6a72a
+>>>>>>> 82664b870125eb6c2d94d3c36c325e589d1c186e:Assets/Abilities/ComboPassive/ComboPassive.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -18,12 +18,15 @@ public class ProjectileController : MonoBehaviour
     }
 	
 	void OnCollisionEnter2D(Collision2D other)
-	{
-
-        if (!gameObject.CompareTag("Player")){
-            if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)")) {
-                Destroy(gameObject);
-            } 
+    {
+        if (!gameObject.CompareTag("Player"))
+        {
+            if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
+            {
+                if (other.gameObject != owner){
+                    Destroy(gameObject);
+                }
+            }
         }
 	}
 }

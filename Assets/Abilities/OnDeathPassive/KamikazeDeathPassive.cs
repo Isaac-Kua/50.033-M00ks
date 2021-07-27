@@ -17,7 +17,7 @@ public class KamikazeDeathPassive : MonoBehaviour
 	void Update()
 	{
 		if (GetComponent<UpgradeManager>().kamikazeDeath){
-			if (GetComponent<M00ksDeathHandler>().myLives == 0 && !GetComponent<M00ksDeathHandler>().Dead){
+			if (GetComponent<M00ksDeathHandler>().myLives <1 && !GetComponent<M00ksDeathHandler>().Dead){
 				GameObject Boom = Instantiate(kamikazePrefab, transform.position, transform.rotation);
 				Boom.GetComponent<ProjectileController>().owner = gameObject;
 			}

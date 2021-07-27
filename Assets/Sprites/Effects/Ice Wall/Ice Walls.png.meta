@@ -1,0 +1,504 @@
+fileFormatVersion: 2
+guid: 4a95ac423ed0c4048b657e543bc99479
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 427267482489708452
+    second: crystal_grow_black_border_01
+  - first:
+      213: 4623765413389896012
+    second: crystal_grow_black_border_02
+  - first:
+      213: 5133846659596911219
+    second: crystal_grow_black_border_03
+  - first:
+      213: 6355176632114318459
+    second: crystal_grow_black_border_04
+  - first:
+      213: 8521942467322974167
+    second: crystal_grow_black_border_05
+  - first:
+      213: 9014489222578802365
+    second: crystal_grow_black_border_06
+  - first:
+      213: -4162268443102770521
+    second: crystal_grow_black_border_07
+  - first:
+      213: -8447148857285711268
+    second: crystal_grow_black_border_08
+  - first:
+      213: 906818095434020857
+    second: crystal_grow_black_border_09
+  - first:
+      213: 5647856184776762492
+    second: crystal_grow_black_border_10
+  - first:
+      213: -3442241672350481304
+    second: crystal_grow_black_border_11
+  - first:
+      213: -7889539892489831680
+    second: crystal_grow_black_border_12
+  - first:
+      213: -8196405690350921197
+    second: crystal_grow_black_border_13
+  - first:
+      213: 21860048592629964
+    second: crystal_grow_black_border_14
+  - first:
+      213: -6169366945166906378
+    second: crystal_grow_black_border_15
+  - first:
+      213: 6101727149524856662
+    second: crystal_grow_black_border_16
+  - first:
+      213: 4186209892233118093
+    second: crystal_grow_black_border_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crystal_grow_black_border_01
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 90
+        width: 331
+        height: 107
+      alignment: 9
+      pivot: {x: 0.4833837, y: 3.3130841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4afdfd5f285fde500800000000000000
+      internalID: 427267482489708452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 36
+        width: 335
+        height: 161
+      alignment: 9
+      pivot: {x: 0.51343286, y: 2.2018633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4987dd452aea2040800000000000000
+      internalID: 4623765413389896012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_03
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 95
+        width: 385
+        height: 221
+      alignment: 9
+      pivot: {x: 0.48831168, y: 1.6040725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372899c26561f3740800000000000000
+      internalID: 5133846659596911219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_04
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 27
+        width: 387
+        height: 284
+      alignment: 9
+      pivot: {x: 0.4883721, y: 1.2482394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c890ac97f123850800000000000000
+      internalID: 6355176632114318459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_05
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 659
+        width: 391
+        height: 333
+      alignment: 9
+      pivot: {x: 0.49360615, y: 1.0645646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df0a19d585044670800000000000000
+      internalID: 8521942467322974167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_06
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 994
+        width: 394
+        height: 335
+      alignment: 9
+      pivot: {x: 0.48984772, y: 1.058209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe8567ef26e91d70800000000000000
+      internalID: 9014489222578802365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_07
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 1331
+        width: 395
+        height: 357
+      alignment: 9
+      pivot: {x: 0.4886076, y: 0.99299717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa8a0557e6ac36c0800000000000000
+      internalID: -4162268443102770521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_08
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 1690
+        width: 402
+        height: 357
+      alignment: 9
+      pivot: {x: 0.49004975, y: 0.99299717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a63a48ed2b5ca80800000000000000
+      internalID: -8447148857285711268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_09
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 968
+        width: 413
+        height: 469
+      alignment: 9
+      pivot: {x: 0.49394673, y: 0.75586355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7bd36d04aa59c00800000000000000
+      internalID: 906818095434020857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_10
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1439
+        width: 422
+        height: 608
+      alignment: 9
+      pivot: {x: 0.48815167, y: 0.5830592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74ac14c647316e40800000000000000
+      internalID: 5647856184776762492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 809
+        width: 422
+        height: 614
+      alignment: 9
+      pivot: {x: 0.48815167, y: 0.5773616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 864c080df63ba30d0800000000000000
+      internalID: -3442241672350481304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 199
+        width: 422
+        height: 608
+      alignment: 9
+      pivot: {x: 0.48815167, y: 0.5830592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00bbed2b449b28290800000000000000
+      internalID: -7889539892489831680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1425
+        width: 411
+        height: 622
+      alignment: 9
+      pivot: {x: 0.4890511, y: 0.5699357}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a94a77374804e80800000000000000
+      internalID: -8196405690350921197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_14
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 873
+        width: 400
+        height: 564
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6285461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0f22f2999ad4000800000000000000
+      internalID: 21860048592629964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_15
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 318
+        width: 360
+        height: 553
+      alignment: 9
+      pivot: {x: 0.49722221, y: 0.64104885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb2a483371026aa0800000000000000
+      internalID: -6169366945166906378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_16
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 313
+        width: 363
+        height: 558
+      alignment: 9
+      pivot: {x: 0.4986226, y: 0.63530463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f29cf9380bda450800000000000000
+      internalID: 6101727149524856662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystal_grow_black_border_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 313
+        width: 363
+        height: 558
+      alignment: 9
+      pivot: {x: 0.4986226, y: 0.63530463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8108cda7b7681a30800000000000000
+      internalID: 4186209892233118093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

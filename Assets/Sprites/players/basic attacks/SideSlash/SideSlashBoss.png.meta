@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: 627404b732268c04f918014e85ef5a81
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9092908270494003201
+    second: Side Slash (1)
+  - first:
+      213: 5434934288193718615
+    second: Side Slash (2)
+  - first:
+      213: -8838670460127087111
+    second: Side Slash (3)
+  - first:
+      213: -1120040731885652990
+    second: Side Slash (4)
+  - first:
+      213: -5323706933476379800
+    second: Side Slash (5)
+  - first:
+      213: 274517099409155845
+    second: Side Slash (6)
+  - first:
+      213: 6035603000408233912
+    second: Side Slash (7)
+  - first:
+      213: 1154601142288446190
+    second: Side Slash (8)
+  - first:
+      213: -115510052965286920
+    second: Side Slash (9)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Side Slash (1)
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 371
+        width: 294
+        height: 538
+      alignment: 9
+      pivot: {x: 0.31632653, y: 0.52230483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff4ef1ba108fc180800000000000000
+      internalID: -9092908270494003201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (2)
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 980
+        width: 351
+        height: 543
+      alignment: 9
+      pivot: {x: 0.45014244, y: 0.5248619}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759806980f3cc6b40800000000000000
+      internalID: 5434934288193718615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (3)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 466
+        width: 571
+        height: 528
+      alignment: 9
+      pivot: {x: 0.5201401, y: 0.532197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5f269bb0cb65580800000000000000
+      internalID: -8838670460127087111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (4)
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 402
+        width: 464
+        height: 576
+      alignment: 9
+      pivot: {x: 0.3448276, y: 0.49131945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204bcf973e0d470f0800000000000000
+      internalID: -1120040731885652990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (5)
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1437
+        width: 786
+        height: 610
+      alignment: 9
+      pivot: {x: 0.20356233, y: 0.4557377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8633bdd00c46e16b0800000000000000
+      internalID: -5323706933476379800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 996
+        width: 786
+        height: 525
+      alignment: 9
+      pivot: {x: 0.19465649, y: 0.5314286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507ad03f8d74fc300800000000000000
+      internalID: 274517099409155845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (7)
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 911
+        width: 777
+        height: 524
+      alignment: 9
+      pivot: {x: 0.19433719, y: 0.53244275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b75d9c63f4c2c350800000000000000
+      internalID: 6035603000408233912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (8)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1523
+        width: 806
+        height: 524
+      alignment: 9
+      pivot: {x: 0.18734491, y: 0.53244275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2fc5f1f97f50010800000000000000
+      internalID: 1154601142288446190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Side Slash (9)
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 1525
+        width: 431
+        height: 522
+      alignment: 9
+      pivot: {x: 0.35034803, y: 0.53065133}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb74050830a56ef0800000000000000
+      internalID: -115510052965286920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

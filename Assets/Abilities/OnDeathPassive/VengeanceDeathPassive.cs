@@ -15,7 +15,7 @@ public class VengeanceDeathPassive : MonoBehaviour
     void Update()
     {
        	if (GetComponent<UpgradeManager>().vengeanceDeath){
-			if (GetComponent<M00ksDeathHandler>().myLives == 0 && !GetComponent<M00ksDeathHandler>().Dead){
+			if (GetComponent<M00ksDeathHandler>().myLives < 1 && !GetComponent<M00ksDeathHandler>().Dead){
 				GameObject other = GetComponent<M00ksDeathHandler>().lastHit;
 				if(other.CompareTag("Player")){
 					other.GetComponent<M00ksDeathHandler>().OnStunned();

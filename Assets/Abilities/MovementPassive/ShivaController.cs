@@ -12,7 +12,6 @@ public class ShivaController : MonoBehaviour
 	{
 		transform.localScale = transform.localScale * gameConstants.shivaRadius;
 		stickiness = gameConstants.shivaRatio;
-		transform.position = transform.position + new Vector3(0, 0, 1);
 	}
 
 	void OnTriggerStay2D(Collider2D other)

@@ -6,9 +6,6 @@ public class ShivaMovePassive : MonoBehaviour
 {
     public GameConstants gameConstants;
     private GameObject shiva;
-    private Vector2 shellPosition;
-    private Vector2 shellDirection;
-    private Quaternion angle = new Quaternion(0, 0, 0, 0);
     // Start is called before the first frame update
     void Start()
     {
