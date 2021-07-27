@@ -34,6 +34,7 @@ GameObject:
   - component: {fileID: 652623204980101124}
   - component: {fileID: 652623204980101127}
   - component: {fileID: 652623204980101126}
+  - component: {fileID: -1269931498285131089}
   m_Layer: 10
   m_Name: M00ks1
   m_TagString: Player
@@ -124,6 +125,7 @@ MonoBehaviour:
   previousLocation: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0}
   faceDirection: {x: 0, y: 0}
+  playerNo: 0
 --- !u!50 &839571231611962985
 Rigidbody2D:
   serializedVersion: 4
@@ -629,3 +631,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96262df8ed4c9244099fe4ea93d6a72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1269931498285131089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839571231611962989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f577f4f37827489fc3ff03c2e8ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNo: 0
