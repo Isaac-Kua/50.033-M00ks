@@ -15,87 +15,71 @@ MonoBehaviour:
   deathTime: 3
   stunTime: 3
   gooPoolLifeTime: 3
-  gooPool: {fileID: 2190267130267438645, guid: 8c4ae051a8b829d4c9945df12a6919b6, type: 3}
+  gooPool: {fileID: 0}
   stickiness: 0.5
   defaultDrag: 10
-  yBound: 20
-  xBound: 35
+  yBound: 18
+  xBound: 30
   comboCount: 2
   M00ksMoveSpeed: 20
-  MagnusSpeed: 30
-  TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
-  TophRatio: 2
-  TophRadius: 20
-  AchmedBomb: {fileID: 4696089679803575608, guid: ca8a7be998b0b4041ab3451b7101d0c1, type: 3}
-  AchmedDuration: 1
-  WidowmakerArrow: {fileID: 8165097702643790258, guid: aecd231470b484148a68251ee74f6ea2, type: 3}
-  WidowmakerDuration: 0.05
-  WidowmakerChargeDuration: 1
-  WidowmakerRange: 50
-  JuggernautAura: {fileID: 4697814213403115097, guid: 8bdbe56597954a444bf48ecceea41a48, type: 3}
-  JuggernautRadius: 3
   defaultLives: 1
   thugLives: 2
   defaultSize: 2
   shrinkRatio: 2
-  shellDistance: 2
-  shell: {fileID: 2745450164218607212, guid: a1a9d51e9c3ad5d489c761b260ae9801, type: 3}
+  shellDistance: 5
+  shell: {fileID: 0}
   slowRatio: 0.3
   crawlRatio: 0.4
-  kamikazePrefab: {fileID: 8703016678992426118, guid: 70874bc68761da54fad97bcbd55f7404, type: 3}
+  kamikazePrefab: {fileID: 0}
   kamikazeMaxRadius: 8
-  kamikazeGrowthRate: 2
+  kamikazeGrowthRate: 1.2
   kamikazeCastTime: 0.5
   launchDuration: 1
   knockbackSpeed: 150
   kaitenGrowthRate: 1.1
   kaitenCastTime: 0.5
   kaitenMaxRadius: 8
-  kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
-  armDuration: 0.5
+  kaitenPrefab: {fileID: 0}
   reverseDuration: 1
   rotationPerSec: 5
-  explosionPrefab: {fileID: 5655318487974413711, guid: 7026978fdb7a2384e881c3dc848a3115, type: 3}
+  explosionPrefab: {fileID: 0}
   katsuMaxRadius: 5
   katsuGrowthRate: 1.5
   katsuCastTime: 0.5
-  zombiePrefab: {fileID: 455198501895332021, guid: 978f6e6adf3ccb34c83055442fa5b77f, type: 3}
-  SpiderMoveSpeed: 15
+  zombiePrefab: {fileID: 0}
+  SpiderMoveSpeed: 30
   SpiderLifeTime: 5
   hasteRatio: 3
   hasteDuration: 2
-  shivaAura: {fileID: 9049008314574287618, guid: ece3cf8e5eec1f540b6c158a7f2561ba, type: 3}
+  shivaAura: {fileID: 0}
   shivaRatio: 0.2
   shivaRadius: 15
   ghostFadeDuration: 5
   ghostFlickerDuration: 1
   ghostApparitionDuration: 0.05
   juggernautRatio: 2
-  juggernautSize: 3
-  juggernautBubble: {fileID: 676521889362899286, guid: d728cbc7c1fc9bd4ab2fd4d37ef73666, type: 3}
-<<<<<<< HEAD
-=======
+  juggernautSize: 4
+  juggernautBubble: {fileID: 0}
   juggernautRampDuration: 5
   reducedDeathTime: 1.5
->>>>>>> 82664b870125eb6c2d94d3c36c325e589d1c186e
   fireboltExplosionScale: 3
   fireboltSpeed: 10
-  fireboltTargetArea: {fileID: 2474520951067320257, guid: b55d2f8fc8c1626419a6dc58258f83b0, type: 3}
-  fireWizardFirebolt: {fileID: 2180849708720968426, guid: bd81218ecb9196c47bbe11eefeab30f6, type: 3}
+  fireboltTargetArea: {fileID: 0}
+  fireWizardFirebolt: {fileID: 0}
   fireWizardMoveSpeed: 5
   fireWizardMaxRange: 20
   fireWizardMinRange: 5
   fireWizardPoofChargeTime: 5
   fireWizardWindUpTime: 3
-  rangerArrow: {fileID: 130144637693236197, guid: 747f29eaffa879f49b3d48d95fbdc078, type: 3}
+  rangerArrow: {fileID: 0}
   rangerMoveSpeed: 12
   rangerMaxRange: 20
   rangerMinRange: 10
-  rangerArrowSpeed: 5
+  rangerArrowSpeed: 100
   rangerWindUpTime: 3
   knightMoveSpeed: 5
-  knightShield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
-  knightSword: {fileID: 7306756330295183489, guid: b56516f49f7058e409b576c02d40a0be, type: 3}
+  knightShield: {fileID: 0}
+  knightSword: {fileID: 0}
   knightShieldWidth: 1
   knightWindUpTime: 3
   knightSwordlength: 1
@@ -106,14 +90,15 @@ MonoBehaviour:
   iceWizardMinRange: 10
   iceWizardBurstChargeTime: 10
   iceWizardWindUpTime: 3
-  iceWizardIcebolt: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}
-  iceWizardIcewave: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
+  iceWizardIcebolt: {fileID: 0}
+  iceWizardIcewave: {fileID: 0}
   iceboltLifeTime: 3
+  iceboltMeltTime: 2
   iceboltSpeed: 10
   icewaveLifeTime: 1
-  icewaveMeltTime: 5
-  icewaveSpeed: 100
-  debris: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
+  icewaveMeltTime: 2
+  icewaveSpeed: 500
+  debris: {fileID: 0}
   wallLength: 2
   BarbarianMoveSpeed: 5
   BarbarianMaxRange: 15

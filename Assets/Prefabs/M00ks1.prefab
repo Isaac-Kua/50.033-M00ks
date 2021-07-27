@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  player: {fileID: 839571231611962989}
   miniDefense: 0
   shellDefense: 0
   unstoppableDefense: 0
@@ -377,7 +378,6 @@ MonoBehaviour:
   wallwalkerMove: 0
   shivaMove: 0
   ghostMove: 0
-  player: {fileID: 839571231611962989}
   respawnUtil: 0
   meleeUtil: 0
   rangedUtil: 0
@@ -386,6 +386,10 @@ MonoBehaviour:
   phaseBullet: 0
   heavyBullet: 0
   homingBullet: 0
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
   JuggernautCombo: 0
   WidowmakerCombo: 0
   TophCombo: 0
@@ -415,8 +419,8 @@ MonoBehaviour:
   m_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
   ab1Upgrade: 3
   ab2Upgrade: 4
-  dUpgrade: 3
-  mUpgrade: 0
+  dUpgrade: 4
+  mUpgrade: 4
 --- !u!120 &652623204980101121
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -581,6 +585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
 --- !u!114 &652623204980101125
 MonoBehaviour:
   m_ObjectHideFlags: 0

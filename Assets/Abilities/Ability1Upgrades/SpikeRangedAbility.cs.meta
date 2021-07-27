@@ -3,7 +3,9 @@ guid: cb6d59b048f7881458e6f7873ab3293b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  - missile: {fileID: 8523725975357090799, guid: 68bdd9fcd4b4ba64aa6c11445fc8dd6a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

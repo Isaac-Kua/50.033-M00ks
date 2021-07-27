@@ -8,10 +8,16 @@ public class KaitenController : MonoBehaviour
 	private float kaitenGrowthRate;
 	private float kaitenCastTime;
 	private float kaitenMaxRadius;
+
+	public bool RangeMod = false;
+    public bool BypassMod = false;
+    public bool SpeedMod = false;
+    public bool HeavyMod = false;
+
 	// Start is called before the first frame update
 	void Start()
 	{
-
+		Debug.Log(RangeMod);
 		kaitenGrowthRate = gameConstants.kaitenGrowthRate;
 		kaitenCastTime = gameConstants.kaitenCastTime;
 		// if(RangeMod){

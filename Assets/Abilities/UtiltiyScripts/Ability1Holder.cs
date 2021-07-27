@@ -17,15 +17,15 @@ public class Ability1Holder : MonoBehaviour
     public bool SpeedMod;
     public bool HeavyMod;
 
-    void checkModifications()
+    bool checkModifications()
     {
         RangeMod = gameObject.GetComponent<UpgradeManager>().RangeMod;
         BypassMod = gameObject.GetComponent<UpgradeManager>().BypassMod;
         SpeedMod = gameObject.GetComponent<UpgradeManager>().SpeedMod;
         HeavyMod = gameObject.GetComponent<UpgradeManager>().HeavyMod;
+        return true;
     }
-
-
+    
     enum AbilityState{
         ready,
         active,

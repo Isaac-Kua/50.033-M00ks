@@ -46,12 +46,7 @@ public class DeathHandler : MonoBehaviour
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
-<<<<<<< HEAD:Assets/Scripts/DeathHandler.cs
 	{
-		Debug.Log(other.gameObject.name);
-=======
-	{
->>>>>>> 82664b870125eb6c2d94d3c36c325e589d1c186e:Assets/Scripts/Enemy Behaviour/DeathHandler.cs
 		if (other.gameObject.CompareTag("PlayerArrow"))
 		{
 			Debug.Log(other.gameObject.GetComponent<ProjectileController>().owner.name);

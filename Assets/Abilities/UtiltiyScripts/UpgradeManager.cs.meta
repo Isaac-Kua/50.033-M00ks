@@ -3,7 +3,28 @@ guid: 6d13a43cbec8b9c4a82e5cf73afe455b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  - player: {instanceID: 0}
+  - ab1_Kaiten: {fileID: 11400000, guid: 72a9641d56ed3494ba1152f8e7ebe3a6, type: 2}
+  - ab1_Knockback: {fileID: 11400000, guid: 2233a6ecefa76ad48b0d9def8c93e7cf, type: 2}
+  - ab1_SpikeRange: {fileID: 11400000, guid: b41f0df1febce0e49b7ae6b18e711617, type: 2}
+  - ab1_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  - ab2_Goo: {fileID: 11400000, guid: 2d980510e80c85c49b08b77311736897, type: 2}
+  - ab2_Magnet: {fileID: 11400000, guid: 220e9e376c9d4b8408ef89a98ae8dbbb, type: 2}
+  - ab2_Mine: {fileID: 11400000, guid: 79ca2a787c706934291540f2553a6ce4, type: 2}
+  - ab2_Teleport: {fileID: 11400000, guid: c3362707e9add5442838df6a07201bab, type: 2}
+  - ab2_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  - d_Phase: {fileID: 11400000, guid: 54c8948a66b1cf1428b0e57952c35b81, type: 2}
+  - d_Reverse: {fileID: 11400000, guid: 49b4eee1e4e54b245bd1db62061d8d36, type: 2}
+  - d_Triple: {fileID: 11400000, guid: 199797ff7391a5d43b2fe6a7854cd93b, type: 2}
+  - d_Spider: {fileID: 11400000, guid: 2340987d5e0a36846b475f886c376012, type: 2}
+  - d_Default: {fileID: 11400000, guid: 5ee6f3545a701ca4a8b54f40475d3443, type: 2}
+  - m_Breaking: {fileID: 11400000, guid: 0ff7ef0710cd5f2488f89dce9444c7eb, type: 2}
+  - m_Repel: {fileID: 11400000, guid: 07aab75f446371e46a0517859e3c872f, type: 2}
+  - m_Lunge: {fileID: 11400000, guid: a5526efd186617a4ca69e17ce3bb4fee, type: 2}
+  - m_Zangief: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
+  - m_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

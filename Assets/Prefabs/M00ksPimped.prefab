@@ -23,12 +23,7 @@ GameObject:
   - component: {fileID: 7023214618810478993}
   - component: {fileID: 7023214618810478992}
   - component: {fileID: 7023214618810478999}
-  - component: {fileID: 7023214618810478998}
-  - component: {fileID: 52325669146992031}
-  - component: {fileID: 4216618675271383341}
-  - component: {fileID: 1077734093323103955}
-  - component: {fileID: 2734999125741936889}
-  - component: {fileID: 2211207528020527022}
+  - component: {fileID: 4391805349383241945}
   m_Layer: 10
   m_Name: M00ksPimped
   m_TagString: Player
@@ -114,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a7d6e50d2405940a0739bc6594d1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
   speed: 30
   previousLocation: {x: 0, y: 0, z: 0}
   moveDirection: {x: 0, y: 0}
@@ -224,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce756daec32f7946b52a2f22fc59191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
   activeAbilities:
   - {fileID: 0}
   - {fileID: 0}
@@ -251,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ea4e4f779c5da4797b5dc3ec753821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
 --- !u!114 &7023214618810479005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7015b06fa0cf447b41b7d7d83085b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   gameConstants: {fileID: 0}
 --- !u!114 &7023214618810479004
 MonoBehaviour:
@@ -278,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed4eb0ba08ff134f9a31f6044a130b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
 --- !u!114 &7023214618810478995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2a02c96ffaa754faf1c3cd4050442a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
 --- !u!114 &7023214618810478994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc75a740bcbeaf428879168c794127e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
 --- !u!114 &7023214618810478993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f5a24b3689c85408ca65937843b8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
 --- !u!114 &7023214618810478992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc25a286ed77ba408db340f3c87266e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameConstants: {fileID: 0}
 --- !u!114 &7023214618810478999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,8 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3607cb2e72ec8648b36f5f8b796ffb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
---- !u!114 &7023214618810478998
+  gameConstants: {fileID: 0}
+--- !u!114 &4391805349383241945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -356,14 +350,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d13a43cbec8b9c4a82e5cf73afe455b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 0}
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   miniDefense: 0
   shellDefense: 0
   unstoppableDefense: 0
   toughDefense: 0
   crawlDeath: 0
   kamikazeDeath: 0
-  soulswapDeath: 0
+  soulswapDeath: 1
   vengeanceDeath: 0
   explosionKill: 0
   zombieKill: 0
@@ -373,7 +367,7 @@ MonoBehaviour:
   wallwalkerMove: 0
   shivaMove: 0
   ghostMove: 0
-  player: {fileID: 0}
+  player: {fileID: 7196519876665669684}
   respawnUtil: 0
   meleeUtil: 0
   rangedUtil: 0
@@ -390,25 +384,45 @@ MonoBehaviour:
   DannyCombo: 0
   TurtleCombo: 0
   MagnusCombo: 0
-  ab1_Kaiten: {fileID: 0}
-  ab1_Knockback: {fileID: 0}
-  ab1_SpikeRange: {fileID: 0}
-  ab1_Default: {fileID: 0}
-  ab2_Goo: {fileID: 0}
-  ab2_Magnet: {fileID: 0}
-  ab2_Mine: {fileID: 0}
-  ab2_Teleport: {fileID: 0}
-  ab2_Default: {fileID: 0}
-  d_Phase: {fileID: 0}
-  d_Reverse: {fileID: 0}
-  d_Triple: {fileID: 0}
-  d_Spider: {fileID: 0}
-  d_Default: {fileID: 0}
-  m_Breaking: {fileID: 0}
-  m_Repel: {fileID: 0}
-  m_Lunge: {fileID: 0}
-  m_Zangief: {fileID: 0}
-  m_Default: {fileID: 0}
+  arrowRange: 0
+  knockbackRange: 0
+  kaitenRange: 0
+  spikeRange: 0
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
+  mineAlt: 0
+  teleportAlt: 0
+  gooAlt: 0
+  magnetAlt: 0
+  breakingMelee: 0
+  repelMelee: 0
+  lungeMelee: 0
+  zangiefMelee: 0
+  phaseDash: 0
+  reverseDash: 0
+  tripleDash: 0
+  spiderDash: 0
+  ab1_Kaiten: {fileID: 11400000, guid: 72a9641d56ed3494ba1152f8e7ebe3a6, type: 2}
+  ab1_Knockback: {fileID: 11400000, guid: 2233a6ecefa76ad48b0d9def8c93e7cf, type: 2}
+  ab1_SpikeRange: {fileID: 11400000, guid: b41f0df1febce0e49b7ae6b18e711617, type: 2}
+  ab1_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  ab2_Goo: {fileID: 11400000, guid: 2d980510e80c85c49b08b77311736897, type: 2}
+  ab2_Magnet: {fileID: 11400000, guid: 220e9e376c9d4b8408ef89a98ae8dbbb, type: 2}
+  ab2_Mine: {fileID: 11400000, guid: 79ca2a787c706934291540f2553a6ce4, type: 2}
+  ab2_Teleport: {fileID: 11400000, guid: c3362707e9add5442838df6a07201bab, type: 2}
+  ab2_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
+  d_Phase: {fileID: 11400000, guid: 54c8948a66b1cf1428b0e57952c35b81, type: 2}
+  d_Reverse: {fileID: 11400000, guid: 49b4eee1e4e54b245bd1db62061d8d36, type: 2}
+  d_Triple: {fileID: 11400000, guid: 199797ff7391a5d43b2fe6a7854cd93b, type: 2}
+  d_Spider: {fileID: 11400000, guid: 2340987d5e0a36846b475f886c376012, type: 2}
+  d_Default: {fileID: 11400000, guid: 5ee6f3545a701ca4a8b54f40475d3443, type: 2}
+  m_Breaking: {fileID: 11400000, guid: 0ff7ef0710cd5f2488f89dce9444c7eb, type: 2}
+  m_Repel: {fileID: 11400000, guid: 07aab75f446371e46a0517859e3c872f, type: 2}
+  m_Lunge: {fileID: 11400000, guid: a5526efd186617a4ca69e17ce3bb4fee, type: 2}
+  m_Zangief: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
+  m_Default: {fileID: 11400000, guid: e887b3a88c6b11d4382b29ca0d2adc30, type: 2}
   ab1Upgrade: 3
   ab2Upgrade: 4
   dUpgrade: 4

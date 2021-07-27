@@ -9,12 +9,31 @@ public class KaitenRangedAbility : Ability
     private Vector2 missilePosition;
     private Rigidbody2D rb;
 
+    public bool RangeMod;
+    public bool BypassMod;
+    public bool SpeedMod;
+    public bool HeavyMod;
+
+    void checkModifications(Ability1Holder parent)
+    {
+        RangeMod = parent.RangeMod;
+        BypassMod = parent.BypassMod;
+        SpeedMod = parent.SpeedMod;
+        HeavyMod = parent.HeavyMod;
+    }
+
     public override void Activate(GameObject parent)
     {
+        checkModifications(parent.GetComponent<Ability1Holder>());
         rb = parent.GetComponent<Rigidbody2D>();
         missilePosition = parent.transform.position;
         GameObject kaiten = Instantiate(gameConstants.kaitenPrefab, missilePosition, parent.transform.rotation);
 		kaiten.GetComponent<ProjectileController>().owner = parent;
+        kaiten.GetComponent<KaitenController>().RangeMod = RangeMod;
+        kaiten.GetComponent<KaitenController>().BypassMod = BypassMod;
+        kaiten.GetComponent<KaitenController>().SpeedMod = SpeedMod;
+        kaiten.GetComponent<KaitenController>().HeavyMod = HeavyMod;
+
         StartCoroutine(ShootCoroutine(parent));
     }
 
