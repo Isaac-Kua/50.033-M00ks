@@ -6,9 +6,9 @@ public class SetLevel : MonoBehaviour
 {
     public GameObject altar;
     public GameObject spawners;
-    public GameObject walls;
     public GameObject upgrades;
     private GameObject[] enemies;
+    private GameObject[] souls;
 
     private List<PlayerConfiguration> players;
     [SerializeField]
@@ -33,17 +33,16 @@ public class SetLevel : MonoBehaviour
         deactivate();
         altar.SetActive(true);
         spawners.SetActive(true);
-        walls.SetActive(true);
+        GameManager.Instance.upgradeSelection = false;
     }
 
     public void setUpgradeSelect()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject enemy in enemies){
-            enemy.SetActive(false);
-        }
         deactivate();
         upgrades.SetActive(true);
+        foreach (Transform child in upgrades.transform){
+            child.gameObject.SetActive(true);
+        }
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawns[i].position;
             if (i != GameManager.Instance.firstPlayer){
@@ -51,13 +50,22 @@ public class SetLevel : MonoBehaviour
                 players[i].Input.DeactivateInput();
             }
         }
+        GameManager.Instance.upgradeSelection = true;
     }
 
     void deactivate()
     {
         altar.SetActive(false);
         spawners.SetActive(false);
-        walls.SetActive(false);
         upgrades.SetActive(false);
+
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies){
+            enemy.SetActive(false);
+        }
+        souls = GameObject.FindGameObjectsWithTag("Soul");
+        foreach(GameObject soul in souls){
+            soul.SetActive(false);
+        }
     }
 }

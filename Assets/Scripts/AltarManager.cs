@@ -21,6 +21,7 @@ public class AltarManager : MonoBehaviour
         {
             Debug.Log("Goal reached");
             NextStage();
+            GameManager.Instance.increaseStage();
             altarSouls = 0;
         }
     }

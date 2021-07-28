@@ -16,6 +16,7 @@ TagManager:
   - Soul
   - Altar
   - Enemy
+  - Upgrade
   layers:
   - Default
   - TransparentFX

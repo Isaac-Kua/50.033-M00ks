@@ -35,7 +35,7 @@ public class Bumblebee : MonoBehaviour
 
 		detectionRange = 20;
 		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList();
-		// targets.AddRange(GameObject.FindGameObjectsWithTag("Altar"));
+		targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);
 		// // Targets Altar on spawn
 		// selectedTarget = targets[0];
 

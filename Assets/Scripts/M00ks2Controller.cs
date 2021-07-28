@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
+// this is an old version
 public class M00ks2Controller : MonoBehaviour
 {
 	

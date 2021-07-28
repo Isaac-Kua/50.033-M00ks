@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public int stage = 1;
     public string currentCondition;
     public int firstPlayer;
-    public int chosenPlayer;
     public int totalPlayers;
+    public bool upgradeSelection = false;
 
     public static GameManager Instance;
     public delegate void gameEvent();

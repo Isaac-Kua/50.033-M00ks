@@ -28,36 +28,26 @@ public class DeathHandler : MonoBehaviour
 	
 	void onDeath()
 	{
+		dead = false;
+		allEnable();
 		this.gameObject.SetActive(false);
 	}
 	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		// change this to attack animation 
-		if (other.gameObject.CompareTag("Player") && !gameObject.CompareTag("DashingBarbarian") && !dead)
-		{
-			dead = true;
-			StartCoroutine(death(other.gameObject));
-		}
-		
-		if (other.gameObject.CompareTag("PlayerArrow"))
-		{
-			StartCoroutine(death(other.gameObject));
-		}
-	}
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.CompareTag("PlayerArrow"))
+		if (other.gameObject.CompareTag("PlayerArrow") && !dead)
 		{
+			dead = true;
 			Debug.Log(other.gameObject.GetComponent<ProjectileController>().owner.name);
 			StartCoroutine(death(other.gameObject));
 		}
 	}
 
 	void OnTriggerEneter2D(Collider2D other) {
-		if (other.gameObject.CompareTag("PlayerArrow"))
+		if (other.gameObject.CompareTag("PlayerArrow") && !dead)
 		{
+			dead = true;
 			Debug.Log(other.gameObject.GetComponent<ProjectileController>().owner.name);
 			StartCoroutine(death(other.gameObject));
 		}
@@ -72,7 +62,8 @@ public class DeathHandler : MonoBehaviour
 		{
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
 		}
-		npcSprite.color = Color.black;
+		//npcSprite.color = Color.black;
+		//yield return new WaitForSeconds(0.5f);
 		yield return null;
 		Instantiate(soul, new  Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
