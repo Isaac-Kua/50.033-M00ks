@@ -57,8 +57,8 @@ public class Ability1Holder : MonoBehaviour
         //Debug.Log(state);
         //Debug.Log(charges);
         checkModifications();
-        Debug.Log("this is the range mod");
-        Debug.Log(RangeMod);
+        //Debug.Log("this is the range mod");
+        //Debug.Log(RangeMod);
         switch (state)
         {
             case AbilityState.ready:

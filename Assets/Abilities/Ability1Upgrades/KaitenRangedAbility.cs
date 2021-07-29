@@ -33,15 +33,16 @@ public class KaitenRangedAbility : Ability
         kaiten.GetComponent<KaitenController>().BypassMod = BypassMod;
         kaiten.GetComponent<KaitenController>().SpeedMod = SpeedMod;
         kaiten.GetComponent<KaitenController>().HeavyMod = HeavyMod;
-
         StartCoroutine(ShootCoroutine(parent));
     }
 
     private IEnumerator ShootCoroutine(GameObject parent)
     {
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        if(!BypassMod){
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
         yield return new WaitForSeconds(activeTime);
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
     }
 }

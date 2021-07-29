@@ -24,6 +24,10 @@ GameObject:
   - component: {fileID: 7023214618810478992}
   - component: {fileID: 7023214618810478999}
   - component: {fileID: 4391805349383241945}
+  - component: {fileID: 8155444501533800291}
+  - component: {fileID: -1208829384213208611}
+  - component: {fileID: -7130318844639959141}
+  - component: {fileID: 8766367611513560902}
   m_Layer: 10
   m_Name: M00ksPimped
   m_TagString: Player
@@ -351,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  player: {fileID: 7196519876665669684}
   miniDefense: 0
   shellDefense: 0
   unstoppableDefense: 0
@@ -367,7 +372,6 @@ MonoBehaviour:
   wallwalkerMove: 0
   shivaMove: 0
   ghostMove: 0
-  player: {fileID: 7196519876665669684}
   respawnUtil: 0
   meleeUtil: 0
   rangedUtil: 0
@@ -376,6 +380,10 @@ MonoBehaviour:
   phaseBullet: 0
   heavyBullet: 0
   homingBullet: 0
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
   JuggernautCombo: 0
   WidowmakerCombo: 0
   TophCombo: 0
@@ -384,26 +392,6 @@ MonoBehaviour:
   DannyCombo: 0
   TurtleCombo: 0
   MagnusCombo: 0
-  arrowRange: 0
-  knockbackRange: 0
-  kaitenRange: 0
-  spikeRange: 0
-  RangeMod: 0
-  BypassMod: 0
-  SpeedMod: 0
-  HeavyMod: 0
-  mineAlt: 0
-  teleportAlt: 0
-  gooAlt: 0
-  magnetAlt: 0
-  breakingMelee: 0
-  repelMelee: 0
-  lungeMelee: 0
-  zangiefMelee: 0
-  phaseDash: 0
-  reverseDash: 0
-  tripleDash: 0
-  spiderDash: 0
   ab1_Kaiten: {fileID: 11400000, guid: 72a9641d56ed3494ba1152f8e7ebe3a6, type: 2}
   ab1_Knockback: {fileID: 11400000, guid: 2233a6ecefa76ad48b0d9def8c93e7cf, type: 2}
   ab1_SpikeRange: {fileID: 11400000, guid: b41f0df1febce0e49b7ae6b18e711617, type: 2}
@@ -427,3 +415,59 @@ MonoBehaviour:
   ab2Upgrade: 4
   dUpgrade: 4
   mUpgrade: 4
+--- !u!114 &8155444501533800291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196519876665669684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d507f772de9614e85cc5cb37230112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 0}
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
+--- !u!114 &-1208829384213208611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196519876665669684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045f642ea4637e54d8f75275a1a9e07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 0}
+--- !u!114 &-7130318844639959141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196519876665669684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6690162a685cfef48b1c7834a441061a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 0}
+--- !u!114 &8766367611513560902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196519876665669684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c36015f7ee07894ca61aae5c47c00b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 0}

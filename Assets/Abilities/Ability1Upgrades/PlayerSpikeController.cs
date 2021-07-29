@@ -6,6 +6,12 @@ public class PlayerSpikeController : MonoBehaviour {
     public float lifeTime = 1f;
     public float meltTime = 2f;
 
+	public bool RangeMod = false;
+    public bool BypassMod = false;
+    public bool SpeedMod = false;
+    public bool HeavyMod = false;
+
+    public GameObject owner;
 
     private Rigidbody2D itemBody;
     private SpriteRenderer itemSprite;
@@ -13,7 +19,6 @@ public class PlayerSpikeController : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-
         itemBody = GetComponent<Rigidbody2D>();
         itemSprite = GetComponent<SpriteRenderer>();
         StartCoroutine(Lifetime());
@@ -38,6 +43,20 @@ public class PlayerSpikeController : MonoBehaviour {
         gameObject.tag = "Debris";
         StartCoroutine(Debris());
     }
+
+	void onCollision(Collider col)
+	{
+        
+
+        if (col.gameObject.tag == "Debris")
+        {
+            if (HeavyMod)
+		    {
+				//If the GameObject has the same tag as specified, output this message in the console
+				Destroy(col.gameObject);
+			}
+		}
+	}
 
     IEnumerator Debris()
     {

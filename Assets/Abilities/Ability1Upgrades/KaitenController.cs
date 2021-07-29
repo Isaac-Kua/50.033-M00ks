@@ -8,6 +8,7 @@ public class KaitenController : MonoBehaviour
 	private float kaitenGrowthRate;
 	private float kaitenCastTime;
 	private float kaitenMaxRadius;
+	private Collider2D Collider;
 
 	public bool RangeMod = false;
     public bool BypassMod = false;
@@ -17,15 +18,35 @@ public class KaitenController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		Collider = gameObject.GetComponent<BoxCollider2D>();
 		Debug.Log(RangeMod);
-		kaitenGrowthRate = gameConstants.kaitenGrowthRate;
-		kaitenCastTime = gameConstants.kaitenCastTime;
-		// if(RangeMod){
-		// 	kaitenMaxRadius = gameConstants.kaitenMaxRadius*1.5f;
-		// }else{
-		kaitenMaxRadius = gameConstants.kaitenMaxRadius;
-		// }
+		if(SpeedMod){
+			kaitenGrowthRate = gameConstants.kaitenGrowthRate*2f;
+			kaitenCastTime = gameConstants.kaitenCastTime*0.5f;
+		}else{
+			kaitenGrowthRate = gameConstants.kaitenGrowthRate;
+			kaitenCastTime = gameConstants.kaitenCastTime;
+		}
+		
+		if(RangeMod){
+			kaitenMaxRadius = gameConstants.kaitenMaxRadius*1.5f;
+		}else{
+			kaitenMaxRadius = gameConstants.kaitenMaxRadius;
+		}
 		StartCoroutine(GrowCoroutine());
+	
+	}
+
+	void onTrigger(Collider col)
+	{
+		if (HeavyMod)
+		{
+			if (col.gameObject.tag == "Arrow"||col.gameObject.tag == "Firebolt"||col.gameObject.tag == "Icebolt")
+			{
+				//If the GameObject has the same tag as specified, output this message in the console
+				Destroy(col.gameObject);
+			}
+		}
 	}
 
 	// Update is called once per frame
@@ -35,6 +56,8 @@ public class KaitenController : MonoBehaviour
 			transform.localScale *= kaitenGrowthRate;
 		}
 	}
+
+	
 	
 	private IEnumerator GrowCoroutine ()
 	{

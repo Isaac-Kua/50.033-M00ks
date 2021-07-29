@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1527e90214ade5343957e34a5b5ac9de, type: 3}
   m_Name: Goo Alt
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: GooAlt
   activeTime: 0.4
   charges: 0
