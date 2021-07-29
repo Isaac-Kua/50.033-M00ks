@@ -787,6 +787,26 @@ PrefabInstance:
       propertyPath: M00ksPrefab
       value: 
       objectReference: {fileID: 839571231611962989, guid: f1fa0bb1136e9c64ba41d5c8f21440d8, type: 3}
+    - target: {fileID: 9180714617500481734, guid: 5f04df9021055844598264ecc704efd6, type: 3}
+      propertyPath: playerSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180714617500481734, guid: 5f04df9021055844598264ecc704efd6, type: 3}
+      propertyPath: playerSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -1235185831877847997, guid: 9b2c512edb11894418606ab66b9d1e34, type: 3}
+    - target: {fileID: 9180714617500481734, guid: 5f04df9021055844598264ecc704efd6, type: 3}
+      propertyPath: playerSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1235185831877847997, guid: a175b23c01e11fc429f1cad1ee4886f2, type: 3}
+    - target: {fileID: 9180714617500481734, guid: 5f04df9021055844598264ecc704efd6, type: 3}
+      propertyPath: playerSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -1235185831877847997, guid: 3e2b9809bfabb42448d94eaf72efce27, type: 3}
+    - target: {fileID: 9180714617500481734, guid: 5f04df9021055844598264ecc704efd6, type: 3}
+      propertyPath: playerSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -1235185831877847997, guid: ae0450883236bff44a4e417809b21cd6, type: 3}
     - target: {fileID: 9180714617500481735, guid: 5f04df9021055844598264ecc704efd6, type: 3}
       propertyPath: m_NotificationBehavior
       value: 0

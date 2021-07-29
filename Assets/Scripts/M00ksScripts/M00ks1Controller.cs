@@ -38,6 +38,7 @@ public class M00ks1Controller : MonoBehaviour
 		dash = GetComponent<DashHolder>();
 		ability1 = GetComponent<Ability1Holder>();
 		ability2 = GetComponent<Ability2Holder>();
+		m00ksSprite = GetComponent<SpriteRenderer>();
 	}
 
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class M00ks1Controller : MonoBehaviour
     {
 		m00ksBody = GetComponent<Rigidbody2D>();
 		m00ksCollider = GetComponent<Collider2D>();
-		m00ksSprite = GetComponent<SpriteRenderer>();
+		
 		previousLocation = transform.position;
 		reverseDuration = gameConstants.reverseDuration;
 		speed = gameConstants.M00ksMoveSpeed;
@@ -63,10 +64,11 @@ public class M00ks1Controller : MonoBehaviour
 		StartCoroutine(WhatWasI());
 	}
 
-	public void InitializePlayer(PlayerConfiguration pc){
+	public void InitializePlayer(PlayerConfiguration pc, Sprite s){
 		playerConfig = pc;
 		playerConfig.Input.onActionTriggered += Input_onActionTriggered;
 		pc.playerPrefab = this.gameObject;
+		m00ksSprite.sprite = s;
 	}
 
 	private void Input_onActionTriggered(CallbackContext obj){

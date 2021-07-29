@@ -10,6 +10,8 @@ public class PlayerReadyController : MonoBehaviour
     private int PlayerIndex;
     [SerializeField]
     private TextMeshProUGUI titleText;
+    [SerializeField]
+    private Image image;
     // [SerializeField]
     // private GameObject readyPanel;
     // [SerializeField]
@@ -22,6 +24,7 @@ public class PlayerReadyController : MonoBehaviour
     public void SetPlayerIndex(int pi){
         PlayerIndex = pi;
         titleText.SetText("Player "+(pi+1).ToString());
+        image.sprite = PlayerConfigurationManager.Instance.getPlayerSprite(pi);
         ignoreInputTime = Time.time +ignoreInputTime;
     }
     void Update(){

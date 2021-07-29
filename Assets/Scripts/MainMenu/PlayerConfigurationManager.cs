@@ -4,14 +4,16 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerConfigurationManager : MonoBehaviour
 {
     private List<PlayerConfiguration> playerConfigs;
 
     [SerializeField]
     private int MinPlayers = 1;
+    [SerializeField]
+    private Sprite[] playerSprites;
     public static PlayerConfigurationManager Instance {get; private set;}
-    public GameObject M00ksPrefab;
 
 
     private void Awake(){
@@ -29,18 +31,17 @@ public class PlayerConfigurationManager : MonoBehaviour
         return playerConfigs;
     }
 
-    public void SetPlayerColor(int index, Color color){
-        playerConfigs[index].PlayerColor = color;
+    public Sprite getPlayerSprite(int i){
+        return playerSprites[i];
+    }
+
+    public void SetPlayerSprite(int index, Sprite s){
+        playerConfigs[index].PlayerSprite = s;
     }
 
     public void ReadyPlayer(int index){
         playerConfigs[index].isReady = true;
         if(AllPlayerReady()){
-            // for(int i=0;i<playerConfigs.Count;i++){
-            //     var newPosition = new Vector3(2*i,2*i,1);
-            //     var mook = Instantiate(M00ksPrefab,this.transform.position+ newPosition,Quaternion.identity);
-            //     playerConfigs[index].M00ks = mook;  
-            // }
             SceneManager.LoadScene("Level");
         }else{
             Debug.Log("Players not readied");
@@ -78,6 +79,6 @@ public class PlayerConfiguration{
     public PlayerInput Input {get;set;}
     public int PlayerIndex{get;set;}
     public bool isReady {get;set;}
-    public Color PlayerColor {get;set;}
+    public Sprite PlayerSprite {get;set;}
     public GameObject playerPrefab;
 }
