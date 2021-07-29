@@ -456,7 +456,7 @@ SpriteRenderer:
   m_SortingLayerID: -205038259
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f02890fa93490104386b630fb04da7a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b2c2640c49b1fa4cba1b9004e286a9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2428,6 +2428,14 @@ MonoBehaviour:
   magnet: {fileID: 21300000, guid: 17d2db0cb56545d499c8e87248e5e6ed, type: 3}
   mine: {fileID: 21300000, guid: 6d46f9ae206d78c44b86be68597781b6, type: 3}
   teleport: {fileID: 21300000, guid: e40dd24ea5583cd42a90ca4af7c6bbfe, type: 3}
+  miniDef: {fileID: 21300000, guid: 7615952fae39b4e41950f9d83d6d7cb1, type: 3}
+  shellDef: {fileID: 21300000, guid: 3e18dd195f20deb4481f7f1261f43ded, type: 3}
+  unstoppableDef: {fileID: 21300000, guid: 8a74e8e83768563498173971c0cd337e, type: 3}
+  toughDef: {fileID: 21300000, guid: 27eeb9077f3704e49b4006c655415cc7, type: 3}
+  crawl: {fileID: 21300000, guid: 1a0110a41b40fbc4ba336a17eb803bde, type: 3}
+  kamikaze: {fileID: 21300000, guid: 4a58e63223df1b3419e28cbd83eefa74, type: 3}
+  soulswap: {fileID: 21300000, guid: ec58c7ba2348162428bf5a4bd4106a2f, type: 3}
+  vengeance: {fileID: 21300000, guid: 212838b6bdd4053479704fb67e73713c, type: 3}
 --- !u!1 &1704277778
 GameObject:
   m_ObjectHideFlags: 0

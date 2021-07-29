@@ -10,13 +10,13 @@ public class Spawner : MonoBehaviour
     void spawn()
     {   
         Debug.Log("Spawning");
-        //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Lina);
-        //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Davion);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Lina);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Davion);
         EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
-        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
-        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
-        //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Rylai);
-        //EnemyPool.SharedInstance.spawnEnemy(EnemyType.bara);
+        //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
+        //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Rylai);
+        EnemyPool.SharedInstance.spawnEnemy(EnemyType.bara);
     }
 
     void Update()

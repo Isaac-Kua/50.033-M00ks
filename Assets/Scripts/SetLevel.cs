@@ -9,6 +9,7 @@ public class SetLevel : MonoBehaviour
     public GameObject upgrades;
     private GameObject[] enemies;
     private GameObject[] souls;
+    private GameObject[] projectiles;
 
     private List<PlayerConfiguration> players;
     [SerializeField]
@@ -38,6 +39,7 @@ public class SetLevel : MonoBehaviour
 
     public void setUpgradeSelect()
     {
+        GameManager.Instance.upgradeNo += 1;
         deactivate();
         upgrades.SetActive(true);
         foreach (Transform child in upgrades.transform){
@@ -67,5 +69,9 @@ public class SetLevel : MonoBehaviour
         foreach(GameObject soul in souls){
             soul.SetActive(false);
         }
+        // projectiles = GameObject.FindGameObjectsWithTag("Enemy Projectile");
+        // foreach(GameObject proj in projectiles){
+        //     Destroy(proj);
+        // }
     }
 }
