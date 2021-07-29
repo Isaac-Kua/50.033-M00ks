@@ -45,7 +45,7 @@ public class RangerController : MonoBehaviour
 		angle.eulerAngles = eulerAngle;
 		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
-		transform.rotation = angle;
+		//transform.rotation = angle;
 
 		if (target1 == gameObject)
 		{
@@ -75,7 +75,7 @@ public class RangerController : MonoBehaviour
 	{
 		ammo = false;
 		Vector3 direction = dir;
-		GameObject arrow = Instantiate(missile, transform.position+direction, transform.rotation);
+		GameObject arrow = Instantiate(missile, transform.position+direction, angle);
 		arrow.GetComponent<ArrowController>().target1 = target1;
 		arrow.transform.rotation = angle;
 		arrow.GetComponent<ProjectileController>().owner = gameObject;

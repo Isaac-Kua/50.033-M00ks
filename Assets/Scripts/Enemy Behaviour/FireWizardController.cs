@@ -49,7 +49,7 @@ public class FireWizardController : MonoBehaviour
 		angle.eulerAngles = eulerAngle;
 		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
-		transform.rotation = angle;
+		//transform.rotation = angle;
 
 		if (target1 == gameObject)
 		{

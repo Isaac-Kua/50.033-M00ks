@@ -44,7 +44,7 @@ public class DeathHandler : MonoBehaviour
 		}
 	}
 
-	void OnTriggerEneter2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("PlayerArrow") && !dead)
 		{
 			dead = true;
