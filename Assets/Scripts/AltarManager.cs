@@ -5,7 +5,7 @@ using UnityEngine;
 public class AltarManager : MonoBehaviour
 {
     private int altarSouls = 0;
-    public int soulCap = 5;
+    public int soulCap = 1;
     public int altarHealth = 50;
 
     public delegate void gameEvent();
@@ -19,7 +19,9 @@ public class AltarManager : MonoBehaviour
         Debug.Log("Altar souls: "+altarSouls);
         if (altarSouls >= soulCap)
         {
+            Debug.Log("Goal reached");
             NextStage();
+            GameManager.Instance.increaseStage();
             altarSouls = 0;
         }
     }

@@ -26,11 +26,6 @@ public class Bumblebee : MonoBehaviour
 			target_dir.Add(m00k,dir);
 		}
 
-		// foreach(KeyValuePair<GameObject, float> entry in target_distance)
-		// {
-			// Debug.Log(entry.Key.name);
-			// Debug.Log(entry.Value);
-		// }
 		
 	}
 	
@@ -40,7 +35,7 @@ public class Bumblebee : MonoBehaviour
 
 		detectionRange = 20;
 		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList();
-		// targets.AddRange(GameObject.FindGameObjectsWithTag("Altar"));
+		targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);
 		// // Targets Altar on spawn
 		// selectedTarget = targets[0];
 

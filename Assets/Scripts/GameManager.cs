@@ -7,15 +7,16 @@ public class GameManager : MonoBehaviour
     public int stage = 1;
     public string currentCondition;
     public int firstPlayer;
-    public int chosenPlayer;
+    public int totalPlayers;
+    public bool upgradeSelection = false;
 
-    public static GameManager centralManagerInstance;
+    public static GameManager Instance;
     public delegate void gameEvent();
     public static event gameEvent BossStage;
 
     void Awake()
     {
-        centralManagerInstance = this;
+        Instance = this;
     }
 
     public void increaseStage(){

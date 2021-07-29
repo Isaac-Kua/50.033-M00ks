@@ -28,5 +28,9 @@ public class ProjectileController : MonoBehaviour
                 }
             }
         }
+        if (other.gameObject.CompareTag("Altar"))
+        {
+            Player1Manager.centralManagerInstance.damageAltar();
+        }
 	}
 }

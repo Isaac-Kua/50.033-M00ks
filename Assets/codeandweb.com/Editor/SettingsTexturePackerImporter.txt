@@ -4,7 +4,6 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/Effects/2 Hit Shield/2 Hit Shield.tpsheet
 - Assets/Sprites/Effects/Basho Tenin/Basho Tenin.tpsheet
-- Assets/Sprites/Effects/Bristleback Horn/Bristleback Horn.tpsheet
 - Assets/Sprites/Effects/Fire Ball/Fire Ball.tpsheet
 - Assets/Sprites/Effects/Goo Pool/Goo Pool.tpsheet
 - Assets/Sprites/Effects/Ice Wall/Ice Walls.tpsheet
@@ -16,6 +15,18 @@ tpsheetFileNames:
 - Assets/Sprites/Effects/Teleport/Teleport In.tpsheet
 - Assets/Sprites/Effects/Teleport/Teleport Out.tpsheet
 - Assets/Sprites/Enemies/Boss/SkeleBoss.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch back.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch front.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch left.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch right.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost back.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost front.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost left.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost right.tpsheet
+- Assets/Sprites/Enemies/Knight/Knight Down Slash.tpsheet
+- Assets/Sprites/Enemies/Knight/knight left.tpsheet
+- Assets/Sprites/Enemies/Knight/Knight Side Slash.tpsheet
+- Assets/Sprites/Enemies/Knight/Knight Up Slash.tpsheet
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlash.tpsheet
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlashBoss.tpsheet
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlashP1.tpsheet
@@ -42,7 +53,6 @@ textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Effects/2 Hit Shield/2 Hit Shield.png
 - Assets/Sprites/Effects/Basho Tenin/Basho Tenin.png
-- Assets/Sprites/Effects/Bristleback Horn/Bristleback Horn.png
 - Assets/Sprites/Effects/Fire Ball/Fire Ball.png
 - Assets/Sprites/Effects/Goo Pool/Goo Pool.png
 - Assets/Sprites/Effects/Ice Wall/Ice Walls.png
@@ -54,6 +64,18 @@ textureFileNames:
 - Assets/Sprites/Effects/Teleport/Teleport In.png
 - Assets/Sprites/Effects/Teleport/Teleport Out.png
 - Assets/Sprites/Enemies/Boss/SkeleBoss.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch back.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch front.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch left.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch right.png
+- Assets/Sprites/Enemies/Ghost/ghost back.png
+- Assets/Sprites/Enemies/Ghost/ghost front.png
+- Assets/Sprites/Enemies/Ghost/ghost left.png
+- Assets/Sprites/Enemies/Ghost/ghost right.png
+- Assets/Sprites/Enemies/Knight/Knight Down Slash.png
+- Assets/Sprites/Enemies/Knight/knight left.png
+- Assets/Sprites/Enemies/Knight/Knight Side Slash.png
+- Assets/Sprites/Enemies/Knight/Knight Up Slash.png
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlash.png
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlashBoss.png
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlashP1.png
@@ -78,6 +100,17 @@ textureFileNames:
 - Assets/Sprites/players/basic movement/SkeleP4.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 

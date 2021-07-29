@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndScreenController : MonoBehaviour
 {
@@ -24,16 +25,6 @@ public class EndScreenController : MonoBehaviour
 
     public void ReturnToMenuButton()
     {
-        foreach (Transform eachChild in transform)
-        {
-            if (eachChild.name == "StartScreen")
-            {
-                eachChild.gameObject.SetActive(true);
-            }
-            else
-            {
-                eachChild.gameObject.SetActive(false);
-            }
-        }
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -26,6 +26,7 @@ public class RangerController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		target1 = gameObject;
 		missile = gameConstants.rangerArrow;
 		speed = gameConstants.rangerMoveSpeed;
 		maxRange = gameConstants.rangerMaxRange;
@@ -46,7 +47,11 @@ public class RangerController : MonoBehaviour
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		transform.rotation = angle;
 
-		if (distance > maxRange)
+		if (target1 == gameObject)
+		{
+			// do nothing
+		}
+		else if (distance > maxRange)
 		{
 			rangerBody.velocity = (dir * speed);
 		
@@ -68,8 +73,9 @@ public class RangerController : MonoBehaviour
 	
 	void Fire()
 	{
-		ammo = false;		
-		GameObject arrow = Instantiate(missile, transform.position, transform.rotation);
+		ammo = false;
+		Vector3 direction = dir;
+		GameObject arrow = Instantiate(missile, transform.position+direction, transform.rotation);
 		arrow.GetComponent<ArrowController>().target1 = target1;
 		arrow.transform.rotation = angle;
 		arrow.GetComponent<ProjectileController>().owner = gameObject;

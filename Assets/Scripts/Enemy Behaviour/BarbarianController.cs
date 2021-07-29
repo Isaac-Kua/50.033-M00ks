@@ -20,7 +20,8 @@ public class BarbarianController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        barbBody = GetComponent<Rigidbody2D>();
+		target1 = gameObject;
+		barbBody = GetComponent<Rigidbody2D>();
 		barbSprite = GetComponent<SpriteRenderer>();
 		barbCollider = GetComponent<PolygonCollider2D>();
 		charges = gameConstants.BarbarianMaxCharges;
@@ -37,7 +38,11 @@ public class BarbarianController : MonoBehaviour
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		transform.rotation = angle;
 
-		if (distance < gameConstants.BarbarianMaxRange)
+		if (target1 == gameObject)
+		{
+			// do nothing
+		}
+		else if (distance < gameConstants.BarbarianMaxRange)
 		{
 			if (charges == 0) {
 				barbBody.velocity = (-1*dir * gameConstants.BarbarianMoveSpeed);

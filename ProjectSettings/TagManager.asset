@@ -16,11 +16,12 @@ TagManager:
   - Soul
   - Altar
   - Enemy
+  - Upgrade
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Enemies
@@ -50,11 +51,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 4089929037
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Obstacles
     uniqueID: 404749179

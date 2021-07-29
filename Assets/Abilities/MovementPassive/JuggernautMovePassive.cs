@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JuggernautMovePassive : MonoBehaviour
 {
-    public GameConstants gameConstants;
+    private GameConstants gameConstants;
     private float motionTimeStamp;
     private Rigidbody2D m00ksBody;
     private GameObject bubble;
@@ -12,6 +12,7 @@ public class JuggernautMovePassive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         m00ksBody = GetComponent<Rigidbody2D>();
         jugg = false;
     }
@@ -19,6 +20,7 @@ public class JuggernautMovePassive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
         if (GetComponent<UpgradeManager>().juggernautMove)
         {
             if (m00ksBody.velocity == Vector2.zero)

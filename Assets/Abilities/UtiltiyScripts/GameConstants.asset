@@ -89,7 +89,7 @@ MonoBehaviour:
   rangerMoveSpeed: 12
   rangerMaxRange: 20
   rangerMinRange: 10
-  rangerArrowSpeed: 100
+  rangerArrowSpeed: 10
   rangerWindUpTime: 3
   knightMoveSpeed: 5
   knightShield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
@@ -105,7 +105,7 @@ MonoBehaviour:
   iceWizardBurstChargeTime: 1
   iceWizardWindUpTime: 3
   iceWizardIcebolt: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}
-  iceWizardIcewave: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}
+  iceWizardIcewave: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
   iceboltLifeTime: 3
   iceboltSpeed: 10
   icewaveLifeTime: 1

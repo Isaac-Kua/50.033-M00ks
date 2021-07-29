@@ -1,0 +1,336 @@
+fileFormatVersion: 2
+guid: 98b0e020c511acc418769476d5a45357
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7796013201690335930
+    second: Dead (1)
+  - first:
+      213: 1413578141847302047
+    second: Dead (2)
+  - first:
+      213: 2628302619515614810
+    second: Dead (3)
+  - first:
+      213: 814374056026990868
+    second: Dead (4)
+  - first:
+      213: 490778013578418519
+    second: Dead (5)
+  - first:
+      213: 3479949658687843504
+    second: Dead (6)
+  - first:
+      213: -6918883376155874174
+    second: Fly (1)
+  - first:
+      213: 3150906382758169974
+    second: Fly (2)
+  - first:
+      213: 3409755042642392099
+    second: Fly (3)
+  - first:
+      213: -4904938011453422003
+    second: Fly (4)
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dead (1)
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 72
+        width: 196
+        height: 277
+      alignment: 9
+      pivot: {x: 0.48214287, y: 0.33754513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645edf05c4ffec390800000000000000
+      internalID: -7796013201690335930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (2)
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 351
+        width: 203
+        height: 317
+      alignment: 9
+      pivot: {x: 0.5640394, y: 0.40536278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fa01f94d90e9310800000000000000
+      internalID: 1413578141847302047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (3)
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 670
+        width: 231
+        height: 353
+      alignment: 9
+      pivot: {x: 0.5779221, y: 0.41784704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56f47e9e4b997420800000000000000
+      internalID: 2628302619515614810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (4)
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 626
+        width: 325
+        height: 397
+      alignment: 9
+      pivot: {x: 0.55230767, y: 0.49244332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41968c3a3ec3d4b00800000000000000
+      internalID: 814374056026990868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 615
+        width: 354
+        height: 408
+      alignment: 9
+      pivot: {x: 0.50706214, y: 0.5036765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759d9eac0089fc600800000000000000
+      internalID: 490778013578418519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (6)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 206
+        width: 359
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bca45ae6c34b4030800000000000000
+      internalID: 3479949658687843504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fly (1)
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 355
+        width: 196
+        height: 269
+      alignment: 9
+      pivot: {x: 0.46173468, y: 0.50743496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28cafd92a303bff90800000000000000
+      internalID: -6918883376155874174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fly (2)
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 82
+        width: 196
+        height: 267
+      alignment: 9
+      pivot: {x: 0.46173468, y: 0.51123595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67dcfc039a44abb20800000000000000
+      internalID: 3150906382758169974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fly (3)
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 87
+        width: 196
+        height: 262
+      alignment: 9
+      pivot: {x: 0.46173468, y: 0.52099234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324fbc74522e15f20800000000000000
+      internalID: 3409755042642392099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fly (4)
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 82
+        width: 196
+        height: 267
+      alignment: 9
+      pivot: {x: 0.46173468, y: 0.51123595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d460206bdd82eebb0800000000000000
+      internalID: -4904938011453422003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

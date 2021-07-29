@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MiniDefensePassive: MonoBehaviour
 {
-	public  GameConstants gameConstants;
+	private  GameConstants gameConstants;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +13,8 @@ public class MiniDefensePassive: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (GetComponent<UpgradeManager>().miniDefense){
+        gameConstants = GetComponent<UpgradeManager>().gameConstants;
+        if (GetComponent<UpgradeManager>().miniDefense){
 			transform.localScale = new Vector2(gameConstants.defaultSize/gameConstants.shrinkRatio,gameConstants.defaultSize/gameConstants.shrinkRatio);
 		} else {
 			transform.localScale = new Vector2(gameConstants.defaultSize,gameConstants.defaultSize);

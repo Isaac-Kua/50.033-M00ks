@@ -29,6 +29,8 @@ public class IceWizardController : MonoBehaviour
 	
 	void Start()
 	{
+
+		target1 = gameObject;
 		speed = gameConstants.iceWizardMoveSpeed;
 		maxRange = gameConstants.iceWizardMaxRange;
 		minRange = gameConstants.iceWizardMinRange;
@@ -49,8 +51,11 @@ public class IceWizardController : MonoBehaviour
 		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		transform.rotation = angle;
-
-		if (distance > maxRange)
+		if (target1 == gameObject)
+        {
+			// do nothing
+        }
+		else if (distance > maxRange)
 		{
 			iceWizBody.velocity = (dir * speed);
 
@@ -62,7 +67,7 @@ public class IceWizardController : MonoBehaviour
             {
                 Fire();
             }
-        } else if (distance < minRange && target1 != gameObject){
+        } else if (distance < minRange){
 			if (burstCharge) {
 				Burst();
 			} else {

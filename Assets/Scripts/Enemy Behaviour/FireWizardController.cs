@@ -23,12 +23,11 @@ public class FireWizardController : MonoBehaviour
 	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-
-	
 	
 	// Start is called before the first frame update
 	void Start()
 	{
+		target1 = gameObject;
 		speed = gameConstants.fireWizardMoveSpeed;
 		yBound = gameConstants.yBound;
 		xBound = gameConstants.xBound;
@@ -52,7 +51,11 @@ public class FireWizardController : MonoBehaviour
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		transform.rotation = angle;
 
-		if (distance > maxRange)
+		if (target1 == gameObject)
+		{
+			// do nothing
+		}
+		else if (distance > maxRange)
 		{
 			fireWizBody.velocity = (dir * speed);
 			

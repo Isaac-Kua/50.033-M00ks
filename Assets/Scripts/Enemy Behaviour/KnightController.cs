@@ -19,6 +19,8 @@ public class KnightController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+
+		target1 = gameObject;
 		knightBody = GetComponent<Rigidbody2D>();
 		knightSprite = GetComponent<SpriteRenderer>();
 		
@@ -40,8 +42,12 @@ public class KnightController : MonoBehaviour
 		angle.eulerAngles = eulerAngle;
 		transform.rotation = angle;
 		eulerAngle = dir;
-		
-		if (!myShield.GetComponent<ShieldController>().engaged && !target1.GetComponent<M00ksDeathHandler>().Dead) {
+
+		if (target1 == gameObject)
+		{
+			// do nothing
+		}
+		else if (!myShield.GetComponent<ShieldController>().engaged && !target1.GetComponent<M00ksDeathHandler>().Dead) {
 			knightBody.velocity = (dir * speed);
 			
 			myShield.GetComponent<ShieldController>().target1 = target1;

@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class UnstoppableDefensePassive : MonoBehaviour
 {
-	public  GameConstants gameConstants;
+	private  GameConstants gameConstants;
 	private float slowRatio;
 	// Start is called before the first frame update
 	void Start()
 	{
+		gameConstants = GetComponent<UpgradeManager>().gameConstants;
 		slowRatio = gameConstants.slowRatio;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		gameConstants = GetComponent<UpgradeManager>().gameConstants;
 		if (GetComponent<UpgradeManager>().unstoppableDefense){
 			if (GetComponent<M00ksDeathHandler>().Brittle){
 				GetComponent<M00ksDeathHandler>().allEnable();
