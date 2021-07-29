@@ -29,7 +29,6 @@ public class AltarManager : MonoBehaviour
     public void damageAltar()
     {
         altarHealth -= 1;
-        Debug.Log("Altar Damaged");
         Debug.Log("Altar health: "+altarHealth);
         if (altarHealth <= 0)
         {

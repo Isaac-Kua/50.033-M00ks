@@ -40,18 +40,18 @@ public class KnightController : MonoBehaviour
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
-		transform.rotation = angle;
+		//transform.rotation = angle;
 		eulerAngle = dir;
 
 		if (target1 == gameObject)
 		{
-			// do nothing
+			knightBody.velocity = Vector2.zero;
 		}
 		else if (!myShield.GetComponent<ShieldController>().engaged && !target1.GetComponent<M00ksDeathHandler>().Dead) {
 			knightBody.velocity = (dir * speed);
 			
 			myShield.GetComponent<ShieldController>().target1 = target1;
-			myShield.transform.position = transform.position + 2f*eulerAngle;
+			myShield.transform.position = transform.position + 1.5f*eulerAngle;
 			
 			eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.right,dir));
 			angle.eulerAngles = eulerAngle;

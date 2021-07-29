@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4433392521452696950}
   - component: {fileID: 3741889582445445316}
   - component: {fileID: 2560170341750450185}
+  - component: {fileID: -6863869382990628864}
   m_Layer: 6
   m_Name: Traxex
   m_TagString: Enemy
@@ -108,12 +109,12 @@ SpriteRenderer:
   m_SortingLayerID: -2024973529
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -528063969655746513, guid: f568ad3d850f75b4b9ca501aa9159ad5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78061124eecc64820ba6dc6ccc95a35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.87, y: 3.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -136,8 +137,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.6806545, y: 2.66}
-    newSize: {x: 1, y: 2}
+    oldSize: {x: 1.87, y: 3.24}
+    newSize: {x: 1.87, y: 3.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -201,3 +202,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6863869382990628864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303145136270888916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aea3091e8793be40833815d546d5ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
