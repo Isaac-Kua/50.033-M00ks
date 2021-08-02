@@ -35,6 +35,12 @@ public class PlayerConfigurationManager : MonoBehaviour
         return playerSprites[i];
     }
 
+    public GameObject getPlayerPrefab(int i){
+        return playerConfigs[i].playerPrefab;
+    }
+        
+    
+
     public void SetPlayerSprite(int index, Sprite s){
         playerConfigs[index].PlayerSprite = s;
     }

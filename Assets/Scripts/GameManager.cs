@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public int firstPlayer;
     public int totalPlayers;
     public bool upgradeSelection = false;
-    public int upgradeNo = 0;
+    public int upgradeNo = 1;
+    public bool secondUpgrade = false;
 
     public static GameManager Instance;
     public delegate void gameEvent();

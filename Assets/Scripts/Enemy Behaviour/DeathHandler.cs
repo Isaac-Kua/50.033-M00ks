@@ -10,6 +10,7 @@ public class DeathHandler : MonoBehaviour
 	public List<MonoBehaviour> activeAbilities;
 	private SpriteRenderer npcSprite;
 	private Rigidbody2D npcBody;
+	private Collider2D npcCollider;
 	private bool dead = false;
 
 
@@ -18,6 +19,7 @@ public class DeathHandler : MonoBehaviour
     {
         npcSprite = GetComponent<SpriteRenderer>();
 		npcBody = GetComponent<Rigidbody2D>();
+		npcCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,8 @@ public class DeathHandler : MonoBehaviour
 	{
 		dead = false;
 		allEnable();
+		npcSprite.color = Color.white;
+		npcCollider.enabled = true;
 		this.gameObject.SetActive(false);
 	}
 	
@@ -56,15 +60,16 @@ public class DeathHandler : MonoBehaviour
 
 	IEnumerator death(GameObject killer)
 	{
-		npcBody.velocity = Vector2.zero;
+		//npcBody.velocity = Vector2.zero;
+		npcCollider.enabled = false;
 		lastHit = killer.GetComponent<ProjectileController>().owner;
 		if (lastHit.CompareTag("Player"))
 		{
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
 		}
-		//npcSprite.color = Color.black;
-		//yield return new WaitForSeconds(0.5f);
-		yield return null;
+		npcSprite.color = Color.black;
+		yield return new WaitForSeconds(0.5f);
+		//yield return null;
 		Instantiate(soul, new  Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
 	}

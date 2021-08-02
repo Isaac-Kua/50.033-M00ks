@@ -35,4 +35,14 @@ public class AltarManager : MonoBehaviour
             Lose();
         }
     }
+
+    public int getHealth()
+    {
+        return altarHealth;
+    }
+
+    public void setHealth(int health)
+    {
+        altarHealth = health;
+    }
 }

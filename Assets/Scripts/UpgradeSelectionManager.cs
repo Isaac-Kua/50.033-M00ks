@@ -18,13 +18,6 @@ public class UpgradeSelectionManager : MonoBehaviour
 
     void Start()
     {
-        for (int i=0; i<4; i++){
-            playerSelect[i] = true;
-        }
-        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
-        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-            playerSelect[i] = false;
-        }
     }
 
     public void playerSelected(int player)
@@ -36,10 +29,29 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         if (allSelected){
-            for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                players[i].Input.ActivateInput();
+            if (Player1Manager.centralManagerInstance.getAltarHealth() <= 10){
+                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+                    players[i].Input.ActivateInput();
+                }
+                SetLevel.Instance.setLevel();
             }
-            SetLevel.Instance.setLevel();
+            else if (Player1Manager.centralManagerInstance.getAltarHealth() <= 35){
+                Player1Manager.centralManagerInstance.setAltarHealth(50);
+                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+                    players[i].Input.ActivateInput();
+                }
+                SetLevel.Instance.setLevel();
+            }
+            else if (GameManager.Instance.secondUpgrade == false){
+                SetLevel.Instance.setUpgradeSelect();
+                GameManager.Instance.secondUpgrade = true;
+            }
+            else{
+                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+                    players[i].Input.ActivateInput();
+                }
+                SetLevel.Instance.setLevel();
+            }
         }
         else{
             randPlayer = Random.Range(0,4);
@@ -55,5 +67,16 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         allSelected = true;
+    }
+
+    public void reset()
+    {
+        for (int i=0; i<4; i++){
+            playerSelect[i] = true;
+        }
+        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            playerSelect[i] = false;
+        }
     }
 }

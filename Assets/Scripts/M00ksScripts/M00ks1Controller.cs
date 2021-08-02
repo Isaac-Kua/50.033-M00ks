@@ -72,7 +72,7 @@ public class M00ks1Controller : MonoBehaviour
 	}
 
 	private void Input_onActionTriggered(CallbackContext obj){
-		Debug.Log("ACTION!!!");
+		//Debug.Log("ACTION!!!");
 		if(obj.action.name == controls.Player.Move.name){
 			OnMove(obj);
 		}

@@ -29,13 +29,13 @@ public class UpgradeAssigner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AltarManager.NextStage += assignUpgrade;
+        //AltarManager.NextStage += assignUpgrade;
     }
 
     // Update is called once per frame
-    void assignUpgrade()
+    public void assignUpgrade()
     {
-        switch (GameManager.Instance.stage)
+        switch (GameManager.Instance.upgradeNo)
         {
             case 1:
                 // Ranged ability

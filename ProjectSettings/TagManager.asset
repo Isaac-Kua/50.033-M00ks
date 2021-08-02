@@ -17,6 +17,7 @@ TagManager:
   - Altar
   - Enemy
   - Upgrade
+  - Area
   layers:
   - Default
   - TransparentFX
