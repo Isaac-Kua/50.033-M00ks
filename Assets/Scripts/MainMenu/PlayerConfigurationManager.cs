@@ -48,7 +48,8 @@ public class PlayerConfigurationManager : MonoBehaviour
     public void ReadyPlayer(int index){
         playerConfigs[index].isReady = true;
         if(AllPlayerReady()){
-            SceneManager.LoadScene("Level");
+            Debug.Log("Players ready");
+            SceneManager.LoadScene("TEsting");
         }else{
             Debug.Log("Players not readied");
         }

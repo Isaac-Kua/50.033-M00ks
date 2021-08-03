@@ -7,19 +7,20 @@ public class RangerController : MonoBehaviour
 {
 	public GameConstants gameConstants;
 	public GameObject target1;
-	
-	private GameObject missile;
+
 	private float speed;
 	private float maxRange;
 	private float minRange;
 	private float missileSpeed;
-	private float windUpTime;	
-	
+
+
+	private Vector2 dir;
 	private Rigidbody2D rangerBody;
 	private SpriteRenderer rangerSprite;
+	private bool faceRight = true;
+	private Animator rangerAnimator;
 	private float distance;
 	private bool ammo = true;
-	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
 	
@@ -27,15 +28,13 @@ public class RangerController : MonoBehaviour
 	void Start()
 	{
 		target1 = gameObject;
-		missile = gameConstants.rangerArrow;
 		speed = gameConstants.rangerMoveSpeed;
 		maxRange = gameConstants.rangerMaxRange;
 		minRange = gameConstants.rangerMinRange;
-		windUpTime = gameConstants.rangerWindUpTime;
 		missileSpeed = gameConstants.rangerArrowSpeed;
-		
 		rangerBody = GetComponent<Rigidbody2D>();
 		rangerSprite = GetComponent<SpriteRenderer>();
+		rangerAnimator = GetComponent<Animator>();
 	}
 
 	void FixedUpdate()
@@ -43,12 +42,22 @@ public class RangerController : MonoBehaviour
 		dir = (target1.transform.position - transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
+
+		if (dir.x < 0)
+		{
+			faceRight = false;
+		}
+		else if (dir.x > 0)
+		{
+			faceRight = true;
+		}
 		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		//transform.rotation = angle;
 
 		if (target1 == gameObject)
 		{
+			rangerBody.velocity = Vector2.zero;
 			// do nothing
 		}
 		else if (distance > maxRange)
@@ -58,7 +67,7 @@ public class RangerController : MonoBehaviour
 		} else if (distance > minRange && distance < maxRange) {
 			rangerBody.velocity = Vector2.zero;
 			if (ammo) {
-				Fire();
+				StartCoroutine(Fire());
 			} 
 		} else if (distance < minRange) {
 			rangerBody.velocity = (-1*dir * speed);
@@ -67,15 +76,19 @@ public class RangerController : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update()
-	{		
-		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
-	}
-	
-	void Fire()
 	{
+		rangerSprite.flipX = !faceRight;
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		rangerAnimator.SetFloat("Speed", Mathf.Abs(rangerBody.velocity.magnitude));
+	}
+
+	IEnumerator Fire()
+	{
+		rangerAnimator.SetTrigger("Firing");
 		ammo = false;
 		Vector3 direction = dir;
-		GameObject arrow = Instantiate(missile, transform.position+direction, angle);
+		yield return new WaitForSeconds(gameConstants.rangerFireTime);
+		GameObject arrow = Instantiate(gameConstants.rangerArrow, transform.position+direction, angle);
 		arrow.GetComponent<ArrowController>().target1 = target1;
 		arrow.transform.rotation = angle;
 		arrow.GetComponent<ProjectileController>().owner = gameObject;
@@ -85,7 +98,7 @@ public class RangerController : MonoBehaviour
 	IEnumerator  WindUp()
 	{
 		rangerSprite.material.color = new Color(1,1,0.5f); //C#
-		yield return new WaitForSeconds(windUpTime);
+		yield return new WaitForSeconds(gameConstants.rangerWindUpTime);
 		rangerSprite.material.color = new Color(1,0,0); //C#
 		ammo = true;
 	}

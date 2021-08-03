@@ -16,7 +16,10 @@ public class Bumblebee : MonoBehaviour
 	{
 		detectionRange = 20;
 		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList();
-		targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);		// // Targets Altar on spawn
+		if (GameObject.FindGameObjectsWithTag("Altar").ToList().Count() > 0)
+		{
+			targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);
+		}		// // Targets Altar on spawn
 		// selectedTarget = targets[0];
 		
 		foreach (GameObject m00k in targets) {
@@ -34,8 +37,11 @@ public class Bumblebee : MonoBehaviour
 	{
 
 		detectionRange = 20;
-		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList();
-		targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);
+		targets = (GameObject.FindGameObjectsWithTag("Player")).ToList(); 
+		if (GameObject.FindGameObjectsWithTag("Altar").ToList().Count() > 0)
+		{
+			targets.Add(GameObject.FindGameObjectsWithTag("Altar")[0]);
+		}
 		// // Targets Altar on spawn
 		// selectedTarget = targets[0];
 

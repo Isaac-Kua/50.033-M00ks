@@ -6,6 +6,8 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class M00ks1Controller : MonoBehaviour
 {
+	public float moveRight = 0;
+	public float moveUp = 0;
 	public GameConstants gameConstants;
 	public float speed;
 	public Vector3 previousLocation;
@@ -55,6 +57,9 @@ public class M00ks1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+		// DELETE THIS LINE AFTER TESTING
+        moveDirection = new Vector2(moveRight, moveUp);
 		m00ksSprite.flipX = !faceRight;
 	}
 	

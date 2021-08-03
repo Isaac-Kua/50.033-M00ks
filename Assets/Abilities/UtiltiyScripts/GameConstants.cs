@@ -136,6 +136,7 @@ public class GameConstants : ScriptableObject
 	public float rangerMaxRange = 20;	
 	public float rangerMinRange = 10;
 	public float rangerArrowSpeed = 100;
+	public float rangerFireTime = 0.5f;
 	public float rangerWindUpTime = 3;
 	
 	// Knight

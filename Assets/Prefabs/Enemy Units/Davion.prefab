@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 127944649722509358}
   - component: {fileID: 3364962700852580756}
   - component: {fileID: -8803818721231339011}
+  - component: {fileID: 685349952370884455}
   m_Layer: 6
   m_Name: Davion
   m_TagString: Enemy
@@ -193,3 +194,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aea3091e8793be40833815d546d5ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &685349952370884455
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165645779147639466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 702a194e6dc74ad4ab1a82f194d39d4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
