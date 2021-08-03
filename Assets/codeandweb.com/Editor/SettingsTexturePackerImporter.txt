@@ -2,11 +2,17 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch right.tpsheet
+- Assets/Sprites/Enemies/Ghost/ghost right.tpsheet
 - Assets/Sprites/Enemies/Knight/base.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch right.png
+- Assets/Sprites/Enemies/Ghost/ghost right.png
 - Assets/Sprites/Enemies/Knight/base.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 enableDebugOutput: 0
