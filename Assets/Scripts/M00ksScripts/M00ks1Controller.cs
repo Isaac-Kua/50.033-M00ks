@@ -52,7 +52,8 @@ public class M00ks1Controller : MonoBehaviour
 		previousLocation = transform.position;
 		reverseDuration = gameConstants.reverseDuration;
 		speed = gameConstants.M00ksMoveSpeed;
-    }
+		faceDirection = new Vector2(moveRight, moveUp); ;
+	}
 
     // Update is called once per frame
     void Update()

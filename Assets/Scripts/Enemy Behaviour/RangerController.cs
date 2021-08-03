@@ -8,17 +8,14 @@ public class RangerController : MonoBehaviour
 	public GameConstants gameConstants;
 	public GameObject target1;
 
-	private float speed;
 	private float maxRange;
 	private float minRange;
-	private float missileSpeed;
-
 
 	private Vector2 dir;
 	private Rigidbody2D rangerBody;
 	private SpriteRenderer rangerSprite;
-	private bool faceRight = true;
 	private Animator rangerAnimator;
+	private bool faceRight = true;
 	private float distance;
 	private bool ammo = true;
 	private Quaternion angle = new Quaternion(0,0,0,0);
@@ -28,10 +25,6 @@ public class RangerController : MonoBehaviour
 	void Start()
 	{
 		target1 = gameObject;
-		speed = gameConstants.rangerMoveSpeed;
-		maxRange = gameConstants.rangerMaxRange;
-		minRange = gameConstants.rangerMinRange;
-		missileSpeed = gameConstants.rangerArrowSpeed;
 		rangerBody = GetComponent<Rigidbody2D>();
 		rangerSprite = GetComponent<SpriteRenderer>();
 		rangerAnimator = GetComponent<Animator>();
@@ -60,17 +53,17 @@ public class RangerController : MonoBehaviour
 			rangerBody.velocity = Vector2.zero;
 			// do nothing
 		}
-		else if (distance > maxRange)
+		else if (distance > gameConstants.rangerMaxRange)
 		{
-			rangerBody.velocity = (dir * speed);
+			rangerBody.velocity = (dir * gameConstants.rangerMoveSpeed);
 		
-		} else if (distance > minRange && distance < maxRange) {
+		} else if (distance > gameConstants.rangerMinRange && distance < gameConstants.rangerMaxRange) {
 			rangerBody.velocity = Vector2.zero;
 			if (ammo) {
 				StartCoroutine(Fire());
 			} 
-		} else if (distance < minRange) {
-			rangerBody.velocity = (-1*dir * speed);
+		} else if (distance < gameConstants.rangerMinRange) {
+			rangerBody.velocity = (-1*dir * gameConstants.rangerMoveSpeed);
 		}
 	}
 	

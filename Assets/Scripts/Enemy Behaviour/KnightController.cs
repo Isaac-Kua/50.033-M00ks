@@ -12,7 +12,9 @@ public class KnightController : MonoBehaviour
 	private GameObject myShield;	
 	private Rigidbody2D knightBody;
 	private SpriteRenderer knightSprite;
-	
+	private Animator rangerAnimator;
+	private bool faceRight = true;
+
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
