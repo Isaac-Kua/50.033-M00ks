@@ -43,6 +43,7 @@ public class GameConstants : ScriptableObject
 	// Tough
 	public int defaultLives = 1;
 	public int thugLives = 2;
+	public GameObject toughField;
 	// Mini
 	public float defaultSize = 2;
 	public float shrinkRatio = 2;
