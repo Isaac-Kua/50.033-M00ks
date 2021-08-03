@@ -35,7 +35,7 @@ TagManager:
   - ShivaGoo
   - Toph
   - Danny
-  - 
+  - ToughDefense
   - 
   - 
   - 
@@ -66,4 +66,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2593855851
+    locked: 0
+  - name: Foreground
+    uniqueID: 3821751075
     locked: 0
