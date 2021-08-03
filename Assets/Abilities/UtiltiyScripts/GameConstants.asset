@@ -36,9 +36,10 @@ MonoBehaviour:
   JuggernautRadius: 3
   defaultLives: 1
   thugLives: 2
+  toughField: {fileID: 2552588994153053948, guid: 9d728906afd49e044b5f173c613c36a3, type: 3}
   defaultSize: 2
   shrinkRatio: 2
-  shellDistance: 5
+  shellDistance: 80
   shell: {fileID: 2745450164218607212, guid: a1a9d51e9c3ad5d489c761b260ae9801, type: 3}
   slowRatio: 0.3
   crawlRatio: 0.4
@@ -90,6 +91,7 @@ MonoBehaviour:
   rangerMaxRange: 20
   rangerMinRange: 10
   rangerArrowSpeed: 10
+  rangerFireTime: 0.5
   rangerWindUpTime: 3
   knightMoveSpeed: 5
   knightShield: {fileID: 6278903173028836825, guid: 2af827aa86e015d4d8d13649c64301c5, type: 3}
