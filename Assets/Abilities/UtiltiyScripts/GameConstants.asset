@@ -39,9 +39,11 @@ MonoBehaviour:
   toughField: {fileID: 2552588994153053948, guid: 9d728906afd49e044b5f173c613c36a3, type: 3}
   defaultSize: 2
   shrinkRatio: 2
-  shellDistance: 80
+  shellDistance: 1
   shell: {fileID: 2745450164218607212, guid: a1a9d51e9c3ad5d489c761b260ae9801, type: 3}
   slowRatio: 0.3
+  unbreakable: {fileID: 8162232642221552516, guid: 942d187ac7bd5f2408a0067d7a94edfd, type: 3}
+  hornDistance: 1
   crawlRatio: 0.4
   kamikazePrefab: {fileID: 8703016678992426118, guid: 70874bc68761da54fad97bcbd55f7404, type: 3}
   kamikazeMaxRadius: 8

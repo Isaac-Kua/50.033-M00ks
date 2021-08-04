@@ -52,6 +52,8 @@ public class GameConstants : ScriptableObject
 	public GameObject shell;
 	// Unstoppable
 	public float slowRatio = 0.3f;
+	public GameObject unbreakable;
+	public float hornDistance = 5;
 	
 	// Death Passive Variables
 	// Crawl 
@@ -76,6 +78,8 @@ public class GameConstants : ScriptableObject
 	// Ability2 (Alternate) Variables 
 	// Mine
 	public float armDuration = 0.5f;
+	// BashoTenin
+	public GameObject magnet;
 
 	// Dash Variables
 	// Reverse

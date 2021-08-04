@@ -8,15 +8,14 @@ public class MagnetAlternateAbility : Ability
 {	
 	private List<GameObject> targets; 
 	public float pullStrength;
-	
+
 	public override void Activate(GameObject parent)
 	{
 		targets = GameObject.FindGameObjectsWithTag("Player").ToList();
 		targets.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-		
 		StartCoroutine(CastCoroutine(parent, targets));
 	}
-	
+
 	IEnumerator CastCoroutine(GameObject parent, List<GameObject> targets){
 		var endOfFrame = new WaitForEndOfFrame();
 		for (float timer = 0; timer < activeTime; timer += Time.deltaTime)
@@ -43,6 +42,5 @@ public class MagnetAlternateAbility : Ability
 					m00k.GetComponent<DeathHandler>().allEnable();
 				}
 			}
-			
 	}
 }
