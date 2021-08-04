@@ -15,7 +15,6 @@ public class RangerController : MonoBehaviour
 	private Rigidbody2D rangerBody;
 	private SpriteRenderer rangerSprite;
 	private Animator rangerAnimator;
-	private bool faceRight = true;
 	private float distance;
 	private bool ammo = true;
 	private Quaternion angle = new Quaternion(0,0,0,0);
@@ -35,15 +34,7 @@ public class RangerController : MonoBehaviour
 		dir = (target1.transform.position - transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
-
-		if (dir.x < 0)
-		{
-			faceRight = false;
-		}
-		else if (dir.x > 0)
-		{
-			faceRight = true;
-		}
+		rangerSprite.flipX = (dir.x < 0);
 		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
 		//transform.rotation = angle;
@@ -70,7 +61,6 @@ public class RangerController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		rangerSprite.flipX = !faceRight;
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 		rangerAnimator.SetFloat("Speed", Mathf.Abs(rangerBody.velocity.magnitude));
 	}

@@ -9,8 +9,6 @@ public class ShieldController : MonoBehaviour
 	
 	public bool engaged = false;
 	private GameObject sword;
-	private float windUpTime;
-	private float shieldWidth;
 	
    	private Rigidbody2D itemBody;
 	private SpriteRenderer itemSprite;
@@ -19,10 +17,8 @@ public class ShieldController : MonoBehaviour
 	{
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
-		shieldWidth = gameConstants.knightShieldWidth;
-		windUpTime = gameConstants.knightWindUpTime;
 		sword = gameConstants.knightSword;
-		transform.localScale = new Vector3(transform.localScale.x*shieldWidth,transform.localScale.y,transform.localScale.z);
+		transform.localScale = new Vector3(transform.localScale.x*gameConstants.knightShieldWidth, transform.localScale.y,transform.localScale.z);
 	}
 
     // Update is called once per frame
@@ -40,20 +36,20 @@ public class ShieldController : MonoBehaviour
 	}
 	
 	IEnumerator Swing(){
-		yield return new WaitForSeconds(windUpTime);
-		
+		gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("SwingNow");
+		yield return new WaitForSeconds(gameConstants.knightWindUpTime);
+		engaged = false;
 		Vector3 dir = (target1.transform.position - this.transform.position).normalized;
 		Quaternion angle = new Quaternion(0,0,0,0);
 		Vector3 eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
-		
+
 		GameObject stroke = Instantiate(sword, transform.position + 2f*dir, transform.rotation);
 		stroke.GetComponent<ProjectileController>().owner = gameObject.transform.parent.gameObject;
 		stroke.transform.parent = gameObject.transform;
 		stroke.transform.rotation = angle;
-		stroke.GetComponent<SwordController>().shield = gameObject;
+		stroke.GetComponent<SwordController>().shield = gameObject.transform.parent.gameObject;
 		
 		itemBody.constraints = RigidbodyConstraints2D.None;
-		engaged = false;
 	}
 }

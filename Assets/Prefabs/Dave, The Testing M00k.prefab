@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a7d6e50d2405940a0739bc6594d1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveRight: 0
+  moveUp: 0
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   speed: 30
   previousLocation: {x: 0, y: 0, z: 0}
@@ -265,7 +267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5097763349903116345}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7015b06fa0cf447b41b7d7d83085b0, type: 3}
   m_Name: 
@@ -277,11 +279,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5097763349903116345}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ed4eb0ba08ff134f9a31f6044a130b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toughDefenseSprite: {fileID: 0}
 --- !u!114 &4906302423473947038
 MonoBehaviour:
   m_ObjectHideFlags: 0
