@@ -9,6 +9,7 @@ public class UpgradeAssigner : MonoBehaviour
     public GameObject upgrade3;
     public GameObject upgrade4;
 
+    public Icons icons;
     public Sprite spike;
     public Sprite kaiten;
     public Sprite knockback;
@@ -40,61 +41,61 @@ public class UpgradeAssigner : MonoBehaviour
             case 1:
                 // Ranged ability
                 upgrade1.GetComponent<UpgradeGranter>().upgrade = "spikeRange";
-                upgrade1.GetComponent<SpriteRenderer>().sprite = spike;
+                upgrade1.GetComponent<SpriteRenderer>().sprite = icons.spike;
                 upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "kaitenRange";
-                upgrade2.GetComponent<SpriteRenderer>().sprite = kaiten;
+                upgrade2.GetComponent<SpriteRenderer>().sprite = icons.kaiten;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "knockbackRange";
-                upgrade3.GetComponent<SpriteRenderer>().sprite = knockback;
+                upgrade3.GetComponent<SpriteRenderer>().sprite = icons.knockback;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "arrowRange";
-                upgrade4.GetComponent<SpriteRenderer>().sprite = arrow;
+                upgrade4.GetComponent<SpriteRenderer>().sprite = icons.arrow;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 break;
             case 2:
                 // Alt ability
                 upgrade1.GetComponent<UpgradeGranter>().upgrade = "goo";
-                upgrade1.GetComponent<SpriteRenderer>().sprite = goo;
+                upgrade1.GetComponent<SpriteRenderer>().sprite = icons.goo;
                 upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "magnet";
-                upgrade2.GetComponent<SpriteRenderer>().sprite = magnet;
+                upgrade2.GetComponent<SpriteRenderer>().sprite = icons.magnet;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "mine";
-                upgrade3.GetComponent<SpriteRenderer>().sprite = mine;
+                upgrade3.GetComponent<SpriteRenderer>().sprite = icons.mine;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "teleport";
-                upgrade4.GetComponent<SpriteRenderer>().sprite = teleport;
+                upgrade4.GetComponent<SpriteRenderer>().sprite = icons.teleport;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 break;
             case 3:
                 // Defence upgrades
                 upgrade1.GetComponent<UpgradeGranter>().upgrade = "miniDefence";
-                upgrade1.GetComponent<SpriteRenderer>().sprite = miniDef;
+                upgrade1.GetComponent<SpriteRenderer>().sprite = icons.miniDef;
                 upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "shellDefence";
-                upgrade2.GetComponent<SpriteRenderer>().sprite = shellDef;
+                upgrade2.GetComponent<SpriteRenderer>().sprite = icons.shellDef;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "toughDefence";
-                upgrade3.GetComponent<SpriteRenderer>().sprite = toughDef;
+                upgrade3.GetComponent<SpriteRenderer>().sprite = icons.toughDef;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "unstoppabaleDefence";
-                upgrade4.GetComponent<SpriteRenderer>().sprite = unstoppableDef;
+                upgrade4.GetComponent<SpriteRenderer>().sprite = icons.unstoppableDef;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 break;
             case 4:
                 // On Death effects
                 upgrade1.GetComponent<UpgradeGranter>().upgrade = "crawlDeath";
-                upgrade1.GetComponent<SpriteRenderer>().sprite = crawl;
+                upgrade1.GetComponent<SpriteRenderer>().sprite = icons.crawl;
                 upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "kamikazeDeath";
-                upgrade2.GetComponent<SpriteRenderer>().sprite = kamikaze;
+                upgrade2.GetComponent<SpriteRenderer>().sprite = icons.kamikaze;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "soulswapDeath";
-                upgrade3.GetComponent<SpriteRenderer>().sprite = soulswap;
+                upgrade3.GetComponent<SpriteRenderer>().sprite = icons.soulswap;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "vengeanceDeath";
-                upgrade4.GetComponent<SpriteRenderer>().sprite = vengeance;
+                upgrade4.GetComponent<SpriteRenderer>().sprite = icons.vengeance;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 break;
             case 5:

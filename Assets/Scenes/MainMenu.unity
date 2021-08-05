@@ -449,6 +449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: unbreakableHorns
       objectReference: {fileID: 0}
+    - target: {fileID: 8162232642221552516, guid: 942d187ac7bd5f2408a0067d7a94edfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942d187ac7bd5f2408a0067d7a94edfd, type: 3}
 --- !u!1 &459893333
@@ -912,6 +916,10 @@ PrefabInstance:
     - target: {fileID: 5097763349903116345, guid: 38af525f7a1a6bc4b817a903e3caced2, type: 3}
       propertyPath: m_Name
       value: Dave, The Testing M00k
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097763349903116345, guid: 38af525f7a1a6bc4b817a903e3caced2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5097763349903116348, guid: 38af525f7a1a6bc4b817a903e3caced2, type: 3}
       propertyPath: m_RootOrder
@@ -1754,6 +1762,10 @@ PrefabInstance:
     - target: {fileID: 3165695242862509984, guid: b4224efb503da394a8babd2068f43d90, type: 3}
       propertyPath: m_Name
       value: GooPool
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165695242862509984, guid: b4224efb503da394a8babd2068f43d90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3165695242862509988, guid: b4224efb503da394a8babd2068f43d90, type: 3}
       propertyPath: m_RootOrder

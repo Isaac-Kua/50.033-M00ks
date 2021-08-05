@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0798728d6c1b9eb4b972024834d91a72, type: 3}
+  m_Name: Icons
+  m_EditorClassIdentifier: 
+  none: {fileID: -5027509340213622084, guid: 6eb15ec74390a2d4d9498aa3ce0f29f5, type: 3}
+  spike: {fileID: 21300000, guid: f97cc4a287311ca4f94925f11592efd0, type: 3}
+  kaiten: {fileID: 21300000, guid: b7a30173dbe22cd43822496f310f555a, type: 3}
+  knockback: {fileID: 21300000, guid: a24e0fa34a3fbd34e88dcebca0bf9516, type: 3}
+  arrow: {fileID: 21300000, guid: 4d237c5c78e9f3e489c4afecb01999ad, type: 3}
+  goo: {fileID: 21300000, guid: baa09dab4c0d83b4bb179ff90ef4852d, type: 3}
+  magnet: {fileID: 21300000, guid: 17d2db0cb56545d499c8e87248e5e6ed, type: 3}
+  mine: {fileID: 21300000, guid: 6d46f9ae206d78c44b86be68597781b6, type: 3}
+  teleport: {fileID: 21300000, guid: e40dd24ea5583cd42a90ca4af7c6bbfe, type: 3}
+  phaseDash: {fileID: 21300000, guid: 00f7fff799399ee469097e0343b86b2a, type: 3}
+  tripleDash: {fileID: 21300000, guid: 3f7c212fad0770f4a88ec03c61880bd0, type: 3}
+  spiderDash: {fileID: 21300000, guid: 38d91ecfdc0139d418d8c1774a405011, type: 3}
+  reverseDash: {fileID: 21300000, guid: 5c660ec08f831814e8f3708e9d7fd98d, type: 3}
+  breaking: {fileID: 21300000, guid: 41efdbcf76b5b744ca21184c9cf0180b, type: 3}
+  zangief: {fileID: 0}
+  lunge: {fileID: 21300000, guid: 1d353f46eb8b73040b6a849eebec7fa3, type: 3}
+  repel: {fileID: 21300000, guid: 9f5f89d2fef132f4496c1353f14b2824, type: 3}
+  miniDef: {fileID: 21300000, guid: 7615952fae39b4e41950f9d83d6d7cb1, type: 3}
+  shellDef: {fileID: 21300000, guid: 3e18dd195f20deb4481f7f1261f43ded, type: 3}
+  unstoppableDef: {fileID: 21300000, guid: 8a74e8e83768563498173971c0cd337e, type: 3}
+  toughDef: {fileID: 21300000, guid: 27eeb9077f3704e49b4006c655415cc7, type: 3}
+  crawl: {fileID: 21300000, guid: 1a0110a41b40fbc4ba336a17eb803bde, type: 3}
+  kamikaze: {fileID: 21300000, guid: 4a58e63223df1b3419e28cbd83eefa74, type: 3}
+  soulswap: {fileID: 21300000, guid: ec58c7ba2348162428bf5a4bd4106a2f, type: 3}
+  vengeance: {fileID: 21300000, guid: 212838b6bdd4053479704fb67e73713c, type: 3}
+  explosion: {fileID: 21300000, guid: f27490f33a292d047a0a3761b7a74089, type: 3}
+  zombie: {fileID: 21300000, guid: 5d9ef4efe64d6b7469ec1d55dbc5246e, type: 3}
+  haste: {fileID: 21300000, guid: 596482450838b1049b043a2126cfdf64, type: 3}
+  saiyan: {fileID: 0}
+  juggernaut: {fileID: 21300000, guid: a2323fe02d78ee54c82e7ea54d1a862c, type: 3}
+  wallwalker: {fileID: 21300000, guid: e9769bcba3cf0504290c12cf2cd002bb, type: 3}
+  shiva: {fileID: 21300000, guid: 21e30e43004faba438c7f53024bf4e01, type: 3}
+  ghost: {fileID: 21300000, guid: 55a4d2284a3d660489647e1d9977b4c8, type: 3}
+  respawn: {fileID: 0}
+  meleeUtil: {fileID: 0}
+  rangedUtil: {fileID: 0}
+  altUtil: {fileID: 0}
+  rangedBullet: {fileID: 21300000, guid: 4ddcd1acd80ab06429f3fd01c9308920, type: 3}
+  phaseBullet: {fileID: 0}
+  heavyBullet: {fileID: 21300000, guid: 2bafa2262c8a6ba418760eb2eaf93781, type: 3}
+  homingBullet: {fileID: 0}

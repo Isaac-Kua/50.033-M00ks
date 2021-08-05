@@ -175,7 +175,41 @@ public class UpgradeManager : MonoBehaviour
 		meleeHolder.changeAbility(newMelee);
 	}
 
-
+	public Dictionary<string, bool> GetUpgrades()
+	{
+		Dictionary<string, bool> upgrades = new Dictionary<string, bool>();
+		// Defensive upgrades
+		upgrades.Add("miniDef", miniDefense);
+		upgrades.Add("shellDef", shellDefense);
+		upgrades.Add("unstoppableDef", unstoppableDefense);
+		upgrades.Add("toughDef", toughDefense);
+		// Death Upgrades
+		upgrades.Add("crawlDeath", crawlDeath);
+		upgrades.Add("kamikazeDeath", kamikazeDeath);
+		upgrades.Add("soulswapDeath", soulswapDeath);
+		upgrades.Add("vengeanceDeath", vengeanceDeath);
+		// Kill Upgrades
+		upgrades.Add("explosionKill", explosionKill);
+		upgrades.Add("zombieKill", zombieKill);
+		upgrades.Add("hasteKill", hasteKill);
+		upgrades.Add("saiyanKill", saiyanKill);
+		// Move Upgrades
+		upgrades.Add("juggernautMove", juggernautMove);
+		upgrades.Add("wallwalkerMove", wallwalkerMove);
+		upgrades.Add("shivaMove", shivaMove);
+		upgrades.Add("ghostMove", ghostMove);
+		// Utility Upgrades
+		upgrades.Add("respawnUtil", respawnUtil);
+		upgrades.Add("meleeUtil", meleeUtil);
+		upgrades.Add("rangedUtil", rangedUtil);
+		upgrades.Add("altUtil", altUtil);
+		// Alt 1 Modifier
+		upgrades.Add("rangedBullet", rangedBullet);
+		upgrades.Add("phaseBullet", phaseBullet);
+		upgrades.Add("heavyBullet", heavyBullet);
+		upgrades.Add("homingBullet", homingBullet);
+		return upgrades;
+	}
 
 	// Start is called before the first frame update
 	void Start()

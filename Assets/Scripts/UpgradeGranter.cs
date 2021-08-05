@@ -135,6 +135,19 @@ public class UpgradeGranter : MonoBehaviour
             case "reverseDash":
                 other.gameObject.GetComponent<UpgradeManager>().dUpgrade = UpgradeManager.dashUpgrade.Reverse;
                 break;
+            // Ranged upgrades
+            case "rangedBullet":
+                other.gameObject.GetComponent<UpgradeManager>().rangedBullet = true;;
+                break;
+            case "phaseBullet":
+                other.gameObject.GetComponent<UpgradeManager>().phaseBullet = true;
+                break;
+            case "heavyBullet":
+                other.gameObject.GetComponent<UpgradeManager>().heavyBullet = true;
+                break;
+            case "homingBullet":
+                other.gameObject.GetComponent<UpgradeManager>().homingBullet = true;
+                break;
             default:
                 Debug.Log("No such upgrade");
                 break;
