@@ -7,6 +7,9 @@ tpsheetFileNames:
 - Assets/Sprites/Enemies/Fire Witch/fire witch right.tpsheet
 - Assets/Sprites/Enemies/Ice Witch/ice witch right.tpsheet
 - Assets/Sprites/Enemies/Knight/base.tpsheet
+- Assets/Sprites/players/basic attacks/DownSlash/DownSlashP1.tpsheet
+- Assets/Sprites/players/basic attacks/SideSlash/SideSlashP1.tpsheet
+- Assets/Sprites/players/basic attacks/UpSlash/UpSlashP1.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Effects/Goo Pool/Goo Pool.png
@@ -14,8 +17,14 @@ textureFileNames:
 - Assets/Sprites/Enemies/Fire Witch/fire witch right.png
 - Assets/Sprites/Enemies/Ice Witch/ice witch right.png
 - Assets/Sprites/Enemies/Knight/base.png
+- Assets/Sprites/players/basic attacks/DownSlash/DownSlashP1.png
+- Assets/Sprites/players/basic attacks/SideSlash/SideSlashP1.png
+- Assets/Sprites/players/basic attacks/UpSlash/UpSlashP1.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
 - 
 - 
 - 
