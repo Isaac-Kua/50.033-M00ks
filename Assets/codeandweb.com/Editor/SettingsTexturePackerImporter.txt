@@ -4,14 +4,20 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/Effects/Goo Pool/Goo Pool.tpsheet
 - Assets/Sprites/Effects/Stun Immune/Stun Immune.tpsheet
+- Assets/Sprites/Enemies/Fire Witch/fire witch right.tpsheet
+- Assets/Sprites/Enemies/Ice Witch/ice witch right.tpsheet
 - Assets/Sprites/Enemies/Knight/base.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/Effects/Goo Pool/Goo Pool.png
 - Assets/Sprites/Effects/Stun Immune/Stun Immune.png
+- Assets/Sprites/Enemies/Fire Witch/fire witch right.png
+- Assets/Sprites/Enemies/Ice Witch/ice witch right.png
 - Assets/Sprites/Enemies/Knight/base.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
 - 
 - 
 - 

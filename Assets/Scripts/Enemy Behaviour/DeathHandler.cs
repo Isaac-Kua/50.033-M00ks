@@ -11,6 +11,8 @@ public class DeathHandler : MonoBehaviour
 	private SpriteRenderer npcSprite;
 	private Rigidbody2D npcBody;
 	private Collider2D npcCollider;
+
+	private Animator npcAnimator;
 	private bool dead = false;
 
 
@@ -20,7 +22,9 @@ public class DeathHandler : MonoBehaviour
         npcSprite = GetComponent<SpriteRenderer>();
 		npcBody = GetComponent<Rigidbody2D>();
 		npcCollider = GetComponent<Collider2D>();
-    }
+		npcAnimator = GetComponent<Animator>();
+
+	}
 
     // Update is called once per frame
     void Update()
@@ -61,6 +65,7 @@ public class DeathHandler : MonoBehaviour
 	IEnumerator death(GameObject killer)
 	{
 		//npcBody.velocity = Vector2.zero;
+		npcAnimator.SetTrigger("Death");
 		npcCollider.enabled = false;
 		lastHit = killer.GetComponent<ProjectileController>().owner;
 		if (lastHit.CompareTag("Player"))
@@ -68,7 +73,7 @@ public class DeathHandler : MonoBehaviour
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
 		}
 		npcSprite.color = Color.black;
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(gameConstants.deathFadeTime);
 		//yield return null;
 		Instantiate(soul, new  Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
