@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9194582249139844003}
   - component: {fileID: -8682729444445444339}
   - component: {fileID: 370690965595558772}
+  - component: {fileID: 4916799712522014840}
   m_Layer: 6
   m_Name: Barathrum
   m_TagString: Enemy
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccc315a6720f9124d9519fab9050be1e, type: 3}
   m_Color: {r: 0.9433962, g: 0.914076, b: 0.11035952, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   target1: {fileID: 0}
-  enemyPool: {fileID: 0}
 --- !u!114 &5997644861611666344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,6 @@ MonoBehaviour:
   lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 6098023446668689170}
-  enemyType: 0
 --- !u!50 &6098023446668689183
 Rigidbody2D:
   serializedVersion: 4
@@ -160,7 +159,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8828125, y: 1}
+    oldSize: {x: 2.78, y: 2.57}
     newSize: {x: 0.8828125, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -201,3 +200,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+--- !u!95 &4916799712522014840
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098023446668689171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5e86ec95c2a151489bd5fd57d3636f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

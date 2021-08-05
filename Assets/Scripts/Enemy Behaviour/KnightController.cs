@@ -20,7 +20,6 @@ public class KnightController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-
 		target1 = gameObject;
 		knightBody = GetComponent<Rigidbody2D>();
 		knightSprite = GetComponent<SpriteRenderer>();
@@ -63,12 +62,14 @@ public class KnightController : MonoBehaviour
 		} else {
 			knightBody.velocity = Vector2.zero;
 		}
+
+
+		knightAnimator.SetFloat("Speed", Mathf.Abs(knightBody.velocity.magnitude));
 	}
 
 	void Update()
 	{
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
-		knightAnimator.SetFloat("Speed", Mathf.Abs(knightBody.velocity.magnitude));
 		knightAnimator.SetBool("Engaged", myShield.GetComponent<ShieldController>().engaged);
 		knightAnimator.SetBool("SwingUp", dir.y > 0.5);
 		knightAnimator.SetBool("SwingDown", dir.y < -0.5);

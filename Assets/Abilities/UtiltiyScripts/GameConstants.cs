@@ -16,6 +16,7 @@ public class GameConstants : ScriptableObject
 	public float yBound = 18;
 	public float xBound = 30;
 	public int comboCount = 2;
+	public int deathFadeTime = 2;
 	
 	// M00ks
 	public float M00ksMoveSpeed = 20;
@@ -133,7 +134,9 @@ public class GameConstants : ScriptableObject
 	public float fireWizardMaxRange = 20;
 	public float fireWizardMinRange = 5;
 	public float fireWizardPoofChargeTime = 5;
+	public float fireWizardPoofCastTime = 0.5f;
 	public float fireWizardWindUpTime = 3;
+	public float fireWizardSwingTime = 0.2f;
 
 	// Ranger
 	public GameObject rangerArrow;
@@ -160,6 +163,7 @@ public class GameConstants : ScriptableObject
 	public float iceWizardMinRange = 10 ;
 	public float iceWizardBurstChargeTime = 10f;
 	public float iceWizardWindUpTime = 3f;
+	public float iceWizardSwingTime = 0.2f;
 	public GameObject iceWizardIcebolt;
 	public GameObject iceWizardIcewave;
 	
