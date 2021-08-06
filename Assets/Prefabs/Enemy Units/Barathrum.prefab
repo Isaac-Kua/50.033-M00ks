@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ccc315a6720f9124d9519fab9050be1e, type: 3}
-  m_Color: {r: 0.9433962, g: 0.914076, b: 0.11035952, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 6098023446668689170}
+  ammo: 0
 --- !u!50 &6098023446668689183
 Rigidbody2D:
   serializedVersion: 4

@@ -8,29 +8,36 @@ public class DeathHandler : MonoBehaviour
 	public GameObject soul;
 	public GameObject lastHit;
 	public List<MonoBehaviour> activeAbilities;
+
+	public bool ammo;
 	private SpriteRenderer npcSprite;
 	private Rigidbody2D npcBody;
 	private Collider2D npcCollider;
 
 	private Animator npcAnimator;
 	private bool dead = false;
+	private GameObject stunAnim;
 
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         npcSprite = GetComponent<SpriteRenderer>();
 		npcBody = GetComponent<Rigidbody2D>();
 		npcCollider = GetComponent<Collider2D>();
 		npcAnimator = GetComponent<Animator>();
-
+		stunAnim = Instantiate(gameConstants.stunAnimation, transform.position, transform.rotation);
+		stunAnim.transform.parent = transform;
+		stunAnim.transform.position = gameConstants.stunPosition;
+		stunAnim.SetActive(false);
+		ammo = true;
 	}
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        stunAnim.transform.position = transform.position + gameConstants.stunPosition;
+	}
 	
 	void onDeath()
 	{
@@ -39,6 +46,7 @@ public class DeathHandler : MonoBehaviour
 		npcSprite.color = Color.white;
 		npcCollider.enabled = true;
 		this.gameObject.SetActive(false);
+		ammo = true;
 	}
 	
 
@@ -65,6 +73,7 @@ public class DeathHandler : MonoBehaviour
 	IEnumerator death(GameObject killer)
 	{
 		//npcBody.velocity = Vector2.zero;
+		allDisable();
 		npcAnimator.SetTrigger("Death");
 		npcCollider.enabled = false;
 		lastHit = killer.GetComponent<ProjectileController>().owner;
@@ -85,6 +94,8 @@ public class DeathHandler : MonoBehaviour
 	
 	
 	public void allDisable(){
+		stunAnim.SetActive(true);
+		npcBody.constraints = RigidbodyConstraints2D.FreezeAll;
 		foreach (MonoBehaviour script in activeAbilities){
 			script.enabled = false;
 		}
@@ -92,6 +103,8 @@ public class DeathHandler : MonoBehaviour
 	}
 	
 	public void allEnable(){
+		stunAnim.SetActive(false);
+		npcBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 		foreach (MonoBehaviour script in activeAbilities){
 			script.enabled = true;
 		}
@@ -100,10 +113,10 @@ public class DeathHandler : MonoBehaviour
 	IEnumerator  Stunned(){
 		npcBody.velocity = Vector2.zero;
 		allDisable();
-		npcSprite.material.color = new Color(0,0,1); //C# blue
 		yield return new WaitForSeconds(gameConstants.stunTime);
-		allEnable();
-		npcSprite.material.color = new Color(1,1,1); //C# white
+		if (!dead) {
+			allEnable();
+        }
 	}
 
 }

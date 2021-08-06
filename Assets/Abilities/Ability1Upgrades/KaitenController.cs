@@ -40,5 +40,5 @@ public class KaitenController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(kaitenCastTime);
 		Destroy(gameObject);
-	}
+    }
 }

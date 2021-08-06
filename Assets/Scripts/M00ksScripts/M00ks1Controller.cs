@@ -6,8 +6,8 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class M00ks1Controller : MonoBehaviour
 {
-	public float moveRight = 0;
-	public float moveUp = 0;
+	//public float moveRight = 0;
+	//public float moveUp = 0;
 	public GameConstants gameConstants;
 	public float speed;
 	public Vector3 previousLocation;
@@ -52,8 +52,8 @@ public class M00ks1Controller : MonoBehaviour
 		previousLocation = transform.position;
 		reverseDuration = gameConstants.reverseDuration;
 		speed = gameConstants.M00ksMoveSpeed;
-		faceDirection = new Vector2(moveRight, moveUp); ;
-		moveDirection = faceDirection;
+		//faceDirection = new Vector2(moveRight, moveUp);
+		//moveDirection = faceDirection;
 	}
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class M00ks1Controller : MonoBehaviour
     {
 
 		// DELETE THIS LINE AFTER TESTING
-        moveDirection = new Vector2(moveRight, moveUp);
+        //moveDirection = new Vector2(moveRight, moveUp);
 		m00ksSprite.flipX = !faceRight;
 	}
 	

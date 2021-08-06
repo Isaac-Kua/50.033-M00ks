@@ -12,7 +12,6 @@ public class FireWizardController : MonoBehaviour
 	private Animator fireWizAnimator;
 	private float distance;
 	private bool poofCharge = true;
-	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
@@ -46,7 +45,7 @@ public class FireWizardController : MonoBehaviour
 			
 		} else if (distance > gameConstants.fireWizardMinRange && distance < gameConstants.fireWizardMaxRange) {
 			fireWizBody.velocity = Vector2.zero;
-			if (ammo) {
+			if (GetComponent<DeathHandler>().ammo) {
 				StartCoroutine(Fire());
 			} 
 		} else if (distance < gameConstants.fireWizardMinRange)
@@ -74,15 +73,13 @@ public class FireWizardController : MonoBehaviour
 		fireWizAnimator.SetTrigger("Panic");
 		yield return new WaitForSeconds(gameConstants.fireWizardPoofCastTime);
 		transform.position = new Vector2(Random.Range(-gameConstants.xBound, gameConstants.xBound), Random.Range(-gameConstants.yBound, gameConstants.yBound));
-		fireWizSprite.material.color = new Color(0,0,1); //C# Deep Blue
 		yield return new WaitForSeconds(gameConstants.fireWizardPoofChargeTime);
 		poofCharge = true;
-		fireWizSprite.material.color = new Color(1,1,1); //C# White
 	}
 
 	IEnumerator Fire()
 	{
-		ammo = false;
+		GetComponent<DeathHandler>().ammo = false;
 		fireWizAnimator.SetTrigger("Firing");
 		yield return new WaitForSeconds(gameConstants.fireWizardSwingTime);
 		GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
@@ -93,9 +90,7 @@ public class FireWizardController : MonoBehaviour
 	
 	IEnumerator  WindUp()
 	{
-		fireWizSprite.material.color = new Color(1,1,0.5f); //C# Yellow
 		yield return new WaitForSeconds(gameConstants.fireWizardWindUpTime);
-		fireWizSprite.material.color = new Color(1,0,0); //C# Red
-		ammo = true;
+		GetComponent<DeathHandler>().ammo = true;
 	}
 }

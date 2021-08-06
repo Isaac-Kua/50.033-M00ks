@@ -15,12 +15,15 @@ MonoBehaviour:
   deathTime: 3
   stunTime: 3
   gooPoolLifeTime: 3
-  gooPool: {fileID: 2190267130267438645, guid: 8c4ae051a8b829d4c9945df12a6919b6, type: 3}
+  gooPool: {fileID: 3165695242862509984, guid: b4224efb503da394a8babd2068f43d90, type: 3}
   stickiness: 0.5
   defaultDrag: 10
   yBound: 18
   xBound: 30
   comboCount: 2
+  deathFadeTime: 2
+  stunAnimation: {fileID: 8317606618247395135, guid: c2452fb074f78a949b5b49e554ecb95a, type: 3}
+  stunPosition: {x: 0, y: 1, z: 0}
   M00ksMoveSpeed: 20
   MagnusSpeed: 30
   TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
@@ -57,6 +60,7 @@ MonoBehaviour:
   kaitenMaxRadius: 8
   kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
   armDuration: 0.5
+  magnet: {fileID: 0}
   reverseDuration: 1
   rotationPerSec: 5
   explosionPrefab: {fileID: 5655318487974413711, guid: 7026978fdb7a2384e881c3dc848a3115, type: 3}
@@ -89,7 +93,7 @@ MonoBehaviour:
   fireWizardPoofChargeTime: 5
   fireWizardPoofCastTime: 0.5
   fireWizardWindUpTime: 3
-  fireWizardSwingTime: 0.6
+  fireWizardSwingTime: 0.2
   rangerArrow: {fileID: 130144637693236197, guid: 747f29eaffa879f49b3d48d95fbdc078, type: 3}
   rangerMoveSpeed: 12
   rangerMaxRange: 20
@@ -110,6 +114,7 @@ MonoBehaviour:
   iceWizardMinRange: 10
   iceWizardBurstChargeTime: 1
   iceWizardWindUpTime: 3
+  iceWizardSwingTime: 0.2
   iceWizardIcebolt: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}
   iceWizardIcewave: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
   iceboltLifeTime: 3
@@ -121,8 +126,8 @@ MonoBehaviour:
   wallLength: 2
   BarbarianMoveSpeed: 5
   BarbarianMaxRange: 15
-  BarbarianDashSpeed: 150
-  BarbarianChargeDuration: 0.05
+  BarbarianDashSpeed: 100
+  BarbarianChargeDuration: 0.1
   BarbarianPauseDuration: 0.1
   BarbarianWindUpTime: 3
   BarbarianMaxCharges: 3

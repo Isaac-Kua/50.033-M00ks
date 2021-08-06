@@ -16,7 +16,6 @@ public class RangerController : MonoBehaviour
 	private SpriteRenderer rangerSprite;
 	private Animator rangerAnimator;
 	private float distance;
-	private bool ammo = true;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
 	
@@ -50,7 +49,7 @@ public class RangerController : MonoBehaviour
 		
 		} else if (distance > gameConstants.rangerMinRange && distance < gameConstants.rangerMaxRange) {
 			rangerBody.velocity = Vector2.zero;
-			if (ammo) {
+			if (GetComponent<DeathHandler>().ammo) {
 				StartCoroutine(Fire());
 			} 
 		} else if (distance < gameConstants.rangerMinRange) {
@@ -68,7 +67,7 @@ public class RangerController : MonoBehaviour
 	IEnumerator Fire()
 	{
 		rangerAnimator.SetTrigger("Firing");
-		ammo = false;
+		GetComponent<DeathHandler>().ammo = false;
 		Vector3 direction = dir;
 		yield return new WaitForSeconds(gameConstants.rangerFireTime);
 		GameObject arrow = Instantiate(gameConstants.rangerArrow, transform.position+direction, angle);
@@ -80,9 +79,7 @@ public class RangerController : MonoBehaviour
 	
 	IEnumerator  WindUp()
 	{
-		rangerSprite.material.color = new Color(1,1,0.5f); //C#
 		yield return new WaitForSeconds(gameConstants.rangerWindUpTime);
-		rangerSprite.material.color = new Color(1,0,0); //C#
-		ammo = true;
+		GetComponent<DeathHandler>().ammo = true;
 	}
 }

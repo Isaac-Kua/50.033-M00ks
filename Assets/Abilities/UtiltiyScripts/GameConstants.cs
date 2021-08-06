@@ -17,7 +17,9 @@ public class GameConstants : ScriptableObject
 	public float xBound = 30;
 	public int comboCount = 2;
 	public int deathFadeTime = 2;
-	
+	public GameObject stunAnimation;
+	public Vector3 stunPosition = new Vector3(0, 0.5f, 0);
+
 	// M00ks
 	public float M00ksMoveSpeed = 20;
 
@@ -184,5 +186,4 @@ public class GameConstants : ScriptableObject
 	public float BarbarianPauseDuration = 0.1f;
 	public float BarbarianWindUpTime = 3f;
 	public int BarbarianMaxCharges = 3;
-
 }
