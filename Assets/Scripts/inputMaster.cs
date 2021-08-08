@@ -65,6 +65,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a0c959c-e8e0-4b43-bb50-d21a93dadd6b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -617,6 +625,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21bfa8c9-453c-46c3-bf9e-2dc338ac0ee0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c428b10e-7f61-48a7-beed-054afbfc356a"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -687,6 +717,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Melee = m_Player.FindAction("Melee", throwIfNotFound: true);
         m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -742,6 +773,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Melee;
     private readonly InputAction m_Player_Select;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -752,6 +784,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Melee => m_Wrapper.m_Player_Melee;
         public InputAction @Select => m_Wrapper.m_Player_Select;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -779,6 +812,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Select.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -801,6 +837,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -858,5 +897,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

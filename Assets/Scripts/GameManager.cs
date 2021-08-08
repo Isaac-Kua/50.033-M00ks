@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int stage = 1;
-    public string currentCondition;
-    public int firstPlayer;
+    public string currentMetric = "None";
+    public int firstPlayer = 0;
     public int totalPlayers;
     public bool upgradeSelection = false;
     public int upgradeNo = 1;

@@ -14,6 +14,7 @@ public class M00ks1Controller : MonoBehaviour
 	public Vector2 moveDirection;
 	public Vector2 faceDirection;
 	public int playerNo;
+	private bool paused = false;
 
 	// ability use case
 	private Rigidbody2D m00ksBody;
@@ -94,6 +95,16 @@ public class M00ks1Controller : MonoBehaviour
 		}
 		if(obj.action.name == controls.Player.Melee.name){
 			melee.OnMelee();
+		}
+		if(obj.action.name == controls.Player.Pause.name){
+			if (!paused) {
+				PauseController.Instance.PauseGame();
+				paused = true;
+			}
+			else {
+				PauseController.Instance.ResumeGame();
+				paused = false;
+			}
 		}
 	}
 	

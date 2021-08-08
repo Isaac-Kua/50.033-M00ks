@@ -32,7 +32,8 @@ public class SetLevel : MonoBehaviour
     void Start()
     {
         setLevel();
-        AltarManager.NextStage += setUpgradeSelect;
+        AltarManager.NextStage1 += chooseFirstPlayer;
+        AltarManager.NextStage1 += setUpgradeSelect;
         players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
     }
 
@@ -49,6 +50,7 @@ public class SetLevel : MonoBehaviour
 
     public void setUpgradeSelect()
     {
+        Debug.Log("Choose upgrades");
         UpgradeSelectionManager.Instance.reset();
         GameManager.Instance.upgradeNo += 1;
         deactivate();
@@ -102,6 +104,26 @@ public class SetLevel : MonoBehaviour
         area = GameObject.FindGameObjectsWithTag("Area");
         foreach(GameObject proj in area){
             Destroy(proj);
+        }
+    }
+
+    void chooseFirstPlayer()
+    {
+        if (GameManager.Instance.currentMetric == "Random"){
+            int randPlayer = Random.Range(0,4);
+            while (randPlayer >= GameManager.Instance.totalPlayers){
+                randPlayer = Random.Range(0,4);
+            }
+            GameManager.Instance.firstPlayer = randPlayer;
+        }
+        if (GameManager.Instance.currentMetric == "Most Souls Collected"){
+            GameManager.Instance.firstPlayer = Player1Manager.centralManagerInstance.mostSoulsPlayer();
+        }
+        if (GameManager.Instance.currentMetric == "Least Deaths"){
+            GameManager.Instance.firstPlayer = Calculator.Instance.leastDeaths();
+        }
+        if (GameManager.Instance.currentMetric == "Most Kills"){
+            GameManager.Instance.firstPlayer = 0;
         }
     }
 }

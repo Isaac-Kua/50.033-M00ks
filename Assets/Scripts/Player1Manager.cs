@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Player1Manager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Player1Manager : MonoBehaviour
     private SoulManager soulManager4;
     public GameObject altarManagerObject;
     private AltarManager altarManager;
+    private List<int> playerSouls = new List<int>{0,0,0,0};
 
     void Awake()
     {
@@ -35,15 +37,19 @@ public class Player1Manager : MonoBehaviour
         switch (player) {
             case(0):
                 soulManager1.increaseSouls();
+                playerSouls[0]++;
                 break;
             case(1):
                 soulManager2.increaseSouls();
+                playerSouls[1]++;
                 break;
             case(2):
                 soulManager3.increaseSouls();
+                playerSouls[2]++;
                 break;
             case(3):
                 soulManager4.increaseSouls();
+                playerSouls[3]++;
                 break;
         }
     }
@@ -71,13 +77,8 @@ public class Player1Manager : MonoBehaviour
         altarManager.damageAltar();
     }
 
-    public int getAltarHealth()
+    public int mostSoulsPlayer()
     {
-        return altarManager.getHealth();
-    }
-
-    public void setAltarHealth(int health)
-    {
-        altarManager.setHealth(health);
+        return playerSouls.IndexOf(playerSouls.Max());
     }
 }

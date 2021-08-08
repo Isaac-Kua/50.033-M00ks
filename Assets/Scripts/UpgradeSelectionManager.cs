@@ -10,14 +10,12 @@ public class UpgradeSelectionManager : MonoBehaviour
 
     private List<PlayerConfiguration> players;
     public static UpgradeSelectionManager Instance;
+    public delegate void gameEvent();
+    public static event gameEvent SelectMetric;
 
     void Awake()
     {
         Instance = this;
-    }
-
-    void Start()
-    {
     }
 
     public void playerSelected(int player)
@@ -29,17 +27,20 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         if (allSelected){
-            if (Player1Manager.centralManagerInstance.getAltarHealth() <= 10){
+            if (AltarManager.Instance.altarDamage >= 40){
+                AltarManager.Instance.resolve();
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
                 }
+                SelectMetric();
                 SetLevel.Instance.setLevel();
             }
-            else if (Player1Manager.centralManagerInstance.getAltarHealth() <= 35){
-                Player1Manager.centralManagerInstance.setAltarHealth(50);
+            else if (AltarManager.Instance.altarDamage >= 15){
+                AltarManager.Instance.setHealth(50);
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
                 }
+                SelectMetric();
                 SetLevel.Instance.setLevel();
             }
             else if (GameManager.Instance.secondUpgrade == false){
@@ -50,6 +51,7 @@ public class UpgradeSelectionManager : MonoBehaviour
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
                 }
+                SelectMetric();
                 SetLevel.Instance.setLevel();
             }
         }

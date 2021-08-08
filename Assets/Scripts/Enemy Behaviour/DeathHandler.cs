@@ -43,7 +43,7 @@ public class DeathHandler : MonoBehaviour
 	{
 		dead = false;
 		allEnable();
-		npcSprite.color = Color.white;
+		//npcSprite.color = Color.white;
 		npcCollider.enabled = true;
 		this.gameObject.SetActive(false);
 		ammo = true;
@@ -72,7 +72,6 @@ public class DeathHandler : MonoBehaviour
 
 	IEnumerator death(GameObject killer)
 	{
-		//npcBody.velocity = Vector2.zero;
 		allDisable();
 		npcAnimator.SetTrigger("Death");
 		npcCollider.enabled = false;
@@ -80,10 +79,10 @@ public class DeathHandler : MonoBehaviour
 		if (lastHit.CompareTag("Player"))
 		{
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
+			lastHit.GetComponent<M00ksDeathHandler>().kills++;
 		}
-		npcSprite.color = Color.black;
+		//npcSprite.color = Color.black;
 		yield return new WaitForSeconds(gameConstants.deathFadeTime);
-		//yield return null;
 		Instantiate(soul, new  Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
 	}

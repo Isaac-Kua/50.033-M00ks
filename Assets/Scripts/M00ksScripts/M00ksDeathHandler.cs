@@ -15,11 +15,14 @@ public class M00ksDeathHandler : MonoBehaviour
 	public float deathTime;
 	public int myLives;
 	public GameObject lastHit;
+	public int deaths = 0;
+	public int kills = 0;
 	
 	private float launchDuration;
 	private float stunTime;
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -30,6 +33,7 @@ public class M00ksDeathHandler : MonoBehaviour
 		deathTime = gameConstants.deathTime;
 		stunTime = gameConstants.stunTime;
 		launchDuration = gameConstants.launchDuration;
+		AltarManager.NextStage2 += resetDeathCounter;
 	}
 
 	// Update is called once per frame
@@ -198,6 +202,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	
 	IEnumerator  Death(){
 		m00ksSprite.material.color = new Color(0,0,0); //C# black
+		deaths++;
 		Dead = true;
 		Immunity = true;
 		allDisable();
@@ -225,5 +230,10 @@ public class M00ksDeathHandler : MonoBehaviour
 		debrisProjectile.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		debrisProjectile.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 		debrisProjectile.tag = "Debris";
+	}
+
+	void resetDeathCounter(){
+		deaths = 0;
+		kills = 0;
 	}
 }

@@ -30,7 +30,7 @@ public class UpgradeAssigner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //AltarManager.NextStage += assignUpgrade;
+        AltarManager.NextStage2 += assignUpgrade;
     }
 
     // Update is called once per frame
