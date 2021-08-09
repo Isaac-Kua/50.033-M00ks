@@ -15,6 +15,7 @@ public class RangerController : MonoBehaviour
 	private Rigidbody2D rangerBody;
 	private SpriteRenderer rangerSprite;
 	private Animator rangerAnimator;
+	private AudioSource rangerAudio;
 	private float distance;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
@@ -26,6 +27,7 @@ public class RangerController : MonoBehaviour
 		rangerBody = GetComponent<Rigidbody2D>();
 		rangerSprite = GetComponent<SpriteRenderer>();
 		rangerAnimator = GetComponent<Animator>();
+		rangerAudio = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -71,6 +73,7 @@ public class RangerController : MonoBehaviour
 		Vector3 direction = dir;
 		yield return new WaitForSeconds(gameConstants.rangerFireTime);
 		GameObject arrow = Instantiate(gameConstants.rangerArrow, transform.position+direction, angle);
+		rangerAudio.Play();
 		arrow.GetComponent<ArrowController>().target1 = target1;
 		arrow.transform.rotation = angle;
 		arrow.GetComponent<ProjectileController>().owner = gameObject;

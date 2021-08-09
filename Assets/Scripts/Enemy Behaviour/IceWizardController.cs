@@ -22,6 +22,7 @@ public class IceWizardController : MonoBehaviour
 	private Rigidbody2D iceWizBody;
 	private SpriteRenderer iceWizSprite;
 	private Animator iceWizAnimator;
+	private AudioSource iceWizAudio;
 
 	private float distance;
 	private bool burstCharge = true;
@@ -38,6 +39,7 @@ public class IceWizardController : MonoBehaviour
 		iceWizBody = GetComponent<Rigidbody2D>();
 		iceWizSprite = GetComponent<SpriteRenderer>();
 		iceWizAnimator = GetComponent<Animator>();
+		iceWizAudio = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -112,6 +114,7 @@ public class IceWizardController : MonoBehaviour
 		iceWizAnimator.SetTrigger("Firing");
 		yield return new WaitForSeconds(gameConstants.iceWizardSwingTime);
 		GameObject icebolt = Instantiate(gameConstants.iceWizardIcebolt, transform.position, transform.rotation);
+		iceWizAudio.Play();
 		icebolt.GetComponent<IceboltController>().target1 = target1;
 		icebolt.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());

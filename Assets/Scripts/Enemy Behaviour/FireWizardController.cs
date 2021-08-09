@@ -10,6 +10,7 @@ public class FireWizardController : MonoBehaviour
 	private Rigidbody2D fireWizBody;
 	private SpriteRenderer fireWizSprite;
 	private Animator fireWizAnimator;
+	private AudioSource fireWizAudio;
 	private float distance;
 	private bool poofCharge = true;
 	private Vector2 dir;
@@ -23,6 +24,7 @@ public class FireWizardController : MonoBehaviour
 		fireWizBody = GetComponent<Rigidbody2D>();
 		fireWizSprite = GetComponent<SpriteRenderer>();
 		fireWizAnimator = GetComponent<Animator>();
+		fireWizAudio = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -83,6 +85,7 @@ public class FireWizardController : MonoBehaviour
 		fireWizAnimator.SetTrigger("Firing");
 		yield return new WaitForSeconds(gameConstants.fireWizardSwingTime);
 		GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
+		fireWizAudio.Play();
 		firebolt.GetComponent<FireboltController>().target1 = target1;
 		firebolt.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());

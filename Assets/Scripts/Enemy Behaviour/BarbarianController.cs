@@ -14,6 +14,7 @@ public class BarbarianController : MonoBehaviour
 	private SpriteRenderer barbSprite;
 	private PolygonCollider2D barbCollider;
 	private Animator barbAnimator;
+	private AudioSource barbAudio;
 
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
@@ -28,6 +29,7 @@ public class BarbarianController : MonoBehaviour
 		charges = gameConstants.BarbarianMaxCharges;
 		GetComponent<ProjectileController>().owner = gameObject;
 		barbAnimator = GetComponent<Animator>();
+		barbAudio = GetComponent<AudioSource>();
     }
 	
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class BarbarianController : MonoBehaviour
 			if (charges > 0 && !dashing)
 			{
 				Dash();
+				barbAudio.Play();
 			}
 			else if (charges != gameConstants.BarbarianMaxCharges && !dashing)
             {
