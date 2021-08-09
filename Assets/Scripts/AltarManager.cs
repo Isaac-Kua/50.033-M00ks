@@ -63,5 +63,6 @@ public class AltarManager : MonoBehaviour
     public void resolve()
     {
         altarHealth -= altarDamage;
+        altarDamage = 0;
     }
 }

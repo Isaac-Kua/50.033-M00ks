@@ -27,7 +27,7 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         if (allSelected){
-            if (AltarManager.Instance.altarDamage >= 40){
+            if (AltarManager.Instance.altarDamage > 40){
                 AltarManager.Instance.resolve();
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
@@ -35,7 +35,8 @@ public class UpgradeSelectionManager : MonoBehaviour
                 SelectMetric();
                 SetLevel.Instance.setLevel();
             }
-            else if (AltarManager.Instance.altarDamage >= 15){
+            else if (AltarManager.Instance.altarDamage > 15){
+                AltarManager.Instance.resolve();
                 AltarManager.Instance.setHealth(50);
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
@@ -48,6 +49,8 @@ public class UpgradeSelectionManager : MonoBehaviour
                 GameManager.Instance.secondUpgrade = true;
             }
             else{
+                AltarManager.Instance.resolve();
+                AltarManager.Instance.setHealth(50);
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
                 }

@@ -10,6 +10,8 @@ public class SetLevel : MonoBehaviour
     public GameObject obstacles;
     public GameObject hpbar;
     public GameObject upgradeAssigner;
+    public GameObject upgradeUI;
+    public GameObject speechBubble;
     private GameObject[] enemies;
     private GameObject[] souls;
     private GameObject[] arrow;
@@ -56,8 +58,18 @@ public class SetLevel : MonoBehaviour
         deactivate();
         upgradeAssigner.GetComponent<UpgradeAssigner>().assignUpgrade();
         upgrades.SetActive(true);
+        upgradeUI.SetActive(true);
         foreach (Transform child in upgrades.transform){
             child.gameObject.SetActive(true);
+        }
+        if (AltarManager.Instance.altarDamage > 40){
+            speechBubble.GetComponent<UpgradeSpeech>().oneStar();
+        }
+        else if (AltarManager.Instance.altarDamage > 15){
+            speechBubble.GetComponent<UpgradeSpeech>().twoStar();
+        }
+        else{
+            speechBubble.GetComponent<UpgradeSpeech>().threeStar();
         }
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawns[i].position;
@@ -76,6 +88,7 @@ public class SetLevel : MonoBehaviour
         upgrades.SetActive(false);
         obstacles.SetActive(false);
         hpbar.SetActive(false);
+        upgradeUI.SetActive(false);
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies){
