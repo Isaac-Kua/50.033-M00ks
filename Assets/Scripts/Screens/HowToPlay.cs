@@ -24,9 +24,6 @@ public class HowToPlay : MonoBehaviour
             {
                 eachChild.gameObject.SetActive(true);
             }
-            else {
-                eachChild.gameObject.SetActive(false);
-            }
         }
     }
 }
