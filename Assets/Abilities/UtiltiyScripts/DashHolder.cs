@@ -57,7 +57,6 @@ public class DashHolder : MonoBehaviour
     public void OnDash()
     {
         input = true;
-        dAudio.Play();
         Debug.Log("dashing in ability holder");
     }
     
@@ -76,6 +75,7 @@ public class DashHolder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    dAudio.Play();
                     charges--;
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -109,6 +109,7 @@ public class DashHolder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    dAudio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                     charges--;
