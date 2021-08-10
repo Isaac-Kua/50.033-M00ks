@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7971344484231806920}
   - component: {fileID: 7348393707404148195}
   - component: {fileID: 8667602767253496595}
+  - component: {fileID: 2920887594895722929}
   m_Layer: 7
   m_Name: Arrow
   m_TagString: Arrow
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130144637693236197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.97, y: -3.18, z: 0}
+  m_LocalPosition: {x: -15.219, y: -3.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d237c5c78e9f3e489c4afecb01999ad, type: 3}
-  m_Color: {r: 0.5148325, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1f0ff7953787e4249954e7c05675f3e3, type: 3}
+  m_Color: {r: 0.78431374, g: 0.057404764, b: 0.057404764, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -139,7 +140,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.23, y: 1.23}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,10 +148,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.25}
-      - {x: -0.5, y: 0}
-      - {x: 0, y: -0.25}
-      - {x: 0.5, y: 0}
+    - - {x: 1.3511715, y: 0.1271615}
+      - {x: 0.68845654, y: 0.43644714}
+      - {x: 0.39617252, y: 0.48476863}
+      - {x: 0.7618818, y: 0.044019222}
+      - {x: 0.697382, y: -0.18636227}
+      - {x: 0.39128113, y: -0.47009587}
+      - {x: 0.794611, y: -0.42786694}
+      - {x: 1.177721, y: -0.22049308}
+      - {x: 1.2068062, y: -0.1998229}
+      - {x: 1.4879847, y: 0}
 --- !u!114 &8667602767253496595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +171,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+--- !u!95 &2920887594895722929
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130144637693236197}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb09fffe3be78645bce5f5a1d591f8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
