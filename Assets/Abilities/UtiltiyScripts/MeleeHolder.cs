@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class MeleeHolder : MonoBehaviour
 {
     public Ability ability;
+    [SerializeField]
+	public AudioClip[] audioClips;
+    private AudioSource mAudio;
     //public string abilityType;
     float cooldownTime;
     float activeTime;
@@ -18,9 +21,32 @@ public class MeleeHolder : MonoBehaviour
     }
 
     AbilityState state = AbilityState.ready;
-
+    private void Start() {
+        mAudio = gameObject.GetComponents<AudioSource>()[0];
+    }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        switch (gameObject.GetComponent<UpgradeManager>().mUpgrade)
+		{
+		case UpgradeManager.meleeUpgrade.Default:
+            mAudio.clip = audioClips[0];
+            break;
+        case UpgradeManager.meleeUpgrade.Breaking:
+			mAudio.clip = audioClips[1];
+			break;
+		case UpgradeManager.meleeUpgrade.Repel:
+			mAudio.clip = audioClips[2];
+			break;
+		case UpgradeManager.meleeUpgrade.Lunge:
+			mAudio.clip = audioClips[3];
+			break;
+        case UpgradeManager.meleeUpgrade.Zangief:
+            mAudio.clip = audioClips[4];
+            break;
+		default:
+			mAudio.clip = audioClips[0];
+			break;
+		}
     }
     public void rechargeFully(){
         charges = ability.charges;
@@ -32,6 +58,7 @@ public class MeleeHolder : MonoBehaviour
 	public void OnMelee()
     {
         input = true;
+        mAudio.Play();
         Debug.Log("melee in abiliy holder");
     }
     // Update is called once per frame

@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class DashHolder : MonoBehaviour
 {
     public Ability ability;
+    [SerializeField]
+	public AudioClip[] audioClips;
+    private AudioSource dAudio;
     //public string abilityType;
     float cooldownTime;
     float activeTime;
@@ -18,9 +21,32 @@ public class DashHolder : MonoBehaviour
     }
 
     AbilityState state = AbilityState.ready;
-
+    private void Start() {
+        dAudio = gameObject.GetComponents<AudioSource>()[1];
+    }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        switch (gameObject.GetComponent<UpgradeManager>().dUpgrade)
+		{
+		case UpgradeManager.dashUpgrade.Default:
+            dAudio.clip = audioClips[0];
+            break;
+        case UpgradeManager.dashUpgrade.Phase:
+			dAudio.clip = audioClips[1];
+			break;
+		case UpgradeManager.dashUpgrade.Reverse:
+			dAudio.clip = audioClips[2];
+			break;
+		case UpgradeManager.dashUpgrade.Triple:
+			dAudio.clip = audioClips[3];
+			break;
+        case UpgradeManager.dashUpgrade.Spider:
+            dAudio.clip = audioClips[4];
+            break;
+		default:
+			dAudio.clip = audioClips[0];
+			break;
+		}
     }
     public void rechargeFully(){
         charges = ability.charges;
@@ -31,6 +57,7 @@ public class DashHolder : MonoBehaviour
     public void OnDash()
     {
         input = true;
+        dAudio.Play();
         Debug.Log("dashing in ability holder");
     }
     
