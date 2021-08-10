@@ -92,7 +92,10 @@ public class M00ks1Controller : MonoBehaviour
 		}
 		else if (obj.action.name == controls.Player.Pause.name)
 		{
-			if (!paused)
+			if (GameManager.Instance.cutscene) {
+				Player1Manager.centralManagerInstance.stopCutscene();
+			}
+			else if (!paused)
 			{
 				PauseController.Instance.PauseGame();
 				paused = true;

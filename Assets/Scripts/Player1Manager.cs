@@ -15,6 +15,7 @@ public class Player1Manager : MonoBehaviour
     public GameObject soulManagerObject4;
     private SoulManager soulManager4;
     public GameObject altarManagerObject;
+    public GameObject introCutscene;
     private AltarManager altarManager;
     private List<int> playerSouls = new List<int>{0,0,0,0};
 
@@ -80,5 +81,10 @@ public class Player1Manager : MonoBehaviour
     public int mostSoulsPlayer()
     {
         return playerSouls.IndexOf(playerSouls.Max());
+    }
+
+    public void stopCutscene()
+    {
+        introCutscene.GetComponent<introScene>().stop = true;
     }
 }

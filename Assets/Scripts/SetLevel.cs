@@ -73,6 +73,7 @@ public class SetLevel : MonoBehaviour
         }
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawns[i].position;
+            players[i].Input.ActivateInput();
             if (i != GameManager.Instance.firstPlayer){
                 Debug.Log("Deactivate player "+ (i+1));
                 players[i].Input.DeactivateInput();

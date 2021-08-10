@@ -32,7 +32,7 @@ public class ProjectileController : MonoBehaviour
                 }
             }
         }
-        if (!gameObject.CompareTag("PlayerArrow")){
+        if (!gameObject.CompareTag("PlayerArrow") && !gameObject.CompareTag("Player")){
             if (other.gameObject.CompareTag("Altar"))
             {
                 Player1Manager.centralManagerInstance.damageAltar();

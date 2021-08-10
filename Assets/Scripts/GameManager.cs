@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool upgradeSelection = false;
     public int upgradeNo = 1;
     public bool secondUpgrade = false;
+    public bool cutscene = false;
 
     public static GameManager Instance;
     public delegate void gameEvent();

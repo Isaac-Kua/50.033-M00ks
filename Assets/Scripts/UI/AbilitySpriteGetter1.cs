@@ -36,8 +36,11 @@ public class AbilitySpriteGetter1 : MonoBehaviour
                 case(UpgradeManager.ability1Upgrade.Knockback):
                     image.sprite = icons.knockback;
                     break;
-                case(UpgradeManager.ability1Upgrade.Default):
+                case(UpgradeManager.ability1Upgrade.Arrow):
                     image.sprite = icons.arrow;
+                    break;
+                case(UpgradeManager.ability1Upgrade.Default):
+                    image.sprite = icons.none;
                     break;
             }
         }
