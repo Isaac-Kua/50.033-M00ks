@@ -22,6 +22,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	private float stunTime;
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
+	private Animator m00ksAnimator;
 
 	// Start is called before the first frame update
 	void Start()
@@ -34,12 +35,15 @@ public class M00ksDeathHandler : MonoBehaviour
 		stunTime = gameConstants.stunTime;
 		launchDuration = gameConstants.launchDuration;
 		AltarManager.NextStage2 += resetDeathCounter;
+		m00ksAnimator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		m00ksAnimator.SetBool("Dead", Dead);
 		if (myLives < 1 && !Dead){
+			m00ksAnimator.SetTrigger("Death");
 			StartCoroutine(Death());
 			if (lastHit.CompareTag("Player")) {
 				lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
@@ -201,12 +205,13 @@ public class M00ksDeathHandler : MonoBehaviour
 	}
 	
 	IEnumerator  Death(){
-		m00ksSprite.material.color = new Color(0,0,0); //C# black
+		m00ksSprite.material.color = new Color(0.3f,0.3f,0.3f); //C# black
 		deaths++;
 		Dead = true;
 		Immunity = true;
 		allDisable();
 		yield return new WaitForSeconds(deathTime);
+		m00ksAnimator.SetTrigger("Respawn");
 		allEnable();
 		StartCoroutine(Respawn());
 	}

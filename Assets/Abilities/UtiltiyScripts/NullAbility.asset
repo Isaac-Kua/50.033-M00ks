@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2597994358d60924d877c14c810d9da4, type: 3}
-  m_Name: Mine Alt
+  m_Script: {fileID: 11500000, guid: c9bbcf8e63bd0df449afe4d779318b1b, type: 3}
+  m_Name: NullAbility
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
-  name: MineAlt
+  gameConstants: {fileID: 0}
+  name: 
   activeTime: 0
   charges: 0
   rechargeTime: 0
-  abilityType: Ability2
-  missile: {fileID: 4696089679803575608, guid: ca8a7be998b0b4041ab3451b7101d0c1, type: 3}
+  abilityType: 

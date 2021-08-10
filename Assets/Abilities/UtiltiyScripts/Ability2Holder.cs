@@ -57,7 +57,6 @@ public class Ability2Holder : MonoBehaviour
     public void OnAbility2()
     {
         input = true;
-        Debug.Log("ability2 in abiliy holder");
     }
 
     // Update is called once per frame
@@ -91,13 +90,13 @@ public class Ability2Holder : MonoBehaviour
                 {
                     state = AbilityState.recharging;
                     rechargeTime = ability.rechargeTime;
-                    Debug.Log("First Use!!!");
+                    //Debug.Log("First Use!!!");
                 }
                 else
                 {
                     state = AbilityState.recharging;
                     // Debug.Log(charges);
-                    Debug.Log("Subsequent Use!!!");
+                    //Debug.Log("Subsequent Use!!!");
                     // Debug.Log(rechargeTime);
                 }
                 input = false;
@@ -121,12 +120,12 @@ public class Ability2Holder : MonoBehaviour
                     charges++;
                     rechargeTime = ability.rechargeTime;
                     //Debug.Log(charges);
-                    Debug.Log("recharged!!!");
+                    //Debug.Log("recharged!!!");
                 }
                 if(charges == ability.charges)
                 {
                     state = AbilityState.ready;
-                    Debug.Log("fully recharged!!!");
+                    //Debug.Log("fully recharged!!!");
                 }
                 input = false;
                 

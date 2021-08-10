@@ -58,7 +58,7 @@ public class PlayerConfigurationManager : MonoBehaviour
     private bool AllPlayerReady(){
         Debug.Log(playerConfigs.Count);
         Debug.Log(MinPlayers);
-        if (playerConfigs.Count >= MinPlayers && playerConfigs.All(p=>p.isReady==true)){    
+        if (playerConfigs.Count >= MinPlayers && playerConfigs.All(p=>p.isReady==true)){
             return true;
         }
         else{
