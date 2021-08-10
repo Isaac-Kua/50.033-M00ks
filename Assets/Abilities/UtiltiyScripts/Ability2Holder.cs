@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 public class Ability2Holder : MonoBehaviour
 {
     public Ability ability;
+    [SerializeField]
+	public AudioClip[] audioClips;
+    private AudioSource a2Audio;
     //public string abilityType;
     float cooldownTime;
     float activeTime;
@@ -19,9 +22,29 @@ public class Ability2Holder : MonoBehaviour
     }
 
     AbilityState state = AbilityState.ready;
-
+    private void Start() {
+        a2Audio = gameObject.GetComponents<AudioSource>()[3];
+    }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        switch (gameObject.GetComponent<UpgradeManager>().ab2Upgrade)
+		{
+		case UpgradeManager.ability2Upgrade.Goo:
+			a2Audio.clip = audioClips[1];
+			break;
+		case UpgradeManager.ability2Upgrade.Magnet:
+			a2Audio.clip = audioClips[2];
+			break;
+		case UpgradeManager.ability2Upgrade.Teleport:
+			a2Audio.clip = audioClips[3];
+			break;
+        case UpgradeManager.ability2Upgrade.Mine:
+            a2Audio.clip = audioClips[4];
+            break;
+		default:
+			a2Audio.clip = audioClips[0];
+			break;
+		}
     }
     public void rechargeFully(){
         charges = ability.charges;

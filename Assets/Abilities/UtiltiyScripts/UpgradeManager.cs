@@ -7,7 +7,6 @@ public class UpgradeManager : MonoBehaviour
 {
 	public GameConstants gameConstants;
 	public GameObject player;
-
 	// Defensive upgrades
 	public bool miniDefense = false;
 	public bool shellDefense = false;

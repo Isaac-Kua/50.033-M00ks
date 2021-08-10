@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 public class Ability1Holder : MonoBehaviour
 {
     public Ability ability;
+
+    [SerializeField]
+	public AudioClip[] audioClips;
+    private AudioSource a1Audio;
     //public string abilityType;
     float cooldownTime;
     float activeTime;
@@ -17,6 +21,9 @@ public class Ability1Holder : MonoBehaviour
     public bool SpeedMod;
     public bool HeavyMod;
 
+    private void Start() {
+        a1Audio = gameObject.GetComponents<AudioSource>()[2];
+    }
     bool checkModifications()
     {
         RangeMod = gameObject.GetComponent<UpgradeManager>().RangeMod;
@@ -36,6 +43,21 @@ public class Ability1Holder : MonoBehaviour
 
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        switch (gameObject.GetComponent<UpgradeManager>().ab1Upgrade)
+		{
+		case UpgradeManager.ability1Upgrade.Kaiten:
+			a1Audio.clip = audioClips[1];
+			break;
+		case UpgradeManager.ability1Upgrade.Knockback:
+			a1Audio.clip = audioClips[2];
+			break;
+		case UpgradeManager.ability1Upgrade.SpikeRange:
+			a1Audio.clip = audioClips[3];
+			break;
+		default:
+			a1Audio.clip = audioClips[0];
+			break;
+		}
     }
     public void rechargeFully(){
         charges = ability.charges;
@@ -48,6 +70,7 @@ public class Ability1Holder : MonoBehaviour
     public void OnAbility1()
     {
         input = true;
+        a1Audio.Play();
         Debug.Log("ability1 in ability holder");
     }
     
