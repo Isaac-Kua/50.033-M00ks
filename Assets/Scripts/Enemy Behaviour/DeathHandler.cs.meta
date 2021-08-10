@@ -4,7 +4,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  - gameConstants: {instanceID: 0}
+  - soul: {fileID: 4587663427684844348, guid: 3cc37b8da865fe1409242e9d9fc82374, type: 3}
+  - lastHit: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -29,6 +29,7 @@ public class UpgradeSelectionManager : MonoBehaviour
         if (allSelected){
             if (AltarManager.Instance.altarDamage > 40){
                 AltarManager.Instance.resolve();
+                GameManager.Instance.upgradeNo += 1;
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
                 }
@@ -38,6 +39,7 @@ public class UpgradeSelectionManager : MonoBehaviour
             else if (AltarManager.Instance.altarDamage > 15){
                 AltarManager.Instance.resolve();
                 AltarManager.Instance.setHealth(50);
+                GameManager.Instance.upgradeNo += 1;
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
                     players[i].Input.ActivateInput();
                 }

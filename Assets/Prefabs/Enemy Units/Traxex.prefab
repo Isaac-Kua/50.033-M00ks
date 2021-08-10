@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
-  soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  soul: {fileID: 4587663427684844348, guid: 3cc37b8da865fe1409242e9d9fc82374, type: 3}
   lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 5303145136270888917}

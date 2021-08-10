@@ -83,7 +83,7 @@ public class DeathHandler : MonoBehaviour
 		}
 		//npcSprite.color = Color.black;
 		yield return new WaitForSeconds(gameConstants.deathFadeTime);
-		Instantiate(soul, new  Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+		Instantiate(soul, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
 	}
 	
