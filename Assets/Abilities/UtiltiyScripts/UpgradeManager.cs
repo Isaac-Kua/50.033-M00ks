@@ -7,6 +7,7 @@ public class UpgradeManager : MonoBehaviour
 {
 	public GameConstants gameConstants;
 	public GameObject player;
+
 	// Defensive upgrades
 	public bool miniDefense = false;
 	public bool shellDefense = false;
@@ -46,6 +47,7 @@ public class UpgradeManager : MonoBehaviour
     public bool BypassMod = false;
     public bool SpeedMod = false;
     public bool HeavyMod = false;
+
 	// Ability 1 Ranged
 	private bool arrowRange = false;
 	private bool knockbackRange = false;
@@ -95,13 +97,15 @@ public class UpgradeManager : MonoBehaviour
 	public Ability ab1_Kaiten;
 	public Ability ab1_Knockback;
 	public Ability ab1_SpikeRange;
+	public Ability ab1_Arrow;
 	public Ability ab1_Default;
-	
+
 	public enum ability1Upgrade
 	{
 		Kaiten,
 		Knockback,
 		SpikeRange,
+		Arrow,
 		Default
 	}
 	//Ability2 ScriptableObjects
@@ -151,6 +155,8 @@ public class UpgradeManager : MonoBehaviour
 	private DashHolder dashHolder;
 	private Ability2Holder ability2Holder;
 	private MeleeHolder meleeHolder;
+	private Animator m00ksAnimator;
+
 	//The Various Ability States
 	public ability1Upgrade ab1Upgrade = ability1Upgrade.Default;
 	public ability2Upgrade ab2Upgrade = ability2Upgrade.Default;
@@ -217,6 +223,7 @@ public class UpgradeManager : MonoBehaviour
 		dashHolder = player.GetComponent<DashHolder>();
 		meleeHolder = player.GetComponent<MeleeHolder>();
 		ability2Holder = player.GetComponent<Ability2Holder>();
+		m00ksAnimator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -315,9 +322,12 @@ public class UpgradeManager : MonoBehaviour
 			changeAbility1(ab1_SpikeRange);
 			spikeRange = true;
 			break;
+		case ability1Upgrade.Arrow:
+			changeAbility1(ab1_Arrow);
+			arrowRange = true;
+			break;
 		default:
 			changeAbility1(ab1_Default);
-			arrowRange = false;
 			break;
 		}
 
@@ -390,6 +400,9 @@ public class UpgradeManager : MonoBehaviour
 			changeMelee(m_Default);	
 			break;
 		}
+
+		m00ksAnimator.SetBool("ZangiefMelee", zangiefMelee);
+		m00ksAnimator.SetBool("DeathCrawlPassive", crawlDeath);
 	}
 
 	void calculateCombo(){

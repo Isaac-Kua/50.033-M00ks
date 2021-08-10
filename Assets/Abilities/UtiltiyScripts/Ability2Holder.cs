@@ -57,6 +57,7 @@ public class Ability2Holder : MonoBehaviour
     public void OnAbility2()
     {
         input = true;
+        a2Audio.Play();
     }
 
     // Update is called once per frame
