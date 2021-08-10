@@ -37,6 +37,9 @@ MonoBehaviour:
   WidowmakerRange: 50
   JuggernautAura: {fileID: 4697814213403115097, guid: 8bdbe56597954a444bf48ecceea41a48, type: 3}
   JuggernautRadius: 3
+  AuraDisplay: {fileID: 3036772712740826811, guid: 32b44780a15e24f4ab25232c446e5320, type: 3}
+  AuraOffsetX: 0.2
+  AuraOffsetY: -1.5
   defaultLives: 1
   thugLives: 2
   toughField: {fileID: 2552588994153053948, guid: 9d728906afd49e044b5f173c613c36a3, type: 3}
@@ -47,6 +50,7 @@ MonoBehaviour:
   slowRatio: 0.3
   unbreakable: {fileID: 8162232642221552516, guid: 942d187ac7bd5f2408a0067d7a94edfd, type: 3}
   hornDistance: 1
+  hornOffset: 0.42
   crawlRatio: 0.4
   kamikazePrefab: {fileID: 8703016678992426118, guid: 70874bc68761da54fad97bcbd55f7404, type: 3}
   kamikazeMaxRadius: 8
@@ -61,6 +65,7 @@ MonoBehaviour:
   kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
   armDuration: 0.5
   magnet: {fileID: 0}
+  magnetPull: 0.1
   reverseDuration: 1
   rotationPerSec: 5
   explosionPrefab: {fileID: 5655318487974413711, guid: 7026978fdb7a2384e881c3dc848a3115, type: 3}
@@ -112,7 +117,7 @@ MonoBehaviour:
   iceWizardMoveSpeed: 10
   iceWizardMaxRange: 30
   iceWizardMinRange: 10
-  iceWizardBurstChargeTime: 1
+  iceWizardBurstChargeTime: 5
   iceWizardWindUpTime: 3
   iceWizardSwingTime: 0.2
   iceWizardIcebolt: {fileID: 7230641355260546534, guid: 5e3de60a17f42f34f8f913e415e11ce2, type: 3}

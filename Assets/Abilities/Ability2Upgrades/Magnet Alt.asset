@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a8b82c94b4e4c42814c6e5da848da8, type: 3}
   m_Name: Magnet Alt
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: MagnetAlt
   activeTime: 0.5
   charges: 0
   rechargeTime: 0
   abilityType: Ability2
-  pullStrength: 5

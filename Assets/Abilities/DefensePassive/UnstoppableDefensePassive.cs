@@ -27,10 +27,10 @@ public class UnstoppableDefensePassive : MonoBehaviour
 		unbreakableHorns.GetComponent<SpriteRenderer>().flipX = GetComponent<SpriteRenderer>().flipX;
 		if (unbreakableHorns.GetComponent<SpriteRenderer>().flipX)
 		{
-			unbreakableHorns.transform.position = transform.position + new Vector3(-0.42f, gameConstants.hornDistance, 0);
+			unbreakableHorns.transform.position = transform.position + new Vector3(-gameConstants.hornOffset, gameConstants.hornDistance, 0);
 		}
 		else {
-			unbreakableHorns.transform.position = transform.position + new Vector3(0.42f, gameConstants.hornDistance, 0);
+			unbreakableHorns.transform.position = transform.position + new Vector3(gameConstants.hornOffset, gameConstants.hornDistance, 0);
 		}
 		if (GetComponent<UpgradeManager>().unstoppableDefense){
 			unbreakableHorns.SetActive(true);

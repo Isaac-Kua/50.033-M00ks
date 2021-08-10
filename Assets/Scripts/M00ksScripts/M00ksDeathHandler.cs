@@ -17,30 +17,38 @@ public class M00ksDeathHandler : MonoBehaviour
 	public GameObject lastHit;
 	public int deaths = 0;
 	public int kills = 0;
-	
+
 	private float launchDuration;
 	private float stunTime;
 	private Rigidbody2D m00ksBody;
 	private SpriteRenderer m00ksSprite;
 	private Animator m00ksAnimator;
+	private GameObject stunAnim;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		m00ksBody = GetComponent<Rigidbody2D>();
 		m00ksSprite = GetComponent<SpriteRenderer>();
+		m00ksAnimator = GetComponent<Animator>();
+
 		lives = gameConstants.defaultLives;
 		myLives = lives;
 		deathTime = gameConstants.deathTime;
 		stunTime = gameConstants.stunTime;
 		launchDuration = gameConstants.launchDuration;
 		AltarManager.NextStage2 += resetDeathCounter;
-		m00ksAnimator = GetComponent<Animator>();
+
+		stunAnim = Instantiate(gameConstants.stunAnimation, transform.position, transform.rotation);
+		stunAnim.transform.parent = transform;
+		stunAnim.transform.position = gameConstants.stunPosition;
+		stunAnim.SetActive(false);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		stunAnim.transform.position = transform.position + gameConstants.stunPosition;
 		m00ksAnimator.SetBool("Dead", Dead);
 		if (myLives < 1 && !Dead){
 			m00ksAnimator.SetTrigger("Death");
@@ -164,6 +172,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	public void OnStunned(){
 		Invisible = false;
 		m00ksSprite.enabled = true;
+		stunAnim.SetActive(true);
 		StartCoroutine(Stunned());
 	}
 	
@@ -186,6 +195,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	}
 	
 	public void allEnable(){
+		stunAnim.SetActive(false);
 		moveEnabled();
 		foreach (MonoBehaviour script in activeAbilities){
 			script.enabled = true;
@@ -195,7 +205,6 @@ public class M00ksDeathHandler : MonoBehaviour
 	IEnumerator  Stunned(){
 		Brittle = true;
 		allDisable();
-		m00ksSprite.material.color = new Color(0,0,1); //C# blue
 		yield return new WaitForSeconds(stunTime);
 		if (!Dead){
 			allEnable();
@@ -210,6 +219,7 @@ public class M00ksDeathHandler : MonoBehaviour
 		Dead = true;
 		Immunity = true;
 		allDisable();
+		DeathPassive();
 		yield return new WaitForSeconds(deathTime);
 		m00ksAnimator.SetTrigger("Respawn");
 		allEnable();
@@ -240,5 +250,33 @@ public class M00ksDeathHandler : MonoBehaviour
 	void resetDeathCounter(){
 		deaths = 0;
 		kills = 0;
+	}
+
+	void DeathPassive() {
+		if (GetComponent<UpgradeManager>().vengeanceDeath)
+		{
+			GameObject other = GetComponent<M00ksDeathHandler>().lastHit;
+			if (other.CompareTag("Player"))
+			{
+				other.GetComponent<M00ksDeathHandler>().OnStunned();
+			}	else {
+				other.GetComponent<DeathHandler>().OnStunned();
+			}
+		}
+
+		else if (GetComponent<UpgradeManager>().kamikazeDeath)
+		{
+			GameObject Boom = Instantiate(gameConstants.kamikazePrefab, transform.position, transform.rotation);
+			Boom.GetComponent<ProjectileController>().owner = gameObject;
+		}
+
+		else if (GetComponent<UpgradeManager>().soulswapDeath)
+		{
+			Vector3 selfPosition = transform.position;
+			Vector3 killerPosition = GetComponent<M00ksDeathHandler>().lastHit.transform.position;
+
+			lastHit.transform.position = selfPosition;
+			transform.position = killerPosition;
+		}
 	}
 }

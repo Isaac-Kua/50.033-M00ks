@@ -91,6 +91,8 @@ public class UpgradeManager : MonoBehaviour
 	public bool DannyCombo = false;
 	public bool TurtleCombo = false;
 	public bool MagnusCombo = false;
+	private GameObject Aura;
+	private Animator AuraAnimator;
 
 
 	//Ability1 ScriptableObjects
@@ -224,11 +226,23 @@ public class UpgradeManager : MonoBehaviour
 		meleeHolder = player.GetComponent<MeleeHolder>();
 		ability2Holder = player.GetComponent<Ability2Holder>();
 		m00ksAnimator = GetComponent<Animator>();
+		Aura = Instantiate(gameConstants.AuraDisplay, transform.position, transform.rotation);
+		Aura.transform.parent = transform;
+		AuraAnimator = Aura.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		Aura.GetComponent<SpriteRenderer>().flipX = GetComponent<SpriteRenderer>().flipX;
+		if (GetComponent<SpriteRenderer>().flipX)
+		{
+			Aura.transform.position = transform.position + new Vector3(-gameConstants.AuraOffsetX, gameConstants.AuraOffsetY, 0);
+		}
+		else
+		{
+			Aura.transform.position = transform.position + new Vector3(gameConstants.AuraOffsetX, gameConstants.AuraOffsetY, 0);
+		}
 		updateAbilities();
 		calculateCombo();
 		if (wallwalkerMove)
@@ -403,6 +417,8 @@ public class UpgradeManager : MonoBehaviour
 
 		m00ksAnimator.SetBool("ZangiefMelee", zangiefMelee);
 		m00ksAnimator.SetBool("DeathCrawlPassive", crawlDeath);
+		m00ksAnimator.SetBool("TeleportAlt2", teleportAlt);
+		m00ksAnimator.SetBool("RewindDash", reverseDash);
 	}
 
 	void calculateCombo(){
@@ -487,6 +503,15 @@ public class UpgradeManager : MonoBehaviour
 		} else {
 			MagnusCombo = false;
 		}
+
+		AuraAnimator.SetBool("Magnus", MagnusCombo);
+		AuraAnimator.SetBool("Achmed", AchmedCombo);
+		AuraAnimator.SetBool("Juggernaut", JuggernautCombo);
+		AuraAnimator.SetBool("Toph", TophCombo);
+		AuraAnimator.SetBool("Pacquiao", PacquiaoCombo);
+		AuraAnimator.SetBool("Danny", DannyCombo);
+		AuraAnimator.SetBool("Turtle", TurtleCombo);
+		AuraAnimator.SetBool("Widowmaker", WidowmakerCombo);
 	}
 }
 

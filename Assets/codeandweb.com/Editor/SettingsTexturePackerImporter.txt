@@ -10,7 +10,7 @@ tpsheetFileNames:
 - Assets/Sprites/Effects/Kaiten/Kaiten.tpsheet
 - Assets/Sprites/Effects/Knock Back/Knock Back.tpsheet
 - Assets/Sprites/Effects/Mine Bomb/Mine Bomb.tpsheet
-- Assets/Sprites/Effects/Set Bonus Aura/Akhbar/Mine Bomb.tpsheet
+- Assets/Sprites/Effects/Set Bonus Aura/Ackbar/Mine Bomb.tpsheet
 - Assets/Sprites/Effects/Stun Immune/Stun Immune.tpsheet
 - Assets/Sprites/Effects/Teleport/Teleport In.tpsheet
 - Assets/Sprites/Effects/Teleport/Teleport Out.tpsheet
@@ -63,7 +63,7 @@ textureFileNames:
 - Assets/Sprites/Effects/Kaiten/Kaiten.png
 - Assets/Sprites/Effects/Knock Back/Knock Back.png
 - Assets/Sprites/Effects/Mine Bomb/Mine Bomb.png
-- Assets/Sprites/Effects/Set Bonus Aura/Akhbar/Mine Bomb.png
+- Assets/Sprites/Effects/Set Bonus Aura/Ackbar/Mine Bomb.png
 - Assets/Sprites/Effects/Stun Immune/Stun Immune.png
 - Assets/Sprites/Effects/Teleport/Teleport In.png
 - Assets/Sprites/Effects/Teleport/Teleport Out.png

@@ -112,7 +112,8 @@ public class M00ks1Controller : MonoBehaviour
             if (obj.action.name == controls.Player.Dash.name)
             {
                 dash.OnDash();
-            }
+				m00ksAnimator.SetTrigger("Dash");
+			}
 			else if(obj.action.name == controls.Player.Ability1.name)
             {
                 ability1.OnAbility1();

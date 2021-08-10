@@ -41,6 +41,10 @@ public class GameConstants : ScriptableObject
 	//Juggernaut
 	public GameObject JuggernautAura;
 	public float JuggernautRadius = 3;
+	// Aura Display
+	public GameObject AuraDisplay; 
+	public float AuraOffsetX = 0.2f;
+	public float AuraOffsetY = -0.8f;
 
 	// Defensive Passive Variables 
 	// Tough
@@ -57,7 +61,8 @@ public class GameConstants : ScriptableObject
 	public float slowRatio = 0.3f;
 	public GameObject unbreakable;
 	public float hornDistance = 5;
-	
+	public float hornOffset = 0.42f;
+
 	// Death Passive Variables
 	// Crawl 
 	public float crawlRatio = 0.4f;
@@ -83,6 +88,7 @@ public class GameConstants : ScriptableObject
 	public float armDuration = 0.5f;
 	// BashoTenin
 	public GameObject magnet;
+	public float magnetPull = 0.1f;
 
 	// Dash Variables
 	// Reverse

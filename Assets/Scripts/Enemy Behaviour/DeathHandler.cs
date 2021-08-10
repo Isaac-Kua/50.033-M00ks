@@ -93,7 +93,6 @@ public class DeathHandler : MonoBehaviour
 	
 	
 	public void allDisable(){
-		stunAnim.SetActive(true);
 		npcBody.constraints = RigidbodyConstraints2D.FreezeAll;
 		foreach (MonoBehaviour script in activeAbilities){
 			script.enabled = false;
@@ -110,6 +109,7 @@ public class DeathHandler : MonoBehaviour
 	}
 	
 	IEnumerator  Stunned(){
+		stunAnim.SetActive(true);
 		npcBody.velocity = Vector2.zero;
 		allDisable();
 		yield return new WaitForSeconds(gameConstants.stunTime);
