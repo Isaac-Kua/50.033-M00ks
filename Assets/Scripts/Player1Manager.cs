@@ -16,6 +16,7 @@ public class Player1Manager : MonoBehaviour
     private SoulManager soulManager4;
     public GameObject altarManagerObject;
     public GameObject introCutscene;
+    public GameObject upgradeCutscene;
     private AltarManager altarManager;
     private List<int> playerSouls = new List<int>{0,0,0,0};
 
@@ -85,6 +86,11 @@ public class Player1Manager : MonoBehaviour
 
     public void stopCutscene()
     {
-        introCutscene.GetComponent<introScene>().stop = true;
+        if (introCutscene.GetComponent<introScene>().playing == true) {
+            introCutscene.GetComponent<introScene>().stop = true;
+        }
+        if (upgradeCutscene.GetComponent<upgradeScene>().playing == true) {
+            upgradeCutscene.GetComponent<upgradeScene>().stop = true;
+        }
     }
 }

@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class introScene : MonoBehaviour
+public class upgradeScene : MonoBehaviour
 {
     public bool stop = false;
-    public bool playing = false;
 
     public GameObject one;
     public GameObject two;
     public GameObject three;
-    public GameObject four;
-    public GameObject five;
     public GameObject msgBox;
-    private Coroutine intro;
+    private Coroutine upgrade;
+    private bool played = false;
+    public bool playing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,23 +20,17 @@ public class introScene : MonoBehaviour
         one.SetActive(false);
         two.SetActive(false);
         three.SetActive(false);
-        four.SetActive(false);
-        five.SetActive(false);
         msgBox.SetActive(false);
-        intro = StartCoroutine(cutscene());
-        GameManager.Instance.cutscene = true;
-        playing = true;
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (stop){
-            StopCoroutine(intro);
+            StopCoroutine(upgrade);
             one.SetActive(false);
             two.SetActive(false);
             three.SetActive(false);
-            four.SetActive(false);
-            five.SetActive(false);
             msgBox.SetActive(false);
             GameManager.Instance.cutscene = false;
             stop = false;
@@ -48,7 +41,6 @@ public class introScene : MonoBehaviour
 
     IEnumerator cutscene()
     {
-        Debug.Log("Intro Cutscene");
         Time.timeScale = 0f;
         msgBox.SetActive(true);
         one.SetActive(true);
@@ -60,14 +52,18 @@ public class introScene : MonoBehaviour
         three.SetActive(true);
         yield return new WaitForSecondsRealtime(5);
         three.SetActive(false);
-        four.SetActive(true);
-        yield return new WaitForSecondsRealtime(5);
-        four.SetActive(false);
-        five.SetActive(true);
-        yield return new WaitForSecondsRealtime(5);
-        five.SetActive(false);
         msgBox.SetActive(false);
         GameManager.Instance.cutscene = false;
         Time.timeScale = 1f;
+    }
+
+    public void play()
+    {
+        if (!played) {
+            upgrade = StartCoroutine(cutscene());
+            playing = true;
+            GameManager.Instance.cutscene = true;
+            played = true;
+        }
     }
 }

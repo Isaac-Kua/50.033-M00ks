@@ -12,6 +12,8 @@ public class SetLevel : MonoBehaviour
     public GameObject upgradeAssigner;
     public GameObject upgradeUI;
     public GameObject speechBubble;
+    public GameObject upgradeCutscene;
+    public GameObject cutscenes;
     private GameObject[] enemies;
     private GameObject[] souls;
     private GameObject[] arrow;
@@ -23,6 +25,8 @@ public class SetLevel : MonoBehaviour
     private List<PlayerConfiguration> players;
     [SerializeField]
     private Transform[] playerSpawns;
+    [SerializeField]
+    private Transform[] playerSpawnsWave;
 
     public static SetLevel Instance;
 
@@ -33,10 +37,11 @@ public class SetLevel : MonoBehaviour
 
     void Start()
     {
-        setLevel();
         AltarManager.NextStage1 += chooseFirstPlayer;
         AltarManager.NextStage1 += setUpgradeSelect;
         players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
+        cutscenes.SetActive(true);
+        setLevel();
     }
 
     public void setLevel()
@@ -46,12 +51,16 @@ public class SetLevel : MonoBehaviour
         spawners.SetActive(true);
         obstacles.SetActive(true);
         hpbar.SetActive(true);
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            players[i].playerPrefab.transform.position = playerSpawnsWave[i].position;
+        }
         GameManager.Instance.upgradeSelection = false;
         GameManager.Instance.secondUpgrade = false;
     }
 
     public void setUpgradeSelect()
     {
+        upgradeCutscene.GetComponent<upgradeScene>().play();
         Debug.Log("Choose upgrades");
         UpgradeSelectionManager.Instance.reset();
         GameManager.Instance.upgradeNo += 1;
@@ -119,6 +128,11 @@ public class SetLevel : MonoBehaviour
         foreach(GameObject proj in area){
             Destroy(proj);
         }
+    }
+
+    void pvpLevel()
+    {
+
     }
 
     void chooseFirstPlayer()

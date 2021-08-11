@@ -92,15 +92,12 @@ public class M00ks1Controller : MonoBehaviour
 		}
 		else if (obj.action.name == controls.Player.Pause.name)
 		{
-			if (GameManager.Instance.cutscene) {
-				Player1Manager.centralManagerInstance.stopCutscene();
-			}
-			else if (!paused)
+			if (!paused)
 			{
 				PauseController.Instance.PauseGame();
 				paused = true;
 			}
-			else
+			else if (paused)
 			{
 				PauseController.Instance.ResumeGame();
 				paused = false;
@@ -111,8 +108,13 @@ public class M00ks1Controller : MonoBehaviour
 		{
             if (obj.action.name == controls.Player.Dash.name)
             {
-                dash.OnDash();
-				m00ksAnimator.SetTrigger("Dash");
+				if (!GameManager.Instance.cutscene){
+					dash.OnDash();
+					m00ksAnimator.SetTrigger("Dash");
+				}
+				if (GameManager.Instance.cutscene) {
+					Player1Manager.centralManagerInstance.stopCutscene();
+				}
 			}
 			else if(obj.action.name == controls.Player.Ability1.name)
             {
