@@ -6,18 +6,21 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class M00ks1Controller : MonoBehaviour
 {
+	//public float moveRight = 0;
+	//public float moveUp = 0;
 	public GameConstants gameConstants;
 	public float speed;
 	public Vector3 previousLocation;
 	public Vector2 moveDirection;
-	public Vector2 faceDirection;
+	public Vector2 faceDirection = new Vector2(0,0);
 	public int playerNo;
+	private bool paused = false;
 
 	// ability use case
 	private Rigidbody2D m00ksBody;
 	private Collider2D m00ksCollider;
+	private Animator m00ksAnimator;
 	private SpriteRenderer m00ksSprite;
-	private bool faceRight = true;
 	private Vector2 dir;
 	private float reverseDuration;
 	private Quaternion angle = new Quaternion(0,0,0,0);
@@ -38,6 +41,7 @@ public class M00ks1Controller : MonoBehaviour
 		dash = GetComponent<DashHolder>();
 		ability1 = GetComponent<Ability1Holder>();
 		ability2 = GetComponent<Ability2Holder>();
+		m00ksSprite = GetComponent<SpriteRenderer>();
 	}
 
     // Start is called before the first frame update
@@ -45,16 +49,25 @@ public class M00ks1Controller : MonoBehaviour
     {
 		m00ksBody = GetComponent<Rigidbody2D>();
 		m00ksCollider = GetComponent<Collider2D>();
-		m00ksSprite = GetComponent<SpriteRenderer>();
+		m00ksAnimator = GetComponent<Animator>();
+
 		previousLocation = transform.position;
 		reverseDuration = gameConstants.reverseDuration;
 		speed = gameConstants.M00ksMoveSpeed;
-    }
+		//faceDirection = new Vector2(moveRight, moveUp);
+		//moveDirection = faceDirection;
+	}
 
     // Update is called once per frame
     void Update()
-    {
-		m00ksSprite.flipX = !faceRight;
+    {	
+		// DELETE THIS LINE AFTER TESTING
+		//moveDirection = new Vector2(moveRight, moveUp);
+		m00ksSprite.flipX = (faceDirection.x < 0);
+		m00ksAnimator.SetFloat("Speed", Mathf.Abs(m00ksBody.velocity.magnitude));
+		m00ksAnimator.SetBool("SwingUp", faceDirection.y > 0.5);
+		m00ksAnimator.SetBool("SwingDown", faceDirection.y < -0.5);
+		m00ksAnimator.SetBool("SwingFront", (faceDirection.y <= 0.5 && faceDirection.y >= -0.5));
 	}
 	
 	void FixedUpdate()
@@ -63,29 +76,62 @@ public class M00ks1Controller : MonoBehaviour
 		StartCoroutine(WhatWasI());
 	}
 
-	public void InitializePlayer(PlayerConfiguration pc){
+	public void InitializePlayer(PlayerConfiguration pc, Sprite s){
 		playerConfig = pc;
 		playerConfig.Input.onActionTriggered += Input_onActionTriggered;
 		pc.playerPrefab = this.gameObject;
+		m00ksSprite.sprite = s;
 	}
 
 	private void Input_onActionTriggered(CallbackContext obj){
 		//Debug.Log("ACTION!!!");
-		if(obj.action.name == controls.Player.Move.name){
+
+		if (obj.action.name == controls.Player.Move.name)
+		{
 			OnMove(obj);
 		}
-		if(obj.action.name == controls.Player.Dash.name){
-			dash.OnDash();
+		else if (obj.action.name == controls.Player.Pause.name)
+		{
+			if (!paused)
+			{
+				PauseController.Instance.PauseGame();
+				paused = true;
+			}
+			else if (paused)
+			{
+				PauseController.Instance.ResumeGame();
+				paused = false;
+			}
 		}
-		if(obj.action.name == controls.Player.Ability1.name){
-			ability1.OnAbility1();
-		}
-		if(obj.action.name == controls.Player.Ability2.name){
-			ability2.OnAbility2();
-		}
-		if(obj.action.name == controls.Player.Melee.name){
-			melee.OnMelee();
-		}
+
+		if (obj.performed)
+		{
+            if (obj.action.name == controls.Player.Dash.name)
+            {
+				if (!GameManager.Instance.cutscene){
+					dash.OnDash();
+					m00ksAnimator.SetTrigger("Dash");
+				}
+				if (GameManager.Instance.cutscene) {
+					Player1Manager.centralManagerInstance.stopCutscene();
+				}
+			}
+			else if(obj.action.name == controls.Player.Ability1.name)
+            {
+                ability1.OnAbility1();
+                m00ksAnimator.SetTrigger("Ability1");
+            }
+			else if(obj.action.name == controls.Player.Ability2.name)
+			{
+				ability2.OnAbility2();
+				m00ksAnimator.SetTrigger("Ability2");
+			}
+			else if(obj.action.name == controls.Player.Melee.name)
+            {
+                melee.OnMelee();
+                m00ksAnimator.SetTrigger("SwingNow");
+            }
+        }
 	}
 	
 	public void OnMove(CallbackContext value)
@@ -104,11 +150,6 @@ public class M00ks1Controller : MonoBehaviour
 		// angle.eulerAngles = eulerAngle;
 		// transform.rotation = angle;
         m00ksBody.velocity = new Vector2(moveDirection.x*speed, moveDirection.y*speed);
-		if (moveDirection.x < 0) {
-			faceRight = false; 
-		} else if (moveDirection.x > 0) {
-			faceRight = true; 
-		}
     }
 
 	void OnDrawGizmos()

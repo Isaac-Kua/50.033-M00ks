@@ -10,7 +10,7 @@ tpsheetFileNames:
 - Assets/Sprites/Effects/Kaiten/Kaiten.tpsheet
 - Assets/Sprites/Effects/Knock Back/Knock Back.tpsheet
 - Assets/Sprites/Effects/Mine Bomb/Mine Bomb.tpsheet
-- Assets/Sprites/Effects/Set Bonus Aura/Akhbar/Mine Bomb.tpsheet
+- Assets/Sprites/Effects/Set Bonus Aura/Ackbar/Mine Bomb.tpsheet
 - Assets/Sprites/Effects/Stun Immune/Stun Immune.tpsheet
 - Assets/Sprites/Effects/Teleport/Teleport In.tpsheet
 - Assets/Sprites/Effects/Teleport/Teleport Out.tpsheet
@@ -23,8 +23,12 @@ tpsheetFileNames:
 - Assets/Sprites/Enemies/Ghost/ghost front.tpsheet
 - Assets/Sprites/Enemies/Ghost/ghost left.tpsheet
 - Assets/Sprites/Enemies/Ghost/ghost right.tpsheet
+- Assets/Sprites/Enemies/Ice Witch/ice witch back.tpsheet
+- Assets/Sprites/Enemies/Ice Witch/ice witch front.tpsheet
+- Assets/Sprites/Enemies/Ice Witch/ice witch left.tpsheet
+- Assets/Sprites/Enemies/Ice Witch/ice witch right.tpsheet
+- Assets/Sprites/Enemies/Knight/base.tpsheet
 - Assets/Sprites/Enemies/Knight/Knight Down Slash.tpsheet
-- Assets/Sprites/Enemies/Knight/knight left.tpsheet
 - Assets/Sprites/Enemies/Knight/Knight Side Slash.tpsheet
 - Assets/Sprites/Enemies/Knight/Knight Up Slash.tpsheet
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlash.tpsheet
@@ -59,7 +63,7 @@ textureFileNames:
 - Assets/Sprites/Effects/Kaiten/Kaiten.png
 - Assets/Sprites/Effects/Knock Back/Knock Back.png
 - Assets/Sprites/Effects/Mine Bomb/Mine Bomb.png
-- Assets/Sprites/Effects/Set Bonus Aura/Akhbar/Mine Bomb.png
+- Assets/Sprites/Effects/Set Bonus Aura/Ackbar/Mine Bomb.png
 - Assets/Sprites/Effects/Stun Immune/Stun Immune.png
 - Assets/Sprites/Effects/Teleport/Teleport In.png
 - Assets/Sprites/Effects/Teleport/Teleport Out.png
@@ -72,8 +76,12 @@ textureFileNames:
 - Assets/Sprites/Enemies/Ghost/ghost front.png
 - Assets/Sprites/Enemies/Ghost/ghost left.png
 - Assets/Sprites/Enemies/Ghost/ghost right.png
+- Assets/Sprites/Enemies/Ice Witch/ice witch back.png
+- Assets/Sprites/Enemies/Ice Witch/ice witch front.png
+- Assets/Sprites/Enemies/Ice Witch/ice witch left.png
+- Assets/Sprites/Enemies/Ice Witch/ice witch right.png
+- Assets/Sprites/Enemies/Knight/base.png
 - Assets/Sprites/Enemies/Knight/Knight Down Slash.png
-- Assets/Sprites/Enemies/Knight/knight left.png
 - Assets/Sprites/Enemies/Knight/Knight Side Slash.png
 - Assets/Sprites/Enemies/Knight/Knight Up Slash.png
 - Assets/Sprites/players/basic attacks/DownSlash/DownSlash.png
@@ -100,6 +108,10 @@ textureFileNames:
 - Assets/Sprites/players/basic movement/SkeleP4.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
+- 
 - 
 - 
 - 

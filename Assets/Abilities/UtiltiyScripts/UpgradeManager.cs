@@ -47,6 +47,7 @@ public class UpgradeManager : MonoBehaviour
     public bool BypassMod = false;
     public bool SpeedMod = false;
     public bool HeavyMod = false;
+
 	// Ability 1 Ranged
 	private bool arrowRange = false;
 	private bool knockbackRange = false;
@@ -90,19 +91,23 @@ public class UpgradeManager : MonoBehaviour
 	public bool DannyCombo = false;
 	public bool TurtleCombo = false;
 	public bool MagnusCombo = false;
+	private GameObject Aura;
+	private Animator AuraAnimator;
 
 
 	//Ability1 ScriptableObjects
 	public Ability ab1_Kaiten;
 	public Ability ab1_Knockback;
 	public Ability ab1_SpikeRange;
+	public Ability ab1_Arrow;
 	public Ability ab1_Default;
-	
+
 	public enum ability1Upgrade
 	{
 		Kaiten,
 		Knockback,
 		SpikeRange,
+		Arrow,
 		Default
 	}
 	//Ability2 ScriptableObjects
@@ -152,6 +157,8 @@ public class UpgradeManager : MonoBehaviour
 	private DashHolder dashHolder;
 	private Ability2Holder ability2Holder;
 	private MeleeHolder meleeHolder;
+	private Animator m00ksAnimator;
+
 	//The Various Ability States
 	public ability1Upgrade ab1Upgrade = ability1Upgrade.Default;
 	public ability2Upgrade ab2Upgrade = ability2Upgrade.Default;
@@ -175,7 +182,41 @@ public class UpgradeManager : MonoBehaviour
 		meleeHolder.changeAbility(newMelee);
 	}
 
-
+	public Dictionary<string, bool> GetUpgrades()
+	{
+		Dictionary<string, bool> upgrades = new Dictionary<string, bool>();
+		// Defensive upgrades
+		upgrades.Add("miniDef", miniDefense);
+		upgrades.Add("shellDef", shellDefense);
+		upgrades.Add("unstoppableDef", unstoppableDefense);
+		upgrades.Add("toughDef", toughDefense);
+		// Death Upgrades
+		upgrades.Add("crawlDeath", crawlDeath);
+		upgrades.Add("kamikazeDeath", kamikazeDeath);
+		upgrades.Add("soulswapDeath", soulswapDeath);
+		upgrades.Add("vengeanceDeath", vengeanceDeath);
+		// Kill Upgrades
+		upgrades.Add("explosionKill", explosionKill);
+		upgrades.Add("zombieKill", zombieKill);
+		upgrades.Add("hasteKill", hasteKill);
+		upgrades.Add("saiyanKill", saiyanKill);
+		// Move Upgrades
+		upgrades.Add("juggernautMove", juggernautMove);
+		upgrades.Add("wallwalkerMove", wallwalkerMove);
+		upgrades.Add("shivaMove", shivaMove);
+		upgrades.Add("ghostMove", ghostMove);
+		// Utility Upgrades
+		upgrades.Add("respawnUtil", respawnUtil);
+		upgrades.Add("meleeUtil", meleeUtil);
+		upgrades.Add("rangedUtil", rangedUtil);
+		upgrades.Add("altUtil", altUtil);
+		// Alt 1 Modifier
+		upgrades.Add("rangedBullet", rangedBullet);
+		upgrades.Add("phaseBullet", phaseBullet);
+		upgrades.Add("heavyBullet", heavyBullet);
+		upgrades.Add("homingBullet", homingBullet);
+		return upgrades;
+	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -184,11 +225,24 @@ public class UpgradeManager : MonoBehaviour
 		dashHolder = player.GetComponent<DashHolder>();
 		meleeHolder = player.GetComponent<MeleeHolder>();
 		ability2Holder = player.GetComponent<Ability2Holder>();
+		m00ksAnimator = GetComponent<Animator>();
+		Aura = Instantiate(gameConstants.AuraDisplay, transform.position, transform.rotation);
+		Aura.transform.parent = transform;
+		AuraAnimator = Aura.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		Aura.GetComponent<SpriteRenderer>().flipX = GetComponent<SpriteRenderer>().flipX;
+		if (GetComponent<SpriteRenderer>().flipX)
+		{
+			Aura.transform.position = transform.position + new Vector3(-gameConstants.AuraOffsetX, gameConstants.AuraOffsetY, 0);
+		}
+		else
+		{
+			Aura.transform.position = transform.position + new Vector3(gameConstants.AuraOffsetX, gameConstants.AuraOffsetY, 0);
+		}
 		updateAbilities();
 		calculateCombo();
 		if (wallwalkerMove)
@@ -282,9 +336,12 @@ public class UpgradeManager : MonoBehaviour
 			changeAbility1(ab1_SpikeRange);
 			spikeRange = true;
 			break;
+		case ability1Upgrade.Arrow:
+			changeAbility1(ab1_Arrow);
+			arrowRange = true;
+			break;
 		default:
 			changeAbility1(ab1_Default);
-			arrowRange = false;
 			break;
 		}
 
@@ -357,6 +414,11 @@ public class UpgradeManager : MonoBehaviour
 			changeMelee(m_Default);	
 			break;
 		}
+
+		m00ksAnimator.SetBool("ZangiefMelee", zangiefMelee);
+		m00ksAnimator.SetBool("DeathCrawlPassive", crawlDeath);
+		m00ksAnimator.SetBool("TeleportAlt2", teleportAlt);
+		m00ksAnimator.SetBool("RewindDash", reverseDash);
 	}
 
 	void calculateCombo(){
@@ -441,6 +503,15 @@ public class UpgradeManager : MonoBehaviour
 		} else {
 			MagnusCombo = false;
 		}
+
+		AuraAnimator.SetBool("Magnus", MagnusCombo);
+		AuraAnimator.SetBool("Achmed", AchmedCombo);
+		AuraAnimator.SetBool("Juggernaut", JuggernautCombo);
+		AuraAnimator.SetBool("Toph", TophCombo);
+		AuraAnimator.SetBool("Pacquiao", PacquiaoCombo);
+		AuraAnimator.SetBool("Danny", DannyCombo);
+		AuraAnimator.SetBool("Turtle", TurtleCombo);
+		AuraAnimator.SetBool("Widowmaker", WidowmakerCombo);
 	}
 }
 

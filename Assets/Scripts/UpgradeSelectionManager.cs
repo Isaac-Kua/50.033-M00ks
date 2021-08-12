@@ -10,21 +10,12 @@ public class UpgradeSelectionManager : MonoBehaviour
 
     private List<PlayerConfiguration> players;
     public static UpgradeSelectionManager Instance;
+    public delegate void gameEvent();
+    public static event gameEvent SelectMetric;
 
     void Awake()
     {
         Instance = this;
-    }
-
-    void Start()
-    {
-        for (int i=0; i<4; i++){
-            playerSelect[i] = true;
-        }
-        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
-        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-            playerSelect[i] = false;
-        }
     }
 
     public void playerSelected(int player)
@@ -36,10 +27,38 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         if (allSelected){
-            for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                players[i].Input.ActivateInput();
+            if (AltarManager.Instance.altarDamage > 40){
+                AltarManager.Instance.resolve();
+                GameManager.Instance.upgradeNo += 1;
+                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+                    players[i].Input.ActivateInput();
+                }
+                SelectMetric();
+                SetLevel.Instance.setLevel();
             }
-            SetLevel.Instance.setLevel();
+            else if (AltarManager.Instance.altarDamage > 15){
+                AltarManager.Instance.resolve();
+                AltarManager.Instance.setHealth(50);
+                GameManager.Instance.upgradeNo += 1;
+                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+                    players[i].Input.ActivateInput();
+                }
+                SelectMetric();
+                SetLevel.Instance.setLevel();
+            }
+            else if (GameManager.Instance.secondUpgrade == false){
+                SetLevel.Instance.setUpgradeSelect();
+                GameManager.Instance.secondUpgrade = true;
+            }
+            else{
+                AltarManager.Instance.resolve();
+                AltarManager.Instance.setHealth(50);
+                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+                    players[i].Input.ActivateInput();
+                }
+                SelectMetric();
+                SetLevel.Instance.setLevel();
+            }
         }
         else{
             randPlayer = Random.Range(0,4);
@@ -55,5 +74,16 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         allSelected = true;
+    }
+
+    public void reset()
+    {
+        for (int i=0; i<4; i++){
+            playerSelect[i] = true;
+        }
+        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            playerSelect[i] = false;
+        }
     }
 }

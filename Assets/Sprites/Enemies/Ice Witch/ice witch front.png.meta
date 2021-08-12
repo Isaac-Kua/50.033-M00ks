@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: 7ee31856de229164fad72236efb1468f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3381504977479712476
+    second: Attack (1)
+  - first:
+      213: -2060519558938617050
+    second: Attack (2)
+  - first:
+      213: -7719392934178719855
+    second: Attack (3)
+  - first:
+      213: -1235185831877847997
+    second: Attack (4)
+  - first:
+      213: 8974187446137494290
+    second: Attack (5)
+  - first:
+      213: -7530245995446422560
+    second: CastSpell (1)
+  - first:
+      213: -1821509090414736180
+    second: CastSpell (2)
+  - first:
+      213: -7770792646136891338
+    second: CastSpell (3)
+  - first:
+      213: -163321106972132924
+    second: CastSpell (4)
+  - first:
+      213: -6681885825852855229
+    second: CastSpell (5)
+  - first:
+      213: -79113932470536442
+    second: CastSpell (6)
+  - first:
+      213: -7796013201690335930
+    second: Dead (1)
+  - first:
+      213: 1413578141847302047
+    second: Dead (2)
+  - first:
+      213: 2628302619515614810
+    second: Dead (3)
+  - first:
+      213: 814374056026990868
+    second: Dead (4)
+  - first:
+      213: 490778013578418519
+    second: Dead (5)
+  - first:
+      213: -8843813298390248249
+    second: Hurt (1)
+  - first:
+      213: -4768309131218314212
+    second: Hurt (2)
+  - first:
+      213: 485847265018218990
+    second: Hurt (3)
+  - first:
+      213: 7043589169208338468
+    second: Hurt (4)
+  - first:
+      213: -8585489948428053015
+    second: Idle (1)
+  - first:
+      213: 4276804271983656219
+    second: Idle (2)
+  - first:
+      213: 6205538695636862587
+    second: Idle (3)
+  - first:
+      213: -7762297477123034162
+    second: Shoot (1)
+  - first:
+      213: -2359000496127544901
+    second: Shoot (2)
+  - first:
+      213: 5024278898182499851
+    second: Shoot (3)
+  - first:
+      213: 6621137067045927315
+    second: Shoot (4)
+  - first:
+      213: 7357266143759950772
+    second: Shoot (5)
+  - first:
+      213: 7081699677714117970
+    second: Walk (1)
+  - first:
+      213: -6594715173487084409
+    second: Walk (2)
+  - first:
+      213: -4337723596598132608
+    second: Walk (3)
+  - first:
+      213: -6606167410711889220
+    second: Walk (4)
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +137,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +171,693 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Attack (1)
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1007
+        width: 380
+        height: 507
+      alignment: 9
+      pivot: {x: 0.5276316, y: 0.48027614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4214b13932b7211d0800000000000000
+      internalID: -3381504977479712476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack (2)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1090
+        width: 392
+        height: 503
+      alignment: 9
+      pivot: {x: 0.49107143, y: 0.47614315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b18b4d0609763e0800000000000000
+      internalID: -2060519558938617050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack (3)
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1092
+        width: 392
+        height: 534
+      alignment: 9
+      pivot: {x: 0.47576532, y: 0.5065543}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197fd9486053fd490800000000000000
+      internalID: -7719392934178719855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack (4)
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 3542
+        width: 442
+        height: 553
+      alignment: 9
+      pivot: {x: 0.41289592, y: 0.52350813}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344535bb70dbbdee0800000000000000
+      internalID: -1235185831877847997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2609
+        width: 454
+        height: 550
+      alignment: 9
+      pivot: {x: 0.40418503, y: 0.5209091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b9bca5fe7ba8c70800000000000000
+      internalID: 8974187446137494290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastSpell (1)
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1628
+        width: 397
+        height: 508
+      alignment: 9
+      pivot: {x: 0.4647355, y: 0.47736222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3bb120a213f7790800000000000000
+      internalID: -7530245995446422560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastSpell (2)
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 2026
+        width: 396
+        height: 509
+      alignment: 9
+      pivot: {x: 0.4709596, y: 0.47642437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc4fae0223b8b6e0800000000000000
+      internalID: -1821509090414736180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastSpell (3)
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 574
+        width: 379
+        height: 513
+      alignment: 9
+      pivot: {x: 0.5105541, y: 0.47270957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638facf7249982490800000000000000
+      internalID: -7770792646136891338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastSpell (4)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1595
+        width: 396
+        height: 511
+      alignment: 9
+      pivot: {x: 0.4659091, y: 0.4745597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c93a9a8154cbbdf0800000000000000
+      internalID: -163321106972132924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastSpell (5)
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 2115
+        width: 399
+        height: 510
+      alignment: 9
+      pivot: {x: 0.462406, y: 0.47549018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ca2585e3c2543a0800000000000000
+      internalID: -6681885825852855229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastSpell (6)
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2138
+        width: 435
+        height: 510
+      alignment: 9
+      pivot: {x: 0.42413792, y: 0.47549018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6073f4e2c4ee6eef0800000000000000
+      internalID: -79113932470536442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (1)
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 3154
+        width: 465
+        height: 514
+      alignment: 9
+      pivot: {x: 0.19784947, y: 0.43093386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645edf05c4ffec390800000000000000
+      internalID: -7796013201690335930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (2)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2108
+        width: 428
+        height: 499
+      alignment: 9
+      pivot: {x: 0.3411215, y: 0.43787575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fa01f94d90e9310800000000000000
+      internalID: 1413578141847302047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (3)
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 3650
+        width: 489
+        height: 445
+      alignment: 9
+      pivot: {x: 0.5562372, y: 0.47977528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56f47e9e4b997420800000000000000
+      internalID: 2628302619515614810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (4)
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 3670
+        width: 490
+        height: 425
+      alignment: 9
+      pivot: {x: 0.68367344, y: 0.6082353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41968c3a3ec3d4b00800000000000000
+      internalID: 814374056026990868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead (5)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3660
+        width: 500
+        height: 435
+      alignment: 9
+      pivot: {x: 0.68, y: 0.6425287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759d9eac0089fc600800000000000000
+      internalID: 490778013578418519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt (1)
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 61
+        width: 374
+        height: 511
+      alignment: 9
+      pivot: {x: 0.4906417, y: 0.4804305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4d29169a6744580800000000000000
+      internalID: -8843813298390248249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt (2)
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 68
+        width: 379
+        height: 508
+      alignment: 9
+      pivot: {x: 0.52110815, y: 0.48129922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c1b76db1093ddb0800000000000000
+      internalID: -4768309131218314212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt (3)
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 2537
+        width: 406
+        height: 507
+      alignment: 9
+      pivot: {x: 0.5406404, y: 0.48816568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee9818e63831eb600800000000000000
+      internalID: 485847265018218990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt (4)
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1605
+        width: 393
+        height: 508
+      alignment: 9
+      pivot: {x: 0.5254453, y: 0.48720473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428a376e70bdfb160800000000000000
+      internalID: 7043589169208338468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (1)
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1516
+        width: 381
+        height: 508
+      alignment: 9
+      pivot: {x: 0.48425198, y: 0.47933072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5524931663ad880800000000000000
+      internalID: -8585489948428053015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (2)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 70
+        width: 379
+        height: 504
+      alignment: 9
+      pivot: {x: 0.48680738, y: 0.4811508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d757d63d24a5b30800000000000000
+      internalID: 4276804271983656219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (3)
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 1010
+        width: 380
+        height: 502
+      alignment: 9
+      pivot: {x: 0.4881579, y: 0.48306772}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b764069b0908e1650800000000000000
+      internalID: 6205538695636862587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (1)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3161
+        width: 458
+        height: 497
+      alignment: 9
+      pivot: {x: 0.36790392, y: 0.47585514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3bb2b2297c64490800000000000000
+      internalID: -7762297477123034162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (2)
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 2627
+        width: 436
+        height: 505
+      alignment: 9
+      pivot: {x: 0.36123854, y: 0.48415843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1f85b1c85234fd0800000000000000
+      internalID: -2359000496127544901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (3)
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 3046
+        width: 440
+        height: 494
+      alignment: 9
+      pivot: {x: 0.3465909, y: 0.47874495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ea8a2c903d9b540800000000000000
+      internalID: 5024278898182499851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (4)
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 3134
+        width: 440
+        height: 514
+      alignment: 9
+      pivot: {x: 0.3465909, y: 0.49902725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399b17a051103eb50800000000000000
+      internalID: 6621137067045927315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (5)
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2650
+        width: 440
+        height: 502
+      alignment: 9
+      pivot: {x: 0.3465909, y: 0.48705178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3e1d8c3924a1660800000000000000
+      internalID: 7357266143759950772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk (1)
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 578
+        width: 381
+        height: 512
+      alignment: 9
+      pivot: {x: 0.48425198, y: 0.48339844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255f5202650474260800000000000000
+      internalID: 7081699677714117970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk (2)
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 1089
+        width: 382
+        height: 514
+      alignment: 9
+      pivot: {x: 0.4803665, y: 0.48151752}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c7c617d7dda74a0800000000000000
+      internalID: -6594715173487084409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk (3)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 576
+        width: 381
+        height: 512
+      alignment: 9
+      pivot: {x: 0.48425198, y: 0.48339844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08040f20f5f4dc3c0800000000000000
+      internalID: -4337723596598132608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk (4)
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 1514
+        width: 385
+        height: 510
+      alignment: 9
+      pivot: {x: 0.4766234, y: 0.47745097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba71cdadbd2254a0800000000000000
+      internalID: -6606167410711889220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

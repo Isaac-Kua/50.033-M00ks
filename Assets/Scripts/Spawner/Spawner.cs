@@ -13,17 +13,17 @@ public class Spawner : MonoBehaviour
         //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Lina);
         //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Davion);
         EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
-        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
-        EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
         //EnemyPool.SharedInstance.spawnEnemy(EnemyType.Rylai);
         //EnemyPool.SharedInstance.spawnEnemy(EnemyType.bara);
     }
 
     void Update()
     {
-        if (!GameManager.Instance.upgradeSelection){
+        if (!GameManager.Instance.upgradeSelection)
+        {
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemies.Length == 0){
+            if (enemies.Length == 0)
+            {
                 spawn();
             }
         }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1165645779147639469}
   - component: {fileID: 127944649722509358}
   - component: {fileID: 3364962700852580756}
+  - component: {fileID: 685349952370884455}
   m_Layer: 6
   m_Name: Davion
   m_TagString: Enemy
@@ -30,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165645779147639466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.56, y: 13.46, z: 0}
-  m_LocalScale: {x: 2, y: 6, z: 1}
+  m_LocalPosition: {x: 26.76, y: 10.66, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.77647066, g: 0.77647066, b: 0.77647066, a: 1}
+  m_Sprite: {fileID: -3381504977479712476, guid: 5e0c7f1325d58aa4daa57af71f174ddb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1.3166667, y: 2.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,18 +102,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.67497146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 0.5}
+    pivot: {x: 0.4, y: 0.517094}
+    oldSize: {x: 1.3166667, y: 2.34}
+    newSize: {x: 1.3166667, y: 2.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1, y: 0.9682214}
   m_EdgeRadius: 0
 --- !u!50 &1165645779147639470
 Rigidbody2D:
@@ -162,10 +163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
-  soul: {fileID: 5941678920240261770, guid: ba1acdb43dfb22d46aa5704cbd312d98, type: 3}
+  soul: {fileID: 4587663427684844348, guid: 3cc37b8da865fe1409242e9d9fc82374, type: 3}
   lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 1165645779147639469}
+  ammo: 0
 --- !u!114 &3364962700852580756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +182,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedTarget: {fileID: 0}
   detectionRange: 0
+--- !u!95 &685349952370884455
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165645779147639466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 702a194e6dc74ad4ab1a82f194d39d4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 public class Ability2Holder : MonoBehaviour
 {
     public Ability ability;
+    [SerializeField]
+	public AudioClip[] audioClips;
+    private AudioSource a2Audio;
     //public string abilityType;
     float cooldownTime;
     float activeTime;
@@ -19,9 +22,29 @@ public class Ability2Holder : MonoBehaviour
     }
 
     AbilityState state = AbilityState.ready;
-
+    private void Start() {
+        a2Audio = gameObject.GetComponents<AudioSource>()[3];
+    }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        switch (gameObject.GetComponent<UpgradeManager>().ab2Upgrade)
+		{
+		case UpgradeManager.ability2Upgrade.Goo:
+			a2Audio.clip = audioClips[1];
+			break;
+		case UpgradeManager.ability2Upgrade.Magnet:
+			a2Audio.clip = audioClips[2];
+			break;
+		case UpgradeManager.ability2Upgrade.Teleport:
+			a2Audio.clip = audioClips[3];
+			break;
+        case UpgradeManager.ability2Upgrade.Mine:
+            a2Audio.clip = audioClips[4];
+            break;
+		default:
+			a2Audio.clip = audioClips[0];
+			break;
+		}
     }
     public void rechargeFully(){
         charges = ability.charges;
@@ -34,7 +57,7 @@ public class Ability2Holder : MonoBehaviour
     public void OnAbility2()
     {
         input = true;
-        Debug.Log("ability2 in abiliy holder");
+        a2Audio.Play();
     }
 
     // Update is called once per frame
@@ -68,13 +91,13 @@ public class Ability2Holder : MonoBehaviour
                 {
                     state = AbilityState.recharging;
                     rechargeTime = ability.rechargeTime;
-                    Debug.Log("First Use!!!");
+                    //Debug.Log("First Use!!!");
                 }
                 else
                 {
                     state = AbilityState.recharging;
                     // Debug.Log(charges);
-                    Debug.Log("Subsequent Use!!!");
+                    //Debug.Log("Subsequent Use!!!");
                     // Debug.Log(rechargeTime);
                 }
                 input = false;
@@ -98,12 +121,12 @@ public class Ability2Holder : MonoBehaviour
                     charges++;
                     rechargeTime = ability.rechargeTime;
                     //Debug.Log(charges);
-                    Debug.Log("recharged!!!");
+                    //Debug.Log("recharged!!!");
                 }
                 if(charges == ability.charges)
                 {
                     state = AbilityState.ready;
-                    Debug.Log("fully recharged!!!");
+                    //Debug.Log("fully recharged!!!");
                 }
                 input = false;
                 

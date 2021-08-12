@@ -19,23 +19,24 @@ public class ProjectileController : MonoBehaviour
 	
 	void OnCollisionEnter2D(Collision2D other)
     {
-        if (!gameObject.CompareTag("Player"))
+        if (!gameObject.CompareTag("Player") && !(gameObject.name == "Barathrum(Clone)") && !(gameObject.name == "Barathrum"))
         {
-            if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
+            if (gameObject.name == "Firebolt(Clone)")
+            {
+                gameObject.GetComponent<FireboltController>().Explode();
+            }
+            else if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
             {
                 if (other.gameObject != owner){
                     Destroy(gameObject);
                 }
             }
         }
-        if (other.gameObject.CompareTag("Altar"))
-        {
-            Player1Manager.centralManagerInstance.damageAltar();
+        if (!gameObject.CompareTag("PlayerArrow") && !gameObject.CompareTag("Player")){
+            if (other.gameObject.CompareTag("Altar"))
+            {
+                Player1Manager.centralManagerInstance.damageAltar();
+            }
         }
-	}
-
-    void OnBecameInvisible()
-    {
-         Destroy(gameObject);
     }
 }

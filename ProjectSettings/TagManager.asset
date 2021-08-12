@@ -17,6 +17,7 @@ TagManager:
   - Altar
   - Enemy
   - Upgrade
+  - Area
   layers:
   - Default
   - TransparentFX
@@ -65,4 +66,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2593855851
+    locked: 0
+  - name: Foreground
+    uniqueID: 3821751075
     locked: 0

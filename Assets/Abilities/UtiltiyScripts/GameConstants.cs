@@ -16,7 +16,10 @@ public class GameConstants : ScriptableObject
 	public float yBound = 18;
 	public float xBound = 30;
 	public int comboCount = 2;
-	
+	public int deathFadeTime = 2;
+	public GameObject stunAnimation;
+	public Vector3 stunPosition = new Vector3(0, 0.5f, 0);
+
 	// M00ks
 	public float M00ksMoveSpeed = 20;
 
@@ -38,11 +41,16 @@ public class GameConstants : ScriptableObject
 	//Juggernaut
 	public GameObject JuggernautAura;
 	public float JuggernautRadius = 3;
+	// Aura Display
+	public GameObject AuraDisplay; 
+	public float AuraOffsetX = 0.2f;
+	public float AuraOffsetY = -0.8f;
 
 	// Defensive Passive Variables 
 	// Tough
 	public int defaultLives = 1;
 	public int thugLives = 2;
+	public GameObject toughField;
 	// Mini
 	public float defaultSize = 2;
 	public float shrinkRatio = 2;
@@ -51,7 +59,10 @@ public class GameConstants : ScriptableObject
 	public GameObject shell;
 	// Unstoppable
 	public float slowRatio = 0.3f;
-	
+	public GameObject unbreakable;
+	public float hornDistance = 5;
+	public float hornOffset = 0.42f;
+
 	// Death Passive Variables
 	// Crawl 
 	public float crawlRatio = 0.4f;
@@ -75,6 +86,9 @@ public class GameConstants : ScriptableObject
 	// Ability2 (Alternate) Variables 
 	// Mine
 	public float armDuration = 0.5f;
+	// BashoTenin
+	public GameObject magnet;
+	public float magnetPull = 0.1f;
 
 	// Dash Variables
 	// Reverse
@@ -128,7 +142,9 @@ public class GameConstants : ScriptableObject
 	public float fireWizardMaxRange = 20;
 	public float fireWizardMinRange = 5;
 	public float fireWizardPoofChargeTime = 5;
+	public float fireWizardPoofCastTime = 0.5f;
 	public float fireWizardWindUpTime = 3;
+	public float fireWizardSwingTime = 0.2f;
 
 	// Ranger
 	public GameObject rangerArrow;
@@ -136,6 +152,7 @@ public class GameConstants : ScriptableObject
 	public float rangerMaxRange = 20;	
 	public float rangerMinRange = 10;
 	public float rangerArrowSpeed = 100;
+	public float rangerFireTime = 0.5f;
 	public float rangerWindUpTime = 3;
 	
 	// Knight
@@ -154,6 +171,7 @@ public class GameConstants : ScriptableObject
 	public float iceWizardMinRange = 10 ;
 	public float iceWizardBurstChargeTime = 10f;
 	public float iceWizardWindUpTime = 3f;
+	public float iceWizardSwingTime = 0.2f;
 	public GameObject iceWizardIcebolt;
 	public GameObject iceWizardIcewave;
 	
@@ -174,5 +192,4 @@ public class GameConstants : ScriptableObject
 	public float BarbarianPauseDuration = 0.1f;
 	public float BarbarianWindUpTime = 3f;
 	public int BarbarianMaxCharges = 3;
-
 }

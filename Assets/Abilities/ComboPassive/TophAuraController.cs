@@ -16,7 +16,6 @@ public class TophAuraController : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-		Debug.Log(other.GetComponent<Rigidbody2D>().velocity);
 		if (other.gameObject != transform.parent.gameObject) {
 			other.GetComponent<Rigidbody2D>().drag = 1000*timeRate;
 		}

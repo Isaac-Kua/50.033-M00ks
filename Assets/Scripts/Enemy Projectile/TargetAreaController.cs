@@ -11,7 +11,7 @@ public class TargetAreaController : MonoBehaviour
     void Start()
     {
 		explosionScale = gameConstants.fireboltExplosionScale;	
-		transform.localScale = new Vector3(explosionScale,explosionScale,0);   
+		transform.localScale*= gameConstants.fireboltExplosionScale;   
 		transform.position = new Vector3(transform.position.x, transform.position.y,2);
     }
 

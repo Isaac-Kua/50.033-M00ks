@@ -6,21 +6,13 @@ public class FireWizardController : MonoBehaviour
 {
 	public GameConstants gameConstants;
 	public GameObject target1;
-	
-	private float speed;
-	private float yBound;
-	private float xBound;
-	private float maxRange;
-	private float minRange;
-	private float poofChargeTime;
-	private float windUpTime;
-	private GameObject missile;
-	
+
 	private Rigidbody2D fireWizBody;
 	private SpriteRenderer fireWizSprite;
+	private Animator fireWizAnimator;
+	private AudioSource fireWizAudio;
 	private float distance;
 	private bool poofCharge = true;
-	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
@@ -28,17 +20,11 @@ public class FireWizardController : MonoBehaviour
 	void Start()
 	{
 		target1 = gameObject;
-		speed = gameConstants.fireWizardMoveSpeed;
-		yBound = gameConstants.yBound;
-		xBound = gameConstants.xBound;
-		maxRange = gameConstants.fireWizardMaxRange;
-		minRange = gameConstants.fireWizardMinRange;
-		poofChargeTime = gameConstants.fireWizardPoofChargeTime;
-		windUpTime = gameConstants.fireWizardWindUpTime;
-		missile = gameConstants.fireWizardFirebolt;
 		
 		fireWizBody = GetComponent<Rigidbody2D>();
 		fireWizSprite = GetComponent<SpriteRenderer>();
+		fireWizAnimator = GetComponent<Animator>();
+		fireWizAudio = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -47,56 +33,59 @@ public class FireWizardController : MonoBehaviour
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
-		
+
 		distance = Vector2.Distance(transform.position, target1.transform.position);
-		transform.rotation = angle;
+		//transform.rotation = angle;
 
 		if (target1 == gameObject)
 		{
-			// do nothing
-		}
-		else if (distance > maxRange)
-		{
-			fireWizBody.velocity = (dir * speed);
-			
-		} else if (distance > minRange && distance < maxRange) {
 			fireWizBody.velocity = Vector2.zero;
-			if (ammo) {
-				Fire();
+		}
+		else if (distance > gameConstants.fireWizardMaxRange)
+		{
+			fireWizBody.velocity = (dir * gameConstants.fireWizardMoveSpeed);
+			
+		} else if (distance > gameConstants.fireWizardMinRange && distance < gameConstants.fireWizardMaxRange) {
+			fireWizBody.velocity = Vector2.zero;
+			if (GetComponent<DeathHandler>().ammo) {
+				StartCoroutine(Fire());
 			} 
-		} else if (distance < minRange){
+		} else if (distance < gameConstants.fireWizardMinRange)
+		{
 			if (poofCharge) {
-				Poof();
+				StartCoroutine(Panic());
 			} else {
-				fireWizBody.velocity = (-1*dir * speed);
+				fireWizBody.velocity = (-1*dir * gameConstants.fireWizardMoveSpeed);
 			}
 		}
+
+		fireWizAnimator.SetFloat("Speed", Mathf.Abs(fireWizBody.velocity.magnitude));
+		fireWizSprite.flipX = (dir.x < 0);
+
 	}
-	
+
 	// Update is called once per frame
 	void Update() {
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 	}
 	
-	void Poof()
-	{
-		transform.position = new Vector2(Random.Range(-xBound, xBound),Random.Range(-yBound, yBound));
-		poofCharge = false;
-		StartCoroutine(Panic());
-	}
-	
 	IEnumerator Panic()
 	{
-		fireWizSprite.material.color = new Color(0,0,1); //C# Deep Blue
-		yield return new WaitForSeconds(poofChargeTime);
+		poofCharge = false;
+		fireWizAnimator.SetTrigger("Panic");
+		yield return new WaitForSeconds(gameConstants.fireWizardPoofCastTime);
+		transform.position = new Vector2(Random.Range(-gameConstants.xBound, gameConstants.xBound), Random.Range(-gameConstants.yBound, gameConstants.yBound));
+		yield return new WaitForSeconds(gameConstants.fireWizardPoofChargeTime);
 		poofCharge = true;
-		fireWizSprite.material.color = new Color(1,1,1); //C# White
 	}
-	
-	void Fire() 
+
+	IEnumerator Fire()
 	{
-		ammo = false;
-		GameObject firebolt = Instantiate(missile, transform.position, transform.rotation);
+		GetComponent<DeathHandler>().ammo = false;
+		fireWizAnimator.SetTrigger("Firing");
+		yield return new WaitForSeconds(gameConstants.fireWizardSwingTime);
+		GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
+		fireWizAudio.Play();
 		firebolt.GetComponent<FireboltController>().target1 = target1;
 		firebolt.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());
@@ -104,9 +93,7 @@ public class FireWizardController : MonoBehaviour
 	
 	IEnumerator  WindUp()
 	{
-		fireWizSprite.material.color = new Color(1,1,0.5f); //C# Yellow
-		yield return new WaitForSeconds(windUpTime);
-		fireWizSprite.material.color = new Color(1,0,0); //C# Red
-		ammo = true;
+		yield return new WaitForSeconds(gameConstants.fireWizardWindUpTime);
+		GetComponent<DeathHandler>().ammo = true;
 	}
 }

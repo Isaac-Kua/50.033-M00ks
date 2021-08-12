@@ -16,7 +16,7 @@ public class FireboltController : MonoBehaviour
 	private SpriteRenderer itemSprite;
 	private Vector3 targetLocation;
 	private Collider2D itemCollider;
-	private GameObject targetArea;
+	public GameObject targetArea;
 	
 	void Start()
 	{
@@ -30,10 +30,15 @@ public class FireboltController : MonoBehaviour
 		itemSprite.flipX = true;
 		
 		targetLocation = target1.transform.position;
-		targetAreaMarker = gameConstants.fireboltTargetArea;
-		targetArea = Instantiate(targetAreaMarker, targetLocation, transform.rotation);
+		targetArea = Instantiate(gameConstants.fireboltTargetArea, targetLocation, transform.rotation);
 		
 		explosionScale = gameConstants.fireboltExplosionScale;
+
+		Vector2 dir = (targetLocation - this.transform.position).normalized;
+		Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, dir));
+		Quaternion angle = new Quaternion(0, 0, 0, 0);
+		angle.eulerAngles = eulerAngle;
+		transform.rotation = angle;
 	}
 		
     // Update is called once per frame
@@ -60,12 +65,12 @@ public class FireboltController : MonoBehaviour
 		}
 	}
 	
-	void Explode()
+	public void Explode()
 	{
 		Destroy(targetArea);
 		exploded = true;
 		transform.localScale = new Vector3(explosionScale,explosionScale,0);
-		GameObject goo = Instantiate(gooPool, transform.position, transform.rotation);
+		GameObject goo = Instantiate(gooPool, transform.position, new Quaternion(0, 0, 0, 0));
 		goo.transform.localScale = transform.localScale;
 		OnBecameInvisible();
 	}	

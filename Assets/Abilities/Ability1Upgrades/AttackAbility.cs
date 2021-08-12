@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "ArrowRangedAbility", menuName = "Ability 1/Arrow")]
 public class AttackAbility : Ability
 {
     public GameObject missile;

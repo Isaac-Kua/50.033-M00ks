@@ -12,18 +12,19 @@ public class KnightController : MonoBehaviour
 	private GameObject myShield;	
 	private Rigidbody2D knightBody;
 	private SpriteRenderer knightSprite;
-	
+	private Animator knightAnimator;
+
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
 	// Start is called before the first frame update
 	void Start()
 	{
-
 		target1 = gameObject;
 		knightBody = GetComponent<Rigidbody2D>();
 		knightSprite = GetComponent<SpriteRenderer>();
-		
+		knightAnimator = GetComponent<Animator>();
+
 		speed = gameConstants.knightMoveSpeed;
 		shield = gameConstants.knightShield;
 		
@@ -37,21 +38,23 @@ public class KnightController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		dir = (target1.transform.position - this.transform.position).normalized;
-		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
-		angle.eulerAngles = eulerAngle;
-		transform.rotation = angle;
-		eulerAngle = dir;
-
 		if (target1 == gameObject)
 		{
-			// do nothing
+			knightBody.velocity = Vector2.zero;
 		}
 		else if (!myShield.GetComponent<ShieldController>().engaged && !target1.GetComponent<M00ksDeathHandler>().Dead) {
+
+			dir = (target1.transform.position - this.transform.position).normalized;
+			Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, dir));
+			angle.eulerAngles = eulerAngle;
+			//transform.rotation = angle;
+			knightSprite.flipX = (dir.x < 0);
+			eulerAngle = dir;
+
+
 			knightBody.velocity = (dir * speed);
-			
 			myShield.GetComponent<ShieldController>().target1 = target1;
-			myShield.transform.position = transform.position + 2f*eulerAngle;
+			myShield.transform.position = transform.position + 1.2f*eulerAngle;
 			
 			eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.right,dir));
 			angle.eulerAngles = eulerAngle;
@@ -59,9 +62,17 @@ public class KnightController : MonoBehaviour
 		} else {
 			knightBody.velocity = Vector2.zero;
 		}
+
+
+		knightAnimator.SetFloat("Speed", Mathf.Abs(knightBody.velocity.magnitude));
 	}
-	
-	void Update() {
+
+	void Update()
+	{
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		knightAnimator.SetBool("Engaged", myShield.GetComponent<ShieldController>().engaged);
+		knightAnimator.SetBool("SwingUp", dir.y > 0.5);
+		knightAnimator.SetBool("SwingDown", dir.y < -0.5);
+		knightAnimator.SetBool("SwingFront", (dir.y <= 0.5 && dir.y >= -0.5));
 	}
 }

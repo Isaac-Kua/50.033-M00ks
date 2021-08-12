@@ -18,6 +18,6 @@ MonoBehaviour:
   charges: 0
   rechargeTime: 0
   abilityType: Ability2
-  missile: {fileID: 2190267130267438645, guid: 8c4ae051a8b829d4c9945df12a6919b6, type: 3}
-  growthRate: 1.07
-  lingerDuration: 0
+  missile: {fileID: 3165695242862509984, guid: b4224efb503da394a8babd2068f43d90, type: 3}
+  growthRate: 1.01
+  lingerDuration: 2

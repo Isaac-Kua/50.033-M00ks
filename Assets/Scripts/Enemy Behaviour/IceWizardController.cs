@@ -21,26 +21,25 @@ public class IceWizardController : MonoBehaviour
 	
 	private Rigidbody2D iceWizBody;
 	private SpriteRenderer iceWizSprite;
+	private Animator iceWizAnimator;
+	private AudioSource iceWizAudio;
+
 	private float distance;
 	private bool burstCharge = true;
-	private bool ammo = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
 	
+	void Awake()
+    {
+		Debug.Log("GoodMorning");
+    }
 	void Start()
 	{
-
 		target1 = gameObject;
-		speed = gameConstants.iceWizardMoveSpeed;
-		maxRange = gameConstants.iceWizardMaxRange;
-		minRange = gameConstants.iceWizardMinRange;
-		burstChargeTime = gameConstants.iceWizardBurstChargeTime;
-		windUpTime = gameConstants.iceWizardWindUpTime;
-		missile = gameConstants.iceWizardIcebolt;
-		wave = gameConstants.iceWizardIcewave;
-	
 		iceWizBody = GetComponent<Rigidbody2D>();
 		iceWizSprite = GetComponent<SpriteRenderer>();
+		iceWizAnimator = GetComponent<Animator>();
+		iceWizAudio = GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -50,30 +49,36 @@ public class IceWizardController : MonoBehaviour
 		angle.eulerAngles = eulerAngle;
 		
 		distance = Vector2.Distance(transform.position, target1.transform.position);
-		transform.rotation = angle;
+		//transform.rotation = angle;
+
 		if (target1 == gameObject)
         {
-			// do nothing
-        }
-		else if (distance > maxRange)
+			iceWizBody.velocity = Vector2.zero;
+
+		}
+		else if (distance > gameConstants.iceWizardMaxRange)
 		{
-			iceWizBody.velocity = (dir * speed);
+			iceWizBody.velocity = (dir * gameConstants.iceWizardMoveSpeed);
 
         }
-        else if (distance > minRange && distance < maxRange)
+        else if (distance > gameConstants.iceWizardMinRange && distance < gameConstants.iceWizardMaxRange)
         {
             iceWizBody.velocity = Vector2.zero;
-            if (ammo)
+            if (GetComponent<DeathHandler>().ammo)
             {
-                Fire();
+				StartCoroutine(Fire());
             }
-        } else if (distance < minRange){
+        } else if (distance < gameConstants.iceWizardMinRange)
+		{
 			if (burstCharge) {
 				Burst();
 			} else {
-				iceWizBody.velocity = (-1*dir * speed);
+				iceWizBody.velocity = (-1*dir * gameConstants.iceWizardMoveSpeed);
 			}
 		}
+
+		iceWizAnimator.SetFloat("Speed", Mathf.Abs(iceWizBody.velocity.magnitude));
+		iceWizSprite.flipX = (dir.x < 0);
 	}
 	
 	// Update is called once per frame
@@ -84,14 +89,14 @@ public class IceWizardController : MonoBehaviour
 	
 	void Burst()
 	{
+		iceWizAnimator.SetTrigger("Panic");
 		burstCharge = false;	
 		Vector3 eulerAngle = new Vector3(0,0, 90+Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
 
 		Vector3 faceDir = dir;
 		
-		GameObject burst = Instantiate(wave, transform.position + faceDir, transform.rotation);		
-		burst.transform.rotation = angle;
+		GameObject burst = Instantiate(gameConstants.iceWizardIcewave, transform.position + faceDir, transform.rotation);		
 		burst.GetComponent<Rigidbody2D>().AddForce(dir* gameConstants.icewaveSpeed, ForceMode2D.Impulse);
 		burst.GetComponent<IcewaveController>().core = true;
 		StartCoroutine(Panic());
@@ -99,16 +104,17 @@ public class IceWizardController : MonoBehaviour
 	
 	IEnumerator Panic()
 	{
-		iceWizSprite.material.color = new Color(0,0,1); //C# Deepblue
-		yield return new WaitForSeconds(burstChargeTime);
+		yield return new WaitForSeconds(gameConstants.iceWizardBurstChargeTime);
 		burstCharge = true;
-		iceWizSprite.material.color = new Color(1,1,1); //C# White
 	}
-	
-	void Fire() 
+
+	IEnumerator Fire()
 	{
-		ammo = false;
-		GameObject icebolt = Instantiate(missile, transform.position, transform.rotation);
+		GetComponent<DeathHandler>().ammo = false;
+		iceWizAnimator.SetTrigger("Firing");
+		yield return new WaitForSeconds(gameConstants.iceWizardSwingTime);
+		GameObject icebolt = Instantiate(gameConstants.iceWizardIcebolt, transform.position, transform.rotation);
+		iceWizAudio.Play();
 		icebolt.GetComponent<IceboltController>().target1 = target1;
 		icebolt.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());
@@ -116,9 +122,7 @@ public class IceWizardController : MonoBehaviour
 	
 	IEnumerator  WindUp()
 	{
-		iceWizSprite.material.color = new Color(1,1,0.5f); //C# Yellow
-		yield return new WaitForSeconds(windUpTime);
-		iceWizSprite.material.color = new Color(1,0,0); //C# Red
-		ammo = true;
+		yield return new WaitForSeconds(gameConstants.iceWizardWindUpTime);
+		GetComponent<DeathHandler>().ammo = true;
 	}
 }

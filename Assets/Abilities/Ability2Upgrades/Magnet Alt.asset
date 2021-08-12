@@ -18,4 +18,3 @@ MonoBehaviour:
   charges: 0
   rechargeTime: 0
   abilityType: Ability2
-  pullStrength: 5
