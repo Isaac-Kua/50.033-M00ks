@@ -38,6 +38,9 @@ public class MinorSpriteGetter : MonoBehaviour
                 }
             }
         } catch {
+            foreach (Transform eachchild in transform){
+                Sprite nosprite = getIcon(null);
+            }
             return;
         }
     }
