@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 [CreateAssetMenu(fileName =  "SpikeRangedAbility", menuName =  "Ability 1/Spike")]
 public class SpikeRangedAbility : Ability
@@ -12,7 +14,8 @@ public class SpikeRangedAbility : Ability
     private Vector2 missilePosition;
     private Vector2 missileDirection;
     private Vector2[] spikePoints;
-    private Quaterion spikeRotation;
+    private Vector2 node;
+    //private Quaterion spikeRotation;
 
     public bool RangeMod = false;
     public bool BypassMod = false;
@@ -37,15 +40,15 @@ public class SpikeRangedAbility : Ability
         }else{
             count = maxCount;
         }
+        spikePoints = new Vector2[count];
         if(SpeedMod)
         {
             activeTime = activeTime*0.5f;
         }
-        for(i=0;i<count; i++){
-            node.add(missilePosition + missileDirection * spacing * i)
+        for(int i=0;i<count; i++){
+            spikePoints[i] = (missilePosition + missileDirection * spacing * i);
         }
         missileDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
-        spikeRotation = parent.transform.rotation;
         missilePosition = new Vector2(parent.transform.position.x+1.5f, parent.transform.position.y+1.5f);
         StartCoroutine(ShootCoroutine(parent));
     }
@@ -54,9 +57,9 @@ public class SpikeRangedAbility : Ability
     {
         //count -= 1;
         //missilePosition = missilePosition + missileDirection * spacing;
-        for(j=0;j<count;j++){
+        for(int j=0;j<count;j++){
             missilePosition = spikePoints[j];
-            GameObject missile1 = Instantiate(missile, missilePosition, spikeRotation);
+            GameObject missile1 = Instantiate(missile, missilePosition, parent.transform.rotation);
             missile1.GetComponent<ProjectileController>().owner = parent;
             missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
             missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
