@@ -13,6 +13,7 @@ public class introScene : MonoBehaviour
     public GameObject four;
     public GameObject five;
     public GameObject msgBox;
+    public GameObject skipText;
     private Coroutine intro;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class introScene : MonoBehaviour
         four.SetActive(false);
         five.SetActive(false);
         msgBox.SetActive(false);
+        skipText.SetActive(false);
         intro = StartCoroutine(cutscene());
         GameManager.Instance.cutscene = true;
         playing = true;
@@ -39,6 +41,7 @@ public class introScene : MonoBehaviour
             four.SetActive(false);
             five.SetActive(false);
             msgBox.SetActive(false);
+            skipText.SetActive(false);
             GameManager.Instance.cutscene = false;
             stop = false;
             playing = false;
@@ -51,6 +54,7 @@ public class introScene : MonoBehaviour
         Debug.Log("Intro Cutscene");
         Time.timeScale = 0f;
         msgBox.SetActive(true);
+        skipText.SetActive(true);
         one.SetActive(true);
         yield return new WaitForSecondsRealtime(5);
         one.SetActive(false);
@@ -67,6 +71,7 @@ public class introScene : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
         five.SetActive(false);
         msgBox.SetActive(false);
+        skipText.SetActive(false);
         GameManager.Instance.cutscene = false;
         Time.timeScale = 1f;
     }
