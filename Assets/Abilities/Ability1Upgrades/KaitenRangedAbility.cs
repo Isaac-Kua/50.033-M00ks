@@ -38,10 +38,10 @@ public class KaitenRangedAbility : Ability
 
     private IEnumerator ShootCoroutine(GameObject parent)
     {
-        if(!BypassMod){
+        //if(!BypassMod){
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        }
+        //}
         yield return new WaitForSeconds(activeTime);
 
     }

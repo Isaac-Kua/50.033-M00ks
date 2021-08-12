@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    public bool HeavyMod = false;
 	public GameObject owner;
     // Start is called before the first frame update
     void Start()
     {
-        
+        HeavyMod = owner.GetComponent<UpgradeManager>().HeavyMod;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 	
 	void OnCollisionEnter2D(Collision2D other)
@@ -24,6 +25,14 @@ public class ProjectileController : MonoBehaviour
             if (gameObject.name == "Firebolt(Clone)")
             {
                 gameObject.GetComponent<FireboltController>().Explode();
+            }
+            else if (gameObject.name == "PlayerSpike(Clone)" && other.gameObject.CompareTag("Debris"))
+            {
+                if(HeavyMod)
+                {
+                    Destroy(other.gameObject);
+                    Destroy(gameObject);
+                }
             }
             else if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
             {

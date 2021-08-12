@@ -15,13 +15,15 @@ public class SpikeRangedAbility : Ability
     private Vector2 missileDirection;
     private Vector2[] spikePoints;
     private Vector2 node;
+    private bool blocked = false;
+    private float spikeSpawnTime = 0.3f;
+
     //private Quaterion spikeRotation;
 
     public bool RangeMod = false;
     public bool BypassMod = false;
     public bool SpeedMod = false;
     public bool HeavyMod = false;
-    public bool stop = false;
 
     void checkModifications(Ability1Holder parent)
     {
@@ -33,6 +35,7 @@ public class SpikeRangedAbility : Ability
 
     public override void Activate(GameObject parent)
     {
+        blocked = false;
         checkModifications(parent.GetComponent<Ability1Holder>());
         if(RangeMod)
         {
@@ -43,13 +46,14 @@ public class SpikeRangedAbility : Ability
         spikePoints = new Vector2[count];
         if(SpeedMod)
         {
-            activeTime = activeTime*0.5f;
+            spikeSpawnTime = spikeSpawnTime*0.5f;
         }
-        for(int i=0;i<count; i++){
-            spikePoints[i] = (missilePosition + missileDirection * spacing * i);
-        }
+
         missileDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
-        missilePosition = new Vector2(parent.transform.position.x+1.5f, parent.transform.position.y+1.5f);
+        missilePosition = new Vector2(parent.transform.position.x, parent.transform.position.y);
+        for(int i=0;i<count; i++){
+            spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(i+1)*spacing);
+        }
         StartCoroutine(ShootCoroutine(parent));
     }
 
@@ -57,26 +61,37 @@ public class SpikeRangedAbility : Ability
     {
         //count -= 1;
         //missilePosition = missilePosition + missileDirection * spacing;
-        for(int j=0;j<count;j++){
+        Debug.Log("Shooting");
+        for(int j=0;j<count;j++)
+        {
             missilePosition = spikePoints[j];
-            GameObject missile1 = Instantiate(missile, missilePosition, parent.transform.rotation);
-            missile1.GetComponent<ProjectileController>().owner = parent;
-            missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
-            missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
-            missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
-            missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
-            yield return new WaitForSeconds(activeTime);
+            if(blocked)
+            {
+                if(!BypassMod){
+                    yield break;
+                }else{
+                    blocked = false;
+                }
+            }
+            else
+            {
+                GameObject missile1 = Instantiate(missile, missilePosition, Quaternion.identity);//, parent.transform.rotation);
+
+                yield return new WaitForSeconds(spikeSpawnTime);
+                if(missile1 == null){
+                    blocked = true;
+                }else{
+                    blocked = missile1.GetComponent<PlayerSpikeController>().blocked;
+                    missile1.GetComponent<ProjectileController>().owner = parent;
+                    missile1.GetComponent<PlayerSpikeController>().owner = parent;
+                    missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
+                    missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
+                    missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
+                    missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
+                }
+            }
         }
+        yield break;
 
-        
-
-
-
-        // if(count > 0 & missile1 != null)
-        // {
-        //     missilePosition = missile1.transform.position;
-        //     StartCoroutine(ShootCoroutine(parent));
-        // }
-        // else { count = maxCount; stop = false;}
     }
 }

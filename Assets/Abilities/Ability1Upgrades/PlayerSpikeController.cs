@@ -10,7 +10,7 @@ public class PlayerSpikeController : MonoBehaviour {
     public bool BypassMod = false;
     public bool SpeedMod = false;
     public bool HeavyMod = false;
-
+    public bool blocked = false;
     public GameObject owner;
 
     private Rigidbody2D itemBody;
@@ -46,14 +46,19 @@ public class PlayerSpikeController : MonoBehaviour {
 
 	void onCollision(Collider col)
 	{
-        if (col.gameObject.tag == "Debris")
+        if(HeavyMod)
         {
-            if (HeavyMod)
-		    {
-				//If the GameObject has the same tag as specified, output this message in the console
-				Destroy(col.gameObject);
-			}
-		}
+            if (col.gameObject.tag == "Debris")
+            {
+                Destroy(col.gameObject);
+		    }
+        }else
+        {
+            if(col.gameObject.tag == "Debris")
+            {
+                blocked = true;
+            }
+        }
 	}
 
     IEnumerator Debris()
@@ -64,6 +69,9 @@ public class PlayerSpikeController : MonoBehaviour {
 
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        if(gameObject!=null){
+            Destroy(gameObject);
+        }
     }
+    
 }
