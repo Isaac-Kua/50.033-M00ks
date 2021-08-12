@@ -79,7 +79,7 @@ public class DeathHandler : MonoBehaviour
 		if (lastHit.CompareTag("Player"))
 		{
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
-			lastHit.GetComponent<M00ksDeathHandler>().kills++;
+			lastHit.GetComponent<M00ksDeathHandler>().enemykills++;
 		}
 		//npcSprite.color = Color.black;
 		yield return new WaitForSeconds(gameConstants.deathFadeTime);

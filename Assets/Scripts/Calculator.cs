@@ -32,8 +32,8 @@ public class Calculator : MonoBehaviour
     {
         List<int> playerKills =  new List<int>();
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-            playerKills.Add(players[i].playerPrefab.GetComponent<M00ksDeathHandler>().kills);
+            playerKills.Add(players[i].playerPrefab.GetComponent<M00ksDeathHandler>().enemykills);
         }
-        return playerKills.IndexOf(playerKills.Min());
+        return playerKills.IndexOf(playerKills.Max());
     }
 }

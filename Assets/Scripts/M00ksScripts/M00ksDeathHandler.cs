@@ -16,7 +16,8 @@ public class M00ksDeathHandler : MonoBehaviour
 	public int myLives;
 	public GameObject lastHit;
 	public int deaths = 0;
-	public int kills = 0;
+	public int enemykills = 0;
+	public int playerkills = 0;
 
 	private float launchDuration;
 	private float stunTime;
@@ -58,6 +59,7 @@ public class M00ksDeathHandler : MonoBehaviour
 			m00ksAnimator.SetTrigger("Death");
 			StartCoroutine(Death());
 			if (lastHit.CompareTag("Player")) {
+				lastHit.GetComponent<M00ksDeathHandler>().playerkills++;
 				lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
 			}
 		}
@@ -253,7 +255,8 @@ public class M00ksDeathHandler : MonoBehaviour
 
 	void resetDeathCounter(){
 		deaths = 0;
-		kills = 0;
+		enemykills = 0;
+		playerkills = 0;
 	}
 
 	void DeathPassive() {
