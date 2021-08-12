@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class GameManager : MonoBehaviour
     public int upgradeNo = 1;
     public bool secondUpgrade = false;
     public bool cutscene = false;
+    public GameObject bg;
+    public Sprite bg2;
+    public Sprite bg3;
+    public Sprite bg4;
+    public Sprite bg5;
 
     public static GameManager Instance;
     public delegate void gameEvent();
@@ -33,5 +39,19 @@ public class GameManager : MonoBehaviour
         } else if (stage == 7) {
             PVPStage();
         } 
+        switch (stage){
+            case(2):
+                bg.GetComponent<Image>().sprite = bg2;
+                break;
+            case(3):
+                bg.GetComponent<Image>().sprite = bg3;
+                break;
+            case(4):
+                bg.GetComponent<Image>().sprite = bg4;
+                break;
+            case(5):
+                bg.GetComponent<Image>().sprite = bg5;
+                break;
+        }
     }
 }

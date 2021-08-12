@@ -19,10 +19,15 @@ public class altCDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject playerPrefab = players[playerNo].playerPrefab;
-        float cooldown = playerPrefab.GetComponent<Ability2Holder>().cooldownTime;
-        float current = playerPrefab.GetComponent<Ability2Holder>().rechargeTime;
-        setCDvalue(current/cooldown);
+        if (playerNo < GameManager.Instance.totalPlayers) {
+            GameObject playerPrefab = players[playerNo].playerPrefab;
+            float cooldown = playerPrefab.GetComponent<Ability2Holder>().cooldownTime;
+            float current = playerPrefab.GetComponent<Ability2Holder>().rechargeTime;
+            setCDvalue(current/cooldown);
+        }
+        else {
+            setCDvalue(0);
+        }
     }
 
     void setCDvalue(float value)

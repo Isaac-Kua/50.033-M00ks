@@ -44,6 +44,7 @@ public class MeleeSpriteGetter : MonoBehaviour
                     break;
             }
         } catch {
+            image.sprite = icons.none;
             return;
         }
     }

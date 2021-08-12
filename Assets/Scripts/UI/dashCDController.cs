@@ -19,10 +19,15 @@ public class dashCDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject playerPrefab = players[playerNo].playerPrefab;
-        float cooldown = playerPrefab.GetComponent<DashHolder>().cooldownTime;
-        float current = playerPrefab.GetComponent<DashHolder>().rechargeTime;
-        setCDvalue(current/cooldown);
+        if (playerNo < GameManager.Instance.totalPlayers) {
+            GameObject playerPrefab = players[playerNo].playerPrefab;
+            float cooldown = playerPrefab.GetComponent<DashHolder>().cooldownTime;
+            float current = playerPrefab.GetComponent<DashHolder>().rechargeTime;
+            setCDvalue(current/cooldown);
+        }
+        else {
+            setCDvalue(0);
+        }
     }
 
     void setCDvalue(float value)

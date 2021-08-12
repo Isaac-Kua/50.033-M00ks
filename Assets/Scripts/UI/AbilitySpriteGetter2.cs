@@ -45,6 +45,7 @@ public class AbilitySpriteGetter2 : MonoBehaviour
             }
         }
         catch {
+            image.sprite = icons.none;
             return;
         }
     }

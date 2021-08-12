@@ -45,6 +45,7 @@ public class DashSpriteGetter : MonoBehaviour
             }
         }
         catch {
+            image.sprite = icons.none;
             return;
         }
     }

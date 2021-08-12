@@ -7,6 +7,7 @@ public class dashChargeUI : MonoBehaviour
 {
     private Text text;
     public int playerNo;
+    private int charges = 0;
     private List<PlayerConfiguration> players;
 
     // Start is called before the first frame update
@@ -19,9 +20,11 @@ public class dashChargeUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject playerPrefab = players[playerNo].playerPrefab;
-        int charges = playerPrefab.GetComponent<DashHolder>().charges;
-        if (charges >= 1) {
+        if (playerNo < GameManager.Instance.totalPlayers) {
+            GameObject playerPrefab = players[playerNo].playerPrefab;
+            charges = playerPrefab.GetComponent<DashHolder>().charges;
+        }
+        if (charges > 1) {
             text.text = charges.ToString();
         }
         else {
