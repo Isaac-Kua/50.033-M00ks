@@ -14,6 +14,7 @@ public class SetLevel : MonoBehaviour
     public GameObject speechBubble;
     public GameObject upgradeCutscene;
     public GameObject cutscenes;
+    public GameObject timer;
     private GameObject[] enemies;
     private GameObject[] souls;
     private GameObject[] arrow;
@@ -39,6 +40,7 @@ public class SetLevel : MonoBehaviour
     {
         AltarManager.NextStage1 += chooseFirstPlayer;
         AltarManager.NextStage1 += setUpgradeSelect;
+        GameManager.PVPStage += pvpLevel;
         players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
         cutscenes.SetActive(true);
         setLevel();
@@ -99,6 +101,7 @@ public class SetLevel : MonoBehaviour
         obstacles.SetActive(false);
         hpbar.SetActive(false);
         upgradeUI.SetActive(false);
+        timer.SetActive(false);
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies){
@@ -132,7 +135,12 @@ public class SetLevel : MonoBehaviour
 
     void pvpLevel()
     {
-
+        deactivate();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            players[i].playerPrefab.transform.position = playerSpawnsWave[i].position;
+        }
+        timer.SetActive(true);
+        timer.GetComponent<timerController>().startTimer = true;
     }
 
     void chooseFirstPlayer()
@@ -151,7 +159,7 @@ public class SetLevel : MonoBehaviour
             GameManager.Instance.firstPlayer = Calculator.Instance.leastDeaths();
         }
         if (GameManager.Instance.currentMetric == "Most Kills"){
-            GameManager.Instance.firstPlayer = 0;
+            GameManager.Instance.firstPlayer = Calculator.Instance.mostKills();
         }
     }
 }
