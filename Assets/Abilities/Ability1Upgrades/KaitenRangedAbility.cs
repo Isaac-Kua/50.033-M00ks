@@ -33,6 +33,7 @@ public class KaitenRangedAbility : Ability
         kaiten.GetComponent<KaitenController>().BypassMod = BypassMod;
         kaiten.GetComponent<KaitenController>().SpeedMod = SpeedMod;
         kaiten.GetComponent<KaitenController>().HeavyMod = HeavyMod;
+        kaiten.GetComponent<ProjectileController>().HeavyMod = HeavyMod;
         StartCoroutine(ShootCoroutine(parent));
     }
 

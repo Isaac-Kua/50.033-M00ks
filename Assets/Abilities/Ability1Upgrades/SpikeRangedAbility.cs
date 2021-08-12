@@ -88,6 +88,7 @@ public class SpikeRangedAbility : Ability
                     missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
                     missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
                     missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
+                    missile1.GetComponent<ProjectileController>().HeavyMod = HeavyMod;
                 }
             }
         }

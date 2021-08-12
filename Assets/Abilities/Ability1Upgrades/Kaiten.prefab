@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeavyMod: 0
   owner: {fileID: 0}
 --- !u!114 &-370183807694594919
 MonoBehaviour:
