@@ -33,4 +33,9 @@ public class ProjectileController : MonoBehaviour
             Player1Manager.centralManagerInstance.damageAltar();
         }
 	}
+
+    void OnBecameInvisible()
+    {
+         Destroy(gameObject);
+    }
 }

@@ -46,8 +46,6 @@ public class PlayerSpikeController : MonoBehaviour {
 
 	void onCollision(Collider col)
 	{
-        
-
         if (col.gameObject.tag == "Debris")
         {
             if (HeavyMod)
