@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void increaseStage(){
         stage += 1;
-        if (stage == 6) {
+        if (stage == 7) {
             PVPStage();
         }
     }
