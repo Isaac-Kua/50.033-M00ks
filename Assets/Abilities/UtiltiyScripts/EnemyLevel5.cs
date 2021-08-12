@@ -20,7 +20,6 @@ public class EnemyLevel5 : ScriptableObject
 	public float fireWizardSwingTime = 0.2f;
 
 	// Ranger
-	public GameObject rangerArrow;
 	public float rangerMoveSpeed = 12;
 	public float rangerMaxRange = 20;
 	public float rangerMinRange = 10;

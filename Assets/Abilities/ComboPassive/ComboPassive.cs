@@ -100,7 +100,11 @@ public class ComboPassive : MonoBehaviour
         JuggernautAura.transform.position = transform.position;
         if (GetComponent<UpgradeManager>().JuggernautCombo)
         {
-            JuggernautAura.SetActive(true);
+            if (gameObject.CompareTag("PlayerArrow")){
+                JuggernautAura.SetActive(false);
+            } else {
+                JuggernautAura.SetActive(true); 
+            }
         }
         else
         {

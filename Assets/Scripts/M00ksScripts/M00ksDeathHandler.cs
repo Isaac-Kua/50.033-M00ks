@@ -48,6 +48,10 @@ public class M00ksDeathHandler : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (Dead && !GetComponent<UpgradeManager>().crawlDeath)
+		{
+			allDisable();
+		}
 		stunAnim.transform.position = transform.position + gameConstants.stunPosition;
 		m00ksAnimator.SetBool("Dead", Dead);
 		if (myLives < 1 && !Dead){
@@ -222,7 +226,6 @@ public class M00ksDeathHandler : MonoBehaviour
 		DeathPassive();
 		yield return new WaitForSeconds(deathTime);
 		m00ksAnimator.SetTrigger("Respawn");
-		allEnable();
 		StartCoroutine(Respawn());
 	}
 	
@@ -235,6 +238,7 @@ public class M00ksDeathHandler : MonoBehaviour
 		Brittle = false;
 		Immunity = false;
 		Dead = false;
+		allEnable();
 		myLives = lives;
 	}
 	
@@ -277,6 +281,13 @@ public class M00ksDeathHandler : MonoBehaviour
 
 			lastHit.transform.position = selfPosition;
 			transform.position = killerPosition;
+		}
+
+		if (GetComponent<UpgradeManager>().PacquiaoCombo)
+		{
+			GameObject other = GetComponent<M00ksDeathHandler>().lastHit;
+			GameObject pew = Instantiate(gameConstants.WidowmakerArrow, other.transform.position, transform.rotation);
+			pew.GetComponent<ProjectileController>().owner = gameObject;
 		}
 	}
 }

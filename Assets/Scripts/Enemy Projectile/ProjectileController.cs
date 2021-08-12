@@ -19,7 +19,7 @@ public class ProjectileController : MonoBehaviour
 	
 	void OnCollisionEnter2D(Collision2D other)
     {
-        if (!gameObject.CompareTag("Player") && !(gameObject.name == "Barathrum(Clone)") && !(gameObject.name == "Barathrum"))
+        if (!(gameObject.name == "M00ks1(Clone)") && !(gameObject.name == "Barathrum(Clone)") && !(gameObject.name == "Barathrum"))
         {
             if (gameObject.name == "Firebolt(Clone)")
             {

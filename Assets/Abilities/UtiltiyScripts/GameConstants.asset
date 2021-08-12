@@ -24,6 +24,8 @@ MonoBehaviour:
   deathFadeTime: 2
   stunAnimation: {fileID: 8317606618247395135, guid: c2452fb074f78a949b5b49e554ecb95a, type: 3}
   stunPosition: {x: 0, y: 1, z: 0}
+  StaticDebris: {fileID: 5585716952190182122, guid: a17c6e625ee18fc40a3d45d29905e9d5, type: 3}
+  DebrisLifeTime: 3
   M00ksMoveSpeed: 20
   MagnusSpeed: 30
   TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
