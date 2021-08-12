@@ -7,28 +7,17 @@ public class IceWizardController : MonoBehaviour
 {
 	public GameConstants gameConstants;
 	public GameObject target1;
-	
-	private float speed;
-	private float maxRange;
-	private float minRange;
 
-	private GameObject missile;
-	private float windUpTime;
-	
-	private GameObject wave;
-	private float burstChargeTime;
-	private float waveSpeed;
-	
 	private Rigidbody2D iceWizBody;
 	private SpriteRenderer iceWizSprite;
 	private Animator iceWizAnimator;
 	private AudioSource iceWizAudio;
 
 	private float distance;
-	private bool burstCharge = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-	
+	private CurrentLevel levelDifficulty;
+
 	void Awake()
     {
 		Debug.Log("GoodMorning");
@@ -40,6 +29,7 @@ public class IceWizardController : MonoBehaviour
 		iceWizSprite = GetComponent<SpriteRenderer>();
 		iceWizAnimator = GetComponent<Animator>();
 		iceWizAudio = GetComponent<AudioSource>();
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 
 	void FixedUpdate()
@@ -70,7 +60,7 @@ public class IceWizardController : MonoBehaviour
             }
         } else if (distance < gameConstants.iceWizardMinRange)
 		{
-			if (burstCharge) {
+			if (GetComponent<DeathHandler>().burstCharge) {
 				Burst();
 			} else {
 				iceWizBody.velocity = (-1*dir * gameConstants.iceWizardMoveSpeed);
@@ -85,12 +75,13 @@ public class IceWizardController : MonoBehaviour
 	void Update()
 	{
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 	
 	void Burst()
 	{
 		iceWizAnimator.SetTrigger("Panic");
-		burstCharge = false;	
+		GetComponent<DeathHandler>().burstCharge = false;
 		Vector3 eulerAngle = new Vector3(0,0, 90+Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
 
@@ -99,13 +90,14 @@ public class IceWizardController : MonoBehaviour
 		GameObject burst = Instantiate(gameConstants.iceWizardIcewave, transform.position + faceDir, transform.rotation);		
 		burst.GetComponent<Rigidbody2D>().AddForce(dir* gameConstants.icewaveSpeed, ForceMode2D.Impulse);
 		burst.GetComponent<IcewaveController>().core = true;
+		burst.GetComponent<IcewaveController>().gameManager = GetComponent<DeathHandler>().gameManager;
 		StartCoroutine(Panic());
 	}
 	
 	IEnumerator Panic()
 	{
 		yield return new WaitForSeconds(gameConstants.iceWizardBurstChargeTime);
-		burstCharge = true;
+		GetComponent<DeathHandler>().burstCharge = true;
 	}
 
 	IEnumerator Fire()
@@ -115,6 +107,7 @@ public class IceWizardController : MonoBehaviour
 		yield return new WaitForSeconds(gameConstants.iceWizardSwingTime);
 		GameObject icebolt = Instantiate(gameConstants.iceWizardIcebolt, transform.position, transform.rotation);
 		iceWizAudio.Play();
+		icebolt.GetComponent<IceboltController>().gameManager = GetComponent<DeathHandler>().gameManager;
 		icebolt.GetComponent<IceboltController>().target1 = target1;
 		icebolt.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());
@@ -122,7 +115,7 @@ public class IceWizardController : MonoBehaviour
 	
 	IEnumerator  WindUp()
 	{
-		yield return new WaitForSeconds(gameConstants.iceWizardWindUpTime);
+		yield return new WaitForSeconds(levelDifficulty.iceWizardWindUpTime);
 		GetComponent<DeathHandler>().ammo = true;
 	}
 }

@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82764105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.820107, y: -1.3447442, z: -3.2534344}
+  m_LocalPosition: {x: 0, y: 0, z: -3.2534344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1531046022}
@@ -3110,7 +3110,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11795,6 +11795,13 @@ MonoBehaviour:
   upgradeNo: 0
   secondUpgrade: 0
   cutscene: 0
+  currentLevel: {fileID: 0}
+  LevelSettings:
+  - {fileID: 11400000, guid: 16575d0b1303ac04393f3ea3922eb454, type: 2}
+  - {fileID: 11400000, guid: a8f136fb8409d4d4389663b3fb7f54b7, type: 2}
+  - {fileID: 11400000, guid: 0b1b402a89610744f8178bb88d29c084, type: 2}
+  - {fileID: 11400000, guid: 5dfdfc5e1333c3540a74c2d8f18d1e02, type: 2}
+  - {fileID: 11400000, guid: f651700bb88387b41852e7019a23e79f, type: 2}
 --- !u!1 &1279826541
 GameObject:
   m_ObjectHideFlags: 0
@@ -14312,6 +14319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd72cec59f300ff4c8b80cb46a5fa497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1268168186}
   itemsToPool:
   - amount: 5
     prefab: {fileID: 6098023446668689171, guid: 897a7ca5e2f91d1448d76abda313684a, type: 3}

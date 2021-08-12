@@ -18,14 +18,15 @@ MonoBehaviour:
   gooPool: {fileID: 3165695242862509984, guid: b4224efb503da394a8babd2068f43d90, type: 3}
   stickiness: 0.5
   defaultDrag: 10
-  yBound: 18
-  xBound: 30
+  yBound: 11
+  xBound: 32
   comboCount: 2
   deathFadeTime: 2
   stunAnimation: {fileID: 8317606618247395135, guid: c2452fb074f78a949b5b49e554ecb95a, type: 3}
   stunPosition: {x: 0, y: 1, z: 0}
   StaticDebris: {fileID: 5585716952190182122, guid: a17c6e625ee18fc40a3d45d29905e9d5, type: 3}
   DebrisLifeTime: 3
+  DebrisSpawnTime: 0.5
   M00ksMoveSpeed: 20
   MagnusSpeed: 30
   TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
@@ -58,7 +59,7 @@ MonoBehaviour:
   kamikazeMaxRadius: 8
   kamikazeGrowthRate: 1.2
   kamikazeCastTime: 0.5
-  launchDuration: 1
+  launchDuration: 2
   knockbackSpeed: 150
   knockbackStrength: 5
   kaitenGrowthRate: 1.1

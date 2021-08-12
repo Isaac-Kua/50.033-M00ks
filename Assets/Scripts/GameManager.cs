@@ -17,15 +17,21 @@ public class GameManager : MonoBehaviour
     public delegate void gameEvent();
     public static event gameEvent PVPStage;
 
+    public CurrentLevel currentLevel;
+    public List<CurrentLevel> LevelSettings;
+
     void Awake()
     {
         Instance = this;
+        currentLevel = LevelSettings[stage-1];
     }
 
     public void increaseStage(){
         stage += 1;
-        if (stage == 7) {
+        if (stage < 5) {
+            currentLevel = LevelSettings[stage];
+        } else if (stage == 7) {
             PVPStage();
-        }
+        } 
     }
 }

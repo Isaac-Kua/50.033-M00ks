@@ -12,9 +12,9 @@ public class FireWizardController : MonoBehaviour
 	private Animator fireWizAnimator;
 	private AudioSource fireWizAudio;
 	private float distance;
-	private bool poofCharge = true;
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
+	private CurrentLevel levelDifficulty;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -25,11 +25,11 @@ public class FireWizardController : MonoBehaviour
 		fireWizSprite = GetComponent<SpriteRenderer>();
 		fireWizAnimator = GetComponent<Animator>();
 		fireWizAudio = GetComponent<AudioSource>();
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 
 	void FixedUpdate()
 	{
-		
 		dir = (target1.transform.position - this.transform.position).normalized;
 		Vector3 eulerAngle = new Vector3(0,0,Vector2.SignedAngle(Vector2.right,dir));
 		angle.eulerAngles = eulerAngle;
@@ -52,7 +52,7 @@ public class FireWizardController : MonoBehaviour
 			} 
 		} else if (distance < gameConstants.fireWizardMinRange)
 		{
-			if (poofCharge) {
+			if (GetComponent<DeathHandler>().burstCharge) {
 				StartCoroutine(Panic());
 			} else {
 				fireWizBody.velocity = (-1*dir * gameConstants.fireWizardMoveSpeed);
@@ -67,16 +67,17 @@ public class FireWizardController : MonoBehaviour
 	// Update is called once per frame
 	void Update() {
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 	
 	IEnumerator Panic()
 	{
-		poofCharge = false;
+		GetComponent<DeathHandler>().burstCharge = false;
 		fireWizAnimator.SetTrigger("Panic");
 		yield return new WaitForSeconds(gameConstants.fireWizardPoofCastTime);
 		transform.position = new Vector2(Random.Range(-gameConstants.xBound, gameConstants.xBound), Random.Range(-gameConstants.yBound, gameConstants.yBound));
 		yield return new WaitForSeconds(gameConstants.fireWizardPoofChargeTime);
-		poofCharge = true;
+		GetComponent<DeathHandler>().burstCharge = true;
 	}
 
 	IEnumerator Fire()
@@ -86,6 +87,7 @@ public class FireWizardController : MonoBehaviour
 		yield return new WaitForSeconds(gameConstants.fireWizardSwingTime);
 		GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
 		fireWizAudio.Play();
+		firebolt.GetComponent<FireboltController>().gameManager = GetComponent<DeathHandler>().gameManager;
 		firebolt.GetComponent<FireboltController>().target1 = target1;
 		firebolt.GetComponent<ProjectileController>().owner = gameObject;
 		StartCoroutine(WindUp());
