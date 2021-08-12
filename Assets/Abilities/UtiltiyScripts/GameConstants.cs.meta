@@ -3,7 +3,27 @@ guid: d61aa299a22aca243bffd89d965a9deb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gooPool: {fileID: 2190267130267438645, guid: 8c4ae051a8b829d4c9945df12a6919b6, type: 3}
+  - TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
+  - AchmedBomb: {fileID: 4696089679803575608, guid: ca8a7be998b0b4041ab3451b7101d0c1, type: 3}
+  - WidowmakerArrow: {fileID: 130144637693236197, guid: 747f29eaffa879f49b3d48d95fbdc078, type: 3}
+  - JuggernautAura: {instanceID: 0}
+  - shell: {instanceID: 0}
+  - kamikazePrefab: {instanceID: 0}
+  - kaitenPrefab: {instanceID: 0}
+  - explosionPrefab: {instanceID: 0}
+  - zombiePrefab: {instanceID: 0}
+  - shivaAura: {instanceID: 0}
+  - juggernautBubble: {instanceID: 0}
+  - fireboltTargetArea: {instanceID: 0}
+  - fireWizardFirebolt: {instanceID: 0}
+  - rangerArrow: {instanceID: 0}
+  - knightShield: {instanceID: 0}
+  - knightSword: {instanceID: 0}
+  - iceWizardIcebolt: {instanceID: 0}
+  - iceWizardIcewave: {instanceID: 0}
+  - debris: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

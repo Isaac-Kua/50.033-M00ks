@@ -6,6 +6,12 @@ public class PlayerSpikeController : MonoBehaviour {
     public float lifeTime = 1f;
     public float meltTime = 2f;
 
+	public bool RangeMod = false;
+    public bool BypassMod = false;
+    public bool SpeedMod = false;
+    public bool HeavyMod = false;
+    public bool blocked = false;
+    public GameObject owner;
 
     private Rigidbody2D itemBody;
     private SpriteRenderer itemSprite;
@@ -13,7 +19,6 @@ public class PlayerSpikeController : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-
         itemBody = GetComponent<Rigidbody2D>();
         itemSprite = GetComponent<SpriteRenderer>();
         StartCoroutine(Lifetime());
@@ -39,6 +44,23 @@ public class PlayerSpikeController : MonoBehaviour {
         StartCoroutine(Debris());
     }
 
+	void onCollision(Collider col)
+	{
+        if(HeavyMod)
+        {
+            if (col.gameObject.tag == "Debris")
+            {
+                Destroy(col.gameObject);
+		    }
+        }else
+        {
+            if(col.gameObject.tag == "Debris")
+            {
+                blocked = true;
+            }
+        }
+	}
+
     IEnumerator Debris()
     {
         yield return new WaitForSeconds(meltTime);
@@ -47,6 +69,9 @@ public class PlayerSpikeController : MonoBehaviour {
 
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        if(gameObject!=null){
+            Destroy(gameObject);
+        }
     }
+    
 }
