@@ -58,7 +58,6 @@ public class MeleeHolder : MonoBehaviour
 	public void OnMelee()
     {
         input = true;
-        mAudio.Play();
         Debug.Log("melee in abiliy holder");
     }
     // Update is called once per frame
@@ -76,6 +75,7 @@ public class MeleeHolder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    mAudio.Play();
                     charges--;
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -109,6 +109,7 @@ public class MeleeHolder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    mAudio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                     charges--;

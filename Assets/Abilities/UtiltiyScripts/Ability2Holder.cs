@@ -57,7 +57,6 @@ public class Ability2Holder : MonoBehaviour
     public void OnAbility2()
     {
         input = true;
-        a2Audio.Play();
     }
 
     // Update is called once per frame
@@ -75,6 +74,7 @@ public class Ability2Holder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    a2Audio.Play();
                     charges--;
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -108,6 +108,7 @@ public class Ability2Holder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    a2Audio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                     charges--;

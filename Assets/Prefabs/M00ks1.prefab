@@ -250,7 +250,8 @@ MonoBehaviour:
   myLives: 0
   lastHit: {fileID: 0}
   deaths: 0
-  kills: 0
+  enemykills: 0
+  playerkills: 0
 --- !u!114 &652623205431300039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +574,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0a58b9db119f1654caaeb2655fe0e0ba, type: 3}
   - {fileID: 8300000, guid: 040e3e7467452df44845d0c8ef72d603, type: 3}
   - {fileID: 8300000, guid: af64c51e6b6d9254c938c0ae06f3cebb, type: 3}
+  - {fileID: 8300000, guid: b029b048523b23449bc4e85b46d396de, type: 3}
   RangeMod: 0
   BypassMod: 0
   SpeedMod: 0

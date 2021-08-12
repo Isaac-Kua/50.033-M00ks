@@ -54,6 +54,9 @@ public class Ability1Holder : MonoBehaviour
 		case UpgradeManager.ability1Upgrade.SpikeRange:
 			a1Audio.clip = audioClips[3];
 			break;
+        case UpgradeManager.ability1Upgrade.Arrow:
+			a1Audio.clip = audioClips[4];
+			break;
 		default:
 			a1Audio.clip = audioClips[0];
 			break;
@@ -70,7 +73,6 @@ public class Ability1Holder : MonoBehaviour
     public void OnAbility1()
     {
         input = true;
-        a1Audio.Play();
         Debug.Log("ability1 in ability holder");
     }
     
@@ -91,6 +93,7 @@ public class Ability1Holder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    a1Audio.Play();
                     charges--;
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -124,6 +127,7 @@ public class Ability1Holder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    a1Audio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                     charges--;

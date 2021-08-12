@@ -13,6 +13,7 @@ public class upgradeScene : MonoBehaviour
     private Coroutine upgrade;
     private bool played = false;
     public bool playing = false;
+    private List<PlayerConfiguration> playerConfigs;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class upgradeScene : MonoBehaviour
         two.SetActive(false);
         three.SetActive(false);
         msgBox.SetActive(false);
+        playerConfigs = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
     }
 
     // Update is called once per frame
@@ -35,12 +37,18 @@ public class upgradeScene : MonoBehaviour
             GameManager.Instance.cutscene = false;
             stop = false;
             playing = false;
+            for(int i =0; i<GameManager.Instance.totalPlayers; i++){
+                playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
+            }
             Time.timeScale = 1f;
         }
     }
 
     IEnumerator cutscene()
     {
+        for(int i = 0; i<GameManager.Instance.totalPlayers; i++){
+            playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StopActions();
+        }
         Time.timeScale = 0f;
         msgBox.SetActive(true);
         one.SetActive(true);
@@ -54,6 +62,9 @@ public class upgradeScene : MonoBehaviour
         three.SetActive(false);
         msgBox.SetActive(false);
         GameManager.Instance.cutscene = false;
+        for(int i =0; i<GameManager.Instance.totalPlayers; i++){
+            playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
+        }
         Time.timeScale = 1f;
     }
 

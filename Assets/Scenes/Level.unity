@@ -2898,7 +2898,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4627,8 +4627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -210}
-  m_SizeDelta: {x: 750, y: 30}
+  m_AnchoredPosition: {x: 0, y: -244.0555}
+  m_SizeDelta: {x: 750, y: 98.111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789950120
 MonoBehaviour:
@@ -4663,7 +4663,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: YOU ARE THE LOWEST OF THE LOWEST SKELETONS CALLED MOOKS WITH NO SELF RECOGNITION/AWARENESS
+    WHATSOEVER.
 --- !u!222 &789950121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14693,6 +14694,7 @@ MonoBehaviour:
   four: {fileID: 2036919448}
   five: {fileID: 597944441}
   msgBox: {fileID: 534362800}
+  subtitle: {fileID: 789950118}
 --- !u!1 &1959236127
 GameObject:
   m_ObjectHideFlags: 0
@@ -15912,6 +15914,74 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[0].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[1].b
+      value: 0.38971162
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[1].g
+      value: 0.38971162
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[1].r
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[2].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[2].b
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[2].g
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[2].r
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[3].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[3].b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[3].g
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: colors.Array.data[3].r
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695017, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
       propertyPath: playerSpawns.Array.data[0]
       value: 
       objectReference: {fileID: 197590897}
@@ -15932,8 +16002,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6490905470945695018, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9907d033eddba40429440b99788080db, type: 3}
+    - target: {fileID: 6490905470945695018, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490905470945695018, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: -3974978655309072884, guid: 857495277106ff14a9d61e8a22253218, type: 2}
+      objectReference: {fileID: 1203838933259242442, guid: 857495277106ff14a9d61e8a22253218, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f94b71cd4ebd9eb4d8b725c7307dde2c, type: 3}
