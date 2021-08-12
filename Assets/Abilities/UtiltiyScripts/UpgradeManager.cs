@@ -422,87 +422,87 @@ public class UpgradeManager : MonoBehaviour
 	}
 
 	void calculateCombo(){
-		JuggernautList = new bool[] {unstoppableDefense, knockbackRange, heavyBullet, breakingMelee, juggernautMove};
-		WidowmakerList = new bool[] {arrowRange, rangedBullet, rangedUtil, spiderDash, saiyanKill};
-		TophList = new bool[] {miniDefense, spikeRange, homingBullet, tripleDash, repelMelee};
-		AchmedList = new bool[] {kaitenRange, magnetAlt, kamikazeDeath, explosionKill, zangiefMelee};
-		PacquiaoList = new bool[] {toughDefense, meleeUtil, vengeanceDeath, hasteKill, lungeMelee};
-		DannyList = new bool[] {phaseBullet, teleportAlt, respawnUtil, phaseDash, ghostMove};
-		TurleList = new bool[] {shellDefense, gooAlt, altUtil, crawlDeath, shivaMove};
-		MagnusList = new bool[] {mineAlt, reverseDash, soulswapDeath, zombieKill, wallwalkerMove};
+		//JuggernautList = new bool[] {unstoppableDefense, knockbackRange, heavyBullet, breakingMelee, juggernautMove};
+		//WidowmakerList = new bool[] {arrowRange, rangedBullet, rangedUtil, spiderDash, saiyanKill};
+		//TophList = new bool[] {miniDefense, spikeRange, homingBullet, tripleDash, repelMelee};
+		//AchmedList = new bool[] {kaitenRange, magnetAlt, kamikazeDeath, explosionKill, zangiefMelee};
+		//PacquiaoList = new bool[] {toughDefense, meleeUtil, vengeanceDeath, hasteKill, lungeMelee};
+		//DannyList = new bool[] {phaseBullet, teleportAlt, respawnUtil, phaseDash, ghostMove};
+		//TurleList = new bool[] {shellDefense, gooAlt, altUtil, crawlDeath, shivaMove};
+		//MagnusList = new bool[] {mineAlt, reverseDash, soulswapDeath, zombieKill, wallwalkerMove};
 	
 
-		if (JuggernautList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!JuggernautCombo) {
-				JuggernautCombo = true;
-				Debug.Log("I'm the Juggernaut Bitch");
-			}
-		} else {
-			JuggernautCombo = false;
-		}
+		//if (JuggernautList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!JuggernautCombo) {
+		//		JuggernautCombo = true;
+		//		Debug.Log("I'm the Juggernaut Bitch");
+		//	}
+		//} else {
+		//	JuggernautCombo = false;
+		//}
 
-		if (WidowmakerList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!WidowmakerCombo) {
-				WidowmakerCombo = true;
-				Debug.Log("Widowmaker pew pew pew");
-			}
-		} else {
-			WidowmakerCombo = false;
-		}
+		//if (WidowmakerList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!WidowmakerCombo) {
+		//		WidowmakerCombo = true;
+		//		Debug.Log("Widowmaker pew pew pew");
+		//	}
+		//} else {
+		//	WidowmakerCombo = false;
+		//}
 
-		if (TophList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!TophCombo) {
-				TophCombo = true;
-				Debug.Log("I am the greatest earthbender in the world, don't you two dunder heads ever forget it");
-			}
-		} else {
-			TophCombo = false;
-		}
+		//if (TophList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!TophCombo) {
+		//		TophCombo = true;
+		//		Debug.Log("I am the greatest earthbender in the world, don't you two dunder heads ever forget it");
+		//	}
+		//} else {
+		//	TophCombo = false;
+		//}
 
-		if (AchmedList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!AchmedCombo) {
-				AchmedCombo = true;
-				Debug.Log("Admiral Ackbar!");
-			}
-		} else {
-			AchmedCombo = false;
-		}
+		//if (AchmedList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!AchmedCombo) {
+		//		AchmedCombo = true;
+		//		Debug.Log("Admiral Ackbar!");
+		//	}
+		//} else {
+		//	AchmedCombo = false;
+		//}
 
-		if (PacquiaoList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!PacquiaoCombo) {
-				PacquiaoCombo = true;
-				Debug.Log("Manny Pacquiao");
-			}
-		} else {
-			PacquiaoCombo = false;
-		}
+		//if (PacquiaoList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!PacquiaoCombo) {
+		//		PacquiaoCombo = true;
+		//		Debug.Log("Manny Pacquiao");
+		//	}
+		//} else {
+		//	PacquiaoCombo = false;
+		//}
 
-		if (DannyList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!DannyCombo) {
-				DannyCombo = true;
-				Debug.Log("He's a phantom");
-			}
-		} else {
-			DannyCombo = false;
-		}
+		//if (DannyList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!DannyCombo) {
+		//		DannyCombo = true;
+		//		Debug.Log("He's a phantom");
+		//	}
+		//} else {
+		//	DannyCombo = false;
+		//}
 
-		if (TurleList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!TurtleCombo) {
-				TurtleCombo = true;
-				Debug.Log("Teenage Mutant Ninja Turtles!");
-			}
-		} else {
-			TurtleCombo = false;
-		}
+		//if (TurleList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!TurtleCombo) {
+		//		TurtleCombo = true;
+		//		Debug.Log("Teenage Mutant Ninja Turtles!");
+		//	}
+		//} else {
+		//	TurtleCombo = false;
+		//}
 		
-		if (MagnusList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
-			if (!MagnusCombo) {
-				MagnusCombo = true;
-				Debug.Log("Magnus Carlsen");
-			}
-		} else {
-			MagnusCombo = false;
-		}
+		//if (MagnusList.Count(upgrade => upgrade == true) > gameConstants.comboCount){
+		//	if (!MagnusCombo) {
+		//		MagnusCombo = true;
+		//		Debug.Log("Magnus Carlsen");
+		//	}
+		//} else {
+		//	MagnusCombo = false;
+		//}
 
 		AuraAnimator.SetBool("Magnus", MagnusCombo);
 		AuraAnimator.SetBool("Achmed", AchmedCombo);

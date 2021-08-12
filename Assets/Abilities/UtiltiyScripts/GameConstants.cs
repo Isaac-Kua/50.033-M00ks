@@ -19,6 +19,9 @@ public class GameConstants : ScriptableObject
 	public int deathFadeTime = 2;
 	public GameObject stunAnimation;
 	public Vector3 stunPosition = new Vector3(0, 0.5f, 0);
+	public GameObject StaticDebris;
+	public float DebrisLifeTime = 3f;
+	public float DebrisSpawnTime = 0.5f;
 
 	// M00ks
 	public float M00ksMoveSpeed = 20;
@@ -36,7 +39,7 @@ public class GameConstants : ScriptableObject
 	//Widowmaker
 	public GameObject WidowmakerArrow;
 	public float WidowmakerDuration = 0.05f;
-	public float WidowmakerChargeDuration = 1;
+	public float WidowmakerChargeDuration = 0.5f;
 	public float WidowmakerRange = 50;
 	//Juggernaut
 	public GameObject JuggernautAura;
@@ -74,7 +77,7 @@ public class GameConstants : ScriptableObject
 	
 	// Ability1 (Ranged) Variables
 	// Knockback
-	public float launchDuration = 1;
+	public float launchDuration = 0.5f;
 	public float knockbackSpeed = 150;
 	public float knockbackStrength = 5;
 	// Kaiten

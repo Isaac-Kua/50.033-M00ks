@@ -9,8 +9,6 @@ public class EnemyLevel2 : ScriptableObject
 	// FireWizard
 	public float fireboltExplosionScale = 3;
 	public float fireboltSpeed = 10;
-	public GameObject fireboltTargetArea;
-	public GameObject fireWizardFirebolt;
 	public float fireWizardMoveSpeed = 5;
 	public float fireWizardMaxRange = 20;
 	public float fireWizardMinRange = 5;
@@ -20,7 +18,6 @@ public class EnemyLevel2 : ScriptableObject
 	public float fireWizardSwingTime = 0.2f;
 
 	// Ranger
-	public GameObject rangerArrow;
 	public float rangerMoveSpeed = 12;
 	public float rangerMaxRange = 20;
 	public float rangerMinRange = 10;
@@ -30,8 +27,6 @@ public class EnemyLevel2 : ScriptableObject
 
 	// Knight
 	public float knightMoveSpeed = 5;
-	public GameObject knightShield;
-	public GameObject knightSword;
 	public float knightShieldWidth = 1;
 	public float knightWindUpTime = 3;
 	public float knightSwordlength = 1;
@@ -45,8 +40,6 @@ public class EnemyLevel2 : ScriptableObject
 	public float iceWizardBurstChargeTime = 10f;
 	public float iceWizardWindUpTime = 3f;
 	public float iceWizardSwingTime = 0.2f;
-	public GameObject iceWizardIcebolt;
-	public GameObject iceWizardIcewave;
 
 	public float iceboltLifeTime = 3f;
 	public float iceboltSpeed = 10;
@@ -54,7 +47,6 @@ public class EnemyLevel2 : ScriptableObject
 	public float icewaveLifeTime = 1f;
 	public float icewaveMeltTime = 2f;
 	public float icewaveSpeed = 3000;
-	public GameObject debris;
 	public int wallLength = 2;
 
 	// Barbarian

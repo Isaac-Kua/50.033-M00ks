@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public delegate void gameEvent();
-    public static event gameEvent BossStage;
+    public static event gameEvent PVPStage;
 
     void Awake()
     {
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public void increaseStage(){
         stage += 1;
         if (stage == 6) {
-            BossStage();
+            PVPStage();
         }
     }
 }
