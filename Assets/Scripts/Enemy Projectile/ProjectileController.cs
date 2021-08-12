@@ -9,7 +9,6 @@ public class ProjectileController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HeavyMod = owner.GetComponent<UpgradeManager>().HeavyMod;
 
     }
 
@@ -28,7 +27,7 @@ public class ProjectileController : MonoBehaviour
             }
             else if (gameObject.name == "PlayerSpike(Clone)" && other.gameObject.CompareTag("Debris"))
             {
-                if(HeavyMod)
+                if(gameObject.GetComponent<PlayerSpikeController>().HeavyMod)
                 {
                     Destroy(other.gameObject);
                     Destroy(gameObject);
