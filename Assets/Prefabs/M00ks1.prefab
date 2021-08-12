@@ -351,10 +351,10 @@ MonoBehaviour:
   phaseBullet: 0
   heavyBullet: 0
   homingBullet: 0
-  RangeMod: 0
-  BypassMod: 0
-  SpeedMod: 0
-  HeavyMod: 0
+  RangeMod: 1
+  BypassMod: 1
+  SpeedMod: 1
+  HeavyMod: 1
   JuggernautCombo: 0
   WidowmakerCombo: 0
   TophCombo: 1
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Lunge: {fileID: 11400000, guid: a5526efd186617a4ca69e17ce3bb4fee, type: 2}
   m_Zangief: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
   m_Default: {fileID: 11400000, guid: ad322882694f17548a4e71b668389d68, type: 2}
-  ab1Upgrade: 1
+  ab1Upgrade: 2
   ab2Upgrade: 2
   dUpgrade: 3
   mUpgrade: 4

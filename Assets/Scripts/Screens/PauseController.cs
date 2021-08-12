@@ -35,4 +35,9 @@ public class PauseController : MonoBehaviour
             eachChild.gameObject.SetActive(false);
         }
     }
+
+    public void endGameButton()
+    {
+        Application.Quit();
+    }
 }

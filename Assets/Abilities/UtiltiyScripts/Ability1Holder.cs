@@ -11,10 +11,10 @@ public class Ability1Holder : MonoBehaviour
 	public AudioClip[] audioClips;
     private AudioSource a1Audio;
     //public string abilityType;
-    float cooldownTime;
+    public float cooldownTime;
     float activeTime;
-    float rechargeTime;
-    int charges = -999;
+    public float rechargeTime;
+    public int charges = -999;
 
     public bool RangeMod;
     public bool BypassMod;
@@ -23,6 +23,7 @@ public class Ability1Holder : MonoBehaviour
 
     private void Start() {
         a1Audio = gameObject.GetComponents<AudioSource>()[2];
+        cooldownTime = ability.rechargeTime;
     }
     bool checkModifications()
     {

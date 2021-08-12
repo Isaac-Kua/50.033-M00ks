@@ -10,6 +10,7 @@ public class upgradeScene : MonoBehaviour
     public GameObject two;
     public GameObject three;
     public GameObject msgBox;
+    public GameObject skipText;
     private Coroutine upgrade;
     private bool played = false;
     public bool playing = false;
@@ -34,6 +35,7 @@ public class upgradeScene : MonoBehaviour
             two.SetActive(false);
             three.SetActive(false);
             msgBox.SetActive(false);
+            skipText.SetActive(false);
             GameManager.Instance.cutscene = false;
             stop = false;
             playing = false;
@@ -51,6 +53,7 @@ public class upgradeScene : MonoBehaviour
         }
         Time.timeScale = 0f;
         msgBox.SetActive(true);
+        skipText.SetActive(true);
         one.SetActive(true);
         yield return new WaitForSecondsRealtime(5);
         one.SetActive(false);
@@ -61,6 +64,7 @@ public class upgradeScene : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
         three.SetActive(false);
         msgBox.SetActive(false);
+        skipText.SetActive(false);
         GameManager.Instance.cutscene = false;
         for(int i =0; i<GameManager.Instance.totalPlayers; i++){
             playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();

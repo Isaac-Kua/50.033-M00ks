@@ -11,10 +11,10 @@ public class Ability2Holder : MonoBehaviour
 	public AudioClip[] audioClips;
     private AudioSource a2Audio;
     //public string abilityType;
-    float cooldownTime;
+    public float cooldownTime;
     float activeTime;
-    float rechargeTime;
-    int charges = -999;
+    public float rechargeTime;
+    public int charges = -999;
     enum AbilityState{
         ready,
         active,
@@ -24,6 +24,7 @@ public class Ability2Holder : MonoBehaviour
     AbilityState state = AbilityState.ready;
     private void Start() {
         a2Audio = gameObject.GetComponents<AudioSource>()[3];
+        cooldownTime = ability.rechargeTime;
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;

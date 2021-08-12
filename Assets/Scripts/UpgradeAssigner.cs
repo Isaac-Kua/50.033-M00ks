@@ -42,7 +42,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade3Text.text = "Knockback";
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "arrowRange";
                 upgrade4.GetComponent<SpriteRenderer>().sprite = icons.arrow;
-                upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
+                upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 upgrade4Text.text = "Arrow";
                 break;
             case 2:
@@ -199,21 +199,21 @@ public class UpgradeAssigner : MonoBehaviour
                 break;
             case 10:
                 // Utility upgrades
-                upgrade1.GetComponent<UpgradeGranter>().upgrade = "respwanUtil";
+                upgrade1.GetComponent<UpgradeGranter>().upgrade = "respawnUtil";
                 upgrade1.GetComponent<SpriteRenderer>().sprite = icons.respawn;
-                upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
+                upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 upgrade1Text.text = "Faster Respawn";
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "meleeUtil";
                 upgrade2.GetComponent<SpriteRenderer>().sprite = icons.meleeUtil;
-                upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
+                upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 upgrade2Text.text = "Melee Util";
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "rangedUtil";
                 upgrade3.GetComponent<SpriteRenderer>().sprite = icons.rangedUtil;
-                upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
+                upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 upgrade3Text.text = "Ranged Util";
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "altUtil";
                 upgrade4.GetComponent<SpriteRenderer>().sprite = icons.altUtil;
-                upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
+                upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
                 upgrade4Text.text = "Alt Util";
                 break;
             default:

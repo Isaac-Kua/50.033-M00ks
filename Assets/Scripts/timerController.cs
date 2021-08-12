@@ -8,6 +8,7 @@ public class timerController : MonoBehaviour
     public float timeRemaining = 60;
     public bool startTimer = false;
     private Text timerText;
+    public GameObject winScene;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,9 @@ public class timerController : MonoBehaviour
             }
             else{
                 startTimer = false;
-                Debug.Log("times up");
+                timeRemaining = 0;
+                winScene.GetComponent<winScene>().getWinner();
+                winScene.SetActive(true);
             }
         }
         float seconds = Mathf.FloorToInt(timeRemaining % 60);

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class IceboltController : MonoBehaviour
 {
-	public GameConstants gameConstants;
+	public GameConstants gameConstants; 
+	public GameObject gameManager;
 	public GameObject target1;
 
-	private float speed;
 	private float lifeTime;
 
 	private Vector2 dir;
@@ -21,10 +21,6 @@ public class IceboltController : MonoBehaviour
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
 		itemSprite.flipX = true;
-
-		lifeTime = gameConstants.iceboltLifeTime;
-		speed = gameConstants.iceboltSpeed ;
-		
 		StartCoroutine(Lifetime());	
 	}
 		
@@ -37,7 +33,7 @@ public class IceboltController : MonoBehaviour
 		transform.rotation = angle;
 		if (!exploded)
 		{ 
-			itemBody.velocity = (target1.transform.position - transform.position).normalized*speed;
+			itemBody.velocity = (target1.transform.position - transform.position).normalized* gameManager.GetComponent<GameManager>().currentLevel.iceboltSpeed;
 		}
     }
 	
@@ -56,13 +52,13 @@ public class IceboltController : MonoBehaviour
 	
 	void Explode()
 	{
-		GameObject debris = Instantiate(gameConstants.debris, transform.position, transform.rotation);
+		GameObject debris = Instantiate(gameConstants.debris, transform.position, new Quaternion(0,0,0,0));
 		debris.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 		OnBecameInvisible();
 	}
 	
 	IEnumerator Lifetime(){
-		yield return new WaitForSeconds(lifeTime);
+		yield return new WaitForSeconds(gameConstants.iceboltLifeTime);
 		Explode();
 	}
 	

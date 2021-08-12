@@ -16,6 +16,6 @@ MonoBehaviour:
   name: SpiderDash
   activeTime: 0.1
   charges: 0
-  rechargeTime: 0
+  rechargeTime: 3
   abilityType: Dash
   dashSpeed: 300

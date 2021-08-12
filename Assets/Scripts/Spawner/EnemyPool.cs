@@ -35,6 +35,7 @@ public  class ExistingPoolItem
 public class EnemyPool : MonoBehaviour
 {
     public static EnemyPool SharedInstance;
+    public GameObject gameManager;
     public List<EnemyPoolItem> itemsToPool; // types of different object to pool 
     public List<ExistingPoolItem> pooledObjects; // a list of all objects in the pool, of all types
     public List<GameObject> Spawners;
@@ -110,6 +111,7 @@ public class EnemyPool : MonoBehaviour
             int rand = Random.Range(0,4);
             enemy.transform.position  =  Spawners[rand].transform.position;
             enemy.SetActive(true);
+            enemy.GetComponent<DeathHandler>().gameManager = gameManager;
         }
         else{
             Debug.Log("not enough items in the pool.");

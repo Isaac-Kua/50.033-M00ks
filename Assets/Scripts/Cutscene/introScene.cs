@@ -14,6 +14,7 @@ public class introScene : MonoBehaviour
     public GameObject four;
     public GameObject five;
     public GameObject msgBox;
+    public GameObject skipText;
     private Coroutine intro;
     public GameObject subtitle;
     private List<PlayerConfiguration> playerConfigs;
@@ -30,6 +31,7 @@ public class introScene : MonoBehaviour
         msgBox.SetActive(false);
         subtitle.SetActive(false);
         playerConfigs = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
+        skipText.SetActive(false);
         intro = StartCoroutine(cutscene());
         GameManager.Instance.cutscene = true;
         playing = true;
@@ -46,6 +48,7 @@ public class introScene : MonoBehaviour
             five.SetActive(false);
             msgBox.SetActive(false);
             subtitle.SetActive(false);
+            skipText.SetActive(false);
             GameManager.Instance.cutscene = false;
             stop = false;
             playing = false;
@@ -65,6 +68,7 @@ public class introScene : MonoBehaviour
         }
         Time.timeScale = 0f;
         msgBox.SetActive(true);
+        skipText.SetActive(true);
         one.SetActive(true);
         subtitle.SetActive(true);
         yield return new WaitForSecondsRealtime(5);
@@ -84,6 +88,7 @@ public class introScene : MonoBehaviour
         five.SetActive(false);
         msgBox.SetActive(false);
         subtitle.SetActive(false);
+        skipText.SetActive(false);
         GameManager.Instance.cutscene = false;
         for(int i =0; i<GameManager.Instance.totalPlayers; i++){
             playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();

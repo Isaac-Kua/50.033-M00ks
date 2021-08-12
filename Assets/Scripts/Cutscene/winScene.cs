@@ -9,9 +9,9 @@ public class winScene : MonoBehaviour
     public Image winner;
     public Text kills;
     private List<PlayerConfiguration> players;
+    public GameObject timer;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
     }
@@ -24,12 +24,15 @@ public class winScene : MonoBehaviour
 
     public void getWinner()
     {
-        List<int> playerKills =  new List<int>();
+        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
+        List<int> playerKills = new List<int>();
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             playerKills.Add(players[i].playerPrefab.GetComponent<M00ksDeathHandler>().playerkills);
         }
-        kills.text = playerKills.Max().ToString();
+        Debug.Log(playerKills);
+        kills.text = "PVP Kills: " + playerKills.Max().ToString();
         int winningPlayer = playerKills.IndexOf(playerKills.Max());
         winner.sprite = PlayerConfigurationManager.Instance.getPlayerSprite(winningPlayer);
+        timer.SetActive(false);
     }
 }

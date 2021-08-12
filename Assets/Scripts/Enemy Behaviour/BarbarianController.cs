@@ -15,6 +15,7 @@ public class BarbarianController : MonoBehaviour
 	private PolygonCollider2D barbCollider;
 	private Animator barbAnimator;
 	private AudioSource barbAudio;
+	private CurrentLevel levelDifficulty;
 
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
@@ -26,11 +27,12 @@ public class BarbarianController : MonoBehaviour
 		barbBody = GetComponent<Rigidbody2D>();
 		barbSprite = GetComponent<SpriteRenderer>();
 		barbCollider = GetComponent<PolygonCollider2D>();
-		charges = gameConstants.BarbarianMaxCharges;
 		GetComponent<ProjectileController>().owner = gameObject;
 		barbAnimator = GetComponent<Animator>();
 		barbAudio = GetComponent<AudioSource>();
-    }
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
+		charges = levelDifficulty.BarbarianMaxCharges;
+	}
 	
     // Update is called once per frame
     void FixedUpdate()
@@ -46,25 +48,25 @@ public class BarbarianController : MonoBehaviour
 		{
 			barbBody.velocity = Vector2.zero;
 		}
-		else if (distance < gameConstants.BarbarianMaxRange)
+		else if (distance < levelDifficulty.BarbarianMaxRange)
 		{
 			if (charges > 0 && !dashing)
 			{
 				Dash();
 				barbAudio.Play();
 			}
-			else if (charges != gameConstants.BarbarianMaxCharges && !dashing)
+			else if (charges != levelDifficulty.BarbarianMaxCharges && !dashing)
             {
-                barbBody.velocity = (-1 * dir * gameConstants.BarbarianMoveSpeed);
+                barbBody.velocity = (-1 * dir * levelDifficulty.BarbarianMoveSpeed);
             }
 
 
         }
-        else if (distance > gameConstants.BarbarianMaxRange)
+        else if (distance > levelDifficulty.BarbarianMaxRange)
 		{
-			barbBody.velocity = (dir * gameConstants.BarbarianMoveSpeed);
+			barbBody.velocity = (dir * levelDifficulty.BarbarianMoveSpeed);
 		}
-		else if (distance == gameConstants.BarbarianMaxRange)
+		else if (distance == levelDifficulty.BarbarianMaxRange)
 		{
 			barbBody.velocity = Vector2.zero;
 		}
@@ -77,8 +79,9 @@ public class BarbarianController : MonoBehaviour
 	
 	void Update(){
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 		if (GetComponent<DeathHandler>().ammo) {
-			charges = gameConstants.BarbarianMaxCharges;
+			charges = levelDifficulty.BarbarianMaxCharges;
 			GetComponent<DeathHandler>().ammo = false;
 		}
 	}
@@ -106,7 +109,7 @@ public class BarbarianController : MonoBehaviour
 			barbSprite.material.color = new Color(1,1,0.5f); //C#
 			yield return new WaitForSeconds(gameConstants.BarbarianWindUpTime);
 			barbSprite.material.color = new Color(1,0,0); //C#
-			charges = gameConstants.BarbarianMaxCharges;
+			charges = levelDifficulty.BarbarianMaxCharges;
 		}
 	}
 }
