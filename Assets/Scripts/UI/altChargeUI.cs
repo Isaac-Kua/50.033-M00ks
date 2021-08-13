@@ -24,7 +24,7 @@ public class altChargeUI : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             charges = playerPrefab.GetComponent<Ability2Holder>().charges;
         }
-        if (charges > 1) {
+        if (charges >= 1) {
             text.text = charges.ToString();
         }
         else {

@@ -24,7 +24,7 @@ public class dashChargeUI : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             charges = playerPrefab.GetComponent<DashHolder>().charges;
         }
-        if (charges > 1) {
+        if (charges >= 1) {
             text.text = charges.ToString();
         }
         else {

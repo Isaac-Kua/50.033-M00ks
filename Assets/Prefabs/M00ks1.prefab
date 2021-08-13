@@ -383,10 +383,10 @@ MonoBehaviour:
   m_Lunge: {fileID: 11400000, guid: a5526efd186617a4ca69e17ce3bb4fee, type: 2}
   m_Zangief: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
   m_Default: {fileID: 11400000, guid: ad322882694f17548a4e71b668389d68, type: 2}
-  ab1Upgrade: 0
-  ab2Upgrade: 4
-  dUpgrade: 4
-  mUpgrade: 4
+  ab1Upgrade: 1
+  ab2Upgrade: 3
+  dUpgrade: 0
+  mUpgrade: 3
 --- !u!120 &652623204980101121
 LineRenderer:
   m_ObjectHideFlags: 0

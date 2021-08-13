@@ -33,7 +33,7 @@ public class UpgradeGranter : MonoBehaviour
                 break;
             // Ability 1
             case "arrowRange":
-                other.gameObject.GetComponent<UpgradeManager>().ab1Upgrade = UpgradeManager.ability1Upgrade.Default;
+                other.gameObject.GetComponent<UpgradeManager>().ab1Upgrade = UpgradeManager.ability1Upgrade.Arrow;
                 break;
             case "kaitenRange":
                 other.gameObject.GetComponent<UpgradeManager>().ab1Upgrade = UpgradeManager.ability1Upgrade.Kaiten;
