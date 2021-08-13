@@ -6826,6 +6826,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4587663427684844348, guid: 3cc37b8da865fe1409242e9d9fc82374, type: 3}
   m_PrefabInstance: {fileID: 7917243395346147419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7355767073339481866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7757044
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733177211958819753, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905980473468237619, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
+      propertyPath: m_Name
+      value: Goo Ball
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f73396bfad20b74ebe3261b5a23be90, type: 3}
 --- !u!1001 &7836638966046828186
 PrefabInstance:
   m_ObjectHideFlags: 0
