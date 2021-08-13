@@ -23,8 +23,8 @@ public class EndScreenController : MonoBehaviour
         }
     }
 
-    public void ReturnToMenuButton()
+    public void ExitButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        Application.Quit();
     }
 }
