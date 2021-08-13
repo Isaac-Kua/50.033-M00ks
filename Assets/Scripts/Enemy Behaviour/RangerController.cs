@@ -18,8 +18,9 @@ public class RangerController : MonoBehaviour
 	private AudioSource rangerAudio;
 	private float distance;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-	
-	
+	private CurrentLevel levelDifficulty;
+
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -28,6 +29,7 @@ public class RangerController : MonoBehaviour
 		rangerSprite = GetComponent<SpriteRenderer>();
 		rangerAnimator = GetComponent<Animator>();
 		rangerAudio = GetComponent<AudioSource>();
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 
 	void FixedUpdate()
@@ -47,7 +49,7 @@ public class RangerController : MonoBehaviour
 		}
 		else if (distance > gameConstants.rangerMaxRange)
 		{
-			rangerBody.velocity = (dir * gameConstants.rangerMoveSpeed);
+			rangerBody.velocity = (dir * levelDifficulty.rangerMoveSpeed);
 		
 		} else if (distance > gameConstants.rangerMinRange && distance < gameConstants.rangerMaxRange) {
 			rangerBody.velocity = Vector2.zero;
@@ -55,13 +57,21 @@ public class RangerController : MonoBehaviour
 				StartCoroutine(Fire());
 			} 
 		} else if (distance < gameConstants.rangerMinRange) {
-			rangerBody.velocity = (-1*dir * gameConstants.rangerMoveSpeed);
+			if (GetComponent<DeathHandler>().ammo)
+			{
+				StartCoroutine(Fire());
+			}
+			else
+			{
+				rangerBody.velocity = (-1 * dir * levelDifficulty.rangerMoveSpeed);
+			}
 		}
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
 		rangerAnimator.SetFloat("Speed", Mathf.Abs(rangerBody.velocity.magnitude));
 	}
@@ -82,7 +92,7 @@ public class RangerController : MonoBehaviour
 	
 	IEnumerator  WindUp()
 	{
-		yield return new WaitForSeconds(gameConstants.rangerWindUpTime);
+		yield return new WaitForSeconds(levelDifficulty.rangerWindUpTime);
 		GetComponent<DeathHandler>().ammo = true;
 	}
 }

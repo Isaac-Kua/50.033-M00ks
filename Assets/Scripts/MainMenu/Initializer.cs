@@ -9,6 +9,8 @@ public class Initializer : MonoBehaviour
     
     [SerializeField]
     private GameObject playerPrefab;
+    [SerializeField]    
+    private Color[] colors;
     // Start is called before the first frame update
     void Start()
     {  
@@ -20,6 +22,7 @@ public class Initializer : MonoBehaviour
             Debug.Log("INSTATIATING " + i.ToString());
             var player = Instantiate(playerPrefab,playerSpawns[i].position,playerSpawns[i].rotation,gameObject.transform);
             player.GetComponent<M00ks1Controller>().InitializePlayer(playerConfigs[i],playerSprite);
+            player.GetComponent<SpriteRenderer>().color = colors[i];
             player.GetComponent<PlayerSoulController>().playerNo = i;
         }
     }

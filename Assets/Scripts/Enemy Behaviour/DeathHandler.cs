@@ -5,11 +5,13 @@ using UnityEngine;
 public class DeathHandler : MonoBehaviour
 {
 	public GameConstants gameConstants;
+	public GameObject gameManager;
 	public GameObject soul;
 	public GameObject lastHit;
 	public List<MonoBehaviour> activeAbilities;
 
 	public bool ammo;
+	public bool burstCharge;
 	private SpriteRenderer npcSprite;
 	private Rigidbody2D npcBody;
 	private Collider2D npcCollider;
@@ -31,6 +33,7 @@ public class DeathHandler : MonoBehaviour
 		stunAnim.transform.position = gameConstants.stunPosition;
 		stunAnim.SetActive(false);
 		ammo = true;
+		burstCharge = true;
 	}
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class DeathHandler : MonoBehaviour
 		npcCollider.enabled = true;
 		this.gameObject.SetActive(false);
 		ammo = true;
+		burstCharge = true;
 	}
 	
 

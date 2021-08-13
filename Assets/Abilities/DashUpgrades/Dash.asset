@@ -15,7 +15,7 @@ MonoBehaviour:
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: DefaultDash
   activeTime: 0.1
-  charges: 3
+  charges: 2
   rechargeTime: 3
   abilityType: Dash
   dashSpeed: 300

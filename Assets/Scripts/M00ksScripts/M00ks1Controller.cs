@@ -33,6 +33,7 @@ public class M00ks1Controller : MonoBehaviour
 	private DashHolder dash;
 	private Ability1Holder ability1;
 	private Ability2Holder ability2;
+	private bool isActions;
 
 	void Awake()
 	{
@@ -42,6 +43,7 @@ public class M00ks1Controller : MonoBehaviour
 		ability1 = GetComponent<Ability1Holder>();
 		ability2 = GetComponent<Ability2Holder>();
 		m00ksSprite = GetComponent<SpriteRenderer>();
+		isActions=false;
 	}
 
     // Start is called before the first frame update
@@ -83,55 +85,68 @@ public class M00ks1Controller : MonoBehaviour
 		m00ksSprite.sprite = s;
 	}
 
+	public void StopActions(){
+		isActions = false;
+	}
+	public void StartActions(){
+		isActions = true;
+	}
+
 	private void Input_onActionTriggered(CallbackContext obj){
 		//Debug.Log("ACTION!!!");
-
-		if (obj.action.name == controls.Player.Move.name)
-		{
-			OnMove(obj);
-		}
-		else if (obj.action.name == controls.Player.Pause.name)
-		{
-			if (!paused)
+		if (isActions){
+			if (obj.action.name == controls.Player.Move.name)
 			{
-				PauseController.Instance.PauseGame();
-				paused = true;
+				OnMove(obj);
 			}
-			else if (paused)
+			else if (obj.action.name == controls.Player.Pause.name)
 			{
-				PauseController.Instance.ResumeGame();
-				paused = false;
-			}
-		}
-
-		if (obj.performed)
-		{
-            if (obj.action.name == controls.Player.Dash.name)
-            {
-				if (!GameManager.Instance.cutscene){
-					dash.OnDash();
-					m00ksAnimator.SetTrigger("Dash");
+				if (!paused)
+				{
+					PauseController.Instance.PauseGame();
+					paused = true;
 				}
+				else if (paused)
+				{
+					PauseController.Instance.ResumeGame();
+					paused = false;
+				}
+			}
+
+			if (obj.performed)
+			{
+				if (obj.action.name == controls.Player.Dash.name)
+				{
+					if (!GameManager.Instance.cutscene){
+						dash.OnDash();
+						m00ksAnimator.SetTrigger("Dash");
+					}
+				}
+				else if(obj.action.name == controls.Player.Ability1.name)
+				{
+					ability1.OnAbility1();
+					m00ksAnimator.SetTrigger("Ability1");
+				}
+				else if(obj.action.name == controls.Player.Ability2.name)
+				{
+					ability2.OnAbility2();
+					m00ksAnimator.SetTrigger("Ability2");
+				}
+				else if(obj.action.name == controls.Player.Melee.name)
+				{
+					melee.OnMelee();
+					m00ksAnimator.SetTrigger("SwingNow");
+				}
+			}
+		}else{
+			if (obj.action.name == controls.Player.Skip.name)
+			{
+				Debug.Log("SKIPPED");
 				if (GameManager.Instance.cutscene) {
 					Player1Manager.centralManagerInstance.stopCutscene();
 				}
 			}
-			else if(obj.action.name == controls.Player.Ability1.name)
-            {
-                ability1.OnAbility1();
-                m00ksAnimator.SetTrigger("Ability1");
-            }
-			else if(obj.action.name == controls.Player.Ability2.name)
-			{
-				ability2.OnAbility2();
-				m00ksAnimator.SetTrigger("Ability2");
-			}
-			else if(obj.action.name == controls.Player.Melee.name)
-            {
-                melee.OnMelee();
-                m00ksAnimator.SetTrigger("SwingNow");
-            }
-        }
+		}
 	}
 	
 	public void OnMove(CallbackContext value)

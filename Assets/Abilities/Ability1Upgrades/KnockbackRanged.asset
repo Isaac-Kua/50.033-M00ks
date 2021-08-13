@@ -16,5 +16,5 @@ MonoBehaviour:
   name: KnockbackRanged
   activeTime: 0.1
   charges: 0
-  rechargeTime: 0
+  rechargeTime: 2
   abilityType: Ability1

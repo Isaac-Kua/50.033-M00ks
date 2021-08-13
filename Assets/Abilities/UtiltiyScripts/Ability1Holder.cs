@@ -11,10 +11,10 @@ public class Ability1Holder : MonoBehaviour
 	public AudioClip[] audioClips;
     private AudioSource a1Audio;
     //public string abilityType;
-    float cooldownTime;
+    public float cooldownTime;
     float activeTime;
-    float rechargeTime;
-    int charges = -999;
+    public float rechargeTime;
+    public int charges = -999;
 
     public bool RangeMod;
     public bool BypassMod;
@@ -23,6 +23,7 @@ public class Ability1Holder : MonoBehaviour
 
     private void Start() {
         a1Audio = gameObject.GetComponents<AudioSource>()[2];
+        cooldownTime = ability.rechargeTime;
     }
     bool checkModifications()
     {
@@ -43,6 +44,7 @@ public class Ability1Holder : MonoBehaviour
 
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        cooldownTime = ability.rechargeTime;
         switch (gameObject.GetComponent<UpgradeManager>().ab1Upgrade)
 		{
 		case UpgradeManager.ability1Upgrade.Kaiten:
@@ -53,6 +55,9 @@ public class Ability1Holder : MonoBehaviour
 			break;
 		case UpgradeManager.ability1Upgrade.SpikeRange:
 			a1Audio.clip = audioClips[3];
+			break;
+        case UpgradeManager.ability1Upgrade.Arrow:
+			a1Audio.clip = audioClips[4];
 			break;
 		default:
 			a1Audio.clip = audioClips[0];
@@ -70,7 +75,6 @@ public class Ability1Holder : MonoBehaviour
     public void OnAbility1()
     {
         input = true;
-        a1Audio.Play();
         Debug.Log("ability1 in ability holder");
     }
     
@@ -91,6 +95,7 @@ public class Ability1Holder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    a1Audio.Play();
                     charges--;
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -128,6 +133,7 @@ public class Ability1Holder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    a1Audio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                     charges--;

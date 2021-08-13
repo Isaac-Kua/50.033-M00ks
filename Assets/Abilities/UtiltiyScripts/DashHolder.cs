@@ -10,10 +10,10 @@ public class DashHolder : MonoBehaviour
 	public AudioClip[] audioClips;
     private AudioSource dAudio;
     //public string abilityType;
-    float cooldownTime;
+    public float cooldownTime;
     float activeTime;
-    float rechargeTime;
-    int charges = -999;
+    public float rechargeTime;
+    public int charges = -999;
     enum AbilityState{
         ready,
         active,
@@ -23,9 +23,11 @@ public class DashHolder : MonoBehaviour
     AbilityState state = AbilityState.ready;
     private void Start() {
         dAudio = gameObject.GetComponents<AudioSource>()[1];
+        cooldownTime = ability.rechargeTime;
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        cooldownTime = ability.rechargeTime;
         switch (gameObject.GetComponent<UpgradeManager>().dUpgrade)
 		{
 		case UpgradeManager.dashUpgrade.Default:

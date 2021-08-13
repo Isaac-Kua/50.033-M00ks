@@ -351,13 +351,13 @@ MonoBehaviour:
   phaseBullet: 0
   heavyBullet: 0
   homingBullet: 0
-  RangeMod: 1
-  BypassMod: 1
-  SpeedMod: 1
-  HeavyMod: 1
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0
   JuggernautCombo: 0
   WidowmakerCombo: 0
-  TophCombo: 1
+  TophCombo: 0
   AchmedCombo: 0
   PacquiaoCombo: 0
   DannyCombo: 0
@@ -384,9 +384,9 @@ MonoBehaviour:
   m_Zangief: {fileID: 11400000, guid: ab389c4fe04a14d489518bd039689244, type: 2}
   m_Default: {fileID: 11400000, guid: ad322882694f17548a4e71b668389d68, type: 2}
   ab1Upgrade: 1
-  ab2Upgrade: 2
-  dUpgrade: 3
-  mUpgrade: 4
+  ab2Upgrade: 3
+  dUpgrade: 0
+  mUpgrade: 3
 --- !u!120 &652623204980101121
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -519,6 +519,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4ac96334d9da88c4f8e007053f8e1600, type: 3}
   - {fileID: 8300000, guid: 4ac96334d9da88c4f8e007053f8e1600, type: 3}
   - {fileID: 8300000, guid: 43c64cf680ca670438d093c8c8bc8dc4, type: 3}
+  cooldownTime: 0
+  rechargeTime: 0
+  charges: -999
 --- !u!114 &652623204980101138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +541,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ee51bcde5e05c5843be9332b9c789ab5, type: 3}
   - {fileID: 8300000, guid: a7b27b34c9bbfbc4982334f145792803, type: 3}
   - {fileID: 8300000, guid: 643f2e890e403b04eb098619d4bb06e9, type: 3}
+  cooldownTime: 0
+  rechargeTime: 0
+  charges: -999
 --- !u!114 &652623204980101133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,6 +563,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0f176806c871b674b8bd356eb862a705, type: 3}
   - {fileID: 8300000, guid: 80e4346acaa9d834f8940ae0fb458f67, type: 3}
   - {fileID: 8300000, guid: c7c9a2dd0419ee348a1ee52fa177032e, type: 3}
+  cooldownTime: 0
+  rechargeTime: 0
+  charges: -999
 --- !u!114 &652623204980101132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +584,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0a58b9db119f1654caaeb2655fe0e0ba, type: 3}
   - {fileID: 8300000, guid: 040e3e7467452df44845d0c8ef72d603, type: 3}
   - {fileID: 8300000, guid: af64c51e6b6d9254c938c0ae06f3cebb, type: 3}
+  - {fileID: 8300000, guid: b029b048523b23449bc4e85b46d396de, type: 3}
+  cooldownTime: 0
+  rechargeTime: 0
+  charges: -999
   RangeMod: 0
   BypassMod: 0
   SpeedMod: 0

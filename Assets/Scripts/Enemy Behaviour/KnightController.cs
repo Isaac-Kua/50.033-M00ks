@@ -7,7 +7,6 @@ public class KnightController : MonoBehaviour
 	public GameConstants gameConstants;
 	public GameObject target1;
 	
-	private float speed;
 	private GameObject shield;
 	private GameObject myShield;	
 	private Rigidbody2D knightBody;
@@ -16,7 +15,8 @@ public class KnightController : MonoBehaviour
 
 	private Vector2 dir;
 	private Quaternion angle = new Quaternion(0,0,0,0);
-	
+	private CurrentLevel levelDifficulty;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -25,14 +25,15 @@ public class KnightController : MonoBehaviour
 		knightSprite = GetComponent<SpriteRenderer>();
 		knightAnimator = GetComponent<Animator>();
 
-		speed = gameConstants.knightMoveSpeed;
 		shield = gameConstants.knightShield;
 		
 		myShield = Instantiate(shield, transform.position, transform.rotation);
 		myShield.transform.parent = transform;
 		Vector3 eulerAngle = new Vector3(0,0,90);
 		angle.eulerAngles = eulerAngle;
-		myShield.transform.rotation = angle;		
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
+		myShield.transform.rotation = angle;
+		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
 	}
 
 	// Update is called once per frame
@@ -52,7 +53,7 @@ public class KnightController : MonoBehaviour
 			eulerAngle = dir;
 
 
-			knightBody.velocity = (dir * speed);
+			knightBody.velocity = (dir * levelDifficulty.knightMoveSpeed);
 			myShield.GetComponent<ShieldController>().target1 = target1;
 			myShield.transform.position = transform.position + 1.2f*eulerAngle;
 			
@@ -63,13 +64,14 @@ public class KnightController : MonoBehaviour
 			knightBody.velocity = Vector2.zero;
 		}
 
-
 		knightAnimator.SetFloat("Speed", Mathf.Abs(knightBody.velocity.magnitude));
 	}
 
 	void Update()
 	{
+		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 		knightAnimator.SetBool("Engaged", myShield.GetComponent<ShieldController>().engaged);
 		knightAnimator.SetBool("SwingUp", dir.y > 0.5);
 		knightAnimator.SetBool("SwingDown", dir.y < -0.5);

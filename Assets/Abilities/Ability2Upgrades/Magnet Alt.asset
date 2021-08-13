@@ -15,6 +15,6 @@ MonoBehaviour:
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: MagnetAlt
   activeTime: 0.5
-  charges: 0
-  rechargeTime: 0
+  charges: 2
+  rechargeTime: 5
   abilityType: Ability2

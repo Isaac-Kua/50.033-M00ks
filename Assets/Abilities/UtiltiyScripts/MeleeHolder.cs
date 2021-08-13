@@ -10,10 +10,10 @@ public class MeleeHolder : MonoBehaviour
 	public AudioClip[] audioClips;
     private AudioSource mAudio;
     //public string abilityType;
-    float cooldownTime;
+    public float cooldownTime;
     float activeTime;
-    float rechargeTime;
-    int charges = -999;
+    public float rechargeTime;
+    public int charges = -999;
     enum AbilityState{
         ready,
         active,
@@ -23,9 +23,11 @@ public class MeleeHolder : MonoBehaviour
     AbilityState state = AbilityState.ready;
     private void Start() {
         mAudio = gameObject.GetComponents<AudioSource>()[0];
+        cooldownTime = ability.rechargeTime;
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        cooldownTime = ability.rechargeTime;
         switch (gameObject.GetComponent<UpgradeManager>().mUpgrade)
 		{
 		case UpgradeManager.meleeUpgrade.Default:
@@ -58,7 +60,6 @@ public class MeleeHolder : MonoBehaviour
 	public void OnMelee()
     {
         input = true;
-        mAudio.Play();
         Debug.Log("melee in abiliy holder");
     }
     // Update is called once per frame
@@ -76,6 +77,7 @@ public class MeleeHolder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    mAudio.Play();
                     charges--;
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -109,6 +111,7 @@ public class MeleeHolder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    mAudio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                     charges--;
