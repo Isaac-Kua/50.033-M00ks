@@ -73,10 +73,10 @@ public class SetLevel : MonoBehaviour
         foreach (Transform child in upgrades.transform){
             child.gameObject.SetActive(true);
         }
-        if (AltarManager.Instance.altarDamage > 40){
+        if (AltarManager.Instance.altarDamage > 15){
             speechBubble.GetComponent<UpgradeSpeech>().oneStar();
         }
-        else if (AltarManager.Instance.altarDamage > 15){
+        else if (AltarManager.Instance.altarDamage > 6){
             speechBubble.GetComponent<UpgradeSpeech>().twoStar();
         }
         else{
