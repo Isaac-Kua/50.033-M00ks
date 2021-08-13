@@ -41,6 +41,12 @@ public class KnightController : MonoBehaviour
 		Destroy(myShield);
 	}
 	void OnEnable(){
+		target1 = gameObject;
+		knightBody = GetComponent<Rigidbody2D>();
+		knightSprite = GetComponent<SpriteRenderer>();
+		knightAnimator = GetComponent<Animator>();
+
+		shield = gameConstants.knightShield;
 		myShield = Instantiate(shield, transform.position, transform.rotation);
 		myShield.transform.parent = transform;
 		Vector3 eulerAngle = new Vector3(0,0,90);
