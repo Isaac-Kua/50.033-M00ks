@@ -18,7 +18,7 @@ public class KaitenController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Collider = gameObject.GetComponent<BoxCollider2D>();
+		Collider = gameObject.GetComponent<CircleCollider2D>();
 		Debug.Log(RangeMod);
 		if(SpeedMod){
 			kaitenGrowthRate = gameConstants.kaitenGrowthRate*2f;
@@ -37,11 +37,11 @@ public class KaitenController : MonoBehaviour
 	
 	}
 
-	void onTrigger(Collider col)
+	void onTriggerEnter2D(Collider col)
 	{
 		if (HeavyMod)
 		{
-			if (col.gameObject.tag == "Arrow"||col.gameObject.tag == "Firebolt"||col.gameObject.tag == "Icebolt")
+			if (col.gameObject.tag == "Arrow"||col.gameObject.tag == "Firebolt"||col.gameObject.tag == "Icebolt"||col.gameObject.tag == "Debris")
 			{
 				//If the GameObject has the same tag as specified, output this message in the console
 				Destroy(col.gameObject);

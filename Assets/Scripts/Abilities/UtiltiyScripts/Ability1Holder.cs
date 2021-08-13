@@ -106,7 +106,11 @@ public class Ability1Holder : MonoBehaviour
                 //Debug.Log("active");
                 if (activeTime>0)
                 {
-                    activeTime -= Time.deltaTime;
+                    if(SpeedMod){
+                        activeTime -= Time.deltaTime*1.5f;
+                    }else{
+                        activeTime -= Time.deltaTime;
+                    }
                 }
                 else if (charges == ability.charges-1)
                 {
