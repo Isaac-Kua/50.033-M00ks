@@ -76,19 +76,19 @@ public class SpikeRangedAbility : Ability
             else
             {
                 GameObject missile1 = Instantiate(missile, missilePosition, Quaternion.identity);//, parent.transform.rotation);
-
+                missile1.GetComponent<ProjectileController>().owner = parent;
+                missile1.GetComponent<PlayerSpikeController>().owner = parent;
+                missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
+                missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
+                missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
+                missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
+                missile1.GetComponent<ProjectileController>().HeavyMod = HeavyMod;
                 yield return new WaitForSeconds(spikeSpawnTime);
                 if(missile1 == null){
                     blocked = true;
                 }else{
                     blocked = missile1.GetComponent<PlayerSpikeController>().blocked;
-                    missile1.GetComponent<ProjectileController>().owner = parent;
-                    missile1.GetComponent<PlayerSpikeController>().owner = parent;
-                    missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
-                    missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
-                    missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
-                    missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
-                    missile1.GetComponent<ProjectileController>().HeavyMod = HeavyMod;
+
                 }
             }
         }
