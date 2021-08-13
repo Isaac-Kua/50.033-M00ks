@@ -32,9 +32,8 @@ public class KnightController : MonoBehaviour
 		myShield.transform.parent = transform;
 		Vector3 eulerAngle = new Vector3(0,0,90);
 		angle.eulerAngles = eulerAngle;
-		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
+		levelDifficulty = GameManager.Instance.currentLevel;
 		myShield.transform.rotation = angle;
-		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
 	}
 
 	void OnDisable(){
@@ -51,9 +50,8 @@ public class KnightController : MonoBehaviour
 		myShield.transform.parent = transform;
 		Vector3 eulerAngle = new Vector3(0,0,90);
 		angle.eulerAngles = eulerAngle;
-		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
+		levelDifficulty = GameManager.Instance.currentLevel;
 		myShield.transform.rotation = angle;
-		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
 	}
 
 
@@ -99,9 +97,8 @@ public class KnightController : MonoBehaviour
 
 	void Update()
 	{
-		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
 		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
-		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
+		levelDifficulty = GameManager.Instance.currentLevel;
 		knightAnimator.SetBool("Engaged", myShield.GetComponent<ShieldController>().engaged);
 		knightAnimator.SetBool("SwingUp", dir.y > 0.5);
 		knightAnimator.SetBool("SwingDown", dir.y < -0.5);

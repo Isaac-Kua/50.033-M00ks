@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
         if (!GameManager.Instance.upgradeSelection)
         {
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemies.Length == 0)
+            if (enemies.Length <= 2)
             {
                 spawn();
             }

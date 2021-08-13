@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class EndScreenController : MonoBehaviour
 {
+    public GameObject select;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class EndScreenController : MonoBehaviour
                 eachChild.gameObject.SetActive(true);
             }
         }
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(select, new BaseEventData(eventSystem));
     }
 
     public void ExitButton()
