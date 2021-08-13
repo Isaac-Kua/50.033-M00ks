@@ -73,10 +73,10 @@ public class SetLevel : MonoBehaviour
         foreach (Transform child in upgrades.transform){
             child.gameObject.SetActive(true);
         }
-        if (AltarManager.Instance.altarDamage > 40){
+        if (AltarManager.Instance.altarDamage > 15){
             speechBubble.GetComponent<UpgradeSpeech>().oneStar();
         }
-        else if (AltarManager.Instance.altarDamage > 15){
+        else if (AltarManager.Instance.altarDamage > 6){
             speechBubble.GetComponent<UpgradeSpeech>().twoStar();
         }
         else{
@@ -84,10 +84,12 @@ public class SetLevel : MonoBehaviour
         }
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawns[i].position;
-            players[i].Input.ActivateInput();
+            // players[i].Input.ActivateInput();
+            players[i].Input.actions.Enable();
             if (i != GameManager.Instance.firstPlayer){
                 Debug.Log("Deactivate player "+ (i+1));
-                players[i].Input.DeactivateInput();
+                // players[i].Input.DeactivateInput();
+                players[i].Input.actions.Disable();
             }
         }
         GameManager.Instance.upgradeSelection = true;

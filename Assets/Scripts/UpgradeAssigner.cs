@@ -62,7 +62,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "homingBullet";
                 upgrade4.GetComponent<SpriteRenderer>().sprite = icons.homingBullet;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
-                upgrade4Text.text = "Homing Shot";
+                upgrade4Text.text = "Speed Shot";
                 break;
             case 3:
                 // Alt ability

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 // using Physics2D;	
 
 public class RangerController : MonoBehaviour
@@ -72,7 +73,7 @@ public class RangerController : MonoBehaviour
 	void Update()
 	{
 		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
-		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
 		rangerAnimator.SetFloat("Speed", Mathf.Abs(rangerBody.velocity.magnitude));
 	}
 
@@ -81,12 +82,40 @@ public class RangerController : MonoBehaviour
 		rangerAnimator.SetTrigger("Firing");
 		GetComponent<DeathHandler>().ammo = false;
 		Vector3 direction = dir;
-		yield return new WaitForSeconds(gameConstants.rangerFireTime);
-		GameObject arrow = Instantiate(gameConstants.rangerArrow, transform.position+direction, angle);
+		yield return new WaitForSeconds(gameConstants.rangerFireTime); 
 		rangerAudio.Play();
-		arrow.GetComponent<ArrowController>().target1 = target1;
-		arrow.transform.rotation = angle;
-		arrow.GetComponent<ProjectileController>().owner = gameObject;
+
+		if (gameObject.GetComponent<Bumblebee>().selectedTarget.Count() > levelDifficulty.rangerTargets)
+		{
+			foreach (GameObject poorsod in gameObject.GetComponent<Bumblebee>().selectedTarget.GetRange(0, levelDifficulty.rangerTargets))
+			{
+				GameObject arrow = Instantiate(gameConstants.rangerArrow, transform.position + direction, angle);
+				arrow.GetComponent<ArrowController>().target1 = poorsod;
+				Vector2 heading = (poorsod.transform.position - transform.position).normalized; 
+
+				Quaternion angleArrow = new Quaternion(0, 0, 0, 0);
+				Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, heading));
+				angleArrow.eulerAngles = eulerAngle;
+				arrow.transform.rotation = angleArrow;
+				arrow.GetComponent<ProjectileController>().owner = gameObject;
+			}
+		}
+		else
+		{
+			foreach (GameObject poorsod in gameObject.GetComponent<Bumblebee>().selectedTarget)
+			{
+				GameObject arrow = Instantiate(gameConstants.rangerArrow, transform.position + direction, angle);
+				arrow.GetComponent<ArrowController>().target1 = poorsod;
+				Vector2 heading = (poorsod.transform.position - transform.position).normalized;
+
+				Quaternion angleArrow = new Quaternion(0, 0, 0, 0);
+				Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, heading));
+				angleArrow.eulerAngles = eulerAngle;
+				arrow.transform.rotation = angleArrow;
+				arrow.GetComponent<ProjectileController>().owner = gameObject;
+			}
+		}
+
 		StartCoroutine(WindUp());
 	}
 	

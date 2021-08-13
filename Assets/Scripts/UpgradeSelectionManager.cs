@@ -31,7 +31,8 @@ public class UpgradeSelectionManager : MonoBehaviour
                 AltarManager.Instance.resolve();
                 GameManager.Instance.upgradeNo += 1;
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                    players[i].Input.ActivateInput();
+                    // players[i].Input.ActivateInput();
+                    players[i].Input.actions.Enable();
                 }
                 SelectMetric();
                 SetLevel.Instance.setLevel();
@@ -41,7 +42,8 @@ public class UpgradeSelectionManager : MonoBehaviour
                 AltarManager.Instance.setHealth(50);
                 GameManager.Instance.upgradeNo += 1;
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                    players[i].Input.ActivateInput();
+                    // players[i].Input.ActivateInput();
+                    players[i].Input.actions.Enable();
                 }
                 SelectMetric();
                 SetLevel.Instance.setLevel();
@@ -54,7 +56,8 @@ public class UpgradeSelectionManager : MonoBehaviour
                 AltarManager.Instance.resolve();
                 AltarManager.Instance.setHealth(50);
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                    players[i].Input.ActivateInput();
+                    // players[i].Input.ActivateInput();
+                    players[i].Input.actions.Enable();
                 }
                 SelectMetric();
                 SetLevel.Instance.setLevel();
@@ -66,10 +69,12 @@ public class UpgradeSelectionManager : MonoBehaviour
                 randPlayer = Random.Range(0,4);
             }
             for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                players[i].Input.ActivateInput();
+                // players[i].Input.ActivateInput();
+                players[i].Input.actions.Enable();
                 if (i != randPlayer){
                     Debug.Log("Deactivate player "+ i+1);
-                    players[i].Input.DeactivateInput();
+                    // players[i].Input.DeactivateInput();
+                    players[i].Input.actions.Disable();
                 }
             }
         }

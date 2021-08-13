@@ -25,6 +25,7 @@ MonoBehaviour:
   tripleDash: {fileID: 21300000, guid: 3f7c212fad0770f4a88ec03c61880bd0, type: 3}
   spiderDash: {fileID: 21300000, guid: 38d91ecfdc0139d418d8c1774a405011, type: 3}
   reverseDash: {fileID: 21300000, guid: 5c660ec08f831814e8f3708e9d7fd98d, type: 3}
+  defaultDash: {fileID: 21300000, guid: 678139da3565c0141b0a74823572c8b5, type: 3}
   breaking: {fileID: 21300000, guid: 41efdbcf76b5b744ca21184c9cf0180b, type: 3}
   zangief: {fileID: 21300000, guid: c4da558cac1e81f43a7b72503a4b93e6, type: 3}
   lunge: {fileID: 21300000, guid: 1d353f46eb8b73040b6a849eebec7fa3, type: 3}

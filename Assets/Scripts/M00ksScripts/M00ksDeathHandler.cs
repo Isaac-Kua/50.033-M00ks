@@ -7,6 +7,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	public GameConstants gameConstants;
 	public List<MonoBehaviour> activeAbilities;
 	public MonoBehaviour movementAbility;
+	public GameObject vision;
 	public bool Dead = false;
 	public bool Immunity = false;
 	public bool Brittle = false;
@@ -67,7 +68,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	
 	void onHit(GameObject other){
 		Invisible = false;
-		m00ksSprite.enabled = true;
+		vision.SetActive(true);
 		Debug.Log(other.GetComponent<ProjectileController>().owner);
 		lastHit = other.GetComponent<ProjectileController>().owner;
 		myLives -=1;
@@ -177,7 +178,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	
 	public void OnStunned(){
 		Invisible = false;
-		m00ksSprite.enabled = true;
+		vision.SetActive(true);
 		stunAnim.SetActive(true);
 		StartCoroutine(Stunned());
 	}

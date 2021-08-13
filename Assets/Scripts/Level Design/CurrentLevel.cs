@@ -9,10 +9,12 @@ public class CurrentLevel : ScriptableObject
 	// FireWizard
 	public float fireboltExplosionScale = 3;
 	public float fireboltSpeed = 10;
+	public int fireWizardTargets = 1;
 
 	// Ranger
 	public float rangerMoveSpeed = 12;
 	public float rangerWindUpTime = 3;
+	public int rangerTargets = 1;
 
 	// Knight
 	public float knightMoveSpeed = 5;
@@ -23,6 +25,7 @@ public class CurrentLevel : ScriptableObject
 	public float iceWizardWindUpTime = 3f;
 	public float iceboltSpeed = 10;
 	public int wallLength = 2;
+
 
 	// Barbarian
 	public float BarbarianMoveSpeed = 5;

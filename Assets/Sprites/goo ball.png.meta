@@ -1,34 +1,31 @@
 fileFormatVersion: 2
-guid: 0e2006f6499ae25449199dc804ad1efc
+guid: 11c67dd9ca354ec42a6373510db97270
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7068677455578962705
-    second: ice boulders_0
+      213: 1496477647817279726
+    second: goo ball_0
   - first:
-      213: 8896079410081613223
-    second: ice boulders_1
+      213: -7643087326938849903
+    second: goo ball_1
   - first:
-      213: 795233416302157770
-    second: ice boulders_2
+      213: -7878996385502640262
+    second: goo ball_2
   - first:
-      213: 3901917866787966210
-    second: ice boulders_3
+      213: 8791928954640430853
+    second: goo ball_3
   - first:
-      213: -6201315767846911584
-    second: ice boulders_4
+      213: -6933188467801244772
+    second: goo ball_4
   - first:
-      213: -2982335721416790324
-    second: ice boulders_5
+      213: 3712271623072259003
+    second: goo ball_5
   - first:
-      213: 2762511051980363229
-    second: ice boulders_6
+      213: -3855070597695619299
+    second: goo ball_6
   - first:
-      213: -2652221149344062395
-    second: ice boulders_7
-  - first:
-      213: 6028075158271980867
-    second: ice boulders_8
+      213: 2276637165901642851
+    second: goo ball_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ice boulders_0
+      name: goo ball_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2431.3335
-        width: 1295.3334
-        height: 1215.6666
+        y: 755
+        width: 247
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4676c3e4307ed90800000000000000
-      internalID: -7068677455578962705
+      spriteID: ee80674fd7e84c410800000000000000
+      internalID: 1496477647817279726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice boulders_1
+      name: goo ball_1
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 2431.3335
-        width: 1295.3334
-        height: 1215.6666
+        x: 247
+        y: 752
+        width: 247
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,41 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a5c49b0719357b70800000000000000
-      internalID: 8896079410081613223
+      spriteID: 19d158a229c4ee590800000000000000
+      internalID: -7643087326938849903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice boulders_2
-      rect:
-        serializedVersion: 2
-        x: 2590
-        y: 2431.3335
-        width: 1295.3334
-        height: 1215.6666
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acfd53c249c390b00800000000000000
-      internalID: 795233416302157770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ice boulders_3
+      name: goo ball_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 1216.3334
-        width: 1295.3334
-        height: 1215.6666
+        y: 506
+        width: 247
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20d85a860a5662630800000000000000
-      internalID: 3901917866787966210
+      spriteID: a774787388e28a290800000000000000
+      internalID: -7878996385502640262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice boulders_4
+      name: goo ball_3
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 1216.3334
-        width: 1295.3334
-        height: 1215.6666
+        x: 247
+        y: 506
+        width: 247
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,41 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a1c4754a2080f9a0800000000000000
-      internalID: -6201315767846911584
+      spriteID: 50770d77dc4330a70800000000000000
+      internalID: 8791928954640430853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice boulders_5
-      rect:
-        serializedVersion: 2
-        x: 2590
-        y: 1216.3334
-        width: 1295.3334
-        height: 1215.6666
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cce6ef3667d9c96d0800000000000000
-      internalID: -2982335721416790324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ice boulders_6
+      name: goo ball_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 1.333374
-        width: 1295.3334
-        height: 1215.6666
+        y: 252
+        width: 247
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd551655a29665620800000000000000
-      internalID: 2762511051980363229
+      spriteID: c9b3fd772dd58cf90800000000000000
+      internalID: -6933188467801244772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice boulders_7
+      name: goo ball_5
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 1.333374
-        width: 1295.3334
-        height: 1215.6666
+        x: 247
+        y: 268
+        width: 247
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 544a19faaea613bd0800000000000000
-      internalID: -2652221149344062395
+      spriteID: bbb1cfa6f53a48330800000000000000
+      internalID: 3712271623072259003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice boulders_8
+      name: goo ball_6
       rect:
         serializedVersion: 2
-        x: 2590
-        y: 1.333374
-        width: 1295.3334
-        height: 1215.6666
+        x: 0
+        y: 0
+        width: 247
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +255,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34578281b6608a350800000000000000
-      internalID: 6028075158271980867
+      spriteID: d1fbc4867b9008ac0800000000000000
+      internalID: -3855070597695619299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goo ball_7
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 0
+        width: 247
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cf404b07d389f10800000000000000
+      internalID: 2276637165901642851
       vertices: []
       indices: 
       edges: []

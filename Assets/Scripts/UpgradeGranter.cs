@@ -137,16 +137,16 @@ public class UpgradeGranter : MonoBehaviour
                 break;
             // Ranged upgrades
             case "rangedBullet":
-                other.gameObject.GetComponent<UpgradeManager>().rangedBullet = true;;
+                other.gameObject.GetComponent<UpgradeManager>().RangeMod = true;;
                 break;
             case "phaseBullet":
-                other.gameObject.GetComponent<UpgradeManager>().phaseBullet = true;
+                other.gameObject.GetComponent<UpgradeManager>().BypassMod = true;
                 break;
             case "heavyBullet":
-                other.gameObject.GetComponent<UpgradeManager>().heavyBullet = true;
+                other.gameObject.GetComponent<UpgradeManager>().HeavyMod = true;
                 break;
             case "homingBullet":
-                other.gameObject.GetComponent<UpgradeManager>().homingBullet = true;
+                other.gameObject.GetComponent<UpgradeManager>().SpeedMod = true;
                 break;
             default:
                 Debug.Log("No such upgrade");

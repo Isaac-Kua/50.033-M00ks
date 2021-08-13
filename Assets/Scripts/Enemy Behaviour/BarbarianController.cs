@@ -78,7 +78,7 @@ public class BarbarianController : MonoBehaviour
 	}
 	
 	void Update(){
-		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
 		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 		if (GetComponent<DeathHandler>().ammo) {
 			charges = levelDifficulty.BarbarianMaxCharges;
