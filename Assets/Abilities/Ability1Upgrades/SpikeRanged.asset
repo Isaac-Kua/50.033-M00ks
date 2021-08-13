@@ -15,11 +15,11 @@ MonoBehaviour:
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: SpikeRanged
   activeTime: 0.2
-  charges: 20
-  rechargeTime: 0.1
+  charges: 2
+  rechargeTime: 5
   abilityType: Ability1
   missile: {fileID: 8523725975357090799, guid: 68bdd9fcd4b4ba64aa6c11445fc8dd6a, type: 3}
-  maxCount: 5
+  maxCount: 3
   spacing: 2.5
   RangeMod: 1
   BypassMod: 1

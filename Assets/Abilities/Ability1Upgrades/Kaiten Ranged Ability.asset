@@ -16,5 +16,9 @@ MonoBehaviour:
   name: KaitenRanged
   activeTime: 0.5
   charges: 0
-  rechargeTime: 0
+  rechargeTime: 5
   abilityType: Ability1
+  RangeMod: 0
+  BypassMod: 0
+  SpeedMod: 0
+  HeavyMod: 0

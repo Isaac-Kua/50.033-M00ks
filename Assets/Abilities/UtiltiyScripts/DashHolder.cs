@@ -27,6 +27,7 @@ public class DashHolder : MonoBehaviour
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        cooldownTime = ability.rechargeTime;
         switch (gameObject.GetComponent<UpgradeManager>().dUpgrade)
 		{
 		case UpgradeManager.dashUpgrade.Default:

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739149e46885d284a8c87fb1616af187, type: 3}
   m_Name: PhaseDash
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 0}
   name: PhaseDash
   activeTime: 0.1
-  charges: 0
-  rechargeTime: 0
+  charges: 2
+  rechargeTime: 3
   abilityType: Dash
   dashSpeed: 300

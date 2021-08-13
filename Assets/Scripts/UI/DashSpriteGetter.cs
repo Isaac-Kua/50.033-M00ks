@@ -40,7 +40,7 @@ public class DashSpriteGetter : MonoBehaviour
                     image.sprite = icons.reverseDash;
                     break;
                 case(UpgradeManager.dashUpgrade.Default):
-                    image.sprite = icons.none;
+                    image.sprite = icons.defaultDash;
                     break;
             }
         }

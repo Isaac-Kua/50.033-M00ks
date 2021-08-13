@@ -24,7 +24,7 @@ public class meleeChargeUI : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             charges = playerPrefab.GetComponent<MeleeHolder>().charges;
         }
-        if (charges > 1) {
+        if (charges >= 1) {
             text.text = charges.ToString();
         }
         else {

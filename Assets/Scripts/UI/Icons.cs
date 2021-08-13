@@ -21,6 +21,7 @@ public class Icons : ScriptableObject
     public Sprite tripleDash;
     public Sprite spiderDash;
     public Sprite reverseDash;
+    public Sprite defaultDash;
     // Melee ability
     public Sprite breaking;
     public Sprite zangief;

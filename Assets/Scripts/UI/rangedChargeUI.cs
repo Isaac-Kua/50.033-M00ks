@@ -24,7 +24,7 @@ public class rangedChargeUI : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             charges = playerPrefab.GetComponent<Ability1Holder>().charges;
         }
-        if (charges > 1) {
+        if (charges >= 1) {
             text.text = charges.ToString();
         }
         else {
