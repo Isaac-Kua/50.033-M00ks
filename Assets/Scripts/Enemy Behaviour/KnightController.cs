@@ -70,7 +70,7 @@ public class KnightController : MonoBehaviour
 	void Update()
 	{
 		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
-		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
 		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 		knightAnimator.SetBool("Engaged", myShield.GetComponent<ShieldController>().engaged);
 		knightAnimator.SetBool("SwingUp", dir.y > 0.5);

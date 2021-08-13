@@ -74,7 +74,7 @@ public class IceWizardController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
 		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 	

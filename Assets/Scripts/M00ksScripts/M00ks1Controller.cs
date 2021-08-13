@@ -70,11 +70,16 @@ public class M00ks1Controller : MonoBehaviour
 		m00ksAnimator.SetBool("SwingUp", faceDirection.y > 0.5);
 		m00ksAnimator.SetBool("SwingDown", faceDirection.y < -0.5);
 		m00ksAnimator.SetBool("SwingFront", (faceDirection.y <= 0.5 && faceDirection.y >= -0.5));
+		
 	}
+
 	
 	void FixedUpdate()
-	{
-		Move();
+	{	if(playerConfig.Input.actions.enabled){
+			Move();
+		}else{
+			m00ksBody.velocity = Vector2.zero;
+		}
 		StartCoroutine(WhatWasI());
 	}
 

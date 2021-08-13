@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bumblebee : MonoBehaviour
 {	
-	public GameObject selectedTarget;
+	public List<GameObject> selectedTarget;
 	private Dictionary<GameObject,float> target_distance = new Dictionary<GameObject,float>();
 	private Dictionary<GameObject,Vector2> target_dir = new Dictionary<GameObject,Vector2>();
 	public float detectionRange;
@@ -86,8 +86,12 @@ public class Bumblebee : MonoBehaviour
 			
 			Debug.DrawRay(transform.position, target_dir[m00k] * target_distance[m00k], Color.red);
 		}
-		
-		selectedTarget = FindClosestEnemy(viable);
+
+		if (viable.Count() == 0) {
+			viable.Add(gameObject);
+		}
+		selectedTarget = viable;
+		//selectedTarget = FindClosestEnemy(viable);
 		// Debug.Log(selectedTarget.name + " is selected");
 	}
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class FireWizardController : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class FireWizardController : MonoBehaviour
 
 	// Update is called once per frame
 	void Update() {
-		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget;
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
 		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
 	}
 	
@@ -85,11 +86,29 @@ public class FireWizardController : MonoBehaviour
 		GetComponent<DeathHandler>().ammo = false;
 		fireWizAnimator.SetTrigger("Firing");
 		yield return new WaitForSeconds(gameConstants.fireWizardSwingTime);
-		GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
 		fireWizAudio.Play();
-		firebolt.GetComponent<FireboltController>().gameManager = GetComponent<DeathHandler>().gameManager;
-		firebolt.GetComponent<FireboltController>().target1 = target1;
-		firebolt.GetComponent<ProjectileController>().owner = gameObject;
+
+		if (gameObject.GetComponent<Bumblebee>().selectedTarget.Count() > levelDifficulty.fireWizardTargets)
+		{
+			foreach (GameObject poorsod in gameObject.GetComponent<Bumblebee>().selectedTarget.GetRange(0, levelDifficulty.fireWizardTargets))
+			{
+				GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
+				firebolt.GetComponent<FireboltController>().gameManager = GetComponent<DeathHandler>().gameManager;
+				firebolt.GetComponent<FireboltController>().target1 = poorsod;
+				firebolt.GetComponent<ProjectileController>().owner = gameObject;
+			}
+		}
+		else
+		{
+			foreach (GameObject poorsod in gameObject.GetComponent<Bumblebee>().selectedTarget)
+			{
+				GameObject firebolt = Instantiate(gameConstants.fireWizardFirebolt, transform.position, transform.rotation);
+				firebolt.GetComponent<FireboltController>().gameManager = GetComponent<DeathHandler>().gameManager;
+				firebolt.GetComponent<FireboltController>().target1 = poorsod;
+				firebolt.GetComponent<ProjectileController>().owner = gameObject;
+			}
+		}
+
 		StartCoroutine(WindUp());
 	}
 	

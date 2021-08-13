@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameManager: {fileID: 0}
   target1: {fileID: 0}
   engaged: 0
 --- !u!50 &-242752022448265566

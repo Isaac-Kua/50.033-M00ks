@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
                 break;
             case(3):
                 bg.GetComponent<SpriteRenderer>().sprite = bg3;
+                bg.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(7, 7);
                 break;
             case(4):
                 bg.GetComponent<SpriteRenderer>().sprite = bg4;
