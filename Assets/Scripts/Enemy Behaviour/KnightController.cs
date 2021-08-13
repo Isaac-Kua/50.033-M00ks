@@ -7,6 +7,7 @@ public class KnightController : MonoBehaviour
 	public GameConstants gameConstants;
 	public GameObject target1;
 	
+	private bool target_is_dead = false;
 	private GameObject shield;
 	private GameObject myShield;	
 	private Rigidbody2D knightBody;
@@ -36,14 +37,37 @@ public class KnightController : MonoBehaviour
 		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
 	}
 
+	void OnDisable(){
+		Destroy(myShield);
+	}
+	void OnEnable(){
+		myShield = Instantiate(shield, transform.position, transform.rotation);
+		myShield.transform.parent = transform;
+		Vector3 eulerAngle = new Vector3(0,0,90);
+		angle.eulerAngles = eulerAngle;
+		levelDifficulty = GetComponent<DeathHandler>().gameManager.GetComponent<GameManager>().currentLevel;
+		myShield.transform.rotation = angle;
+		myShield.GetComponent<ShieldController>().gameManager = GetComponent<DeathHandler>().gameManager;
+	}
+
+
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		target1 = gameObject.GetComponent<Bumblebee>().selectedTarget[0];
+		if(target1.GetComponent<M00ksDeathHandler>() != null){
+			target_is_dead = target1.GetComponent<M00ksDeathHandler>().Dead;
+		}
+		else
+		{
+			target_is_dead = true;
+		}
+		
 		if (target1 == gameObject)
 		{
 			knightBody.velocity = Vector2.zero;
 		}
-		else if (!myShield.GetComponent<ShieldController>().engaged && !target1.GetComponent<M00ksDeathHandler>().Dead) {
+		else if (!myShield.GetComponent<ShieldController>().engaged && !target_is_dead) {
 
 			dir = (target1.transform.position - this.transform.position).normalized;
 			Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, dir));

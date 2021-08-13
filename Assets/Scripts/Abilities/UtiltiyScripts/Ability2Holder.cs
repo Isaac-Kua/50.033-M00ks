@@ -44,7 +44,7 @@ public class Ability2Holder : MonoBehaviour
             a2Audio.clip = audioClips[4];
             break;
 		default:
-			a2Audio.clip = audioClips[0];
+			//a2Audio.clip = audioClips[0];
 			break;
 		}
     }

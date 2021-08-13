@@ -268,11 +268,11 @@ public class UpgradeManager : MonoBehaviour
 			}
 			else if (transform.position.y > gameConstants.yBound)
 			{
-				transform.position = transform.position - new Vector3(0, 2 * gameConstants.yBound, 0);
+				transform.position = transform.position - new Vector3(0, 2 * gameConstants.yBound+6, 0);
 			}
-			else if (transform.position.y < -gameConstants.yBound)
+			else if (transform.position.y < -gameConstants.yBound-6)
 			{
-				transform.position = transform.position + new Vector3(0, 2 * gameConstants.yBound, 0);
+				transform.position = transform.position + new Vector3(0, 2 * gameConstants.yBound+6, 0);
 			}
 		}
 	}

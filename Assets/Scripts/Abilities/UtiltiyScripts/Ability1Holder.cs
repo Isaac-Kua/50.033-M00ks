@@ -60,7 +60,7 @@ public class Ability1Holder : MonoBehaviour
 			a1Audio.clip = audioClips[4];
 			break;
 		default:
-			a1Audio.clip = audioClips[0];
+			//a1Audio.clip = audioClips[0];
 			break;
 		}
     }

@@ -8,7 +8,7 @@ public class ShieldController : MonoBehaviour
 	public GameObject gameManager;
 	public GameObject target1;
 	
-	public bool engaged = false;
+	public bool engaged;
 	private GameObject sword;
 	
    	private Rigidbody2D itemBody;
@@ -16,6 +16,7 @@ public class ShieldController : MonoBehaviour
 	
 	void Start()
 	{
+		engaged = false;
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
 		sword = gameConstants.knightSword;

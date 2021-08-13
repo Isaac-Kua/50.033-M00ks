@@ -15,6 +15,7 @@ public class DeathHandler : MonoBehaviour
 	private SpriteRenderer npcSprite;
 	private Rigidbody2D npcBody;
 	private Collider2D npcCollider;
+	private Collider2D polyCollider;
 
 	private Animator npcAnimator;
 	private bool dead = false;
@@ -27,6 +28,11 @@ public class DeathHandler : MonoBehaviour
         npcSprite = GetComponent<SpriteRenderer>();
 		npcBody = GetComponent<Rigidbody2D>();
 		npcCollider = GetComponent<Collider2D>();
+		if(GetComponent<PolygonCollider2D>()){
+			polyCollider =  GetComponent<PolygonCollider2D>();
+		}else{
+			polyCollider =  npcCollider;
+		}
 		npcAnimator = GetComponent<Animator>();
 		stunAnim = Instantiate(gameConstants.stunAnimation, transform.position, transform.rotation);
 		stunAnim.transform.parent = transform;
@@ -48,6 +54,7 @@ public class DeathHandler : MonoBehaviour
 		allEnable();
 		//npcSprite.color = Color.white;
 		npcCollider.enabled = true;
+		polyCollider.enabled = true;
 		this.gameObject.SetActive(false);
 		ammo = true;
 		burstCharge = true;
@@ -79,6 +86,7 @@ public class DeathHandler : MonoBehaviour
 		allDisable();
 		npcAnimator.SetTrigger("Death");
 		npcCollider.enabled = false;
+		polyCollider.enabled = false;
 		lastHit = killer.GetComponent<ProjectileController>().owner;
 		if (lastHit.CompareTag("Player"))
 		{

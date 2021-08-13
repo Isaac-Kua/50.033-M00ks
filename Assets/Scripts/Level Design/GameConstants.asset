@@ -18,8 +18,8 @@ MonoBehaviour:
   gooPool: {fileID: 3165695242862509984, guid: b4224efb503da394a8babd2068f43d90, type: 3}
   stickiness: 0.5
   defaultDrag: 10
-  yBound: 11
-  xBound: 32
+  yBound: 14
+  xBound: 36
   comboCount: 2
   deathFadeTime: 2
   stunAnimation: {fileID: 8317606618247395135, guid: c2452fb074f78a949b5b49e554ecb95a, type: 3}
