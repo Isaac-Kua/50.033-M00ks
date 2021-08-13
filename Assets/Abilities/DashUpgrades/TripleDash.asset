@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3068cf953e00d44814851cf539da13, type: 3}
   m_Name: TripleDash
   m_EditorClassIdentifier: 
+  gameConstants: {fileID: 0}
   name: TripleDash
   activeTime: 0.1
-  charges: 3
-  rechargeTime: 0
+  charges: 0
+  rechargeTime: 3
   abilityType: Dash
   dashSpeed: 100

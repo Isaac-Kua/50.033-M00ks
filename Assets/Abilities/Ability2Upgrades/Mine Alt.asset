@@ -15,7 +15,7 @@ MonoBehaviour:
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
   name: MineAlt
   activeTime: 0
-  charges: 0
-  rechargeTime: 0
+  charges: 3
+  rechargeTime: 5
   abilityType: Ability2
   missile: {fileID: 4696089679803575608, guid: ca8a7be998b0b4041ab3451b7101d0c1, type: 3}

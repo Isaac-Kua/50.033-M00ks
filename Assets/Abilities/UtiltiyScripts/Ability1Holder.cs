@@ -44,6 +44,7 @@ public class Ability1Holder : MonoBehaviour
 
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        cooldownTime = ability.rechargeTime;
         switch (gameObject.GetComponent<UpgradeManager>().ab1Upgrade)
 		{
 		case UpgradeManager.ability1Upgrade.Kaiten:

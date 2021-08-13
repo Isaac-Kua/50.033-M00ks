@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Attack
   activeTime: 0
   charges: 5
-  rechargeTime: 0.5
+  rechargeTime: 2
   abilityType: Ability1
   missile: {fileID: 1668824383739398946, guid: be2a73505d7e4d740b4e67e9f60ce545, type: 3}
   missileSpeed: 4000

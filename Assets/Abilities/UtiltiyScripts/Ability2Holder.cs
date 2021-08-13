@@ -28,6 +28,7 @@ public class Ability2Holder : MonoBehaviour
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
+        cooldownTime = ability.rechargeTime;
         switch (gameObject.GetComponent<UpgradeManager>().ab2Upgrade)
 		{
 		case UpgradeManager.ability2Upgrade.Goo:
