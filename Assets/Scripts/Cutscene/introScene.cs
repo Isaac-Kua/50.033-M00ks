@@ -74,7 +74,7 @@ public class introScene : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
         one.SetActive(false);
         two.SetActive(true);
-        subtitle.GetComponent<Text>().text = "YOU WORK RELENTLESSLY FOR THE OVERLORD DAY AND NIGHT LIKE A SKELE-DOG THAT YOU ARE.\nKILLING ENEMIES AND COLLECTING THEIR SOULS FOR THE OVERLORD JUST TO MAKE HIM STRONGER";
+        subtitle.GetComponent<Text>().text = "You work relentlessly for the overlord day and night like a skele-dog that you are.\nKilling enemies and collecting their souls for the overlord to make him stronger.";
         yield return new WaitForSecondsRealtime(5);
         two.SetActive(false);
         three.SetActive(true);

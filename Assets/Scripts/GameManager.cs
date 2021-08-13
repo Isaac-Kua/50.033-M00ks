@@ -41,16 +41,16 @@ public class GameManager : MonoBehaviour
         } 
         switch (stage){
             case(2):
-                bg.GetComponent<Image>().sprite = bg2;
+                bg.GetComponent<SpriteRenderer>().sprite = bg2;
                 break;
             case(3):
-                bg.GetComponent<Image>().sprite = bg3;
+                bg.GetComponent<SpriteRenderer>().sprite = bg3;
                 break;
             case(4):
-                bg.GetComponent<Image>().sprite = bg4;
+                bg.GetComponent<SpriteRenderer>().sprite = bg4;
                 break;
             case(5):
-                bg.GetComponent<Image>().sprite = bg5;
+                bg.GetComponent<SpriteRenderer>().sprite = bg5;
                 break;
         }
     }
