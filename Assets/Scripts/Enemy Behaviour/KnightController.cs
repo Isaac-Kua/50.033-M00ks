@@ -9,7 +9,6 @@ public class KnightController : MonoBehaviour
 	
 	private bool target_is_dead = false;
 	private GameObject myShield;
-	private GameObject mySword;	
 	private Rigidbody2D knightBody;
 	private SpriteRenderer knightSprite;
 	private Animator knightAnimator;
@@ -33,9 +32,8 @@ public class KnightController : MonoBehaviour
 		knightAnimator = GetComponent<Animator>();
 		levelDifficulty = GameManager.Instance.currentLevel;
 
-		myShield = Instantiate(gameConstants.knightShield, transform.position, transform.rotation);
-		myShield.transform.parent = transform;
-		myShield.transform.rotation = angle;
+		// myShield = Instantiate(gameConstants.knightShield, transform.position, transform.rotation);
+		// myShield.transform.parent = transform;
 	}
 
 	void OnDisable(){
@@ -50,7 +48,6 @@ public class KnightController : MonoBehaviour
 
 		myShield = Instantiate(gameConstants.knightShield, transform.position, transform.rotation);
 		myShield.transform.parent = transform;
-		// myShield.transform.rotation = angle;
 	}
 
 

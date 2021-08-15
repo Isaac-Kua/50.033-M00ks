@@ -94,8 +94,8 @@ public class GameConstants : ScriptableObject
 	// Ability2 (Alternate) Variables 
 	// Mine
 	public float armDuration = 0.5f;
+	public float mineLifeTime = 5f;
 	// BashoTenin
-	public GameObject magnet;
 	public float magnetPull = 0.1f;
 
 	// Dash Variables

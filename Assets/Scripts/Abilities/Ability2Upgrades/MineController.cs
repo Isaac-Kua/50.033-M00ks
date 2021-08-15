@@ -19,8 +19,14 @@ public class MineController : MonoBehaviour
 		yield return new WaitForSeconds(gameConstants.armDuration);
 		armed = true;
 		GetComponent<SpriteRenderer>().color = Color.red;
+		StartCoroutine(Disarm());
 	}
-
+	IEnumerator Disarm(){
+		yield return new WaitForSeconds(gameConstants.mineLifeTime);
+		if (gameObject!=null){
+			Destroy(gameObject);
+		}
+	}
     // Update is called once per frame
 	
 	void OnTriggerEnter2D(Collider2D other){

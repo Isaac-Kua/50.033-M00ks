@@ -19,8 +19,7 @@ MonoBehaviour:
   rangerWindUpTime: 3
   rangerTargets: 1
   knightMoveSpeed: 10
-  knightShieldWidth: 2
-  knightSwordlength: 2
+  knightShieldWidth: 1.2
   iceWizardWindUpTime: 2
   iceboltSpeed: 15
   wallLength: 2

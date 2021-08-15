@@ -8,6 +8,7 @@ public class SetLevel : MonoBehaviour
     public GameObject spawners;
     public GameObject upgrades;
     public GameObject obstacles;
+    public List<GameObject> ObstaclesStack;
     public GameObject hpbar;
     public GameObject upgradeAssigner;
     public GameObject upgradeUI;
@@ -53,6 +54,13 @@ public class SetLevel : MonoBehaviour
         deactivate();
         altar.SetActive(true);
         spawners.SetActive(true);
+        foreach (GameObject obstacle in ObstaclesStack){
+                if (obstacle == ObstaclesStack[GameManager.Instance.stage-1]){
+                    obstacles = obstacle;
+                } else {
+                    obstacle.SetActive(false);
+                }
+            }
         obstacles.SetActive(true);
         hpbar.SetActive(true);
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
@@ -151,6 +159,7 @@ public class SetLevel : MonoBehaviour
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawnsWave[i].position;
         }
+        obstacles.SetActive(true);
         timer.SetActive(true);
         timer.GetComponent<timerController>().startTimer = true;
     }
