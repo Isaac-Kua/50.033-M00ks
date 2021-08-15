@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
         // EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
         // EnemyPool.SharedInstance.spawnEnemy(EnemyType.Rylai);
         // EnemyPool.SharedInstance.spawnEnemy(EnemyType.bara);
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 2; i++){
             spawnOne();
         }
     }

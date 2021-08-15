@@ -35,7 +35,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade1.GetComponent<UpgradeGranter>().upgrade = "spikeRange";
                 upgrade1.GetComponent<SpriteRenderer>().sprite = icons.spike;
                 upgrade1.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
-                upgrade1Text.text = "Frost Wall";
+                upgrade1Text.text = "Ice Spikes";
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "kaitenRange";
                 upgrade2.GetComponent<SpriteRenderer>().sprite = icons.kaiten;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
@@ -142,7 +142,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "vengeanceDeath";
                 upgrade4.GetComponent<SpriteRenderer>().sprite = icons.vengeance;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
-                upgrade4Text.text = "Vengeance?";
+                upgrade4Text.text = "Vengeance";
                 break;
             case 7:
                 // Melee Abilities
@@ -153,7 +153,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "repelMelee";
                 upgrade2.GetComponent<SpriteRenderer>().sprite = icons.repel;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
-                upgrade2Text.text = "Repel";
+                upgrade2Text.text = "Deflect";
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "zangiefMelee";
                 upgrade3.GetComponent<SpriteRenderer>().sprite = icons.zangief;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
@@ -191,7 +191,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "wallwalkerMove";
                 upgrade2.GetComponent<SpriteRenderer>().sprite = icons.wallwalker;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
-                upgrade2Text.text = "Wallwalker";
+                upgrade2Text.text = "Wall Walker";
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "shivaMove";
                 upgrade3.GetComponent<SpriteRenderer>().sprite = icons.shiva;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
@@ -210,15 +210,15 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade2.GetComponent<UpgradeGranter>().upgrade = "meleeUtil";
                 upgrade2.GetComponent<SpriteRenderer>().sprite = icons.meleeUtil;
                 upgrade2.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
-                upgrade2Text.text = "Melee Util";
+                upgrade2Text.text = "Attack Speed";
                 upgrade3.GetComponent<UpgradeGranter>().upgrade = "rangedUtil";
                 upgrade3.GetComponent<SpriteRenderer>().sprite = icons.rangedUtil;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
-                upgrade3Text.text = "Ranged Util";
+                upgrade3Text.text = "More Charges";
                 upgrade4.GetComponent<UpgradeGranter>().upgrade = "altUtil";
                 upgrade4.GetComponent<SpriteRenderer>().sprite = icons.altUtil;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(0.5f, 0.5f);
-                upgrade4Text.text = "Alt Util";
+                upgrade4Text.text = "Faster Cooldown";
                 break;
             default:
                 Debug.Log("WHat upgrade is this?");
