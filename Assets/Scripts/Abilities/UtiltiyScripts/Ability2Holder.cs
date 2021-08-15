@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Ability2Holder : MonoBehaviour
 {
+    private Animator m00ksAnimator;
     public Ability ability;
     [SerializeField]
 	public AudioClip[] audioClips;
@@ -25,6 +26,7 @@ public class Ability2Holder : MonoBehaviour
     private void Start() {
         a2Audio = gameObject.GetComponents<AudioSource>()[3];
         cooldownTime = ability.rechargeTime;
+        m00ksAnimator = m00ksAnimator = GetComponent<Animator>();
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
@@ -76,6 +78,7 @@ public class Ability2Holder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("Ability2");
                     a2Audio.Play();
                     charges--;
                     state = AbilityState.active;
@@ -110,6 +113,7 @@ public class Ability2Holder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("Ability2");
                     a2Audio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;

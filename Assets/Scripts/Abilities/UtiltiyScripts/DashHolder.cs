@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class DashHolder : MonoBehaviour
 {
+    private Animator m00ksAnimator;
     public Ability ability;
     [SerializeField]
 	public AudioClip[] audioClips;
@@ -24,6 +25,7 @@ public class DashHolder : MonoBehaviour
     private void Start() {
         dAudio = gameObject.GetComponents<AudioSource>()[1];
         cooldownTime = ability.rechargeTime;
+        m00ksAnimator = GetComponent<Animator>();
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
@@ -59,7 +61,7 @@ public class DashHolder : MonoBehaviour
     public void OnDash()
     {
         input = true;
-        Debug.Log("dashing in ability holder");
+        //Debug.Log("dashing in ability holder");
     }
     
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class DashHolder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("Dash");
                     dAudio.Play();
                     charges--;
                     state = AbilityState.active;
@@ -94,13 +97,13 @@ public class DashHolder : MonoBehaviour
                 {
                     state = AbilityState.recharging;
                     rechargeTime = ability.rechargeTime;
-                    Debug.Log("First Use!!!");
+                    //Debug.Log("First Use!!!");
                 }
                 else
                 {
                     state = AbilityState.recharging;
                     // Debug.Log(charges);
-                    Debug.Log("Subsequent Use!!!");
+                    //Debug.Log("Subsequent Use!!!");
                     // Debug.Log(rechargeTime);
                 }
                 input = false;
@@ -111,6 +114,7 @@ public class DashHolder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("Dash");
                     dAudio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
@@ -125,12 +129,12 @@ public class DashHolder : MonoBehaviour
                     charges++;
                     rechargeTime = ability.rechargeTime;
                     //Debug.Log(charges);
-                    Debug.Log("recharged!!!");
+                    //Debug.Log("recharged!!!");
                 }
                 if(charges == ability.charges)
                 {
                     state = AbilityState.ready;
-                    Debug.Log("fully recharged!!!");
+                    //Debug.Log("fully recharged!!!");
                 }
                 input = false;
                 

@@ -124,23 +124,23 @@ public class M00ks1Controller : MonoBehaviour
 				{
 					if (!GameManager.Instance.cutscene){
 						dash.OnDash();
-						m00ksAnimator.SetTrigger("Dash");
+						//m00ksAnimator.SetTrigger("Dash");
 					}
 				}
 				else if(obj.action.name == controls.Player.Ability1.name)
 				{
 					ability1.OnAbility1();
-					m00ksAnimator.SetTrigger("Ability1");
+					//m00ksAnimator.SetTrigger("Ability1");
 				}
 				else if(obj.action.name == controls.Player.Ability2.name)
 				{
 					ability2.OnAbility2();
-					m00ksAnimator.SetTrigger("Ability2");
+					//m00ksAnimator.SetTrigger("Ability2");
 				}
 				else if(obj.action.name == controls.Player.Melee.name)
 				{
 					melee.OnMelee();
-					m00ksAnimator.SetTrigger("SwingNow");
+					//m00ksAnimator.SetTrigger("SwingNow");
 				}
 			}
 		}else{
