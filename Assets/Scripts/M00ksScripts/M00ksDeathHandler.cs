@@ -12,6 +12,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	public bool Immunity = false;
 	public bool Brittle = false;
 	public bool Invisible = false;
+	public bool Stun = false;
 	public int lives;
 	public float deathTime;
 	public int myLives;
@@ -69,7 +70,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	void onHit(GameObject other){
 		Invisible = false;
 		vision.SetActive(true);
-		Debug.Log(other.GetComponent<ProjectileController>().owner);
+		// Debug.Log(other.GetComponent<ProjectileController>().owner);
 		lastHit = other.GetComponent<ProjectileController>().owner;
 		myLives -=1;
 	}
@@ -145,41 +146,11 @@ public class M00ksDeathHandler : MonoBehaviour
 		}
 	}
 	
-	// void OnTriggerEnter2D(Collider2D other)
-	// {
-		// if(!Immunity){
-			// if (other.gameObject.CompareTag("DashingBarbarian"))
-			// {
-				// Debug.Log("Hit By Barbarian");
-				// onHit();
-			// } else if (other.gameObject.CompareTag("KnightSword")){
-				// Debug.Log("Hit By Knight");
-				// onHit();
-			// }
-		// }
-		// if(!Dead && !Immunity){
-			// if (other.gameObject.CompareTag("KnightShield"))
-			// {
-				// Debug.Log("Collided with KnightShield");
-				// StartCoroutine(Stunned());
-			// } else if (other.gameObject.CompareTag("Arrow") || other.gameObject.CompareTag("Firebolt")) {
-				// onHit();
-			// } else if (other.gameObject.CompareTag("Icebolt")) {
-				// if (!Brittle){
-					// Brittle = true;
-					// // StartCoroutine(Stunned());
-				// } else if (Brittle){
-					// Debug.Log("Hit by IceWizard");
-					// onHit();
-				// }
-			// }
-		// }
-	// }
-	
 	public void OnStunned(){
 		Invisible = false;
 		vision.SetActive(true);
 		stunAnim.SetActive(true);
+		Stun = true;
 		StartCoroutine(Stunned());
 	}
 	
@@ -216,6 +187,7 @@ public class M00ksDeathHandler : MonoBehaviour
 		if (!Dead){
 			allEnable();
 			Brittle = false;
+			Stun = false;
 		m00ksSprite.material.color = new Color(1,1,1); //C# white
 		}
 	}
@@ -241,6 +213,7 @@ public class M00ksDeathHandler : MonoBehaviour
 		Brittle = false;
 		Immunity = false;
 		Dead = false;
+		Stun = false;
 		allEnable();
 		myLives = lives;
 	}

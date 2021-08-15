@@ -15,7 +15,6 @@ public class GooController : MonoBehaviour
 		lifeTime = gameConstants.gooPoolLifeTime;
 		stickiness = gameConstants.stickiness;
         StartCoroutine(LifeTime());
-		transform.position= transform.position + new Vector3(0,0,1);
     }
 
 	IEnumerator LifeTime(){

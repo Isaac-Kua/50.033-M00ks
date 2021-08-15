@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedTarget: {fileID: 0}
+  selectedTarget:
+  - {fileID: 0}
   detectionRange: 0
 --- !u!50 &-6746092523729370845
 Rigidbody2D:
@@ -418,7 +419,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.926
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4d5dc7f3000000007bfb1f18275b4d876b199b9a234bcbe3

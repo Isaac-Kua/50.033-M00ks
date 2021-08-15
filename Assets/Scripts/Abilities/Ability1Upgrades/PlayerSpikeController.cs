@@ -39,7 +39,7 @@ public class PlayerSpikeController : MonoBehaviour {
     void Explode()
     {
         itemBody.constraints = RigidbodyConstraints2D.FreezeAll;
-        itemSprite.material.color = new Color(0, 0, 1); //C#
+        // itemSprite.material.color = new Color(0, 0, 1); //C#
         gameObject.tag = "Debris";
         StartCoroutine(Debris());
     }

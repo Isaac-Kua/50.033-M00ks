@@ -73,7 +73,7 @@ public class IcewaveController : MonoBehaviour
 		exploded = true;
 		itemBody.velocity = Vector2.zero;
 		itemBody.constraints = RigidbodyConstraints2D.FreezeAll;
-		itemSprite.material.color = new Color(0,0,1); //C#
+		// itemSprite.material.color = new Color(0,0,1); //C#
 		together = false;
 		gameObject.tag = "Debris";
 		itemBody.mass = 1;
