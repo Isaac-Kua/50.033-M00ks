@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5755112243369817811}
   - component: {fileID: 3470556906979871794}
   - component: {fileID: 2923636034283354978}
-  m_Layer: 16
+  m_Layer: 9
   m_Name: TurtleShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2745450164218607212}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

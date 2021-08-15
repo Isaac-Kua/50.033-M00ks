@@ -19,6 +19,7 @@ public class Player1Manager : MonoBehaviour
     public GameObject upgradeCutscene;
     private AltarManager altarManager;
     private List<int> playerSouls = new List<int>{0,0,0,0};
+    private List<PlayerConfiguration> players;
 
     void Awake()
     {
@@ -32,6 +33,14 @@ public class Player1Manager : MonoBehaviour
         soulManager3 = soulManagerObject3.GetComponent<SoulManager>();
         soulManager4 = soulManagerObject4.GetComponent<SoulManager>();
         altarManager = altarManagerObject.GetComponent<AltarManager>();
+
+        players = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            players[i].playerPrefab.GetComponent<PlayerSoulController>().soulManager1 = soulManager1;
+            players[i].playerPrefab.GetComponent<PlayerSoulController>().soulManager2 = soulManager2;
+            players[i].playerPrefab.GetComponent<PlayerSoulController>().soulManager3 = soulManager3;
+            players[i].playerPrefab.GetComponent<PlayerSoulController>().soulManager4 = soulManager4;
+        }
     }
 
     public void increaseSouls(int player)
@@ -56,23 +65,23 @@ public class Player1Manager : MonoBehaviour
         }
     }
 
-    public void depositSouls(int player)
-    {
-        switch (player) {
-            case(0):
-                altarManager.altarDeposit(soulManager1.depositSouls());
-                break;
-            case(1):
-                altarManager.altarDeposit(soulManager2.depositSouls());
-                break;
-            case(2):
-                altarManager.altarDeposit(soulManager3.depositSouls());
-                break;
-            case(3):
-                altarManager.altarDeposit(soulManager4.depositSouls());
-                break;
-        }
-    }
+    // public void depositSouls(int player)
+    // {
+    //     switch (player) {
+    //         case(0):
+    //             altarManager.altarDeposit(soulManager1.depositSouls());
+    //             break;
+    //         case(1):
+    //             altarManager.altarDeposit(soulManager2.depositSouls());
+    //             break;
+    //         case(2):
+    //             altarManager.altarDeposit(soulManager3.depositSouls());
+    //             break;
+    //         case(3):
+    //             altarManager.altarDeposit(soulManager4.depositSouls());
+    //             break;
+    //     }
+    // }
 
     public void damageAltar()
     {

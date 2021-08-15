@@ -27,7 +27,7 @@ public class RepelFistController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Arrow") || other.gameObject.CompareTag("PlayerArrow"))
         {
-            if (other.gameObject.name!= "M00ks1(Clone)" || other.gameObject.name!= "Kaiten(Clone)"){
+            if (other.gameObject.name!= "M00ks1(Clone)" && other.gameObject.name!= "Kaiten(Clone)"){
                 Destroy(other.gameObject);
             }
         }
@@ -37,7 +37,7 @@ public class RepelFistController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Arrow") || other.gameObject.CompareTag("PlayerArrow"))
         {
-            if (other.gameObject.name!= "M00ks1(Clone)" || other.gameObject.name!= "Kaiten(Clone)"){
+            if (other.gameObject.name!= "M00ks1(Clone)" && other.gameObject.name!= "Kaiten(Clone)"){
                 Destroy(other.gameObject);
             }
         }

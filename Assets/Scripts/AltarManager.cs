@@ -9,6 +9,15 @@ public class AltarManager : MonoBehaviour
     public int altarHealth = 50;
     public int altarDamage = 0;
 
+    public GameObject soulManagerObject1;
+    private SoulManager soulManager1;
+    public GameObject soulManagerObject2;
+    private SoulManager soulManager2;
+    public GameObject soulManagerObject3;
+    private SoulManager soulManager3;
+    public GameObject soulManagerObject4;
+    private SoulManager soulManager4;
+
     public delegate void gameEvent();
     public static event gameEvent Lose;
     public static event gameEvent NextStage1;
@@ -20,8 +29,17 @@ public class AltarManager : MonoBehaviour
         Instance = this;
     }
 
+    void Start()
+    {
+        soulManager1 = soulManagerObject1.GetComponent<SoulManager>();
+        soulManager2 = soulManagerObject2.GetComponent<SoulManager>();
+        soulManager3 = soulManagerObject3.GetComponent<SoulManager>();
+        soulManager4 = soulManagerObject4.GetComponent<SoulManager>();
+    }
+
     void Update()
     {
+        altarSouls = soulManager1.depositedSouls+soulManager2.depositedSouls+soulManager3.depositedSouls+soulManager4.depositedSouls;
         if (altarSouls >= soulCap)
         {
             altarSouls = 0;
@@ -32,12 +50,12 @@ public class AltarManager : MonoBehaviour
         }
     }
 
-    public void altarDeposit(int souls)
-    {
-        altarSouls += souls;
-        Debug.Log("Deposited souls: "+souls);
-        Debug.Log("Altar souls: "+altarSouls);
-    }
+    // public void altarDeposit(int souls)
+    // {
+    //     altarSouls += souls;
+    //     Debug.Log("Deposited souls: "+souls);
+    //     Debug.Log("Altar souls: "+altarSouls);
+    // }
 
     public void damageAltar()
     {
