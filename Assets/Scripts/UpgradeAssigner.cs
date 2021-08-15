@@ -21,6 +21,10 @@ public class UpgradeAssigner : MonoBehaviour
         AltarManager.NextStage2 += assignUpgrade;
     }
 
+    private void OnDestroy() {
+        AltarManager.NextStage2 -= assignUpgrade;
+    }
+
     // Update is called once per frame
     public void assignUpgrade()
     {

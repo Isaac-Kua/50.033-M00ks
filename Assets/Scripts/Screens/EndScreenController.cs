@@ -14,6 +14,9 @@ public class EndScreenController : MonoBehaviour
     {
         AltarManager.Lose += GameOver;
     }
+    private void OnDestroy() {
+        AltarManager.Lose -= GameOver;
+    }
 
     void GameOver()
     {
@@ -41,7 +44,10 @@ public class EndScreenController : MonoBehaviour
     public void MainMenuButton()
     {
         Debug.Log("RESTARTING");
-        PlayerConfigurationManager.Instance.destroyInstance();
+        AltarManager.Lose -= GameOver;
+        if (PlayerConfigurationManager.Instance){
+            PlayerConfigurationManager.Instance.destroyInstance();
+        }
         SceneManager.LoadScene("Initial");
     }
 }

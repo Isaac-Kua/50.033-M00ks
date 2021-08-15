@@ -47,6 +47,9 @@ public class M00ksDeathHandler : MonoBehaviour
 		stunAnim.transform.position = gameConstants.stunPosition;
 		stunAnim.SetActive(false);
 	}
+	private void OnDestroy() {
+		AltarManager.NextStage2 -= resetDeathCounter;
+	}
 
 	// Update is called once per frame
 	void Update()
