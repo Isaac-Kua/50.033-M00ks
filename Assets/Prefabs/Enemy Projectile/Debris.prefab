@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameManager: {fileID: 0}
   core: 0
 --- !u!114 &4880342385745167573
 MonoBehaviour:
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeavyMod: 0
   owner: {fileID: 0}
 --- !u!95 &7840850886603360868
 Animator:
@@ -181,7 +183,7 @@ AudioSource:
   m_GameObject: {fileID: 1799325140147787573}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5775361486487472778, guid: 857495277106ff14a9d61e8a22253218, type: 2}
   m_audioClip: {fileID: 8300000, guid: af64c51e6b6d9254c938c0ae06f3cebb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
