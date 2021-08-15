@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.EventSystems;
 
 public class winScene : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class winScene : MonoBehaviour
     public GameObject timer;
     public GameObject background;
     public Sprite winBg;
+    public GameObject finalButton;
 
     void Awake()
     {
@@ -41,5 +43,9 @@ public class winScene : MonoBehaviour
         timer.SetActive(false);
         background.GetComponent<SpriteRenderer>().sprite = winBg;
         background.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2.5f, 2.5f);
+
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(null);
+        eventSystem.SetSelectedGameObject(finalButton, new BaseEventData(eventSystem));
     }
 }
