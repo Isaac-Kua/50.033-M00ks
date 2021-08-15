@@ -163,11 +163,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: 460913dc176a4d74fb48eec9f20946fc, type: 2}
+  gameManager: {fileID: 0}
   soul: {fileID: 4587663427684844348, guid: 3cc37b8da865fe1409242e9d9fc82374, type: 3}
   lastHit: {fileID: 0}
   activeAbilities:
   - {fileID: 1165645779147639469}
   ammo: 0
+  burstCharge: 0
 --- !u!114 &3364962700852580756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f34f528b78284b8a7c8ed5c63b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedTarget: {fileID: 0}
+  selectedTarget:
+  - {fileID: 0}
   detectionRange: 0
 --- !u!95 &685349952370884455
 Animator:

@@ -148,6 +148,7 @@ public class M00ksDeathHandler : MonoBehaviour
 	
 	public void OnStunned(){
 		Invisible = false;
+		m00ksBody.velocity = Vector2.zero;
 		vision.SetActive(true);
 		stunAnim.SetActive(true);
 		Stun = true;

@@ -5,11 +5,7 @@ using UnityEngine;
 public class ShieldController : MonoBehaviour
 {
 	public GameConstants gameConstants;
-	public GameObject target1;
-	
 	public bool engaged;
-	private GameObject sword;
-	
    	private Rigidbody2D itemBody;
 	private SpriteRenderer itemSprite;
 	
@@ -18,15 +14,17 @@ public class ShieldController : MonoBehaviour
 		engaged = false;
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
-		sword = gameConstants.knightSword;
 	}
 
     // Update is called once per frame
     void Update()
     {
-		transform.localScale = new Vector3(transform.localScale.x * GameManager.Instance.currentLevel.knightShieldWidth, transform.localScale.y, transform.localScale.z);
-	}
-	
+		if (transform.parent.gameObject != null){
+			transform.localScale = new Vector3(transform.localScale.x , GameManager.Instance.currentLevel.knightShieldWidth, transform.localScale.z);
+		} else {	
+			Destroy(gameObject);
+		}
+    }
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.CompareTag("Player")) {
@@ -37,20 +35,9 @@ public class ShieldController : MonoBehaviour
 	}
 	
 	IEnumerator Swing(){
-		gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("SwingNow");
 		yield return new WaitForSeconds(gameConstants.knightWindUpTime);
+		gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("SwingNow");
 		engaged = false;
-		Vector3 dir = (target1.transform.position - this.transform.position).normalized;
-		Quaternion angle = new Quaternion(0,0,0,0);
-		Vector3 eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.right,dir));
-		angle.eulerAngles = eulerAngle;
-
-		GameObject stroke = Instantiate(sword, transform.position + 2f*dir, transform.rotation);
-		stroke.GetComponent<ProjectileController>().owner = gameObject.transform.parent.gameObject;
-		stroke.transform.parent = gameObject.transform;
-		stroke.transform.rotation = angle;
-		stroke.GetComponent<SwordController>().shield = gameObject.transform.parent.gameObject;
-		
-		itemBody.constraints = RigidbodyConstraints2D.None;
+		itemBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 }

@@ -55,6 +55,12 @@ public class DeathHandler : MonoBehaviour
 		npcCollider.enabled = true;
 		polyCollider.enabled = true;
 		this.gameObject.SetActive(false);
+        // foreach (Transform eachChild in transform)
+        // {
+        //     if (eachChild.CompareTag("KnightShield")){
+        //         Destroy(eachChild.gameObject);
+        //     }
+        // }
 		ammo = true;
 		burstCharge = true;
 	}

@@ -7,9 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName =  "SpikeRangedAbility", menuName =  "Ability 1/Spike")]
 public class SpikeRangedAbility : Ability
 {
-    public GameObject missile;
-    public int maxCount = 3;
-    public float spacing = 2f;
     private int count;
     private Vector2 missilePosition;
     private Vector2 missileDirection;
@@ -40,9 +37,9 @@ public class SpikeRangedAbility : Ability
         checkModifications(parent.GetComponent<Ability1Holder>());
         if(RangeMod)
         {
-            count = maxCount + 2;
+            count = gameConstants.spikeMaxCount + 2;
         }else{
-            count = maxCount;
+            count = gameConstants.spikeMaxCount;
         }
         spikePoints = new Vector2[count];
         if(SpeedMod)

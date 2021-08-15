@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSpikeController : MonoBehaviour { 
-    public float lifeTime = 1f;
-    public float meltTime = 2f;
-
+    public GameConstants gameConstants;
 	public bool RangeMod = false;
     public bool BypassMod = false;
     public bool SpeedMod = false;
@@ -32,7 +30,7 @@ public class PlayerSpikeController : MonoBehaviour {
 
     IEnumerator Lifetime()
     {
-        yield return new WaitForSeconds(lifeTime);
+        yield return new WaitForSeconds(gameConstants.spikeLifeTime);
         Explode();
     }
 
@@ -63,7 +61,7 @@ public class PlayerSpikeController : MonoBehaviour {
 
     IEnumerator Debris()
     {
-        yield return new WaitForSeconds(meltTime);
+        yield return new WaitForSeconds(gameConstants.spikeMeltTime);
         OnBecameInvisible();
     }
 

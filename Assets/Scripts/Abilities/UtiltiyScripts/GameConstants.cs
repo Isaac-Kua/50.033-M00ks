@@ -85,6 +85,11 @@ public class GameConstants : ScriptableObject
 	public float kaitenCastTime = 0.5f;
 	public float kaitenMaxRadius = 8;
 	public GameObject kaitenPrefab;
+	public float spikeLifeTime = 1;
+	public float spikeMeltTime = 4;
+	public int spikeMaxCount = 2;
+	public float spikeSpacing = 2;
+	public GameObject playerSpike;
 
 	// Ability2 (Alternate) Variables 
 	// Mine

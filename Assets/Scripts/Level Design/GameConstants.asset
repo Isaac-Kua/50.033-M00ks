@@ -27,8 +27,8 @@ MonoBehaviour:
   StaticDebris: {fileID: 5585716952190182122, guid: a17c6e625ee18fc40a3d45d29905e9d5, type: 3}
   DebrisLifeTime: 3
   DebrisSpawnTime: 0.5
-  M00ksMoveSpeed: 20
-  MagnusSpeed: 30
+  M00ksMoveSpeed: 10
+  MagnusSpeed: 20
   TophAura: {fileID: 5242414351336466906, guid: 483eeb27a462312439d058685d9cf921, type: 3}
   TophRatio: 2
   TophRadius: 20
@@ -66,6 +66,11 @@ MonoBehaviour:
   kaitenCastTime: 0.5
   kaitenMaxRadius: 8
   kaitenPrefab: {fileID: 7532896425907243978, guid: 492c65a254bfe084193a940f66f5b797, type: 3}
+  spikeLifeTime: 1
+  spikeMeltTime: 4
+  spikeMaxCount: 2
+  spikeSpacing: 2
+  playerSpike: {fileID: 8523725975357090799, guid: 68bdd9fcd4b4ba64aa6c11445fc8dd6a, type: 3}
   armDuration: 0.5
   magnet: {fileID: 0}
   magnetPull: 0.1
@@ -95,10 +100,10 @@ MonoBehaviour:
   fireboltSpeed: 10
   fireboltTargetArea: {fileID: 2474520951067320257, guid: b55d2f8fc8c1626419a6dc58258f83b0, type: 3}
   fireWizardFirebolt: {fileID: 2180849708720968426, guid: bd81218ecb9196c47bbe11eefeab30f6, type: 3}
-  fireWizardMoveSpeed: 5
+  fireWizardMoveSpeed: 10
   fireWizardMaxRange: 20
-  fireWizardMinRange: 5
-  fireWizardPoofChargeTime: 5
+  fireWizardMinRange: 10
+  fireWizardPoofChargeTime: 3
   fireWizardPoofCastTime: 0.5
   fireWizardWindUpTime: 3
   fireWizardSwingTime: 0.2
@@ -128,7 +133,7 @@ MonoBehaviour:
   iceboltLifeTime: 3
   iceboltSpeed: 10
   icewaveLifeTime: 1
-  icewaveMeltTime: 5
+  icewaveMeltTime: 7
   icewaveSpeed: 2000
   debris: {fileID: 1799325140147787573, guid: b551607a2f408624fb5fa7be39bf2e10, type: 3}
   wallLength: 2

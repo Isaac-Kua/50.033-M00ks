@@ -8,8 +8,8 @@ public class KnightController : MonoBehaviour
 	public GameObject target1;
 	
 	private bool target_is_dead = false;
-	private GameObject shield;
-	private GameObject myShield;	
+	private GameObject myShield;
+	private GameObject mySword;	
 	private Rigidbody2D knightBody;
 	private SpriteRenderer knightSprite;
 	private Animator knightAnimator;
@@ -25,9 +25,17 @@ public class KnightController : MonoBehaviour
 		knightBody = GetComponent<Rigidbody2D>();
 		knightSprite = GetComponent<SpriteRenderer>();
 		knightAnimator = GetComponent<Animator>();
-
-		shield = gameConstants.knightShield;
 		levelDifficulty = GameManager.Instance.currentLevel;
+
+		target1 = gameObject;
+		knightBody = GetComponent<Rigidbody2D>();
+		knightSprite = GetComponent<SpriteRenderer>();
+		knightAnimator = GetComponent<Animator>();
+		levelDifficulty = GameManager.Instance.currentLevel;
+
+		myShield = Instantiate(gameConstants.knightShield, transform.position, transform.rotation);
+		myShield.transform.parent = transform;
+		myShield.transform.rotation = angle;
 	}
 
 	void OnDisable(){
@@ -38,14 +46,11 @@ public class KnightController : MonoBehaviour
 		knightBody = GetComponent<Rigidbody2D>();
 		knightSprite = GetComponent<SpriteRenderer>();
 		knightAnimator = GetComponent<Animator>();
-
-		shield = gameConstants.knightShield;
-		myShield = Instantiate(shield, transform.position, transform.rotation);
-		myShield.transform.parent = transform;
-		Vector3 eulerAngle = new Vector3(0,0,0);
-		angle.eulerAngles = eulerAngle;
 		levelDifficulty = GameManager.Instance.currentLevel;
-		myShield.transform.rotation = angle;
+
+		myShield = Instantiate(gameConstants.knightShield, transform.position, transform.rotation);
+		myShield.transform.parent = transform;
+		// myShield.transform.rotation = angle;
 	}
 
 
@@ -70,14 +75,12 @@ public class KnightController : MonoBehaviour
 			dir = (target1.transform.position - this.transform.position).normalized;
 			Vector3 eulerAngle = new Vector3(0, 0, Vector2.SignedAngle(Vector2.right, dir));
 			angle.eulerAngles = eulerAngle;
-			//transform.rotation = angle;
 			knightSprite.flipX = (dir.x < 0);
 			eulerAngle = dir;
 
 
 			knightBody.velocity = (dir * levelDifficulty.knightMoveSpeed);
-			myShield.GetComponent<ShieldController>().target1 = target1;
-			myShield.transform.position = transform.position + 1.2f*eulerAngle;
+			myShield.transform.position = transform.position + 1.5f*eulerAngle;
 			
 			eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.down,dir));
 			angle.eulerAngles = eulerAngle;
@@ -97,5 +100,6 @@ public class KnightController : MonoBehaviour
 		knightAnimator.SetBool("SwingUp", dir.y > 0.5);
 		knightAnimator.SetBool("SwingDown", dir.y < -0.5);
 		knightAnimator.SetBool("SwingFront", (dir.y <= 0.5 && dir.y >= -0.5));
+
 	}
 }
