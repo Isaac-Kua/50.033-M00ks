@@ -48,6 +48,11 @@ public class SetLevel : MonoBehaviour
         cutscenes.SetActive(true);
         setLevel();
     }
+    private void OnDestroy() {
+        AltarManager.NextStage1 -= chooseFirstPlayer;
+        AltarManager.NextStage1 -= setUpgradeSelect;
+        GameManager.PVPStage -= pvpLevel;
+    }
 
     public void setLevel()
     {

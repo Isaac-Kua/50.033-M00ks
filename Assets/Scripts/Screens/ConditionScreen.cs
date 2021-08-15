@@ -12,6 +12,9 @@ public class ConditionScreen : MonoBehaviour
     {
         UpgradeSelectionManager.SelectMetric += load;
     }
+    private void OnDestroy() {
+        UpgradeSelectionManager.SelectMetric -= load;
+    }
 
     void load()
     {

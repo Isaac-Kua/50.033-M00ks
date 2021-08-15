@@ -12,7 +12,9 @@ public class AltarSoulUI : MonoBehaviour
     {
         AltarManager.NextStage1 += resetUI;
     }
-
+    private void OnDestroy() {
+        AltarManager.NextStage1 -= resetUI;
+    }
     // Update is called once per frame
     void Update()
     {

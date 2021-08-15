@@ -136,7 +136,7 @@ public class M00ks1Controller : MonoBehaviour
 		}else{
 			if (obj.action.name == controls.Player.Skip.name)
 			{
-				Debug.Log("SKIPPED");
+				//Debug.Log("SKIPPED");
 				if (GameManager.Instance.cutscene) {
 					Player1Manager.centralManagerInstance.stopCutscene();
 				}

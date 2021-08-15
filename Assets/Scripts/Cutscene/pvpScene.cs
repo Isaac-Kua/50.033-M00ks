@@ -23,6 +23,9 @@ public class pvpScene : MonoBehaviour
         playerConfigs = PlayerConfigurationManager.Instance.getListOfPlayerConfigs();
         GameManager.PVPStage += play;
     }
+    private void OnDestroy() {
+        GameManager.PVPStage -= play;
+    }
 
     // Update is called once per frame
     void Update()

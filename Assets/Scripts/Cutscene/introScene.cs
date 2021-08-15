@@ -56,6 +56,7 @@ public class introScene : MonoBehaviour
                 playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
             }
             levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(0);
+            levelInitializer.GetComponent<AudioSource>().loop = true;
             levelInitializer.GetComponent<AudioSource>().Play();
             Time.timeScale = 1f;
         }
@@ -100,6 +101,7 @@ public class introScene : MonoBehaviour
         }
         levelInitializer.GetComponent<AudioSource>().Stop();
         levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(0);
+        levelInitializer.GetComponent<AudioSource>().loop = true;
         levelInitializer.GetComponent<AudioSource>().Play();
         Time.timeScale = 1f;
     }
