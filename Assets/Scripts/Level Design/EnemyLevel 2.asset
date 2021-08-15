@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a042fbcb99ad84d859b49d7fa743fb, type: 3}
   m_Name: EnemyLevel 2
   m_EditorClassIdentifier: 
-  fireboltExplosionScale: 4
-  fireboltSpeed: 15
-  rangerMoveSpeed: 15
-  rangerWindUpTime: 2
-  knightMoveSpeed: 10
-  knightShieldWidth: 2
-  knightSwordlength: 2
-  iceWizardWindUpTime: 2
-  iceboltSpeed: 30
-  wallLength: 2
-  BarbarianMoveSpeed: 15
-  BarbarianMaxRange: 30
-  BarbarianMaxCharges: 5
+  fireboltExplosionScale: 3
+  fireboltSpeed: 10
+  fireWizardTargets: 1
+  rangerMoveSpeed: 12
+  rangerWindUpTime: 3
+  rangerTargets: 1
+  knightMoveSpeed: 5
+  knightShieldWidth: 1
+  knightSwordlength: 1
+  iceWizardWindUpTime: 3
+  iceboltSpeed: 10
+  wallLength: 1
+  BarbarianMoveSpeed: 5
+  BarbarianMaxRange: 15
+  BarbarianMaxCharges: 2

@@ -7,7 +7,7 @@ public class introScene : MonoBehaviour
 {
     public bool stop = false;
     public bool playing = false;
-
+    public GameObject levelInitializer;
     public GameObject one;
     public GameObject two;
     public GameObject three;
@@ -90,6 +90,8 @@ public class introScene : MonoBehaviour
         subtitle.SetActive(false);
         skipText.SetActive(false);
         GameManager.Instance.cutscene = false;
+        levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(0);
+        levelInitializer.GetComponent<AudioSource>().Play();
         for(int i =0; i<GameManager.Instance.totalPlayers; i++){
             playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
         }

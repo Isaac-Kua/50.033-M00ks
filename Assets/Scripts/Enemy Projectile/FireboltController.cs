@@ -48,17 +48,9 @@ public class FireboltController : MonoBehaviour
 		}
     }
 	
-	void  OnBecameInvisible()
-	{
-		Destroy(gameObject);	
-	}
-	
 	void OnCollisionEnter2D(Collision2D other)
-	{
-		if (other.gameObject.CompareTag("Player"))
-		{   
+	{ 
 			Explode();
-		}
 	}
 	
 	public void Explode()
@@ -68,6 +60,6 @@ public class FireboltController : MonoBehaviour
 		transform.localScale = new Vector3(gameManager.GetComponent<GameManager>().currentLevel.fireboltExplosionScale, gameManager.GetComponent<GameManager>().currentLevel.fireboltExplosionScale,0);
 		GameObject goo = Instantiate(gooPool, transform.position, new Quaternion(0, 0, 0, 0));
 		goo.transform.localScale = transform.localScale;
-		OnBecameInvisible();
+		Destroy(gameObject);
 	}	
 }

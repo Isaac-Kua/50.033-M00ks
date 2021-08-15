@@ -35,7 +35,12 @@ public class ProjectileController : MonoBehaviour
     }
 	
 	void OnCollisionEnter2D(Collision2D other)
-    {
+    {            
+        if (gameObject.name == "Firebolt(Clone)")
+            {
+                gameObject.GetComponent<FireboltController>().Explode();
+            }
+        
         if(gameObject.CompareTag("Debris")){
 
             if(other.gameObject.name == "Kaiten(Clone)")
@@ -63,14 +68,17 @@ public class ProjectileController : MonoBehaviour
                 }
             }
         }
+
+        if (!(gameObject.CompareTag("PlayerArrow")) && !gameObject.CompareTag("Player") && !(gameObject.name == "M00ks1(Clone)")){
+            if (other.gameObject.CompareTag("Altar"))
+            {
+                Player1Manager.centralManagerInstance.damageAltar();
+            }
+        }
+
         if (!(gameObject.name == "PlayerSpike(Clone)") && !gameObject.CompareTag("Player") && !(gameObject.name == "Barathrum(Clone)") && !(gameObject.name == "Barathrum") && !(gameObject.name == "M00ks1(Clone)"))
         {
-            if (gameObject.name == "Firebolt(Clone)")
-            {
-                gameObject.GetComponent<FireboltController>().Explode();
-            }
-
-            else if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
+            if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
             {
                 if (other.gameObject != owner){
                     if(!(gameObject.name == "M00ks1(Clone)"))
@@ -78,12 +86,6 @@ public class ProjectileController : MonoBehaviour
                         Destroy(gameObject);
                     }
                 }
-            }
-        }
-        if (!(gameObject.CompareTag("PlayerArrow")) && !gameObject.CompareTag("Player") && !(gameObject.name == "M00ks1(Clone)")){
-            if (other.gameObject.CompareTag("Altar"))
-            {
-                Player1Manager.centralManagerInstance.damageAltar();
             }
         }
     }
