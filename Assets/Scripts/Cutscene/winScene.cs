@@ -7,10 +7,11 @@ using System.Linq;
 public class winScene : MonoBehaviour
 {
     public GameObject levelInitializer;
-    public Image winner;
     public Text kills;
     private List<PlayerConfiguration> players;
     public GameObject timer;
+    public GameObject background;
+    public Sprite winBg;
 
     void Awake()
     {
@@ -34,10 +35,11 @@ public class winScene : MonoBehaviour
         
         int winningPlayer = playerKills.IndexOf(playerKills.Max());
         kills.text = "Player " + (winningPlayer+1) + " won!\n" + "PvP Kills: "+ playerKills.Max().ToString();
-        winner.sprite = PlayerConfigurationManager.Instance.getPlayerSprite(winningPlayer);
         levelInitializer.GetComponent<AudioSource>().Stop();
         levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(3);
         levelInitializer.GetComponent<AudioSource>().Play();
         timer.SetActive(false);
+        background.GetComponent<SpriteRenderer>().sprite = winBg;
+        background.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2.5f, 2.5f);
     }
 }

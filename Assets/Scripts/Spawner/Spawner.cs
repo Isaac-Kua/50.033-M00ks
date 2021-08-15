@@ -16,9 +16,9 @@ public class Spawner : MonoBehaviour
         // EnemyPool.SharedInstance.spawnEnemy(EnemyType.Traxex);
         // EnemyPool.SharedInstance.spawnEnemy(EnemyType.Rylai);
         // EnemyPool.SharedInstance.spawnEnemy(EnemyType.bara);
-        // for (int i = 0; i < 3; i++){
-        //     spawnOne();
-        // }
+        for (int i = 0; i < 1; i++){
+            spawnOne();
+        }
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
         if (!GameManager.Instance.upgradeSelection)
         {
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemies.Length <= 2)
+            if (enemies.Length <= 0)
             {
                 spawn();
             }

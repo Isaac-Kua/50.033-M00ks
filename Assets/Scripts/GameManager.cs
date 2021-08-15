@@ -42,11 +42,9 @@ public class GameManager : MonoBehaviour
         switch (stage){
             case(2):
                 bg.GetComponent<SpriteRenderer>().sprite = bg2;
-                // bg.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 break;
             case(3):
                 bg.GetComponent<SpriteRenderer>().sprite = bg3;
-                bg.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(7, 7);
                 break;
             case(4):
                 bg.GetComponent<SpriteRenderer>().sprite = bg4;

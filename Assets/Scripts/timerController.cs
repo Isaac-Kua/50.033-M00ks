@@ -26,8 +26,9 @@ public class timerController : MonoBehaviour
             else{
                 startTimer = false;
                 timeRemaining = 0;
-                winScene.GetComponent<winScene>().getWinner();
                 winScene.SetActive(true);
+                winScene.GetComponent<winScene>().getWinner();
+                SetLevel.Instance.winner();
             }
         }
         float seconds = Mathf.FloorToInt(timeRemaining % 60);

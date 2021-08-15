@@ -43,6 +43,10 @@ public class AltarManager : MonoBehaviour
         if (altarSouls >= soulCap)
         {
             altarSouls = 0;
+            soulManager1.depositedSouls = 0;
+            soulManager2.depositedSouls = 0;
+            soulManager3.depositedSouls = 0;
+            soulManager4.depositedSouls = 0;
             Debug.Log("Goal reached");
             NextStage1();
             NextStage2();

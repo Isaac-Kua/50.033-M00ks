@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SetLevel : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class SetLevel : MonoBehaviour
     public GameObject upgradeCutscene;
     public GameObject cutscenes;
     public GameObject timer;
+    public GameObject overlayUI;
+    public GameObject bright;
     private GameObject[] enemies;
     private GameObject[] souls;
     private GameObject[] arrow;
@@ -24,7 +27,6 @@ public class SetLevel : MonoBehaviour
     private GameObject[] area;
     private GameObject[] debris;
     private GameObject[] shield;
-    private GameObject[] sword;
 
     private List<PlayerConfiguration> players;
     [SerializeField]
@@ -131,10 +133,6 @@ public class SetLevel : MonoBehaviour
         foreach(GameObject proj in shield){
             Destroy(proj);
         }
-        sword = GameObject.FindGameObjectsWithTag("KnightSword");
-        foreach(GameObject proj in sword){
-            Destroy(proj);
-        }
         fireball = GameObject.FindGameObjectsWithTag("Firebolt");
         foreach(GameObject proj in fireball){
             Destroy(proj);
@@ -158,6 +156,7 @@ public class SetLevel : MonoBehaviour
         deactivate();
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawnsWave[i].position;
+            players[i].Input.actions.Enable();
         }
         obstacles.SetActive(true);
         timer.SetActive(true);
@@ -181,6 +180,28 @@ public class SetLevel : MonoBehaviour
         }
         if (GameManager.Instance.currentMetric == "Most Kills"){
             GameManager.Instance.firstPlayer = Calculator.Instance.mostKills();
+        }
+    }
+
+    public void winner()
+    {
+        List<int> playerKills = new List<int>();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            playerKills.Add(players[i].playerPrefab.GetComponent<M00ksDeathHandler>().playerkills);
+        }
+        Debug.Log(playerKills);
+        
+        int winningPlayer = playerKills.IndexOf(playerKills.Max());
+        players[winningPlayer].playerPrefab.transform.position = new Vector3(0, 0, 0);
+        players[winningPlayer].playerPrefab.transform.localScale = new Vector2(5, 5);
+        deactivate();
+        overlayUI.SetActive(false);
+        bright.SetActive(true);
+
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            if (i != winningPlayer){
+                players[i].playerPrefab.SetActive(false);
+            }
         }
     }
 }
