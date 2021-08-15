@@ -20,11 +20,8 @@ public class AltarManager : MonoBehaviour
         Instance = this;
     }
 
-    public void altarDeposit(int souls)
+    void Update()
     {
-        altarSouls += souls;
-        Debug.Log("Deposited souls: "+souls);
-        Debug.Log("Altar souls: "+altarSouls);
         if (altarSouls >= soulCap)
         {
             altarSouls = 0;
@@ -33,6 +30,13 @@ public class AltarManager : MonoBehaviour
             NextStage2();
             GameManager.Instance.increaseStage();  
         }
+    }
+
+    public void altarDeposit(int souls)
+    {
+        altarSouls += souls;
+        Debug.Log("Deposited souls: "+souls);
+        Debug.Log("Altar souls: "+altarSouls);
     }
 
     public void damageAltar()

@@ -49,7 +49,7 @@ public class PauseController : MonoBehaviour
         //Application.Quit();
         Debug.Log("RESTARTING");
         PlayerConfigurationManager.Instance.destroyInstance();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Initial");
     }
 
     public void HowToPlayButton()

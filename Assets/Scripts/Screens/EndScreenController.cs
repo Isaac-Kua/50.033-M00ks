@@ -42,6 +42,6 @@ public class EndScreenController : MonoBehaviour
     {
         Debug.Log("RESTARTING");
         PlayerConfigurationManager.Instance.destroyInstance();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Initial");
     }
 }

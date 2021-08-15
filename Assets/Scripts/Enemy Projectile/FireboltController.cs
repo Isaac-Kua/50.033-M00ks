@@ -43,7 +43,9 @@ public class FireboltController : MonoBehaviour
 		if (transform.position != targetLocation && !exploded)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, targetLocation, gameManager.GetComponent<GameManager>().currentLevel.fireboltSpeed * Time.deltaTime);
-		} else {
+		} else if (transform.position == targetLocation && !exploded){
+			Explode();
+		} else if (itemBody.velocity == Vector2.zero){
 			Explode();
 		}
     }
