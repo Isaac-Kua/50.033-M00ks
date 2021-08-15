@@ -37,9 +37,10 @@ public class AltarManager : MonoBehaviour
         soulManager4 = soulManagerObject4.GetComponent<SoulManager>();
     }
 
-    void Update()
+    public void altarDeposit()
     {
         altarSouls = soulManager1.depositedSouls+soulManager2.depositedSouls+soulManager3.depositedSouls+soulManager4.depositedSouls;
+        Debug.Log(altarSouls);
         if (altarSouls >= soulCap)
         {
             altarSouls = 0;

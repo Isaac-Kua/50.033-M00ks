@@ -17,7 +17,7 @@ public class SoulManager : MonoBehaviour
 
     public void depositSouls()
     {
-        depositedSouls = currentSouls;
+        depositedSouls += currentSouls;
         Debug.Log("Souls deposited: "+currentSouls);
         currentSouls = 0;
     }

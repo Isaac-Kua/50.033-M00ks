@@ -40,6 +40,7 @@ public class PlayerSoulController : MonoBehaviour
                 soulManager4.depositSouls();
                 break;
             }
+            AltarManager.Instance.altarDeposit();
         }
     }
 }
