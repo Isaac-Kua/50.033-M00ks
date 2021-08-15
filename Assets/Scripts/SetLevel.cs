@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SetLevel : MonoBehaviour
 {
@@ -94,11 +95,9 @@ public class SetLevel : MonoBehaviour
         }
         for (int i=0; i<GameManager.Instance.totalPlayers; i++){
             players[i].playerPrefab.transform.position = playerSpawns[i].position;
-            // players[i].Input.ActivateInput();
             players[i].Input.actions.Enable();
             if (i != GameManager.Instance.firstPlayer){
                 Debug.Log("Deactivate player "+ (i+1));
-                // players[i].Input.DeactivateInput();
                 players[i].Input.actions.Disable();
             }
         }
@@ -182,5 +181,17 @@ public class SetLevel : MonoBehaviour
         if (GameManager.Instance.currentMetric == "Most Kills"){
             GameManager.Instance.firstPlayer = Calculator.Instance.mostKills();
         }
+    }
+
+    void winner()
+    {
+        List<int> playerKills = new List<int>();
+        for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            playerKills.Add(players[i].playerPrefab.GetComponent<M00ksDeathHandler>().playerkills);
+        }
+        Debug.Log(playerKills);
+        
+        int winningPlayer = playerKills.IndexOf(playerKills.Max());
+        players[winningPlayer].playerPrefab.transform.position = new Vector2(0, 0);
     }
 }
