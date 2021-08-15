@@ -27,27 +27,26 @@ public class UpgradeSelectionManager : MonoBehaviour
             }
         }
         if (allSelected){
-            if (AltarManager.Instance.altarDamage > 40){
-                AltarManager.Instance.resolve();
-                GameManager.Instance.upgradeNo += 1;
-                for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                    // players[i].Input.ActivateInput();
-                    players[i].Input.actions.Enable();
-                }
-                SelectMetric();
-                SetLevel.Instance.setLevel();
-            }
-            else if (AltarManager.Instance.altarDamage > 15){
+            if (AltarManager.Instance.altarDamage > 15){
                 AltarManager.Instance.resolve();
                 AltarManager.Instance.setHealth(20);
                 GameManager.Instance.upgradeNo += 1;
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                    // players[i].Input.ActivateInput();
                     players[i].Input.actions.Enable();
                 }
                 SelectMetric();
                 SetLevel.Instance.setLevel();
             }
+            // else if (AltarManager.Instance.altarDamage > 6){
+            //     AltarManager.Instance.resolve();
+            //     AltarManager.Instance.setHealth(20);
+            //     GameManager.Instance.upgradeNo += 1;
+            //     for (int i=0; i<GameManager.Instance.totalPlayers; i++){
+            //         players[i].Input.actions.Enable();
+            //     }
+            //     SelectMetric();
+            //     SetLevel.Instance.setLevel();
+            // }
             else if (GameManager.Instance.secondUpgrade == false){
                 SetLevel.Instance.setUpgradeSelect();
                 GameManager.Instance.secondUpgrade = true;
@@ -56,7 +55,6 @@ public class UpgradeSelectionManager : MonoBehaviour
                 AltarManager.Instance.resolve();
                 AltarManager.Instance.setHealth(20);
                 for (int i=0; i<GameManager.Instance.totalPlayers; i++){
-                    // players[i].Input.ActivateInput();
                     players[i].Input.actions.Enable();
                 }
                 SelectMetric();
