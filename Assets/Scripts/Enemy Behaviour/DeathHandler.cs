@@ -48,11 +48,10 @@ public class DeathHandler : MonoBehaviour
         stunAnim.transform.position = transform.position + gameConstants.stunPosition;
 	}
 	
-	void onDeath()
+	public void onDeath()
 	{
 		dead = false;
 		allEnable();
-		//npcSprite.color = Color.white;
 		npcCollider.enabled = true;
 		polyCollider.enabled = true;
 		this.gameObject.SetActive(false);
@@ -93,7 +92,6 @@ public class DeathHandler : MonoBehaviour
 			lastHit.GetComponent<UpgradeManager>().onKill(this.gameObject);
 			lastHit.GetComponent<M00ksDeathHandler>().enemykills++;
 		}
-		//npcSprite.color = Color.black;
 		yield return new WaitForSeconds(gameConstants.deathFadeTime);
 		Instantiate(soul, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
 		onDeath();
