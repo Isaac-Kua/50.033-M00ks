@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MeleeHolder : MonoBehaviour
 {
+    private Animator m00ksAnimator;
     public Ability ability;
     [SerializeField]
 	public AudioClip[] audioClips;
@@ -24,6 +25,7 @@ public class MeleeHolder : MonoBehaviour
     private void Start() {
         mAudio = gameObject.GetComponents<AudioSource>()[0];
         cooldownTime = ability.rechargeTime;
+        m00ksAnimator = GetComponent<Animator>();
     }
     public void changeAbility(Ability newAbility){
         ability = newAbility;
@@ -77,6 +79,7 @@ public class MeleeHolder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("SwingNow");
                     mAudio.Play();
                     charges--;
                     state = AbilityState.active;
@@ -111,6 +114,7 @@ public class MeleeHolder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("SwingNow");
                     mAudio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;

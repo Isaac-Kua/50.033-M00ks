@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Ability1Holder : MonoBehaviour
 {
+    private Animator m00ksAnimator;
     public Ability ability;
 
     [SerializeField]
@@ -23,6 +24,7 @@ public class Ability1Holder : MonoBehaviour
 
     private void Start() {
         a1Audio = gameObject.GetComponents<AudioSource>()[2];
+        m00ksAnimator = GetComponent<Animator>();
         cooldownTime = ability.rechargeTime;
     }
     bool checkModifications()
@@ -75,7 +77,7 @@ public class Ability1Holder : MonoBehaviour
     public void OnAbility1()
     {
         input = true;
-        Debug.Log("ability1 in ability holder");
+        //Debug.Log("ability1 in ability holder");
     }
     
     // Update is called once per frame
@@ -95,6 +97,8 @@ public class Ability1Holder : MonoBehaviour
                 {
                     
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("Ability1");
+
                     a1Audio.Play();
                     charges--;
                     state = AbilityState.active;
@@ -133,6 +137,7 @@ public class Ability1Holder : MonoBehaviour
                 if(input && charges>0)
                 {
                     ability.Activate(gameObject);
+                    m00ksAnimator.SetTrigger("Ability1");
                     a1Audio.Play();
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
