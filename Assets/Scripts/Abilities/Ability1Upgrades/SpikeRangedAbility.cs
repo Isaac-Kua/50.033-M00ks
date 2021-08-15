@@ -17,7 +17,8 @@ public class SpikeRangedAbility : Ability
     private Vector2 node;
     private bool blocked = false;
     private float spikeSpawnTime = 0.3f;
-
+    private RaycastHit2D hitDebris;
+    private float debrisDistance = 9999f;
     //private Quaterion spikeRotation;
 
     public bool RangeMod = false;
@@ -51,9 +52,48 @@ public class SpikeRangedAbility : Ability
 
         missileDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         missilePosition = new Vector2(parent.transform.position.x, parent.transform.position.y);
-        for(int i=0;i<count; i++){
-            spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(i+1)*spacing);
+        if(!BypassMod){
+            hitDebris = Physics2D.Raycast(missilePosition,missileDirection);
         }
+        if(hitDebris != null && hitDebris.collider != null && hitDebris.collider.tag == "Debris")
+        {
+            var x_val = hitDebris.point.x - missilePosition.x;
+            var y_val = hitDebris.point.y - missilePosition.y;
+            debrisDistance =   x_val*x_val + y_val*y_val;
+        }else{
+            debrisDistance = 9999f;
+        }
+        
+        for(int i=0;i<count; i++){
+            var mag = 1f + (i+1)*spacing;
+            mag = mag*mag;
+            if(i == 0){
+                if(mag>debrisDistance){
+                    spikePoints[i] = (missilePosition + missileDirection*debrisDistance);
+                }else{
+                    spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(i+1)*spacing);
+                }
+                
+            }
+            else
+            {
+
+                if(mag>debrisDistance){
+                    blocked = true;
+                }
+                if(blocked && !BypassMod)
+                {
+                    spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(200)*spacing);
+                }
+                else
+                {
+                    spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(i+1)*spacing);
+                }
+            }
+        }
+
+
+
         StartCoroutine(ShootCoroutine(parent));
     }
 
@@ -61,36 +101,21 @@ public class SpikeRangedAbility : Ability
     {
         //count -= 1;
         //missilePosition = missilePosition + missileDirection * spacing;
+
         Debug.Log("Shooting");
         for(int j=0;j<count;j++)
         {
             missilePosition = spikePoints[j];
-            if(blocked)
-            {
-                if(!BypassMod){
-                    yield break;
-                }else{
-                    blocked = false;
-                }
-            }
-            else
-            {
-                GameObject missile1 = Instantiate(missile, missilePosition, Quaternion.identity);//, parent.transform.rotation);
-                missile1.GetComponent<ProjectileController>().owner = parent;
-                missile1.GetComponent<PlayerSpikeController>().owner = parent;
-                missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
-                missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
-                missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
-                missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
-                missile1.GetComponent<ProjectileController>().HeavyMod = HeavyMod;
-                yield return new WaitForSeconds(spikeSpawnTime);
-                if(missile1 == null){
-                    blocked = true;
-                }else{
-                    blocked = missile1.GetComponent<PlayerSpikeController>().blocked;
-
-                }
-            }
+            GameObject missile1 = Instantiate(missile, missilePosition, Quaternion.identity);//, parent.transform.rotation);
+            missile1.GetComponent<ProjectileController>().owner = parent;
+            missile1.GetComponent<PlayerSpikeController>().owner = parent;
+            missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
+            missile1.GetComponent<PlayerSpikeController>().BypassMod = BypassMod;
+            missile1.GetComponent<PlayerSpikeController>().SpeedMod = SpeedMod;
+            missile1.GetComponent<PlayerSpikeController>().HeavyMod = HeavyMod;
+            missile1.GetComponent<ProjectileController>().HeavyMod = HeavyMod;
+            yield return new WaitForSeconds(spikeSpawnTime);
+            
         }
         yield break;
 
