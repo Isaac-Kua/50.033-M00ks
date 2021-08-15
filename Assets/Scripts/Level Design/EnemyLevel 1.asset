@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyLevel 1
   m_EditorClassIdentifier: 
   fireboltExplosionScale: 3
-  fireboltSpeed: 10
+  fireboltSpeed: 7
   fireWizardTargets: 1
   rangerMoveSpeed: 12
   rangerWindUpTime: 3

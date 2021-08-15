@@ -18,4 +18,4 @@ MonoBehaviour:
   charges: 0
   rechargeTime: 3
   abilityType: Dash
-  dashSpeed: 100
+  dashSpeed: 75
