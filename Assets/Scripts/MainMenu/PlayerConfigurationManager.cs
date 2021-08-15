@@ -18,6 +18,7 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Awake(){
         //MinPlayers = 2;
+        Time.timeScale = 1.0f;
         if(Instance!=null){
             Debug.Log("Trying to create another instance of singleton!");
         }else{
@@ -74,6 +75,10 @@ public class PlayerConfigurationManager : MonoBehaviour
             playerConfigs.Add(new PlayerConfiguration(pi));
             Debug.Log(pi);
         }
+    }
+
+    public void destroyInstance(){
+        Destroy(this.gameObject);
     }
 }
 

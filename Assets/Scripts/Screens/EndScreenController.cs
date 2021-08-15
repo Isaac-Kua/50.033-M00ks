@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class EndScreenController : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class EndScreenController : MonoBehaviour
 
     public void ExitButton()
     {
-        Application.Quit();
+        Debug.Log("RESTARTING");
+        PlayerConfigurationManager.Instance.destroyInstance();
+        SceneManager.LoadScene("MainMenu");
     }
 }

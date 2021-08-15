@@ -16,14 +16,4 @@ public class HowToPlay : MonoBehaviour
         
     }
 
-    public void HowToPlayButton()
-    {
-        foreach (Transform eachChild in transform)
-        {
-            if (eachChild.name == "HowToPlayScreen")
-            {
-                eachChild.gameObject.SetActive(true);
-            }
-        }
-    }
 }
