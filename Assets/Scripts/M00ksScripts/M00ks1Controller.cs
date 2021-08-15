@@ -14,7 +14,6 @@ public class M00ks1Controller : MonoBehaviour
 	public Vector2 moveDirection;
 	public Vector2 faceDirection = new Vector2(0,0);
 	public int playerNo;
-	private bool paused = false;
 
 	// ability use case
 	private Rigidbody2D m00ksBody;
