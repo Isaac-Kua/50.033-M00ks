@@ -97,7 +97,7 @@ public class UpgradeAssigner : MonoBehaviour
                 upgrade3.GetComponent<SpriteRenderer>().sprite = icons.toughDef;
                 upgrade3.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade3Text.text = "1 UP";
-                upgrade4.GetComponent<UpgradeGranter>().upgrade = "unstoppabaleDefence";
+                upgrade4.GetComponent<UpgradeGranter>().upgrade = "unstoppableDefence";
                 upgrade4.GetComponent<SpriteRenderer>().sprite = icons.unstoppableDef;
                 upgrade4.GetComponent<SpriteRenderer>().transform.localScale = new Vector2(2, 2);
                 upgrade4Text.text = "Unstoppable";

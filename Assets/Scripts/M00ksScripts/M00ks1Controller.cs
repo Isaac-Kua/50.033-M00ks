@@ -99,7 +99,7 @@ public class M00ks1Controller : MonoBehaviour
 
 	private void Input_onActionTriggered(CallbackContext obj){
 		//Debug.Log("ACTION!!!");
-		if (isActions){
+		if (isActions && !GetComponent<M00ksDeathHandler>().Stun){
 			if (obj.action.name == controls.Player.Move.name)
 			{
 				OnMove(obj);

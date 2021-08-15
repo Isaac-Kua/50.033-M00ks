@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireboltExplosionScale: 3
   fireboltSpeed: 10
-  fireWizardTargets: 2
+  fireWizardTargets: 1
   rangerMoveSpeed: 12
   rangerWindUpTime: 3
-  rangerTargets: 3
+  rangerTargets: 1
   knightMoveSpeed: 5
   knightShieldWidth: 1
   knightSwordlength: 1
@@ -26,4 +26,4 @@ MonoBehaviour:
   wallLength: 0
   BarbarianMoveSpeed: 5
   BarbarianMaxRange: 15
-  BarbarianMaxCharges: 3
+  BarbarianMaxCharges: 2

@@ -74,40 +74,40 @@ public class EnemyPool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Transform child in transform){
-            if (child.gameObject.activeInHierarchy){
-                if(child.gameObject.GetComponent<KnightController>()!=null){
-                    var controller1 = child.gameObject.GetComponent<KnightController>();
-                    enableWithCheck(controller1.enabled); // = true;
-                }
-                if(child.gameObject.GetComponent<IceWizardController>() != null){
-                    var controller2 = child.gameObject.GetComponent<IceWizardController>();
-                    enableWithCheck(controller2.enabled); //= true;
-                }
-                if(child.gameObject.GetComponent<FireWizardController>() != null){
-                    var controller3 = child.gameObject.GetComponent<FireWizardController>();
-                    enableWithCheck(controller3.enabled);
-                }
-                if(child.gameObject.GetComponent<RangerController>()!=null){
-                    var controller4 = child.gameObject.GetComponent<RangerController>();
-                    enableWithCheck(controller4.enabled);// = true;
+        // foreach (Transform child in transform){
+        //     if (child.gameObject.activeInHierarchy){
+        //         if(child.gameObject.GetComponent<KnightController>()!=null){
+        //             var controller1 = child.gameObject.GetComponent<KnightController>();
+        //             enableWithCheck(controller1.enabled); // = true;
+        //         }
+        //         if(child.gameObject.GetComponent<IceWizardController>() != null){
+        //             var controller2 = child.gameObject.GetComponent<IceWizardController>();
+        //             enableWithCheck(controller2.enabled); //= true;
+        //         }
+        //         if(child.gameObject.GetComponent<FireWizardController>() != null){
+        //             var controller3 = child.gameObject.GetComponent<FireWizardController>();
+        //             enableWithCheck(controller3.enabled);
+        //         }
+        //         if(child.gameObject.GetComponent<RangerController>()!=null){
+        //             var controller4 = child.gameObject.GetComponent<RangerController>();
+        //             enableWithCheck(controller4.enabled);// = true;
 
-                }
-                if(child.gameObject.GetComponent<BarbarianController>()!=null){
-                    var controller5 = child.gameObject.GetComponent<BarbarianController>();
-                    enableWithCheck(controller5.enabled);//= true;
-                }
-                npcCollider = child.gameObject.GetComponent<Collider2D>();
-                enableWithCheck(npcCollider.enabled);// = true;
-                if(child.gameObject.GetComponent<PolygonCollider2D>()){
-                    polyCollider =  child.gameObject.GetComponent<PolygonCollider2D>();
-                    enableWithCheck(polyCollider.enabled);// = true;
-                }else{
-                    polyCollider =  npcCollider;
-                    enableWithCheck(polyCollider.enabled);// = true;
-		        }
-            }
-        }
+        //         }
+        //         if(child.gameObject.GetComponent<BarbarianController>()!=null){
+        //             var controller5 = child.gameObject.GetComponent<BarbarianController>();
+        //             enableWithCheck(controller5.enabled);//= true;
+        //         }
+        //         npcCollider = child.gameObject.GetComponent<Collider2D>();
+        //         enableWithCheck(npcCollider.enabled);// = true;
+        //         if(child.gameObject.GetComponent<PolygonCollider2D>()){
+        //             polyCollider =  child.gameObject.GetComponent<PolygonCollider2D>();
+        //             enableWithCheck(polyCollider.enabled);// = true;
+        //         }else{
+        //             polyCollider =  npcCollider;
+        //             enableWithCheck(polyCollider.enabled);// = true;
+		//         }
+        //     }
+        // }
 
     }
 

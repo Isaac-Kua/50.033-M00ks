@@ -107,7 +107,7 @@ public class SetLevel : MonoBehaviour
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies){
-            enemy.SetActive(false);
+            enemy.GetComponent<DeathHandler>().onDeath();
         }
         souls = GameObject.FindGameObjectsWithTag("Soul");
         foreach(GameObject soul in souls){

@@ -27,13 +27,7 @@ public class KnightController : MonoBehaviour
 		knightAnimator = GetComponent<Animator>();
 
 		shield = gameConstants.knightShield;
-		
-		myShield = Instantiate(shield, transform.position, transform.rotation);
-		myShield.transform.parent = transform;
-		Vector3 eulerAngle = new Vector3(0,0,90);
-		angle.eulerAngles = eulerAngle;
 		levelDifficulty = GameManager.Instance.currentLevel;
-		myShield.transform.rotation = angle;
 	}
 
 	void OnDisable(){
@@ -48,7 +42,7 @@ public class KnightController : MonoBehaviour
 		shield = gameConstants.knightShield;
 		myShield = Instantiate(shield, transform.position, transform.rotation);
 		myShield.transform.parent = transform;
-		Vector3 eulerAngle = new Vector3(0,0,90);
+		Vector3 eulerAngle = new Vector3(0,0,0);
 		angle.eulerAngles = eulerAngle;
 		levelDifficulty = GameManager.Instance.currentLevel;
 		myShield.transform.rotation = angle;
@@ -85,7 +79,7 @@ public class KnightController : MonoBehaviour
 			myShield.GetComponent<ShieldController>().target1 = target1;
 			myShield.transform.position = transform.position + 1.2f*eulerAngle;
 			
-			eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.right,dir));
+			eulerAngle = new Vector3(0,0,90+Vector2.SignedAngle(Vector2.down,dir));
 			angle.eulerAngles = eulerAngle;
 			myShield.transform.rotation = angle;
 		} else {
