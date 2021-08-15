@@ -19,7 +19,6 @@ public class CurrentLevel : ScriptableObject
 	// Knight
 	public float knightMoveSpeed = 5;
 	public float knightShieldWidth = 1;
-	public float knightSwordlength = 1;
 
 	// IceWizard
 	public float iceWizardWindUpTime = 3f;

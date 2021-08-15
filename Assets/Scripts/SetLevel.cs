@@ -22,6 +22,8 @@ public class SetLevel : MonoBehaviour
     private GameObject[] fireball;
     private GameObject[] area;
     private GameObject[] debris;
+    private GameObject[] shield;
+    private GameObject[] sword;
 
     private List<PlayerConfiguration> players;
     [SerializeField]
@@ -115,6 +117,14 @@ public class SetLevel : MonoBehaviour
         }
         arrow = GameObject.FindGameObjectsWithTag("Arrow");
         foreach(GameObject proj in arrow){
+            Destroy(proj);
+        }
+        shield = GameObject.FindGameObjectsWithTag("KnightShield");
+        foreach(GameObject proj in shield){
+            Destroy(proj);
+        }
+        sword = GameObject.FindGameObjectsWithTag("KnightSword");
+        foreach(GameObject proj in sword){
             Destroy(proj);
         }
         fireball = GameObject.FindGameObjectsWithTag("Firebolt");

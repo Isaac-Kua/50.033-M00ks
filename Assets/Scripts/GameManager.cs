@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void increaseStage(){
         stage += 1;
         if (stage < 5) {
-            currentLevel = LevelSettings[stage];
+            currentLevel = LevelSettings[stage-1];
         } else if (stage == 7) {
             PVPStage();
         } 

@@ -7,9 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName =  "SpikeRangedAbility", menuName =  "Ability 1/Spike")]
 public class SpikeRangedAbility : Ability
 {
-    public GameObject missile;
-    public int maxCount = 3;
-    public float spacing = 2f;
     private int count;
     private Vector2 missilePosition;
     private Vector2 missileDirection;
@@ -17,8 +14,6 @@ public class SpikeRangedAbility : Ability
     private Vector2 node;
     private bool blocked = false;
     private float spikeSpawnTime = 0.3f;
-
-    //private Quaterion spikeRotation;
 
     public bool RangeMod = false;
     public bool BypassMod = false;
@@ -39,9 +34,9 @@ public class SpikeRangedAbility : Ability
         checkModifications(parent.GetComponent<Ability1Holder>());
         if(RangeMod)
         {
-            count = maxCount + 2;
+            count = gameConstants.spikeMaxCount + 2;
         }else{
-            count = maxCount;
+            count = gameConstants.spikeMaxCount;
         }
         spikePoints = new Vector2[count];
         if(SpeedMod)
@@ -52,7 +47,7 @@ public class SpikeRangedAbility : Ability
         missileDirection = parent.GetComponent<M00ks1Controller>().faceDirection;
         missilePosition = new Vector2(parent.transform.position.x, parent.transform.position.y);
         for(int i=0;i<count; i++){
-            spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(i+1)*spacing);
+            spikePoints[i] = (missilePosition + missileDirection*2f + missileDirection*(i+1)*gameConstants.spikeSpacing);
         }
         StartCoroutine(ShootCoroutine(parent));
     }
@@ -75,7 +70,7 @@ public class SpikeRangedAbility : Ability
             }
             else
             {
-                GameObject missile1 = Instantiate(missile, missilePosition, Quaternion.identity);//, parent.transform.rotation);
+                GameObject missile1 = Instantiate(gameConstants.playerSpike, missilePosition, Quaternion.identity);//, parent.transform.rotation);
                 missile1.GetComponent<ProjectileController>().owner = parent;
                 missile1.GetComponent<PlayerSpikeController>().owner = parent;
                 missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;

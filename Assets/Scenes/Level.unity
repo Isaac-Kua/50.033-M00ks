@@ -12418,7 +12418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altarSouls: 0
-  soulCap: 10
+  soulCap: 0
   altarHealth: 20
   altarDamage: 0
 --- !u!1 &1474241150
