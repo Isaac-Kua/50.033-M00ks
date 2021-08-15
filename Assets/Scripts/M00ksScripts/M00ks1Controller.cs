@@ -106,16 +106,7 @@ public class M00ks1Controller : MonoBehaviour
 			}
 			else if (obj.action.name == controls.Player.Pause.name)
 			{
-				if (!paused)
-				{
-					PauseController.Instance.PauseGame();
-					paused = true;
-				}
-				else if (paused)
-				{
-					PauseController.Instance.ResumeGame();
-					paused = false;
-				}
+				PauseController.Instance.PauseGame();
 			}
 
 			if (obj.performed)

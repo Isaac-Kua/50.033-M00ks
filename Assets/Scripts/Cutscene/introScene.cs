@@ -55,6 +55,8 @@ public class introScene : MonoBehaviour
             for(int i =0; i<GameManager.Instance.totalPlayers; i++){
                 playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
             }
+            levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(0);
+            levelInitializer.GetComponent<AudioSource>().Play();
             Time.timeScale = 1f;
         }
     }
@@ -67,6 +69,8 @@ public class introScene : MonoBehaviour
             Debug.Log("Stop Action " + i);
         }
         Time.timeScale = 0f;
+        levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(2);
+        levelInitializer.GetComponent<AudioSource>().Play();
         msgBox.SetActive(true);
         skipText.SetActive(true);
         one.SetActive(true);
@@ -90,11 +94,13 @@ public class introScene : MonoBehaviour
         subtitle.SetActive(false);
         skipText.SetActive(false);
         GameManager.Instance.cutscene = false;
-        levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(0);
-        levelInitializer.GetComponent<AudioSource>().Play();
+        
         for(int i =0; i<GameManager.Instance.totalPlayers; i++){
             playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
         }
+        levelInitializer.GetComponent<AudioSource>().Stop();
+        levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(0);
+        levelInitializer.GetComponent<AudioSource>().Play();
         Time.timeScale = 1f;
     }
 }

@@ -256,7 +256,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JojoBackground
+  m_Name: LevelBackground
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: d9c13114489bc9f45b6763a79bf47a9e
   m_Children: []

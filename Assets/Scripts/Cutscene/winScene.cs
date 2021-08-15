@@ -6,6 +6,7 @@ using System.Linq;
 
 public class winScene : MonoBehaviour
 {
+    public GameObject levelInitializer;
     public Image winner;
     public Text kills;
     private List<PlayerConfiguration> players;
@@ -30,9 +31,13 @@ public class winScene : MonoBehaviour
             playerKills.Add(players[i].playerPrefab.GetComponent<M00ksDeathHandler>().playerkills);
         }
         Debug.Log(playerKills);
-        kills.text = "PVP Kills: " + playerKills.Max().ToString();
+        
         int winningPlayer = playerKills.IndexOf(playerKills.Max());
+        kills.text = "Player " + (winningPlayer+1) + " won!\n" + "PvP Kills: "+ playerKills.Max().ToString();
         winner.sprite = PlayerConfigurationManager.Instance.getPlayerSprite(winningPlayer);
+        levelInitializer.GetComponent<AudioSource>().Stop();
+        levelInitializer.GetComponent<AudioSource>().clip = levelInitializer.GetComponent<Initializer>().getAudioClip(3);
+        levelInitializer.GetComponent<AudioSource>().Play();
         timer.SetActive(false);
     }
 }

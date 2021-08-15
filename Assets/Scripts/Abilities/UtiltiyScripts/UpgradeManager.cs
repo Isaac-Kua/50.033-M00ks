@@ -7,6 +7,9 @@ public class UpgradeManager : MonoBehaviour
 {
 	public GameConstants gameConstants;
 	public GameObject player;
+	private AudioSource comboAudio;
+	[SerializeField]
+	private AudioClip[] audioClips;
 
 	// Defensive upgrades
 	public bool miniDefense = false;
@@ -229,6 +232,7 @@ public class UpgradeManager : MonoBehaviour
 		Aura = Instantiate(gameConstants.AuraDisplay, transform.position, transform.rotation);
 		Aura.transform.parent = transform;
 		AuraAnimator = Aura.GetComponent<Animator>();
+		comboAudio = player.GetComponents<AudioSource>()[4];
 	}
 
 	// Update is called once per frame
@@ -449,6 +453,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 JuggernautCombo = true;
                 Debug.Log("I'm the Juggernaut Bitch");
+				comboAudio.clip = audioClips[0];
+				comboAudio.Play();
             }
         }
         else
@@ -462,6 +468,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 WidowmakerCombo = true;
                 Debug.Log("Widowmaker pew pew pew");
+				comboAudio.clip = audioClips[1];
+				comboAudio.Play();
             }
         }
         else
@@ -475,6 +483,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 TophCombo = true;
                 Debug.Log("I am the greatest earthbender in the world, don't you two dunder heads ever forget it");
+				comboAudio.clip = audioClips[2];
+				comboAudio.Play();
             }
         }
         else
@@ -488,6 +498,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 AchmedCombo = true;
                 Debug.Log("Admiral Ackbar!");
+				comboAudio.clip = audioClips[3];
+				comboAudio.Play();
             }
         }
         else
@@ -501,6 +513,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 PacquiaoCombo = true;
                 Debug.Log("Manny Pacquiao");
+				comboAudio.clip = audioClips[4];
+				comboAudio.Play();
             }
         }
         else
@@ -514,6 +528,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 DannyCombo = true;
                 Debug.Log("He's a phantom");
+				comboAudio.clip = audioClips[5];
+				comboAudio.Play();
             }
         }
         else
@@ -527,6 +543,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 TurtleCombo = true;
                 Debug.Log("Teenage Mutant Ninja Turtles!");
+				comboAudio.clip = audioClips[6];
+				comboAudio.Play();
             }
         }
         else
@@ -540,6 +558,8 @@ public class UpgradeManager : MonoBehaviour
             {
                 MagnusCombo = true;
                 Debug.Log("Magnus Carlsen");
+				comboAudio.clip = audioClips[7];
+				comboAudio.Play();
             }
         }
         else
