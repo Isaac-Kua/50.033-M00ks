@@ -60,7 +60,8 @@ public class SpikeRangedAbility : Ability
         }else{
             debrisDistance = 9999f;
         }
-        
+        var spacing = gameConstants.spikeSpacing;
+
         for(int i=0;i<count; i++){
             var mag = 1f + (i+1)*spacing;
             mag = mag*mag;
@@ -74,7 +75,6 @@ public class SpikeRangedAbility : Ability
             }
             else
             {
-
                 if(mag>debrisDistance){
                     blocked = true;
                 }
@@ -103,7 +103,7 @@ public class SpikeRangedAbility : Ability
         for(int j=0;j<count;j++)
         {
             missilePosition = spikePoints[j];
-            GameObject missile1 = Instantiate(missile, missilePosition, Quaternion.identity);//, parent.transform.rotation);
+            GameObject missile1 = Instantiate(gameConstants.playerSpike, missilePosition, Quaternion.identity);//, parent.transform.rotation);
             missile1.GetComponent<ProjectileController>().owner = parent;
             missile1.GetComponent<PlayerSpikeController>().owner = parent;
             missile1.GetComponent<PlayerSpikeController>().RangeMod = RangeMod;
