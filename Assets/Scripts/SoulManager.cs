@@ -6,6 +6,7 @@ public class SoulManager : MonoBehaviour
 {
     private int totalSouls = 0;
     private int currentSouls = 0;
+    public int depositedSouls = 0;
 
     public void increaseSouls()
     {
@@ -14,11 +15,10 @@ public class SoulManager : MonoBehaviour
         Debug.Log("Player Souls: "+currentSouls);
     }
 
-    public int depositSouls()
+    public void depositSouls()
     {
-        int temp = currentSouls;
+        depositedSouls = currentSouls;
         Debug.Log("Souls deposited: "+currentSouls);
         currentSouls = 0;
-        return temp;
     }
 }

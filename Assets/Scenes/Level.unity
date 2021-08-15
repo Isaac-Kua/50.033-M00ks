@@ -14714,6 +14714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2842d666dd005d4a940357952ba73dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositedSouls: 0
 --- !u!1 &1292318848
 GameObject:
   m_ObjectHideFlags: 0
@@ -15455,6 +15456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2842d666dd005d4a940357952ba73dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositedSouls: 0
 --- !u!4 &1329030196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498570784414528837, guid: 3b2aaa2a352dce84fb49432bd0f48c9a, type: 3}
@@ -17697,6 +17699,10 @@ MonoBehaviour:
   soulCap: 10
   altarHealth: 20
   altarDamage: 0
+  soulManagerObject1: {fileID: 1286334464}
+  soulManagerObject2: {fileID: 1842150871}
+  soulManagerObject3: {fileID: 1324181949}
+  soulManagerObject4: {fileID: 1873659349}
 --- !u!1001 &1471630055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21959,6 +21965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2842d666dd005d4a940357952ba73dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositedSouls: 0
 --- !u!1001 &1850462163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22183,6 +22190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2842d666dd005d4a940357952ba73dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositedSouls: 0
 --- !u!1001 &1896624465
 PrefabInstance:
   m_ObjectHideFlags: 0
