@@ -23,7 +23,12 @@ public class dashCDController : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             float cooldown = playerPrefab.GetComponent<DashHolder>().cooldownTime;
             float current = playerPrefab.GetComponent<DashHolder>().rechargeTime;
-            setCDvalue(current/cooldown);
+            if (cooldown == 0){
+                setCDvalue(0);
+            }
+            else{
+                setCDvalue(current/cooldown);
+            }
         }
         else {
             setCDvalue(0);

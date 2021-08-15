@@ -38,6 +38,7 @@ public class pvpScene : MonoBehaviour
             for(int i =0; i<GameManager.Instance.totalPlayers; i++){
                 playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
             }
+            GameManager.Instance.cutscene = false;
             Time.timeScale = 1f;
         }
     }
@@ -60,6 +61,7 @@ public class pvpScene : MonoBehaviour
         for(int i =0; i<GameManager.Instance.totalPlayers; i++){
             playerConfigs[i].playerPrefab.GetComponent<M00ks1Controller>().StartActions();
         }
+        GameManager.Instance.cutscene = false;
         Time.timeScale = 1f;
     }
 

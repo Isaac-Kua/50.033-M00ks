@@ -23,7 +23,12 @@ public class rangedCDController : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             float cooldown = playerPrefab.GetComponent<Ability1Holder>().cooldownTime;
             float current = playerPrefab.GetComponent<Ability1Holder>().rechargeTime;
-            setCDvalue(current/cooldown);
+            if (cooldown == 0){
+                setCDvalue(0);
+            }
+            else{
+                setCDvalue(current/cooldown);
+            }
         }
         else {
             setCDvalue(0);

@@ -23,7 +23,12 @@ public class meleeCDController : MonoBehaviour
             GameObject playerPrefab = players[playerNo].playerPrefab;
             float cooldown = playerPrefab.GetComponent<MeleeHolder>().cooldownTime;
             float current = playerPrefab.GetComponent<MeleeHolder>().rechargeTime;
-            setCDvalue(current/cooldown);
+            if (cooldown == 0){
+                setCDvalue(0);
+            }
+            else{
+                setCDvalue(current/cooldown);
+            }
         }
         else {
             setCDvalue(0);
