@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5939674656525650169}
   - component: {fileID: 1037382051065985581}
   - component: {fileID: 6270429976671918270}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: PlayerSpike
   m_TagString: PlayerArrow
   m_Icon: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa6d9df51ac56943bb636fdd21296ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeavyMod: 0
   owner: {fileID: 0}
 --- !u!95 &1037382051065985581
 Animator:

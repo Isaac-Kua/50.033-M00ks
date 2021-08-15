@@ -60,7 +60,7 @@ public class Ability1Holder : MonoBehaviour
 			a1Audio.clip = audioClips[4];
 			break;
 		default:
-			a1Audio.clip = audioClips[0];
+			//a1Audio.clip = audioClips[0];
 			break;
 		}
     }
@@ -116,13 +116,13 @@ public class Ability1Holder : MonoBehaviour
                 {
                     state = AbilityState.recharging;
                     rechargeTime = ability.rechargeTime;
-                    Debug.Log("First Use!!!");
+                    //Debug.Log("First Use!!!");
                 }
                 else
                 {
                     state = AbilityState.recharging;
                     // Debug.Log(charges);
-                    Debug.Log("Subsequent Use!!!");
+                    //Debug.Log("Subsequent Use!!!");
                     // Debug.Log(rechargeTime);
                 }
                 input = false;
@@ -147,12 +147,12 @@ public class Ability1Holder : MonoBehaviour
                     charges++;
                     rechargeTime = ability.rechargeTime;
                     //Debug.Log(charges);
-                    Debug.Log("recharged!!!");
+                    //Debug.Log("recharged!!!");
                 }
                 if(charges == ability.charges)
                 {
                     state = AbilityState.ready;
-                    Debug.Log("fully recharged!!!");
+                    //Debug.Log("fully recharged!!!");
                 }
                 input = false;
                 

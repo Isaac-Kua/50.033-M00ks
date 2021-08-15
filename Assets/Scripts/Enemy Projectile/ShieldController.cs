@@ -5,10 +5,9 @@ using UnityEngine;
 public class ShieldController : MonoBehaviour
 {
 	public GameConstants gameConstants;
-	public GameObject gameManager;
 	public GameObject target1;
 	
-	public bool engaged = false;
+	public bool engaged;
 	private GameObject sword;
 	
    	private Rigidbody2D itemBody;
@@ -16,6 +15,7 @@ public class ShieldController : MonoBehaviour
 	
 	void Start()
 	{
+		engaged = false;
 		itemBody = GetComponent<Rigidbody2D>();
 		itemSprite = GetComponent<SpriteRenderer>();
 		sword = gameConstants.knightSword;
@@ -24,7 +24,7 @@ public class ShieldController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		transform.localScale = new Vector3(transform.localScale.x * gameManager.GetComponent<GameManager>().currentLevel.knightShieldWidth, transform.localScale.y, transform.localScale.z);
+		transform.localScale = new Vector3(transform.localScale.x * GameManager.Instance.currentLevel.knightShieldWidth, transform.localScale.y, transform.localScale.z);
 	}
 	
 	void OnCollisionEnter2D(Collision2D other)
@@ -46,7 +46,6 @@ public class ShieldController : MonoBehaviour
 		angle.eulerAngles = eulerAngle;
 
 		GameObject stroke = Instantiate(sword, transform.position + 2f*dir, transform.rotation);
-		stroke.GetComponent<SwordController>().gameManager = gameManager;
 		stroke.GetComponent<ProjectileController>().owner = gameObject.transform.parent.gameObject;
 		stroke.transform.parent = gameObject.transform;
 		stroke.transform.rotation = angle;

@@ -63,7 +63,7 @@ public class ProjectileController : MonoBehaviour
                 }
             }
         }
-        if (!gameObject.CompareTag("Player") && !(gameObject.name == "Barathrum(Clone)") && !(gameObject.name == "Barathrum"))
+        if (!(gameObject.name == "PlayerSpike(Clone)") && !gameObject.CompareTag("Player") && !(gameObject.name == "Barathrum(Clone)") && !(gameObject.name == "Barathrum") && !(gameObject.name == "M00ks1(Clone)"))
         {
             if (gameObject.name == "Firebolt(Clone)")
             {
@@ -73,11 +73,14 @@ public class ProjectileController : MonoBehaviour
             else if (!gameObject.CompareTag("Debris") && !(gameObject.name == "ZangiefFist(Clone)") && !(gameObject.name == "KnockbackProjectile") && !(gameObject.name == "JuggernautBubble(Clone)"))
             {
                 if (other.gameObject != owner){
-                    Destroy(gameObject);
+                    if(!(gameObject.name == "M00ks1(Clone)"))
+                    {
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
-        if (!gameObject.CompareTag("PlayerArrow") && !gameObject.CompareTag("Player")){
+        if (!(gameObject.CompareTag("PlayerArrow")) && !gameObject.CompareTag("Player") && !(gameObject.name == "M00ks1(Clone)")){
             if (other.gameObject.CompareTag("Altar"))
             {
                 Player1Manager.centralManagerInstance.damageAltar();

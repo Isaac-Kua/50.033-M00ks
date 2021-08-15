@@ -17,7 +17,7 @@ public class AltarHealthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetHealthBarValue(altar.GetComponent<AltarManager>().getAltarHealth() * 0.005f);
+        SetHealthBarValue(altar.GetComponent<AltarManager>().getAltarHealth() * 0.05f);
     }
 
     void SetHealthBarValue(float value)
